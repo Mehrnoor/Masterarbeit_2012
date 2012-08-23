@@ -1,0 +1,18 @@
+
+#====================================
+set terminal latex
+set size 0.9 , 1.8
+set title 'Absolute Kapazitaet bei 1kHz Messfrequenz'
+set noautoscale
+set xrange [0:6]
+set yrange [0.9668:0.971]
+set pointsize 0.5
+set grid
+set ytics 0, 0.0005
+set key top right
+set xlabel 'Anliegende Differenzspannung an der Messdose in mV'
+set ylabel 'absolute Kapazitaet in nF'
+plot 'plot_2_1_4.dat' using 1:2 title "Kapazitaet bei 1kHz" axis x1y1 with linespoints
+set output "tabelle2_1_4.eps"
+set terminal postscript eps
+replot

@@ -1,0 +1,19 @@
+
+#====================================
+set terminal latex
+set size 0.9, 1.8
+set title 'Parallelwiderstand, Reproduzierbarkeit'
+set noautoscale
+set xrange [0:11]
+set yrange [16:20]
+set pointsize 0.5
+set grid
+set ytics 0, 0.4
+set ytics nomirror
+set key bottom right
+set xlabel 'Anliegende Differenzspannung an der Messdose in mV'
+set ylabel 'Parallelwiderstand in k{/Symbol W}'
+plot 'plot_2_2_5.dat' using 1:2 title "Messung 1" axis x1y1 with linespoints,'plot_2_2_5.dat' using 3:4 title "Messung 2" axis x1y1 with linespoints
+set output "tabelle2_2_5.eps"
+set terminal postscript eps enhanced
+replot

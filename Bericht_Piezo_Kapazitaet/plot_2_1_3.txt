@@ -1,0 +1,21 @@
+
+#====================================
+set terminal latex
+set size 0.9 , 1.8
+set title 'Absolute Kapazitaet (Maschinenschraubstock)'
+set noautoscale
+set xrange [0:7]
+set yrange [0.962:0.973]
+set y2range [0.952:0.97]
+set pointsize 0.5
+set grid
+set ytics 0, 0.001
+set y2tics 0, 0.001
+set ytics nomirror
+set key top right
+set xlabel 'Anliegende Differenzspannung an der Messdose in mV'
+set ylabel 'absolute Kapazitaet in nF'
+plot 'plot_2_1_3.dat' using 1:2 title "100k Ohm Parallelwiderstand" axis x1y1 with linespoints,'plot_2_1_3.dat' using 3:4 title "ohne Parallelwiderstand" axis x1y2 with linespoints
+set output "tabelle2_1_3.eps"
+set terminal postscript eps
+replot

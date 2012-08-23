@@ -1,0 +1,21 @@
+
+#====================================
+set terminal latex
+set size 1, 2
+set title 'Kapazitaetsdifferenz und absolute Kapazitaet'
+set noautoscale
+set xrange [0:8]
+set yrange [-0.035:0.000]
+set y2range [0.96:0.995]
+set pointsize 0.5
+set grid
+set y2tics 0, 0.005
+set ytics nomirror
+set key bottom right
+set xlabel 'Anliegende Differenzspannung an der Messdose in mV'
+set ylabel 'Kapazitaetsdifferenz in nF'
+set y2label 'absolute Kapazitaet in nF'
+plot 'plot_2_1_1.dat' using 1:2 title "Kapazitaetsdifferenz" axis x1y1 with linespoints,'plot_2_1_1.dat' using 1:3 title "absolute Kapazitaet" axis x1y2 with linespoints
+set output "tabelle2_1_1.eps"
+set terminal postscript eps
+replot
