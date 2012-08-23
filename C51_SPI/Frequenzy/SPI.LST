@@ -1,0 +1,211 @@
+C51 COMPILER V9.06   SPI                                                                   08/22/2012 17:18:54 PAGE 1   
+
+
+C51 COMPILER V9.06, COMPILATION OF MODULE SPI
+OBJECT MODULE PLACED IN SPI.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE SPI.c OPTIMIZE(9,SIZE) BROWSE INCDIR(C:\Keil\C51\INC\SiLABS) DEBUG OBJECTEX
+                    -TEND
+
+line level    source
+
+   1          #include "C8051F020.h" 
+   2          #include "dependences.h"
+   3          
+   4          
+   5          
+   6          unsigned char ken5[12]={"SPI:      mV"};
+   7          
+   8          union
+   9          {
+  10                  unsigned char   c[4];
+  11                  unsigned int    i[2];
+  12                  unsigned long   longre;
+  13          }analog;
+  14          
+  15          
+  16          
+  17          #ifndef TEMP
+  18          void wandlascii_signed(unsigned int e)
+  19          {
+  20   1              unsigned int reference = REFERENCE;
+  21   1      /*Folgender Codeausschnitt bewirkt nur eine laufende Animation auf dem LCD-EA T123-I2C*/
+  22   1      #ifdef EVAL_BOARD
+  23   1              static unsigned char inc = 0x8F;
+  24   1      
+  25   1              switch(inc)
+  26   1              {
+  27   2                      case 0x94:
+  28   2                                              inc = 0xBD;
+  29   2                                              break;
+  30   2                      case 0xBD:
+  31   2                                              inc = 0x90;
+  32   2                                              break;
+  33   2                      default:
+  34   2                                              inc++;
+  35   2                                              break;
+  36   2              }
+  37   1      
+  38   1      #endif   //#ifdef EVAL_BOARD
+  39   1      
+  40   1      #ifdef MV_OUT
+  41   1      
+  42   1              ken5[0] = inc;
+  43   1              ken5[1] = ':';
+  44   1              ken5[2] = ' ';  
+  45   1              ken5[3] = ' ';
+  46   1              ken5[4] = ' ';
+  47   1      
+  48   1              /*Erkennen des Vorzeichenbits und Auswertung als Symbol*/
+  49   1              ken5[5] = (e > 0x7FFF) ? 0x2D : 0x2B;
+  50   1      
+  51   1              e = e << 1;                        //Entfernung des Vorzeichenbits
+  52   1              e = e >> 1;
+  53   1      
+  54   1              e =((unsigned long)e * reference)/65536;
+C51 COMPILER V9.06   SPI                                                                   08/22/2012 17:18:54 PAGE 2   
+
+  55   1              ken5[6]=e/1000+ 0x30;
+  56   1              e = e % 1000;
+  57   1              ken5[7]=e/100+ 0x30;
+  58   1              e = e % 100;
+  59   1              ken5[8]=e/10 + 0x30; 
+  60   1              e = e % 10;
+  61   1              ken5[9]=e + 0x30;
+  62   1              ken5[10]= 'm';
+  63   1      #endif  //#ifdef MV_OUT
+  64   1       
+  65   1      #ifdef UV_OUT
+                      
+                      ken5[0] = inc;
+                      ken5[1]= ':';
+                      
+                      /*Erkennen des Vorzeichenbits und Auswertung als Symbol*/
+                      ken5[2] = (e > 0x7FFF) ? 0x2D : 0x2B;
+              
+                      e = e << 1;                        //Entfernung des Vorzeichenbits
+                      e = e >> 1;
+              
+                      e =(((unsigned long)e * reference*100))>>16;
+              
+                      /* Ganzzahl-in-String Umwandlung */
+                      ken5[3]=e/100000 + 0x30;
+                      e = e % 100000;
+                      ken5[4]=e/10000 + 0x30; 
+                      e = e % 10000;
+                      ken5[5]=e/1000 + 0x30;
+                      e = e % 1000;
+                      ken5[6]=e/100 + 0x30;
+                      e = e % 100;
+                      ken5[7]=e/10 + 0x30;
+                      e = e % 10;
+                      ken5[8]=e + 0x30;
+                      ken5[9]= '5';
+                      ken5[10]= 'u';
+              
+              #endif //#ifdef UV_OUT
+  94   1      } 
+  95          #endif //#ifndef TEMP
+  96          
+  97          #ifdef TEMP
+              void wandlascii_signed(unsigned long e)
+              {
+                      unsigned long   subb  = SUBB;
+                      unsigned long   div = DIV;
+                      unsigned int step = STEP;
+              
+              /*Folgender Codeausschnitt bewirkt nur eine laufende Animation auf dem LCD-EA T123-I2C*/        
+              #ifdef EVAL_BOARD
+                      static unsigned char inc = 0x8F;
+              
+                      switch(inc)
+                      {
+                              case 0x94:
+                                                      inc = 0xBD;
+                                                      break;
+                              case 0xBD:
+                                                      inc = 0x90;
+                                                      break;
+                              default:
+C51 COMPILER V9.06   SPI                                                                   08/22/2012 17:18:54 PAGE 3   
+
+                                                      inc++;
+                                                      break;
+                      }
+              #endif   //EVAL_BOARD
+                      
+                      ken5[0] = inc;
+                      ken5[1]= ':';
+                      ken5[2]= ' ';
+              
+                      /*Kürzen des 32Bit ulong Wertes auf den 24Bit-Inhalt.*/
+                      /*Beispiel: 34 45 B4 00h --> 34 45 B4h                           */
+                      e = e >> 8;
+                              
+                      /*Erkennen des Vorzeichenbits und Auswertung als Symbol*/
+                      ken5[3] = (e > 0x7FFFFF) ? 0x2D : 0x2B;
+              
+                      e = e << 1;                        //Entfernung des Vorzeichenbits
+                      e = e >> 1;
+              
+                      /*Berechnung nach Kalibrationswerten*/
+                      e =(e-subb)*10/div;
+              
+                      /* Ganzzahl-in-String Umwandlung */
+                      ken5[5]=e/1000 + 0x30;
+                      e = e % 1000;
+                      ken5[6]=e/100 + 0x30;
+                      e = e % 100;
+              
+                      ken5[7]= ',';
+              
+                      ken5[8]=e/10 + 0x30;
+                      e = e % 10;
+                      ken5[9]= e + 0x30;
+                      ken5[10]= ' ';
+                      ken5[11]= 'C';
+              }
+              #endif
+ 154          
+ 155          
+ 156          void SPI_read(void)
+ 157          {
+ 158   1              unsigned char   i = 0;
+ 159   1      
+ 160   1              /*eventuell muss zum Pollen des DATAREADY-Zustands der SPI-MODE der GPIO ausgeschalten werden!*/
+ 161   1              //SPI0CN &= 0xFE;
+ 162   1      
+ 163   1              while(MISO_PIN);   /*warten bis DATAREADY anliegt*/
+ 164   1      
+ 165   1              //SPI0CN |= 0x01;
+ 166   1      
+ 167   1              for(i = 0; i < 4; i++)
+ 168   1              {
+ 169   2                      SPI0DAT = 0xAA;
+ 170   2                      while(!SPIF);
+ 171   2                      SPIF = 0;
+ 172   2                      analog.c[i] = SPI0DAT;
+ 173   2              }
+ 174   1              analog.c[3] = 0x00;
+ 175   1      
+ 176   1      #ifdef TEMP
+                      wandlascii_signed(analog.longre);
+              #else
+C51 COMPILER V9.06   SPI                                                                   08/22/2012 17:18:54 PAGE 4   
+
+ 179   1         wandlascii_signed(analog.i[0]);
+ 180   1      #endif
+ 181   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    225    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     17       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

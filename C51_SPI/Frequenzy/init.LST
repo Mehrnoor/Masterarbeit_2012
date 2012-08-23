@@ -1,0 +1,168 @@
+C51 COMPILER V9.06   INIT                                                                  08/22/2012 17:18:53 PAGE 1   
+
+
+C51 COMPILER V9.06, COMPILATION OF MODULE INIT
+OBJECT MODULE PLACED IN init.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE init.c OPTIMIZE(9,SIZE) BROWSE INCDIR(C:\Keil\C51\INC\SiLABS) DEBUG OBJECTE
+                    -XTEND
+
+line level    source
+
+   1          /////////////////////////////////////
+   2          //  Generated Initialization File  //
+   3          /////////////////////////////////////
+   4          
+   5          #include "C8051F020.h"
+   6          
+   7          // Peripheral specific initialization functions,
+   8          // Called from the Init_Device() function
+   9          void Reset_Sources_Init()
+  10          {
+  11   1          WDTCN     = 0xDE;
+  12   1          WDTCN     = 0xAD;
+  13   1      }
+  14          
+  15          void Timer_Init()
+  16          {
+  17   1          CKCON     = 0x48;
+  18   1          TCON      = 0x10;
+  19   1          TMOD      = 0x51;
+  20   1          TH0       = 0xFF;
+  21   1          T4CON     = 0x34;
+  22   1          RCAP4L    = 0xFA;
+  23   1          RCAP4H    = 0xFF;
+  24   1      }
+  25          
+  26          void PCA_Init()
+  27          {
+  28   1          PCA0CN    = 0x40;
+  29   1          PCA0MD    = 0x04;
+  30   1          PCA0CPM0  = 0x46;
+  31   1          PCA0CPH0  = 0x6F;
+  32   1      }
+  33          
+  34          void UART_Init()
+  35          {
+  36   1          SCON1     = 0x50;
+  37   1      }
+  38          
+  39          void SMBus_Init()
+  40          {
+  41   1          SMB0CN    = 0x40;
+  42   1          SMB0CR    = 0x99;
+  43   1      }
+  44          
+  45          void SPI_Init()
+  46          {
+  47   1          SPI0CFG   = 0x80;
+  48   1          SPI0CN    = 0x03;
+  49   1          SPI0CKR   = 0x6D;
+  50   1      }
+  51          
+  52          void ADC_Init()
+  53          {
+  54   1          AMX0SL    = 0x02;
+C51 COMPILER V9.06   INIT                                                                  08/22/2012 17:18:53 PAGE 2   
+
+  55   1          ADC0CN    = 0x80;
+  56   1      }
+  57          
+  58          void Voltage_Reference_Init()
+  59          {
+  60   1          REF0CN    = 0x07;
+  61   1      }
+  62          
+  63          void Port_IO_Init()
+  64          {
+  65   1          // P0.0  -  TX0 (UART0), Push-Pull,  Digital
+  66   1          // P0.1  -  RX0 (UART0), Open-Drain, Digital
+  67   1          // P0.2  -  SCK  (SPI0), Push-Pull,  Digital
+  68   1          // P0.3  -  MISO (SPI0), Open-Drain, Digital
+  69   1          // P0.4  -  MOSI (SPI0), Push-Pull,  Digital
+  70   1          // P0.5  -  NSS  (SPI0), Open-Drain, Digital
+  71   1          // P0.6  -  SDA (SMBus), Open-Drain, Digital
+  72   1          // P0.7  -  SCL (SMBus), Open-Drain, Digital
+  73   1      
+  74   1          // P1.0  -  TX1 (UART1), Push-Pull,  Digital
+  75   1          // P1.1  -  RX1 (UART1), Open-Drain, Digital
+  76   1          // P1.2  -  CEX0 (PCA),  Push-Pull,  Digital
+  77   1          // P1.3  -  CEX1 (PCA),  Push-Pull,  Digital
+  78   1          // P1.4  -  CP1 (Cmpr1), Push-Pull,  Digital
+  79   1          // P1.5  -  INT0 (Tmr0), Open-Drain, Digital
+  80   1          // P1.6  -  T1 (Timer1), Open-Drain, Digital
+  81   1          // P1.7  -  INT1 (Tmr1), Open-Drain, Digital
+  82   1      
+  83   1          // P2.0  -  Unassigned,  Push-Pull,  Digital
+  84   1          // P2.1  -  Unassigned,  Open-Drain, Digital
+  85   1          // P2.2  -  Unassigned,  Open-Drain, Digital
+  86   1          // P2.3  -  Unassigned,  Open-Drain, Digital
+  87   1          // P2.4  -  Unassigned,  Open-Drain, Digital
+  88   1          // P2.5  -  Unassigned,  Open-Drain, Digital
+  89   1          // P2.6  -  Unassigned,  Push-Pull,  Digital
+  90   1          // P2.7  -  Unassigned,  Push-Pull,  Digital
+  91   1      
+  92   1          // P3.0  -  Unassigned,  Open-Drain, Digital
+  93   1          // P3.1  -  Unassigned,  Open-Drain, Digital
+  94   1          // P3.2  -  Unassigned,  Open-Drain, Digital
+  95   1          // P3.3  -  Unassigned,  Open-Drain, Digital
+  96   1          // P3.4  -  Unassigned,  Open-Drain, Digital
+  97   1          // P3.5  -  Unassigned,  Open-Drain, Digital
+  98   1          // P3.6  -  Unassigned,  Open-Drain, Digital
+  99   1          // P3.7  -  Unassigned,  Open-Drain, Digital
+ 100   1      
+ 101   1          P0MDOUT   = 0x15;
+ 102   1          P1MDOUT   = 0x1D;
+ 103   1          P2MDOUT   = 0xC1;
+ 104   1          P74OUT    = 0x08;
+ 105   1          XBR0      = 0x17;
+ 106   1          XBR1      = 0x1D;
+ 107   1          XBR2      = 0x44;
+ 108   1      }
+ 109          
+ 110          void Oscillator_Init()
+ 111          {
+ 112   1          int i = 0;
+ 113   1          OSCXCN    = 0x67;
+ 114   1          for (i = 0; i < 3000; i++);  // Wait 1ms for initialization
+ 115   1          while ((OSCXCN & 0x80) == 0);
+ 116   1          OSCICN    = 0x0C;
+C51 COMPILER V9.06   INIT                                                                  08/22/2012 17:18:53 PAGE 3   
+
+ 117   1      }
+ 118          
+ 119          void Interrupts_Init()
+ 120          {
+ 121   1          IE        = 0x80;
+ 122   1          EIE2      = 0x40;
+ 123   1      }
+ 124          
+ 125          // Initialization function for device,
+ 126          // Call Init_Device() from your main program
+ 127          void Init_Device(void)
+ 128          {
+ 129   1          Reset_Sources_Init();
+ 130   1          Timer_Init();
+ 131   1          PCA_Init();
+ 132   1          UART_Init();
+ 133   1          SMBus_Init();
+ 134   1          SPI_Init();
+ 135   1          ADC_Init();
+ 136   1          Voltage_Reference_Init();
+ 137   1          Port_IO_Init();
+ 138   1          Oscillator_Init();
+ 139   1          Interrupts_Init();
+ 140   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    162    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

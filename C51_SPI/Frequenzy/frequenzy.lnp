@@ -1,0 +1,9 @@
+"LCD.obj",
+"init.obj",
+"mainsource.obj",
+"SPI.obj" 
+TO "frequenzy" 
+RAMSIZE(256) 
+nooverlay 
+CODE( 0X0000-0XFFFF )
+XDATA( 0X0000-0X0FFF )
