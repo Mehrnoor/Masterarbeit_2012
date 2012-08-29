@@ -1,4 +1,4 @@
-C51 COMPILER V9.06   SPI                                                                   08/22/2012 17:18:54 PAGE 1   
+C51 COMPILER V9.06   SPI                                                                   08/29/2012 10:03:31 PAGE 1   
 
 
 C51 COMPILER V9.06, COMPILATION OF MODULE SPI
@@ -48,61 +48,61 @@ line level    source
   38   1      #endif   //#ifdef EVAL_BOARD
   39   1      
   40   1      #ifdef MV_OUT
-  41   1      
-  42   1              ken5[0] = inc;
-  43   1              ken5[1] = ':';
-  44   1              ken5[2] = ' ';  
-  45   1              ken5[3] = ' ';
-  46   1              ken5[4] = ' ';
-  47   1      
-  48   1              /*Erkennen des Vorzeichenbits und Auswertung als Symbol*/
-  49   1              ken5[5] = (e > 0x7FFF) ? 0x2D : 0x2B;
-  50   1      
-  51   1              e = e << 1;                        //Entfernung des Vorzeichenbits
-  52   1              e = e >> 1;
-  53   1      
-  54   1              e =((unsigned long)e * reference)/65536;
-C51 COMPILER V9.06   SPI                                                                   08/22/2012 17:18:54 PAGE 2   
-
-  55   1              ken5[6]=e/1000+ 0x30;
-  56   1              e = e % 1000;
-  57   1              ken5[7]=e/100+ 0x30;
-  58   1              e = e % 100;
-  59   1              ken5[8]=e/10 + 0x30; 
-  60   1              e = e % 10;
-  61   1              ken5[9]=e + 0x30;
-  62   1              ken5[10]= 'm';
-  63   1      #endif  //#ifdef MV_OUT
-  64   1       
-  65   1      #ifdef UV_OUT
-                      
+              
                       ken5[0] = inc;
-                      ken5[1]= ':';
-                      
+                      ken5[1] = ':';
+                      ken5[2] = ' ';  
+                      ken5[3] = ' ';
+                      ken5[4] = ' ';
+              
                       /*Erkennen des Vorzeichenbits und Auswertung als Symbol*/
-                      ken5[2] = (e > 0x7FFF) ? 0x2D : 0x2B;
+                      ken5[5] = (e > 0x7FFF) ? 0x2D : 0x2B;
               
                       e = e << 1;                        //Entfernung des Vorzeichenbits
                       e = e >> 1;
               
-                      e =(((unsigned long)e * reference*100))>>16;
-              
-                      /* Ganzzahl-in-String Umwandlung */
-                      ken5[3]=e/100000 + 0x30;
-                      e = e % 100000;
-                      ken5[4]=e/10000 + 0x30; 
-                      e = e % 10000;
-                      ken5[5]=e/1000 + 0x30;
+                      e =((unsigned long)e * reference)/65536;
+C51 COMPILER V9.06   SPI                                                                   08/29/2012 10:03:31 PAGE 2   
+
+                      ken5[6]=e/1000+ 0x30;
                       e = e % 1000;
-                      ken5[6]=e/100 + 0x30;
+                      ken5[7]=e/100+ 0x30;
                       e = e % 100;
-                      ken5[7]=e/10 + 0x30;
+                      ken5[8]=e/10 + 0x30; 
                       e = e % 10;
-                      ken5[8]=e + 0x30;
-                      ken5[9]= '5';
-                      ken5[10]= 'u';
-              
-              #endif //#ifdef UV_OUT
+                      ken5[9]=e + 0x30;
+                      ken5[10]= 'm';
+              #endif  //#ifdef MV_OUT
+  64   1       
+  65   1      #ifdef UV_OUT
+  66   1              
+  67   1              ken5[0] = inc;
+  68   1              ken5[1]= ':';
+  69   1              
+  70   1              /*Erkennen des Vorzeichenbits und Auswertung als Symbol*/
+  71   1              ken5[2] = (e > 0x7FFF) ? 0x2D : 0x2B;
+  72   1      
+  73   1              e = e << 1;                        //Entfernung des Vorzeichenbits
+  74   1              e = e >> 1;
+  75   1      
+  76   1              e =(((unsigned long)e * reference*100))>>16;
+  77   1      
+  78   1              /* Ganzzahl-in-String Umwandlung */
+  79   1              ken5[3]=e/100000 + 0x30;
+  80   1              e = e % 100000;
+  81   1              ken5[4]=e/10000 + 0x30; 
+  82   1              e = e % 10000;
+  83   1              ken5[5]=e/1000 + 0x30;
+  84   1              e = e % 1000;
+  85   1              ken5[6]=e/100 + 0x30;
+  86   1              e = e % 100;
+  87   1              ken5[7]=e/10 + 0x30;
+  88   1              e = e % 10;
+  89   1              ken5[8]=e + 0x30;
+  90   1              ken5[9]= '5';
+  91   1              ken5[10]= 'u';
+  92   1      
+  93   1      #endif //#ifdef UV_OUT
   94   1      } 
   95          #endif //#ifndef TEMP
   96          
@@ -126,7 +126,7 @@ line level    source
                                                       inc = 0x90;
                                                       break;
                               default:
-C51 COMPILER V9.06   SPI                                                                   08/22/2012 17:18:54 PAGE 3   
+C51 COMPILER V9.06   SPI                                                                   08/29/2012 10:03:31 PAGE 3   
 
                                                       inc++;
                                                       break;
@@ -190,7 +190,7 @@ line level    source
  176   1      #ifdef TEMP
                       wandlascii_signed(analog.longre);
               #else
-C51 COMPILER V9.06   SPI                                                                   08/22/2012 17:18:54 PAGE 4   
+C51 COMPILER V9.06   SPI                                                                   08/29/2012 10:03:31 PAGE 4   
 
  179   1         wandlascii_signed(analog.i[0]);
  180   1      #endif
@@ -198,7 +198,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    225    ----
+   CODE SIZE        =    282    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

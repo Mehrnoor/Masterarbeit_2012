@@ -58,20 +58,20 @@ void main (void)
 
 	while(1)
 	{
-		switch(P5)
-		{
-			case 0x07:
-			{
+//		switch(P5)
+//		{
+//			case 0x07:
+//			{
 			
 					SPI_read();
 					show_display(1,ken5);
-					break;
-			}
-
-			default:
-			{
-					break;
-			}
-		}
+//					break;
+//			}
+//
+//			default:
+//			{
+//					break;
+//			}
+//		}
 	}
 }
