@@ -1,0 +1,119 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{scrreprt} % use larger type; default would be 10pt
+\linespread {1,25}\selectfont %1.25 da er von Haus aus 1.2 ist und 1,25 * 1,2 = 1,5 isch
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+%
+%\setkomafont{chapter}{\Large\linespread{ 1}\sffamily\bfseries}
+%\setkomafont{section}{\Large\linespread{ 1}\sffamily\bfseries}
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage[german]{babel}
+\usepackage{helvet}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{picinpar}
+\usepackage{float}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage[german]{varioref}
+\usepackage{longtable} %for tables langer than a page
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry //fancyhdr
+\pagestyle{fancy} % options: empty , plain , fancy
+%\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt} % customise the layout...
+%\lhead{}\chead{}\rhead{}
+%\lfoot{}\cfoot{\thepage}\rfoot{}
+%\lohead{\headmark}
+
+
+%%%% SECTION TITLE APPEARANCE
+%\usepackage{sectsty}
+%\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+
+\setkomafont{chapter}{\rm\bf \large} %Größe der Kapitelüberschriften
+\setkomafont{section}{\rm\bf\large} %Größe der UNterkapitelüberschriften 
+\setkomafont{subsection}{\rm\bf\large} %Größe der UNterkapitelüberschriften 
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+
+%\usepackage[automark]{scrpage2}
+%\pagestyle{scrheadings}
+
+
+%%% END Article customizations
+
+
+
+%%% The "real" document content comes below...
+
+\title{Entwicklung und Erprobung einer piezoresistiven Sensor-Schaltung mit drahtloser Energieversorgung im Projekt "MedLast"}
+\author{Stephan Jobstmann}
+\date {31. August 2012}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\def\chapterpagestyle{fancy}
+\chapter{Einleitung}
+Die fortschreitende Entwicklung in der Medizintechnik bietet auch Hilfestellung im Genesungsprozess im Fachbereich der Orthopädie. So wird im Projekt MedLast sowohl eine Unterstützung für den Patienten als auch eine Kontrollmöglichkeit während der Heilung einer Beinfraktur erstrebt. Dabei wird das Gewicht auf dem geschienten Fuß und die Häufigkeit der Auftritte aufgezeichnet. Gleichzeitig sollen diese Daten zur zeitnahen Kontrolle an eine visuelle Ausgabeeinheit, ähnlich einer Armbanduhr, weitergegeben werden. Da dies im Ganzen ein sehr umfangreiches Unterfangen darstellt, wird es sinngemäß in Teilbereiche untergliedert. Für die Konstruktion der Elektronik, welche die Werte für Belastung und Schrittzahl aufnimmt, werden die Gebiete Energieversorgung und Sensorik zusammengefasst. Hierbei kann man leider nur sehr schlecht auf proprietäre Komplettlösungen zurückgreifen. 
+\chapter{Anforderungen}
+Als wesentliche Bestandteile der Aufgabenstellung sind zuerst die zu bearbeitenden Teilgebiete zu nennen. Hierzu gehören:
+\begin{itemize}
+\item
+Energiezuführung
+\item
+Energiebereitstellung
+\item
+Sensorik-Auswertung
+\end{itemize}
+Bei der Energiezuführung sollen dahingehend Überlegungen angestrebt werden, auf welche Art und Weise das komplette Modul mit Spannung versorgt werden kann. Dabei sollen autarke wie auch fremd-gespeiste Quellen betrachtet werden. Die Energiebereitstellung bezieht sich auf die Speicherung im oder am Modul selbst. Hierbei ist die Abstimmung zwischen Bedarf und Bereitstellung ausschlaggebend für die Wahl der zu verwendenden Technologie. In der Sensorik-Auswertung ist natürlich in erster Linie der zu verwendende Sensor ausschlaggebend. Da dieser sich durch den steten Optimierungsverlauf auch im Verhalten sowie in den zu erwartenden Messgrößen ändern kann, sollte diesbezüglich ein Freiheitsgrad in der Implementierung vorhanden sein. Weiter soll im zentralen Mikrocontroller des Moduls eine passende Auslesesoftware erstellt werden. Diese muss die gemessenen Daten aufbereiten und in eine passende SI-Einheit wie Newton [N] oder Kilogramm [kg] zurück rechnen. 
+\chapter{Hardware}
+Im Folgenden werden die Fortschritte in der Hardware-Entwicklung chronologisch und in Teilbereichen separiert aufgeführt.
+\section{Energiezuführung}
+Als zielführend erweist sich eine Vorüberlegung im Bezug auf die Möglichkeiten der elektrischen Speisung.
+\subsection{Energy-Harvesting}
+In diesem Teilbereich werden zwei physikalische Grundarten des Micro-Energy-Harvesting betrachtet. Diese sind die Umwandlung von mechanischer Schwingungsenergie und thermischer Differenz in elektrische Spannung. Bei der Vorbereitung und Einarbeitung in die entsprechende Thematik wird bei der Umformung von mechanischen Schwingungen in Elektrizität offensichtlich, dass dies eine ungünstige Form der Energiegewinnung für dieses System ist. Dies liegt unter anderem an der unmöglichen Abstimmung der durch den Auftritt erzeugten Erregung auf die Resonanzfrequenz des Schwingungsaufnehmers. Weiter benötigt ein solches Bauelement einen Freiraum um seine abklingende Bewegung harmonisch abbauen zu können. Es müssen auch die maximal auftretenden Beschleunigungen berücksichtigt werden was wiederum zu einer Versteifung des kompletten Federsystems führen würde. Das hätte als Resultat, dass durch die Erhöhung der dynamischen Bandbreite die verhältnismäßig kleineren Anregungen einen schlechteren Wirkungsgrad liefern würden. 
+
+
+
+
+\end{document}
