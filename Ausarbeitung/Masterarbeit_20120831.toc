@@ -7,3 +7,4 @@
 \contentsline {chapter}{\numberline {4}Hardware}{6}
 \contentsline {section}{\numberline {4.1}Energiezuf\IeC {\"u}hrung}{6}
 \contentsline {subsection}{\numberline {4.1.1}Energy-Harvesting}{6}
+\contentsline {chapter}{Literaturverzeichnis}{8}
