@@ -1,0 +1,33 @@
+% This file was created with JabRef 2.8.1.
+% Encoding: Cp1252
+
+@INBOOK{brooks2001-silver,
+  chapter = {No Silver Bullet - Essence and Accident in Software Engineering},
+  pages = {177--203},
+  title = {The Mythical Man-Month},
+  publisher = {Addison Wesley Longman Inc.},
+  year = {2001},
+  author = {F. P. Brooks},
+  address = {New York},
+  edition = {15., Aufl.}
+}
+
+@BOOK{demb2011,
+  title = {Energy Harvesting f"ur die Mikroelektronik},
+  publisher = {VDE Verlag GmbH},
+  year = {2011},
+  author = {K. Dembowski},
+  address = {Berlin},
+  edition = {1., Aufl.}
+}
+
+@TECHREPORT{pasche1992,
+  author = {M. Pasche},
+  title = {Synergetik und Evolutorische Ökonomik},
+  institution = {Universität Hannover Fachbereich Wirtschaftswissenschaften},
+  year = {1992},
+  type = {Diskussionspapier},
+  number = {179},
+  month = dec
+}
+

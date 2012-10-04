@@ -35,6 +35,13 @@
 \usepackage{epsfig}
 \usepackage{graphicx}
 \usepackage[german]{varioref}
+\usepackage{natbib}
+%\usepackage{cite}
+%\usepackage[round]{natbib}
+%\bibliographystyle{alphadin}
+%\usepackage[style=authoryear]{biblatex} %e
+%\bibliographystyle{unsrt}
+%\bibliography{literatur}
 \usepackage{longtable} %for tables langer than a page
 \usepackage{booktabs} % for much better looking tables
 \usepackage{array} % for better arrays (eg matrices) in maths
@@ -93,6 +100,12 @@
 \maketitle
 \tableofcontents
 \def\chapterpagestyle{fancy}
+%\bibliographystyle{alpha}
+%\bibliography{literatur}
+%\begin{thebibliography}
+%\bibitem[test ]{demb11} Klaus Dembowski: \textit{Energy Harvesting für die Mikroelektronik}, VDE Verlag (2011)
+%\end{thebibliography}
+
 \chapter{Einleitung}
 Die fortschreitende Entwicklung in der Medizintechnik bietet auch Hilfestellung im Genesungsprozess im Fachbereich der Orthopädie. So wird im Projekt MedLast sowohl eine Unterstützung für den Patienten als auch eine Kontrollmöglichkeit während der Heilung einer Beinfraktur erstrebt. Dabei wird das Gewicht auf dem geschienten Fuß und die Häufigkeit der Auftritte aufgezeichnet. Gleichzeitig sollen diese Daten zur zeitnahen Kontrolle an eine visuelle Ausgabeeinheit, ähnlich einer Armbanduhr, weitergegeben werden. Da dies im Ganzen ein sehr umfangreiches Unterfangen darstellt, wird es sinngemäß in Teilbereiche untergliedert. Für die Konstruktion der Elektronik, welche die Werte für Belastung und Schrittzahl aufnimmt, werden die Gebiete Energieversorgung und Sensorik zusammengefasst. Hierbei kann man leider nur sehr schlecht auf proprietäre Komplettlösungen zurückgreifen. 
 \chapter{Anforderungen}
@@ -106,6 +119,13 @@ Energiebereitstellung
 Sensorik-Auswertung
 \end{itemize}
 Bei der Energiezuführung sollen dahingehend Überlegungen angestrebt werden, auf welche Art und Weise das komplette Modul mit Spannung versorgt werden kann. Dabei sollen autarke wie auch fremd-gespeiste Quellen betrachtet werden. Die Energiebereitstellung bezieht sich auf die Speicherung im oder am Modul selbst. Hierbei ist die Abstimmung zwischen Bedarf und Bereitstellung ausschlaggebend für die Wahl der zu verwendenden Technologie. In der Sensorik-Auswertung ist natürlich in erster Linie der zu verwendende Sensor ausschlaggebend. Da dieser sich durch den steten Optimierungsverlauf auch im Verhalten sowie in den zu erwartenden Messgrößen ändern kann, sollte diesbezüglich ein Freiheitsgrad in der Implementierung vorhanden sein. Weiter soll im zentralen Mikrocontroller des Moduls eine passende Auslesesoftware erstellt werden. Diese muss die gemessenen Daten aufbereiten und in eine passende SI-Einheit wie Newton [N] oder Kilogramm [kg] zurück rechnen. 
+\chapter{Grundlagen}
+\section{Energy-Harvesting}
+\subsection{Piezoelektrisch}
+
+Eines der größten abgedeckten Felder im Energy-Harvesting ist die Gewinnung von nutzbarer eleketrischer Energe aus vorhandener mechanischer Energie. Hierbei werden die piezoelektrischen Effekte genutzt, welche bei Druck oder Schwingungsbelastungen auf dem Piezokristall entstehen.\citep{Dembowski2011}
+
+
 \chapter{Hardware}
 Im Folgenden werden die Fortschritte in der Hardware-Entwicklung chronologisch und in Teilbereichen separiert aufgeführt.
 \section{Energiezuführung}
@@ -116,9 +136,5 @@ In diesem Teilbereich werden zwei physikalische Grundarten des Micro Energy Harv
 Die thermoelektrische Wandlung beruht auf der Inversen des Peltier-Effekts, dem Seebeck Effekt. Diesem liegt zu Grunde, dass am Übergang von zwei unterschiedlichen Metallen unterschiedlicher Temperierung ein elektrisches Feld aufgebaut wird. Die Verwendung dieses Effekts war zunächst nur bei Temperatur-Messfühlern weit verbreitet. Allerdings ist aufgrund der fortschreitenden Entwicklung der Micro Energy Harvesting Technologien dieser Effekt mittlerweile auch zur Energieversorgung nutzbar. \newline \newline
 Als zentralen Baustein für die Erprobung von Micro-Energy-Harvesting Systemen im Bezug auf thermo-elektrische Energiewandlung bietet sich der \textbf{LTC3108} von der Firma Linear Technology an. Dieser vermag mit geringem Aufwand Eingangsspannungen von 20mV bis 500mV auf ausgangsseitig bis zu 5V aufwärts zu wandeln. Um möglichst schnell Erkenntnisse aus der Wirkungsweise des Bausteins ziehen zu können, wird eine im Internet veröffentlichte Schaltung für Tests verwendet. 
 
-
-
-
-
-
+\bibliography{literatur}
 \end{document}

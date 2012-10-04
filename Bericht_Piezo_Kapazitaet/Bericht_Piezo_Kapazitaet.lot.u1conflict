@@ -1,0 +1,13 @@
+\select@language {german}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Messung 1}}{5}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Messung 2 }}{6}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Messung 3; mit 100k$\Omega $ Parallelwiderstand}}{9}
+\contentsline {table}{\numberline {2.4}{\ignorespaces Messung 4; ohne Parallelwiderstand}}{10}
+\contentsline {table}{\numberline {2.5}{\ignorespaces Messung 5; 1kHz Messfrequenz}}{12}
+\contentsline {table}{\numberline {2.6}{\ignorespaces Messung 6; Piezostack; Einf\IeC {\"u}hrende Messung}}{15}
+\contentsline {table}{\numberline {2.7}{\ignorespaces Messung 7; Piezostack; mit Entladung, ohne Setz-Zeit; Kapazit\IeC {\"a}t}}{17}
+\contentsline {table}{\numberline {2.8}{\ignorespaces Messung 8; Piezostack; mit Entladung, ohne Setz-Zeit; Parallelwiderstand}}{19}
+\contentsline {table}{\numberline {2.9}{\ignorespaces Messung 9; Piezostack; mit Entladung, 2 Minuten Setz-Zeit; Kapazit\IeC {\"a}t}}{21}
+\contentsline {table}{\numberline {2.10}{\ignorespaces Messung 10; Piezostack; mit Entladung, 2 Minuten Setz-Zeit; Parallelwiderstand}}{21}

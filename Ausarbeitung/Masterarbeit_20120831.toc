@@ -1,6 +1,9 @@
 \select@language {german}
 \contentsline {chapter}{\numberline {1}Einleitung}{3}
 \contentsline {chapter}{\numberline {2}Anforderungen}{4}
-\contentsline {chapter}{\numberline {3}Hardware}{5}
-\contentsline {section}{\numberline {3.1}Energiezuf\IeC {\"u}hrung}{5}
-\contentsline {subsection}{\numberline {3.1.1}Energy-Harvesting}{5}
+\contentsline {chapter}{\numberline {3}Grundlagen}{5}
+\contentsline {section}{\numberline {3.1}Energy-Harvesting}{5}
+\contentsline {subsection}{\numberline {3.1.1}Piezoelektrisch}{5}
+\contentsline {chapter}{\numberline {4}Hardware}{6}
+\contentsline {section}{\numberline {4.1}Energiezuf\IeC {\"u}hrung}{6}
+\contentsline {subsection}{\numberline {4.1.1}Energy-Harvesting}{6}

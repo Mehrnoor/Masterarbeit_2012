@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=pdflatex 2012.9.6)  2 OCT 2012 17:23
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=pdflatex 2012.9.6)  6 SEP 2012 14:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -519,32 +519,25 @@ Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 Package: varioref 2011/10/02 v1.4z package for extended references (FMi)
 \c@vrcnt=\count117
 )
-(c:/texlive/2012/texmf-dist/tex/latex/natbib/natbib.sty
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip50
-\bibsep=\skip51
-LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count118
-)
 (c:/texlive/2012/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip52
-\LTright=\skip53
-\LTpre=\skip54
-\LTpost=\skip55
-\LTchunksize=\count119
+\LTleft=\skip50
+\LTright=\skip51
+\LTpre=\skip52
+\LTpost=\skip53
+\LTchunksize=\count118
 \LTcapwidth=\dimen137
 \LT@head=\box44
 \LT@firsthead=\box45
 \LT@foot=\box46
 \LT@lastfoot=\box47
-\LT@cols=\count120
-\LT@rows=\count121
-\c@LT@tables=\count122
-\c@LT@chunks=\count123
+\LT@cols=\count119
+\LT@rows=\count120
+\c@LT@tables=\count121
+\c@LT@chunks=\count122
 \LT@p@ftn=\toks30
 )
-Class scrreprt Info: longtable captions redefined on input line 46.
+Class scrreprt Info: longtable captions redefined on input line 39.
 
 (c:/texlive/2012/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
@@ -558,12 +551,12 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen145
 \cmidrulekern=\dimen146
 \defaultaddspace=\dimen147
-\@cmidla=\count124
-\@cmidlb=\count125
+\@cmidla=\count123
+\@cmidlb=\count124
 \@aboverulesep=\dimen148
 \@belowrulesep=\dimen149
-\@thisruleclass=\count126
-\@lastruleclass=\count127
+\@thisruleclass=\count125
+\@lastruleclass=\count126
 \@thisrulewidth=\dimen150
 )
 (c:/texlive/2012/texmf-dist/tex/latex/tools/array.sty
@@ -571,15 +564,15 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen151
 \extrarowheight=\dimen152
 \NC@list=\toks31
-\extratabsurround=\skip56
-\backup@length=\skip57
+\extratabsurround=\skip54
+\backup@length=\skip55
 )
 (c:/texlive/2012/texmf-dist/tex/latex/paralist/paralist.sty
 Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
-\pltopsep=\skip58
-\plpartopsep=\skip59
-\plitemsep=\skip60
-\plparsep=\skip61
+\pltopsep=\skip56
+\plpartopsep=\skip57
+\plitemsep=\skip58
+\plparsep=\skip59
 \pl@lab=\toks32
 )
 (c:/texlive/2012/texmf-dist/tex/latex/tools/verbatim.sty
@@ -604,7 +597,7 @@ Package: caption3 2012/01/12 v1.4b caption3 kernel (AR)
 \caption@hangindent=\dimen158
 )
 Package caption Info: KOMA-Script document class.
-\c@ContinuedFloat=\count128
+\c@ContinuedFloat=\count127
 Package caption Info: float package is loaded.
 Package caption Info: longtable package is loaded.
 
@@ -613,30 +606,30 @@ Package: ltcaption 2011/09/12 v1.3 longtable captions (AR)
 )
 Package caption Info: picinpar package is loaded.
 )
-\c@KVtest=\count129
-\sf@farskip=\skip62
+\c@KVtest=\count128
+\sf@farskip=\skip60
 \sf@captopadj=\dimen159
-\sf@capskip=\skip63
-\sf@nearskip=\skip64
-\c@subfigure=\count130
-\c@subfigure@save=\count131
-\c@lofdepth=\count132
-\c@subtable=\count133
-\c@subtable@save=\count134
-\c@lotdepth=\count135
-\sf@top=\skip65
-\sf@bottom=\skip66
+\sf@capskip=\skip61
+\sf@nearskip=\skip62
+\c@subfigure=\count129
+\c@subfigure@save=\count130
+\c@lofdepth=\count131
+\c@subtable=\count132
+\c@subtable@save=\count133
+\c@lotdepth=\count134
+\sf@top=\skip63
+\sf@bottom=\skip64
 )
 (c:/texlive/2012/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip67
-\f@ncyO@elh=\skip68
-\f@ncyO@erh=\skip69
-\f@ncyO@olh=\skip70
-\f@ncyO@orh=\skip71
-\f@ncyO@elf=\skip72
-\f@ncyO@erf=\skip73
-\f@ncyO@olf=\skip74
-\f@ncyO@orf=\skip75
+\fancy@headwidth=\skip65
+\f@ncyO@elh=\skip66
+\f@ncyO@erh=\skip67
+\f@ncyO@olh=\skip68
+\f@ncyO@orh=\skip69
+\f@ncyO@elf=\skip70
+\f@ncyO@erf=\skip71
+\f@ncyO@olf=\skip72
+\f@ncyO@orf=\skip73
 )
 (c:/texlive/2012/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
@@ -648,62 +641,62 @@ Package tocbibind Note: Using chapter style headings, unless overridden.
 ) (c:/texlive/2012/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2010/10/13 v2.3e parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 43.
-\cftparskip=\skip76
-\cftbeforetoctitleskip=\skip77
-\cftaftertoctitleskip=\skip78
-\cftbeforepartskip=\skip79
-\cftpartnumwidth=\skip80
-\cftpartindent=\skip81
-\cftbeforechapskip=\skip82
-\cftchapindent=\skip83
-\cftchapnumwidth=\skip84
-\cftbeforesecskip=\skip85
-\cftsecindent=\skip86
-\cftsecnumwidth=\skip87
-\cftbeforesubsecskip=\skip88
-\cftsubsecindent=\skip89
-\cftsubsecnumwidth=\skip90
-\cftbeforesubsubsecskip=\skip91
-\cftsubsubsecindent=\skip92
-\cftsubsubsecnumwidth=\skip93
-\cftbeforeparaskip=\skip94
-\cftparaindent=\skip95
-\cftparanumwidth=\skip96
-\cftbeforesubparaskip=\skip97
-\cftsubparaindent=\skip98
-\cftsubparanumwidth=\skip99
-\cftbeforeloftitleskip=\skip100
-\cftafterloftitleskip=\skip101
-\cftbeforefigskip=\skip102
-\cftfigindent=\skip103
-\cftfignumwidth=\skip104
-\cftbeforelottitleskip=\skip105
-\cftafterlottitleskip=\skip106
-\cftbeforetabskip=\skip107
-\cfttabindent=\skip108
-\cfttabnumwidth=\skip109
-\cftbeforesubfigskip=\skip110
-\cftsubfigindent=\skip111
-\cftsubfignumwidth=\skip112
-\cftbeforesubtabskip=\skip113
-\cftsubtabindent=\skip114
-\cftsubtabnumwidth=\skip115
+\cftparskip=\skip74
+\cftbeforetoctitleskip=\skip75
+\cftaftertoctitleskip=\skip76
+\cftbeforepartskip=\skip77
+\cftpartnumwidth=\skip78
+\cftpartindent=\skip79
+\cftbeforechapskip=\skip80
+\cftchapindent=\skip81
+\cftchapnumwidth=\skip82
+\cftbeforesecskip=\skip83
+\cftsecindent=\skip84
+\cftsecnumwidth=\skip85
+\cftbeforesubsecskip=\skip86
+\cftsubsecindent=\skip87
+\cftsubsecnumwidth=\skip88
+\cftbeforesubsubsecskip=\skip89
+\cftsubsubsecindent=\skip90
+\cftsubsubsecnumwidth=\skip91
+\cftbeforeparaskip=\skip92
+\cftparaindent=\skip93
+\cftparanumwidth=\skip94
+\cftbeforesubparaskip=\skip95
+\cftsubparaindent=\skip96
+\cftsubparanumwidth=\skip97
+\cftbeforeloftitleskip=\skip98
+\cftafterloftitleskip=\skip99
+\cftbeforefigskip=\skip100
+\cftfigindent=\skip101
+\cftfignumwidth=\skip102
+\cftbeforelottitleskip=\skip103
+\cftafterlottitleskip=\skip104
+\cftbeforetabskip=\skip105
+\cfttabindent=\skip106
+\cfttabnumwidth=\skip107
+\cftbeforesubfigskip=\skip108
+\cftsubfigindent=\skip109
+\cftsubfignumwidth=\skip110
+\cftbeforesubtabskip=\skip111
+\cftsubtabindent=\skip112
+\cftsubtabnumwidth=\skip113
 )
 (./Masterarbeit_20120831.aux)
 \openout1 = `Masterarbeit_20120831.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -741,16 +734,16 @@ LaTeX Font Info:    ... okay on input line 99.
 
 (c:/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count136
+\scratchcounter=\count135
 \scratchdimen=\dimen160
 \scratchbox=\box48
-\nofMPsegments=\count137
-\nofMParguments=\count138
+\nofMPsegments=\count136
+\nofMParguments=\count137
 \everyMPshowfont=\toks35
-\MPscratchCnt=\count139
+\MPscratchCnt=\count138
 \MPscratchDim=\dimen161
-\MPnumerator=\count140
-\makeMPintoPDFobject=\count141
+\MPnumerator=\count139
+\makeMPintoPDFobject=\count140
 \everyMPtoPDFconversion=\toks36
 ) (c:/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -799,22 +792,21 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 101.
-
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 94.
 
 (c:/texlive/2012/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 101.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 94.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 101.
-LaTeX Font Info:    Try loading font information for U+msa on input line 101.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 94.
+LaTeX Font Info:    Try loading font information for U+msa on input line 94.
 
 (c:/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 101.
+LaTeX Font Info:    Try loading font information for U+msb on input line 94.
 
 (c:/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -843,57 +835,45 @@ Class scrreprt Warning: \float@addtolists detected!
 
 ]
 Kapitel 2.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 115.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 102.
 
 (c:/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 102.
  [4
 
 ]
 Kapitel 3.
 
-Package natbib Warning: Citation `Dembowski2011' on page 5 undefined on input l
-ine 126.
-
-[5
-
-]
-Kapitel 4.
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--138
+Underfull \hbox (badness 10000) in paragraph at lines 115--118
 
  []
 
-[6
+[5
 
-] (./Masterarbeit_20120831.bbl)
-
-Package natbib Warning: There were undefined citations.
-
-[7] (./Masterarbeit_20120831.aux) ) 
+] [6] (./Masterarbeit_20120831.aux) ) 
 Here is how much of TeX's memory you used:
- 7332 strings out of 493488
- 106358 string characters out of 3144749
- 209949 words of memory out of 3000000
- 10485 multiletter control sequences out of 15000+200000
+ 6999 strings out of 493488
+ 102306 string characters out of 3144749
+ 204028 words of memory out of 3000000
+ 10159 multiletter control sequences out of 15000+200000
  16025 words of font info for 52 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  50i,11n,54p,1201b,303s stack positions out of 5000i,500n,10000p,200000b,50000s
-{c:/texlive/2012/texmf-dist/fonts/enc/dvips/
-base/8r.enc}<c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.p
-fb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/te
-xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2012
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2012/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsl10.pfb><c:/texlive/2012/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2012/texmf-dist/fonts/type1/urw/
-helvetic/uhvb8a.pfb>
-Output written on Masterarbeit_20120831.pdf (7 pages, 97035 bytes).
+{c:/texlive/2012/texmf-dist/fonts/enc/dvip
+s/base/8r.enc}<c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10
+.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/
+texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/20
+12/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2012/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsl10.pfb><c:/texlive/2012/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2012/texmf-dist/fonts/type1/ur
+w/helvetic/uhvb8a.pfb>
+Output written on Masterarbeit_20120831.pdf (6 pages, 93017 bytes).
 PDF statistics:
- 57 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 52 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
