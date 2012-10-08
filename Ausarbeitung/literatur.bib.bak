@@ -12,13 +12,23 @@
   edition = {15., Aufl.}
 }
 
-@BOOK{demb2011,
+@BOOK{Dembowski2011,
   title = {Energy Harvesting f"ur die Mikroelektronik},
   publisher = {VDE Verlag GmbH},
   year = {2011},
   author = {K. Dembowski},
   address = {Berlin},
-  edition = {1., Aufl.}
+  edition = {1.}
+}
+
+@BOOK{Schruefer2012,
+  title = {Elektrische Messtechnik},
+  publisher = {Hanser Verlag},
+  year = {2012},
+  author = {E. Schrüfer, L. Reindl, B. Zagar},
+  edition = {10.},
+  owner = {sjobstm},
+  timestamp = {2012.10.08}
 }
 
 @TECHREPORT{pasche1992,

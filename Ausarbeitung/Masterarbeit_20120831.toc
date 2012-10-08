@@ -4,7 +4,8 @@
 \contentsline {chapter}{\numberline {3}Grundlagen}{5}
 \contentsline {section}{\numberline {3.1}Energy-Harvesting}{5}
 \contentsline {subsection}{\numberline {3.1.1}Piezoelektrisch}{5}
-\contentsline {chapter}{\numberline {4}Hardware}{6}
-\contentsline {section}{\numberline {4.1}Energiezuf\IeC {\"u}hrung}{6}
-\contentsline {subsection}{\numberline {4.1.1}Energy-Harvesting}{6}
-\contentsline {chapter}{Literaturverzeichnis}{8}
+\contentsline {chapter}{\numberline {4}Thermoelektrisch}{7}
+\contentsline {chapter}{\numberline {5}Hardware}{8}
+\contentsline {section}{\numberline {5.1}Energiezuf\IeC {\"u}hrung}{8}
+\contentsline {subsection}{\numberline {5.1.1}Energy-Harvesting}{8}
+\contentsline {chapter}{Literaturverzeichnis}{10}

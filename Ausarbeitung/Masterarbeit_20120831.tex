@@ -30,6 +30,7 @@
 \usepackage{helvet}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{gensymb}
 \usepackage{picinpar}
 \usepackage{float}
 \usepackage{epsfig}
@@ -118,9 +119,35 @@ Bei der Energiezuführung sollen dahingehend Überlegungen angestrebt werden, au
 \section{Energy-Harvesting}
 \subsection{Piezoelektrisch}
 
-Eines der größten abgedeckten Felder im Energy-Harvesting ist die Gewinnung von nutzbarer eleketrischer Energe aus vorhandener mechanischer Energie. Hierbei werden die piezoelektrischen Effekte genutzt, welche bei Druck oder Schwingungsbelastungen auf dem Piezokristall entstehen.\citep{Dembowski2011}
-
-
+Eines der größten abgedeckten Felder im Energy-Harvesting Bereich ist die Gewinnung von nutzbarer elektrischer Energie aus vorhandener mechanischer Energie. Hierbei werden die piezoelektrischen Effekte genutzt, welche bei Druck oder Schwingungsbelastungen auf einem Piezokristall entstehen \citep[vgl. S.36 ff]{Dembowski2011}. Dabei entsteht bei bestimmten nichtleitenden Keramiken aufgrund von mechanischem Druck elektrische Ladung an den Oberflächen. Die inneren Ladungskerne driften dabei auseinander, es bildet sich ein Dipol aus. Es werden die grundlegenden Gleichungen des Piezo-Effekts wie folgt beschrieben:
+\begin{align}
+D & =  \textrm{d} \cdot T + \varepsilon^{\textrm{T}} \cdot E\\
+S & =  s^{\textrm{E}} \cdot T + \textrm{d} \cdot E
+\end{align}
+Mit den Parametern:
+\begin{array}[t] {r c l}
+D & : & \textrm{Dielektrische Verschiebung (statt Polarisation)}\\
+S & : & \textrm{Relative mechanische Dehnung} \\
+T & : &\textrm{Mechanische Spannung} \\
+E & : & \textrm{Elektrische Feldstärke} \\
+  $d$  & : & \textrm{piezoelektrische Ladungskonstante} \\
+ s^{\textrm{E}}  & : & \textrm{Elastizitätskonstante, E = konstant} \\
+ \varepsilon^{\textrm{T}}  & : & \textrm{Permittivität, T = konstant}\\
+\end{array}\\ \newline
+Zum Energy-Harvesting werden vorzüglich Biegebalken\footnote{im Englischen auch bekannt als Cantilever} verwendet. Diese können technologisch an die angeforderte Kraftaufnahme, die Schwingungsfrequenz und die Amplitude der resultierenden Spannung angepasst werden. Der Aufbau als Biegebalken liefert sein Optimum der Energieumwandlung bei seiner Resonanzfrequenz. Dabei unterscheidet man weiter zwischen Transversalschwingern\footnote{31-Schwingungsmodus} (Formel \ref{formel:3.3} und \ref{formel:3.4}) und Longitudinalschwingern\footnote{33-Schwingungsmodus}  (Formel \ref{formel:3.5} und \ref{formel:3.6}). 
+\begin{align}
+D_3 & =  \textrm{d}_{31} \cdot T_1 + \varepsilon_{33}^{\textrm{T}} \cdot E_3 \label{formel:3.3} \\
+S_1 & =  s_{11}^{\textrm{E}} \cdot T_3 + \textrm{d}_{31} \cdot E_3 \label{formel:3.4}
+\end{align}
+Bei den Transversalschwingern wird quer zur mechanischen Auslenkung eine elektrische Spannung erzeugt. Wenn mechanische Schwingung bzw. Druckbelastung mit dem elektrischen Feld bzw. der dielektrischen Verschiebung gleichgerichtet ist, spricht man von Longitudinalschwingern. Transversalschwinger erzeugen eine rund zehnmal höhere Spannung als Longitudinalschwinger \citep[vgl. S.39]{Dembowski2011}.
+\begin{align}
+D_3 & =  \textrm{d}_{33} \cdot T_3 + \varepsilon_{33}^{\textrm{T}} \cdot E_3 \label{formel:3.5} \\
+S_3 & =  s_{33}^{\textrm{E}} \cdot T_3 + \textrm{d}_{33} \cdot E_3 \label{formel:3.6}
+\end{align}
+\chapter{Thermoelektrisch}
+Eine im Vergleich zu piezoelektrischem Energy-Harvesting hohe Energieumwandlung erzielt man mit der thermoelektrischen Transformation. Dabei wird als physikalische Grundlage der Seebeck-Effekt benutzt. Dieser beschreibt, dass bei zwei unterschiedlichen Metalllegierungen bei vorliegender Temperaturdifferenz am Stoffübergang eine Spannung entsteht. Die entstandene Potentialdifferenz nennt man auch Thermospannung \citep[vgl. S.158]{Schruefer2012}. Die Inverse dieses Vorgangs wird mit dem Peltier-Effekt beschrieben. Da das Verhalten der spezifischen Elemente reziprok ist, kann man Peltierelemente auch zur Gewinnung von elektrischer Energie nutzen. \newline
+Der Seebeck-Effekt beruht auf den folgenden molekularen Gegebenheiten: Naturgemäß wandern bei einem Metall, welches einem Temperaturunterschied ausgesetzt ist, die Elektronen von der heißen zur kalten Seite. Dies geschieht aufgrund der natürlichen Diffusionsbewegung innerhalb des Metalls. Bei zwei aneinanderliegenden, verlöteten oder verschweißten Legierungen gibt das Metall mit der niedrigeren Austrittsarbeit Elektronen an das andere Metall ab und wird dadurch positiv geladen. Dadurch bildet sich an der Kontaktfläche ein elektrisches Feld. Dieses kann resultierend als direkte Proportionale zur anliegenden Temperaturdifferenz der zwei Kontaktstellen mit einem Voltmeter gemessen werden. Übliche Werte hierfür sind ca. $10  \frac{\textrm{mV}}{100 \degree \textrm{K}}$.\newline \newline
+Wenn man den technischen Aufbau nun so gestaltet, dass er zur Energieumwandlung und nicht zur Temperaturmessung verwendet werden soll, erweist es sich als zweckmäßig ein oder mehrere Peltierelemente im umgekehrten Betrieb zu verwenden. \citep[vgl. S.30]{Dembowski2011}
 \chapter{Hardware}
 Im Folgenden werden die Fortschritte in der Hardware-Entwicklung chronologisch und in Teilbereichen separiert aufgeführt.
 \section{Energiezuführung}
