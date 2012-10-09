@@ -37,12 +37,7 @@
 \usepackage{graphicx}
 \usepackage[german]{varioref}
 \usepackage{natbib}
-%\usepackage{cite}
-%\usepackage[round]{natbib}
-%\bibliographystyle{alphadin}
-%\usepackage[style=authoryear]{biblatex} %e
-%\bibliographystyle{unsrt}
-%\bibliography{literatur}
+\usepackage{url}
 \usepackage{longtable} %for tables langer than a page
 \usepackage{booktabs} % for much better looking tables
 \usepackage{array} % for better arrays (eg matrices) in maths
@@ -91,6 +86,8 @@
 \title{Entwicklung und Erprobung einer piezoresistiven Sensor-Schaltung mit drahtloser Energieversorgung im Projekt "MedLast"}
 \author{Stephan Jobstmann}
 \date {31. August 2012}
+\pagenumbering{roman}
+
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
 
@@ -99,10 +96,13 @@
 
 \begin{document}
 \maketitle
+\setcounter {page}{1}
 \tableofcontents
+\listoffigures
 \def\chapterpagestyle{fancy}
-
 \chapter{Einleitung}
+\pagenumbering{arabic}
+\setcounter {page}{1}
 Die fortschreitende Entwicklung in der Medizintechnik bietet auch Hilfestellung im Genesungsprozess im Fachbereich der Orthopädie. So wird im Projekt MedLast sowohl eine Unterstützung für den Patienten als auch eine Kontrollmöglichkeit während der Heilung einer Beinfraktur erstrebt. Dabei wird das Gewicht auf dem geschienten Fuß und die Häufigkeit der Auftritte aufgezeichnet. Gleichzeitig sollen diese Daten zur zeitnahen Kontrolle an eine visuelle Ausgabeeinheit, ähnlich einer Armbanduhr, weitergegeben werden. Da dies im Ganzen ein sehr umfangreiches Unterfangen darstellt, wird es sinngemäß in Teilbereiche untergliedert. Für die Konstruktion der Elektronik, welche die Werte für Belastung und Schrittzahl aufnimmt, werden die Gebiete Energieversorgung und Sensorik zusammengefasst. Hierbei kann man leider nur sehr schlecht auf proprietäre Komplettlösungen zurückgreifen. 
 \chapter{Anforderungen}
 Als wesentliche Bestandteile der Aufgabenstellung sind zuerst die zu bearbeitenden Teilgebiete zu nennen. Hierzu gehören:
@@ -118,7 +118,6 @@ Bei der Energiezuführung sollen dahingehend Überlegungen angestrebt werden, au
 \chapter{Grundlagen}
 \section{Energy-Harvesting}
 \subsection{Piezoelektrisch}
-
 Eines der größten abgedeckten Felder im Energy-Harvesting Bereich ist die Gewinnung von nutzbarer elektrischer Energie aus vorhandener mechanischer Energie. Hierbei werden die piezoelektrischen Effekte genutzt, welche bei Druck oder Schwingungsbelastungen auf einem Piezokristall entstehen \citep[vgl. S.36 ff]{Dembowski2011}. Dabei entsteht bei bestimmten nichtleitenden Keramiken aufgrund von mechanischem Druck elektrische Ladung an den Oberflächen. Die inneren Ladungskerne driften dabei auseinander, es bildet sich ein Dipol aus. Es werden die grundlegenden Gleichungen des Piezo-Effekts wie folgt beschrieben:
 \begin{align}
 D & =  \textrm{d} \cdot T + \varepsilon^{\textrm{T}} \cdot E\\
@@ -144,7 +143,7 @@ Bei den Transversalschwingern wird quer zur mechanischen Auslenkung eine elektri
 D_3 & =  \textrm{d}_{33} \cdot T_3 + \varepsilon_{33}^{\textrm{T}} \cdot E_3 \label{formel:3.5} \\
 S_3 & =  s_{33}^{\textrm{E}} \cdot T_3 + \textrm{d}_{33} \cdot E_3 \label{formel:3.6}
 \end{align}
-\chapter{Thermoelektrisch}
+\subsection{Thermoelektrisch}
 Eine im Vergleich zu piezoelektrischem Energy-Harvesting hohe Energieumwandlung erzielt man mit der thermoelektrischen Transformation. Dabei wird als physikalische Grundlage der Seebeck-Effekt benutzt. Dieser beschreibt, dass bei zwei unterschiedlichen Metalllegierungen bei vorliegender Temperaturdifferenz am Stoffübergang eine Spannung entsteht. Die entstandene Potentialdifferenz nennt man auch Thermospannung \citep[vgl. S.158]{Schruefer2012}. Die Inverse dieses Vorgangs wird mit dem Peltier-Effekt beschrieben. Da das Verhalten der spezifischen Elemente reziprok ist, kann man Peltierelemente auch zur Gewinnung von elektrischer Energie nutzen. \newline
 Der Seebeck-Effekt beruht auf den folgenden molekularen Gegebenheiten: Naturgemäß wandern bei einem Metall, welches einem Temperaturunterschied ausgesetzt ist, die Elektronen von der heißen zur kalten Seite. Dies geschieht aufgrund der natürlichen Diffusionsbewegung innerhalb des Metalls. Bei zwei aneinanderliegenden, verlöteten oder verschweißten Legierungen gibt das Metall mit der niedrigeren Austrittsarbeit Elektronen an das andere Metall ab und wird dadurch positiv geladen. Dadurch bildet sich an der Kontaktfläche ein elektrisches Feld. Dieses kann resultierend als direkte Proportionale zur anliegenden Temperaturdifferenz der zwei Kontaktstellen mit einem Voltmeter gemessen werden. Übliche Werte hierfür sind ca. $10  \frac{\textrm{mV}}{100 \degree \textrm{K}}$.\newline \newline
 Wenn man den technischen Aufbau nun so gestaltet, dass er zur Energieumwandlung und nicht zur Temperaturmessung verwendet werden soll, erweist es sich als zweckmäßig ein oder mehrere Peltierelemente im umgekehrten Betrieb zu verwenden. \citep[vgl. S.30]{Dembowski2011}
@@ -153,11 +152,19 @@ Im Folgenden werden die Fortschritte in der Hardware-Entwicklung chronologisch u
 \section{Energiezuführung}
 Als zielführend erweist sich eine Vorüberlegung im Bezug auf die Möglichkeiten der elektrischen Speisung.
 \subsection{Energy-Harvesting}
-%Piezo-Schwingungsübertrager erklären aufgrund der physikalischen Effekte
-In diesem Teilbereich werden zwei physikalische Grundarten des Micro Energy Harvesting betrachtet. Diese sind die Umwandlung von mechanischer Schwingungsenergie und thermischer Differenz in elektrische Spannung. Bei der Vorbereitung und Einarbeitung in die entsprechende Thematik wird bei der Umformung von mechanischen Schwingungen in Elektrizität offensichtlich, dass dies eine ungünstige Form der Energiegewinnung für dieses System ist. Dies liegt unter anderem an der unmöglichen Abstimmung der durch den Auftritt erzeugten Erregung auf die Resonanzfrequenz des Schwingungsaufnehmers. Weiter benötigt ein solches Bauelement einen Freiraum um seine abklingende Bewegung harmonisch abbauen zu können. Es müssen auch die maximal auftretenden Beschleunigungen berücksichtigt werden was wiederum zu einer Versteifung des kompletten Federsystems führen würde. Das hätte als Resultat, dass durch die Erhöhung der dynamischen Bandbreite die verhältnismäßig kleineren Anregungen einen schlechteren Wirkungsgrad liefern würden. Diese Umstände schließen die elektro-mechanische Wandlung leider für die Option der Energiezuführung aus. \newline %Quelle
+In diesem Teilbereich werden zwei physikalische Grundarten des Micro Energy Harvesting betrachtet. Diese sind die Umwandlung von mechanischer Schwingungsenergie und thermischer Differenz in elektrische Spannung. Bei der Vorbereitung und Einarbeitung in die entsprechende Thematik wird bei der Umformung von mechanischen Schwingungen in Elektrizität offensichtlich, dass dies eine ungünstige Form der Energiegewinnung für dieses System ist. Dies liegt unter anderem an der unmöglichen Abstimmung der durch den Auftritt erzeugten Erregung auf die Resonanzfrequenz des Schwingungsaufnehmers. Weiter benötigt ein solches Bauelement einen Freiraum um seine abklingende Bewegung harmonisch abbauen zu können. Es müssen auch die maximal auftretenden Beschleunigungen berücksichtigt werden was wiederum zu einer Versteifung des kompletten Federsystems führen würde. Das hätte als Resultat, dass durch die Erhöhung der dynamischen Bandbreite die verhältnismäßig kleineren Anregungen einen schlechteren Wirkungsgrad liefern würden. Diese Umstände schließen die piezoelektrische Wandlung leider für die Option der Energiezuführung aus. \citep[vgl. S.39]{Dembowski2011} \newline 
 Die thermoelektrische Wandlung beruht auf der Inversen des Peltier-Effekts, dem Seebeck Effekt. Diesem liegt zu Grunde, dass am Übergang von zwei unterschiedlichen Metallen unterschiedlicher Temperierung ein elektrisches Feld aufgebaut wird. Die Verwendung dieses Effekts war zunächst nur bei Temperatur-Messfühlern weit verbreitet. Allerdings ist aufgrund der fortschreitenden Entwicklung der Micro Energy Harvesting Technologien dieser Effekt mittlerweile auch zur Energieversorgung nutzbar. \newline \newline
-Als zentralen Baustein für die Erprobung von Micro-Energy-Harvesting Systemen im Bezug auf thermo-elektrische Energiewandlung bietet sich der \textbf{LTC3108} von der Firma Linear Technology an. Dieser vermag mit geringem Aufwand Eingangsspannungen von 20mV bis 500mV auf ausgangsseitig bis zu 5V aufwärts zu wandeln. Um möglichst schnell Erkenntnisse aus der Wirkungsweise des Bausteins ziehen zu können, wird eine im Internet veröffentlichte Schaltung für Tests verwendet. 
-
+Als zentralen Baustein für die Erprobung von Micro-Energy-Harvesting Systemen im Bezug auf thermo-elektrische Energiewandlung bietet sich der \textbf{LTC3108} von der Firma Linear Technology an. Dieser vermag mit geringem Aufwand Eingangsspannungen von 20mV bis 500mV auf ausgangsseitig bis zu 5V aufwärts zu wandeln. Um möglichst schnell Erkenntnisse aus der Wirkungsweise des Bausteins ziehen zu können, wird eine im Internet veröffentlichte Schaltung\footnote{\url{https://github.com/wa7iut}} für Tests verwendet (siehe Abbildung \vref{fig:4.1}). Diese hält sich strikt an die Vorgaben des Datenblatts\footnote{\url{http://www.linear.com/product/LTC3108}} \citep{LTC3108}. Beim LTC3108 handelt es sich um einen Spannungs-Aufwärtswandler\footnote{Step-Up-Converter} für sehr niedrige Eingangsspannungen. Im Gegensatz zum normalen Aufbau von Aufwärtswandlern wird keine einfache Induktivität sondern ein kleiner Transformator verwendet. Dies reduziert zwar aufgrund des hohen Übersetzungsverhältnisses (1:20 bis 1:100) den Wirkungsgrad, allerdings lassen sich so auch höhere Spannungen erzeugen. Bei dem Versuchsaufbau wird ein 1:100 Transformator verwendet, da sich die Eingangsspannungen, welche experimentell ermittelt wurden, sich zwischen 20mV und 90mV bewegen. Als zu erstrebende Ausgangsspannung wurde schaltungstechnisch 3,3V eingestellt, da dies die zur Zeit am häufigsten bei Mikrocontrollern vorkommende Versorgungsspannung ist. Als externer Energiespeicher wurde ausgangsseitig an die Schaltung ein $2200 \mu$F Kondensator angefügt. Als energieerzeugendes Element wurde ein Peltierelement mit einem Aluminium-Kühlkörper versehen. So muss bei ausreichender zugeführter Wärme nicht einmal aktiv gekühlt werden, es genügt die Wärmeveräußerung durch den Kühlkörper.%weitere Fotos
+\begin{figure}[htb]
+\centering
+\includegraphics[bb=3.4cm 10.6cm 17.5cm 19.4cm]{Bilder/LTC3108breakoutSSOC}
+\caption{LTC3108 Board von Ambient Sensors}
+\label{fig:4.1}
+\end{figure}
+\section{Energiebereitstellung}
+\section{Arbeitsschaltung}
+\subsection{Sensorik}
+Zentrales Element der Schaltung des Fußmoduls des Projekts "`MedLast"' ist der Druckaufnehmer. Erste Versuche die Druckbelastung über die Kapazitätsänderung von Piezoelementen erwiesen sich als äußerst schwierig. Die Problematik bei dieser Messmethode besteht darin, dass sie aufgrund der Flüchtigkeit der geringen Ladung und der Empfindlichkeit gegenüber parasitären Effekten äußerst aufwendig betrieben werden muss, um repräsentative und reproduzierbare Ergebnisse zu erzielen. Als parasitäre Effekte spielen hier unter anderem Luftfeuchte, Beleuchtung und die Umgebungstemperatur eine entscheidende Rolle. Bei ausführlichen Belastungstests im Bereich bis 200N konnten keine zufriedenstellenden Ergebnisse erzielt werden \citep{Jobstmann2012}. 
 \bibliography{literatur}
 \bibliographystyle{alpha}
 \end{document}

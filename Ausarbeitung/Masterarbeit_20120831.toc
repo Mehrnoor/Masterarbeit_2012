@@ -1,11 +1,14 @@
 \select@language {german}
-\contentsline {chapter}{\numberline {1}Einleitung}{3}
-\contentsline {chapter}{\numberline {2}Anforderungen}{4}
-\contentsline {chapter}{\numberline {3}Grundlagen}{5}
-\contentsline {section}{\numberline {3.1}Energy-Harvesting}{5}
-\contentsline {subsection}{\numberline {3.1.1}Piezoelektrisch}{5}
-\contentsline {chapter}{\numberline {4}Thermoelektrisch}{7}
-\contentsline {chapter}{\numberline {5}Hardware}{8}
-\contentsline {section}{\numberline {5.1}Energiezuf\IeC {\"u}hrung}{8}
-\contentsline {subsection}{\numberline {5.1.1}Energy-Harvesting}{8}
-\contentsline {chapter}{Literaturverzeichnis}{10}
+\contentsline {chapter}{\numberline {1}Einleitung}{1}
+\contentsline {chapter}{\numberline {2}Anforderungen}{2}
+\contentsline {chapter}{\numberline {3}Grundlagen}{3}
+\contentsline {section}{\numberline {3.1}Energy-Harvesting}{3}
+\contentsline {subsection}{\numberline {3.1.1}Piezoelektrisch}{3}
+\contentsline {subsection}{\numberline {3.1.2}Thermoelektrisch}{4}
+\contentsline {chapter}{\numberline {4}Hardware}{6}
+\contentsline {section}{\numberline {4.1}Energiezuf\IeC {\"u}hrung}{6}
+\contentsline {subsection}{\numberline {4.1.1}Energy-Harvesting}{6}
+\contentsline {section}{\numberline {4.2}Energiebereitstellung}{7}
+\contentsline {section}{\numberline {4.3}Arbeitsschaltung}{7}
+\contentsline {subsection}{\numberline {4.3.1}Sensorik}{7}
+\contentsline {chapter}{Literaturverzeichnis}{9}

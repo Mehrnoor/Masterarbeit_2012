@@ -1,4 +1,4 @@
-\begin{thebibliography}{Dem11}
+\begin{thebibliography}{LTC10}
 
 \bibitem[Dem11]{Dembowski2011}
 K.~Dembowski.
@@ -9,5 +9,18 @@ K.~Dembowski.
 B.~Zagar E.~Schr"ufer, L.~Reindl.
 \newblock {\em Elektrische Messtechnik}.
 \newblock Hanser Verlag, 10. edition, 2012.
+
+\bibitem[Job12]{Jobstmann2012}
+S.~Jobstmann.
+\newblock {\em Auswertung der Messungen "uber Kapazit"ats"anderung von
+  Piezoelementen in Abh"angigkeit von eindimensionaler mechanischer
+  Druckbelastung}.
+\newblock unpublished, 2012.
+
+\bibitem[LTC10]{LTC3108}
+LTC.
+\newblock {\em LTC3108 Ultralow voltage Step-Up Converter and Power Manager}.
+\newblock Linear Technology Corporation, 1630 McCarthy Blvd., Milpitas, CA
+  95035-7417, 2010.
 
 \end{thebibliography}
