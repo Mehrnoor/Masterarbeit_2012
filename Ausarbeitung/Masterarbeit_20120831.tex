@@ -38,6 +38,12 @@
 \usepackage[german]{varioref}
 \usepackage{natbib}
 \usepackage{url}
+%\usepackage{cite}
+%\usepackage[round]{natbib}
+%\bibliographystyle{alphadin}
+%\usepackage[style=authoryear]{biblatex} %e
+%\bibliographystyle{unsrt}
+%\bibliography{literatur}
 \usepackage{longtable} %for tables langer than a page
 \usepackage{booktabs} % for much better looking tables
 \usepackage{array} % for better arrays (eg matrices) in maths
@@ -99,10 +105,11 @@
 \setcounter {page}{1}
 \tableofcontents
 \listoffigures
+
 \def\chapterpagestyle{fancy}
+
 \chapter{Einleitung}
 \pagenumbering{arabic}
-\setcounter {page}{1}
 Die fortschreitende Entwicklung in der Medizintechnik bietet auch Hilfestellung im Genesungsprozess im Fachbereich der Orthopädie. So wird im Projekt MedLast sowohl eine Unterstützung für den Patienten als auch eine Kontrollmöglichkeit während der Heilung einer Beinfraktur erstrebt. Dabei wird das Gewicht auf dem geschienten Fuß und die Häufigkeit der Auftritte aufgezeichnet. Gleichzeitig sollen diese Daten zur zeitnahen Kontrolle an eine visuelle Ausgabeeinheit, ähnlich einer Armbanduhr, weitergegeben werden. Da dies im Ganzen ein sehr umfangreiches Unterfangen darstellt, wird es sinngemäß in Teilbereiche untergliedert. Für die Konstruktion der Elektronik, welche die Werte für Belastung und Schrittzahl aufnimmt, werden die Gebiete Energieversorgung und Sensorik zusammengefasst. Hierbei kann man leider nur sehr schlecht auf proprietäre Komplettlösungen zurückgreifen. 
 \chapter{Anforderungen}
 Als wesentliche Bestandteile der Aufgabenstellung sind zuerst die zu bearbeitenden Teilgebiete zu nennen. Hierzu gehören:
@@ -118,6 +125,7 @@ Bei der Energiezuführung sollen dahingehend Überlegungen angestrebt werden, au
 \chapter{Grundlagen}
 \section{Energy-Harvesting}
 \subsection{Piezoelektrisch}
+
 Eines der größten abgedeckten Felder im Energy-Harvesting Bereich ist die Gewinnung von nutzbarer elektrischer Energie aus vorhandener mechanischer Energie. Hierbei werden die piezoelektrischen Effekte genutzt, welche bei Druck oder Schwingungsbelastungen auf einem Piezokristall entstehen \citep[vgl. S.36 ff]{Dembowski2011}. Dabei entsteht bei bestimmten nichtleitenden Keramiken aufgrund von mechanischem Druck elektrische Ladung an den Oberflächen. Die inneren Ladungskerne driften dabei auseinander, es bildet sich ein Dipol aus. Es werden die grundlegenden Gleichungen des Piezo-Effekts wie folgt beschrieben:
 \begin{align}
 D & =  \textrm{d} \cdot T + \varepsilon^{\textrm{T}} \cdot E\\
@@ -138,7 +146,7 @@ Zum Energy-Harvesting werden vorzüglich Biegebalken\footnote{im Englischen auch
 D_3 & =  \textrm{d}_{31} \cdot T_1 + \varepsilon_{33}^{\textrm{T}} \cdot E_3 \label{formel:3.3} \\
 S_1 & =  s_{11}^{\textrm{E}} \cdot T_3 + \textrm{d}_{31} \cdot E_3 \label{formel:3.4}
 \end{align}
-Bei den Transversalschwingern wird quer zur mechanischen Auslenkung eine elektrische Spannung erzeugt. Wenn mechanische Schwingung bzw. Druckbelastung mit dem elektrischen Feld bzw. der dielektrischen Verschiebung gleichgerichtet ist, spricht man von Longitudinalschwingern. Transversalschwinger erzeugen eine rund zehnmal höhere Spannung als Longitudinalschwinger \citep[vgl. S.39]{Dembowski2011}.
+Bei den Transversalschwingern wird quer zur mechanischen Auslenkung eine elektrische Spannung erzeugt. Wenn mechanische Schwingung bzw. Druckbelastung mit dem elektrischen Feld bzw. der dielektrischen Verschiebung gleichgerichtet ist, spricht man von Longitudinalschwingern. Transversalschwinger erzeugen eine rund zehnmal höhere Spannung als Longitudinalschwinger \citep[S.39]{Dembowski2011}.
 \begin{align}
 D_3 & =  \textrm{d}_{33} \cdot T_3 + \varepsilon_{33}^{\textrm{T}} \cdot E_3 \label{formel:3.5} \\
 S_3 & =  s_{33}^{\textrm{E}} \cdot T_3 + \textrm{d}_{33} \cdot E_3 \label{formel:3.6}

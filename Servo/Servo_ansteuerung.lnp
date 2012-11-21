@@ -1,0 +1,5 @@
+"init.obj",
+"main.obj" 
+TO "Servo_ansteuerung" 
+RAMSIZE(256) 
+nooverlay 

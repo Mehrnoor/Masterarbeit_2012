@@ -1,0 +1,206 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/13/2012  12:51:28  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE init.obj, main.obj TO Servo_ansteuerung RAMSIZE (256) NOOVERLAY
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  init.obj (INIT)
+  main.obj (MAIN)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  Servo_ansteuerung (INIT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?MAIN?MAIN
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0048H                  *** GAP ***
+            CODE    004BH     0003H     ABSOLUTE     
+                    004EH     07B2H                  *** GAP ***
+            CODE    0800H     0086H     UNIT         ?PR?MAIN?MAIN
+            CODE    0886H     001AH     UNIT         ?PR?OSCILLATOR_INIT?INIT
+            CODE    08A0H     0013H     UNIT         ?PR?PCA_INIT?INIT
+            CODE    08B3H     000FH     UNIT         ?PR?INIT_DEVICE?INIT
+            CODE    08C2H     000CH     UNIT         ?C_C51STARTUP
+            CODE    08CEH     000AH     UNIT         ?PR?PORT_IO_INIT?INIT
+            CODE    08D8H     0007H     UNIT         ?PR?RESET_SOURCES_INIT?INIT
+            CODE    08DFH     0007H     UNIT         ?PR?PCA_ISR?MAIN
+            CODE    08E6H     0004H     UNIT         ?PR?INTERRUPTS_INIT?INIT
+
+
+
+SYMBOL TABLE OF MODULE:  Servo_ansteuerung (INIT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        INIT
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00FFH         PUBLIC        WDTCN
+  D:00E6H         PUBLIC        EIE1
+  D:00E8H         PUBLIC        ADC0CN
+  D:00A4H         PUBLIC        P0MDOUT
+  D:00A8H         PUBLIC        IE
+  D:00FAH         PUBLIC        PCA0CPH0
+  D:00EAH         PUBLIC        PCA0CPL0
+  C:08CEH         PUBLIC        Port_IO_Init
+  D:00DAH         PUBLIC        PCA0CPM0
+  D:00D9H         PUBLIC        PCA0MD
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/13/2012  12:51:28  PAGE 2
+
+
+  D:00D8H         PUBLIC        PCA0CN
+  D:00B8H         PUBLIC        IP
+  C:0886H         PUBLIC        Oscillator_Init
+  D:00E1H         PUBLIC        XBR0
+  D:00E3H         PUBLIC        XBR2
+  D:00C0H         PUBLIC        SMB0CN
+  D:00F8H         PUBLIC        SPI0CN
+  D:0088H         PUBLIC        TCON
+  C:08E6H         PUBLIC        Interrupts_Init
+  D:00B2H         PUBLIC        OSCICN
+  C:08D8H         PUBLIC        Reset_Sources_Init
+  C:08B3H         PUBLIC        Init_Device
+  C:08A0H         PUBLIC        PCA_Init
+  D:00F9H         PUBLIC        PCA0H
+  D:00B1H         PUBLIC        OSCXCN
+  D:0098H         PUBLIC        SCON0
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          RESET_SOURCES_INIT
+  C:08D8H         LINE#         9
+  C:08D8H         LINE#         10
+  C:08D8H         LINE#         11
+  C:08DBH         LINE#         12
+  C:08DEH         LINE#         13
+  -------         ENDPROC       RESET_SOURCES_INIT
+  -------         PROC          PCA_INIT
+  C:08A0H         LINE#         15
+  C:08A0H         LINE#         16
+  C:08A0H         LINE#         17
+  C:08A3H         LINE#         18
+  C:08A6H         LINE#         19
+  C:08A9H         LINE#         20
+  C:08ACH         LINE#         21
+  C:08AFH         LINE#         22
+  C:08B2H         LINE#         23
+  -------         ENDPROC       PCA_INIT
+  -------         PROC          PORT_IO_INIT
+  C:08CEH         LINE#         25
+  C:08CEH         LINE#         26
+  C:08CEH         LINE#         63
+  C:08D1H         LINE#         64
+  C:08D4H         LINE#         65
+  C:08D7H         LINE#         66
+  -------         ENDPROC       PORT_IO_INIT
+  -------         PROC          OSCILLATOR_INIT
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0886H         LINE#         68
+  C:0886H         LINE#         69
+  C:0886H         LINE#         70
+  C:0889H         LINE#         71
+  C:088CH         LINE#         72
+  C:0897H         LINE#         73
+  C:089CH         LINE#         74
+  C:089FH         LINE#         75
+  -------         ENDPROC       OSCILLATOR_INIT
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/13/2012  12:51:28  PAGE 3
+
+
+  -------         PROC          INTERRUPTS_INIT
+  C:08E6H         LINE#         77
+  C:08E6H         LINE#         78
+  C:08E6H         LINE#         79
+  C:08E9H         LINE#         80
+  -------         ENDPROC       INTERRUPTS_INIT
+  -------         PROC          INIT_DEVICE
+  C:08B3H         LINE#         84
+  C:08B3H         LINE#         85
+  C:08B3H         LINE#         86
+  C:08B6H         LINE#         87
+  C:08B9H         LINE#         88
+  C:08BCH         LINE#         89
+  C:08BFH         LINE#         90
+  -------         ENDPROC       INIT_DEVICE
+  -------         ENDMOD        INIT
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A8H.7       PUBLIC        EA
+  D:00E8H         PUBLIC        ADC0CN
+  D:00A8H         PUBLIC        IE
+  D:00FAH         PUBLIC        PCA0CPH0
+  D:00EAH         PUBLIC        PCA0CPL0
+  D:00D8H         PUBLIC        PCA0CN
+  D:00B8H         PUBLIC        IP
+  C:08DFH         PUBLIC        PCA_ISR
+  D:00C0H         PUBLIC        SMB0CN
+  C:0800H         PUBLIC        main
+  D:00F8H         PUBLIC        SPI0CN
+  D:0088H         PUBLIC        TCON
+  D:00F9H         PUBLIC        PCA0H
+  D:0098H         PUBLIC        SCON0
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0008H         SYMBOL        j
+  -------         ENDDO         
+  C:0800H         LINE#         12
+  C:0800H         LINE#         13
+  C:0800H         LINE#         16
+  C:0803H         LINE#         18
+  C:0805H         LINE#         20
+  C:0805H         LINE#         21
+  C:0805H         LINE#         22
+  C:0808H         LINE#         23
+  C:080BH         LINE#         24
+  C:080EH         LINE#         25
+  C:080EH         LINE#         26
+  C:0823H         LINE#         27
+  C:0830H         LINE#         29
+  C:0833H         LINE#         30
+  C:0836H         LINE#         31
+  C:0839H         LINE#         32
+  C:0839H         LINE#         33
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/13/2012  12:51:28  PAGE 4
+
+
+  C:084EH         LINE#         34
+  C:085BH         LINE#         36
+  C:085EH         LINE#         37
+  C:0861H         LINE#         38
+  C:086AH         LINE#         39
+  C:086AH         LINE#         40
+  C:087FH         LINE#         41
+  -------         ENDPROC       MAIN
+  -------         PROC          PCA_ISR
+  C:08DFH         LINE#         46
+  C:08DFH         LINE#         48
+  C:08E2H         LINE#         49
+  C:08E5H         LINE#         50
+  -------         ENDPROC       PCA_ISR
+  -------         ENDMOD        MAIN
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00E1H BYTE (10%) *
+******************************************************************************
+
+Program Size: data=11.0 xdata=0 code=240
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
