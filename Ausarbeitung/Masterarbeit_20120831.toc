@@ -9,6 +9,7 @@
 \contentsline {section}{\numberline {4.1}Energiezuf\IeC {\"u}hrung}{6}
 \contentsline {subsection}{\numberline {4.1.1}Energy-Harvesting}{6}
 \contentsline {section}{\numberline {4.2}Energiebereitstellung}{7}
-\contentsline {section}{\numberline {4.3}Arbeitsschaltung}{7}
-\contentsline {subsection}{\numberline {4.3.1}Sensorik}{7}
-\contentsline {chapter}{Literaturverzeichnis}{9}
+\contentsline {subsection}{\numberline {4.2.1}Superkondensator}{7}
+\contentsline {section}{\numberline {4.3}Arbeitsschaltung}{8}
+\contentsline {subsection}{\numberline {4.3.1}Sensorik}{8}
+\contentsline {chapter}{Literaturverzeichnis}{10}
