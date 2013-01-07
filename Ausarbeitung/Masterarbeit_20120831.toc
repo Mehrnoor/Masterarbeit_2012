@@ -8,8 +8,9 @@
 \contentsline {chapter}{\numberline {4}Hardware}{6}
 \contentsline {section}{\numberline {4.1}Energiezuf\IeC {\"u}hrung}{6}
 \contentsline {subsection}{\numberline {4.1.1}Energy-Harvesting}{6}
-\contentsline {section}{\numberline {4.2}Energiebereitstellung}{7}
-\contentsline {subsection}{\numberline {4.2.1}Superkondensator}{7}
-\contentsline {section}{\numberline {4.3}Arbeitsschaltung}{8}
-\contentsline {subsection}{\numberline {4.3.1}Sensorik}{8}
-\contentsline {chapter}{Literaturverzeichnis}{10}
+\contentsline {section}{\numberline {4.2}Energiebereitstellung}{8}
+\contentsline {subsection}{\numberline {4.2.1}Superkondensator}{8}
+\contentsline {subsection}{\numberline {4.2.2}Lithium-Ionen-Akkumulator}{9}
+\contentsline {section}{\numberline {4.3}Arbeitsschaltung}{11}
+\contentsline {subsection}{\numberline {4.3.1}Sensorik}{11}
+\contentsline {chapter}{Literaturverzeichnis}{12}
