@@ -189,7 +189,111 @@ Die Schaltung ist bereits im Datenblatt festgehalten und muss lediglich bei den 
 \end{itemize}
 Nach hinreichendem Vergleich fiel die Wahl des zu verwendenden Bausteins auf den BQ24100 von der Firma Texas Instruments\footnote{\url{https://www.ti.com/product/bq24100}}. Dieser umfasst eine durch die am Akku anliegende Temperatur gesteuerte Schutzbeschaltung und eine äußerst niedrige Mindestspannung für die Eingangsbeschaltung. Weiter sind diverse Steuereingänge als auch Ausgänge die durch ihre logischen Pegel den aktuellen Status des Ladezyklus wiedergeben im Baustein realisiert. Die Ladelogik erkennt ebenfalls eine Tiefentladung und passt dementsprechend den Ladezyklus an. \\
 \\
-berechnung
+Berechnungsschritte nach Datenblatt \citep{BQ24100}
+\begin{eqnarray}
+\Delta I_L &=& I_{Charge} \cdot I_{Charge^{Ripple}}\\
+\Delta I_L &=& 1,33 A \cdot 30 \% = 0,4A
+\end{eqnarray}
+\begin{eqnarray}
+L_{OUT}&=&\frac{V_{BAT} \cdot \left( V_{INMAX} - V_{BAT} \right)}{V_{INMAX} \cdot f \cdot \Delta I_L}\\
+\nonumber\\
+L_{OUT}&=&\frac{4,2V \cdot \left(5V-4,2V\right)}{5V \cdot 1,1 \cdot 10^6 \frac{1}{s} \cdot 0,4A}\\
+\nonumber\\
+L_{OUT}&=&\frac{3,36 V^2}{2,2 \cdot 10^6  \frac{VA}{s}} = 1,527 \mu \frac{Vs}{A} = 1,527 \mu H
+\end{eqnarray}
+Da das Hybridlabor der Hochschule Landshut während des Aufbaus Induktivitäten mit $6,2\mu H$ im Lager hatte, wurde folgende Rechnung zur Anpassung vorgenommen:
+\begin{eqnarray}
+\Delta I_L&=&\frac{V_{BAT} \cdot \left( V_{INMAX} - V_{BAT} \right)}{V_{INMAX} \cdot f \cdot L_{OUT}}\\
+\nonumber\\
+\Delta I_L&=&\frac{4,2V \cdot \left(5V-4,2V\right)}{5V \cdot 1,1 \cdot 10^6 \frac{1}{s} \cdot 6,2 \cdot 10^{-6} \frac{Vs}{A}} \\
+\nonumber\\
+\Delta I_L& = & \frac{3,36 V^2}{34,1 \frac{V^2s}{sA}}=0,0985A = 98,5mA\\
+\end{eqnarray}
+Resultierender Spitzenstrom $I_{IPK}$ an der Induktivität:
+\begin{eqnarray}
+I_{IPK} &=& I_{OUT}+\frac{\Delta I_L}{2}\\
+\nonumber\\
+I_{IPK}&=& 1,33A + \frac{0,0985A}{2} = 1,379 A
+\end{eqnarray}
+Die ideale Ausgangskapazität berechnet sich über eine optimale Resonanzfrequenz von $16kHz$. Grundsätzlich bewegt sich die zulässige Frequenz zwischen $8kHz$ und $32kHz$ laut Datenblatt \citep{BQ24100}. 
+\begin{eqnarray}
+f_O&=&\frac{1}{2 \pi \sqrt{L_{OUT} \cdot C_{OUT}}}\\
+C_{OUT}&=&\frac{1}{4 \pi^2 \cdot f_O^2 \cdot L_{OUT}}\\
+C_{OUT}&=&\frac{1}{4 \pi^2 \cdot \left( 16 \cdot 10^3 \frac{1}{s} \right)^2 \cdot 6,2 \cdot 10^{-6} \frac{Vs}{A}}\\
+C_{OUT}&=&1,595 \cdot 10^{-5} \frac{As}{V} \Rightarrow 16 \mu F
+\end{eqnarray}
+Wieder wurde Aufgrund von Lagerbeständen eine andere Kapazität gewählt: $10 \mu F$ 
+\begin{eqnarray}
+f_O&=&\frac{1}{2 \pi \sqrt{L_{OUT} \cdot C_{OUT}}}\\
+f_O&=&\frac{1}{2 \pi \sqrt{6,2 \cdot 10^{-6} \frac{Vs}{A} \cdot 10 \cdot 10^{-5} \frac{As}{V}}}\\
+f_O&=& 20,212kHz
+\end{eqnarray}
+Die Resonanzfrequenz der passiven Leistungsbauteile am Schaltungsausgang liegen mit rund $20kHz$ noch innerhalb des gültigen Bereichs.\\
+Der angelegte Speisestrom für den Ladevorgang wird vom IC über einen Shunt-Widerstand $\left( R_{SNS} \right)$ bestimmt. Dieser wird über geforderten Ladestrom $\left( I_{CHARGE} \right)$ und einer Shuntspannung $\left( V_{RSNS} \right)$ dimensioniert. Die Shuntspannung sollte laut Vorgabe zwischen $100mV$ und $200mV$ betragen. Für die Berechnung wurde daher ein arithmetisches Mittel von $150mV$ gewählt.
+\begin{eqnarray}
+R_{SNS}&=&\frac{V_{RSNS}}{I_{CHARGE}}\\
+\nonumber\\
+R_{SNS}&=&\frac{150mV}{1,33A} = 0,1128 \Omega \Rightarrow 0,1 \Omega \\
+\nonumber\\
+&&\textrm{resultierende Shuntspannung} \nonumber \\
+&&\textrm{bei einem Widerstand von } 0,1 \Omega : \nonumber \\
+\nonumber\\
+V_{RSNS}&=&R_{SNS} \cdot I_{CHARGE} = 0,1 \Omega \cdot 1,33A \Rightarrow 133mV
+\end{eqnarray}
+Berechnung der Verlustleistung am Shuntwiderstand:
+\begin{eqnarray}
+P_{RSNS}&=& I_{CHARGE}^2 \cdot R_{SNS}\\
+P_{RSNS}&=& \left( 1,33A \right)^2 \cdot 0,1 \Omega = 176,9mW
+\end{eqnarray}
+Die Steuerwiderstände für die Stromgrenzen berechnen sich wie folgt:
+\begin{eqnarray}
+R_{ISET1}&=&\frac{K_{ISET1} \cdot V_{ISET1}}{R_{SNS} \cdot I_{CHARGE}}\\
+ \nonumber \\
+R_{ISET1}&=&\frac{1000 \frac{V}{A} \cdot 1,0V}{0,1\Omega \cdot 1,33A}\\
+ \nonumber \\
+R_{ISET1}&=&7,5k\Omega
+\end{eqnarray}
+\begin{eqnarray}
+R_{ISET2}&=&\frac{K_{ISET2} \cdot V_{ISET2}}{R_{SNS} \cdot I_{PRECHARGE}}\\
+ \nonumber \\
+R_{ISET2}&=&\frac{1000 \frac{V}{A} \cdot 0,1V}{0,1\Omega \cdot 0,133A}\\
+ \nonumber \\
+R_{ISET2}&=&7,5k\Omega
+\end{eqnarray}
+Das IC verfügt ebenfalls über eine zeitgesteuerte Sicherheitsabschaltung. Dessen Zeitintervall wird über einen externen Kondensator eingestellt. Man geht im Allgemeinen von einer sicheren Ladezeit von 5 Stunden aus. 
+\begin{eqnarray}
+C_{TTC}&=&\frac{t_{CHARGE}}{K_{TTC}}\\
+\nonumber\\
+C_{TTC}&=&\frac{300 \text{ Minuten} }{2,6 \frac{\text{ Minuten}}{nF}}\\
+\nonumber\\
+C_{TTC}&=& 115,4 nF
+\end{eqnarray}
+Ähnlich wie im Beispiel des Datenblatts wurde beim Versuchsaufbau der Berechnungsgrundlage ein NTC-Widerstand des Li-Ionen Akkus von $10k\Omega$  verwendet.\\
+\begin{eqnarray}
+\text{Mit }&& \nonumber\\
+V_{LTF}&=&\frac{V_{O(VTSB)} \cdot \%_{LTF+100}}{100}\\
+\nonumber\\
+V_{LTF}&=&\frac{3,15V \cdot 73,5\%}{100} = 2,31525V\\
+\nonumber\\
+\text{und } && \nonumber\\
+V_{HTF}&=&\frac{V_{O(VTSB)} \cdot \%_{HTF+100}}{100}\\
+\nonumber\\
+V_{HTF}&=&\frac{3,15V \cdot 34,4\%}{100} = 1,0836V
+\end{eqnarray}
+Lassen sich die begrenzenden Widerstände für die interne Sicherheitsschaltung berechnen. Als Grundlage wurden die Widerstandswerte vom Datenblatt übernommen: $RTH_{COLD} = 27,28k\Omega$ und $RTH_{HOT} = 4,912k\Omega$.
+\begin{eqnarray}
+RT2&=&\frac{V_{O(VTSB)} \cdot RTH_{COLD} \cdot RTH_{HOT} \cdot \left( \frac{1}{V_{LTF}}-\frac{1}{V_{HTF}}\right)}{RTH_{HOT} \cdot \left( \frac{V_{O(VTSB)}}{V_{HTF}}-1\right)-RTH_{COLD} \cdot \left( \frac{V_{O(VTSB)}}{V_{LTF}}-1 \right)}\\
+\nonumber\\
+RT2&=&\frac{3,15V \cdot 27,28k\Omega \cdot4,912k\Omega \cdot \left( \frac{1}{2,31525V}-\frac{1}{1,0836V}\right)}{4,912k\Omega \cdot \left( \frac{3,15V}{1,0836V}-1\right)-27,28k\Omega \cdot \left( \frac{3,15V}{2,31525V}-1 \right)}\\
+\nonumber\\
+RT2&=& 442,235 k \Omega \Rightarrow 442k \Omega\\
+\nonumber\\
+RT1&=&\frac{\frac{V_{O(VTSB)}}{V_{LTF}}-1}{\frac{1}{RT2}+\frac{1}{RTH_{COLD}}}\\
+\nonumber\\
+RT1&=&\frac{\frac{3,15V}{2,31525V}-1}{\frac{1}{442k \Omega}+\frac{1}{27,28k\Omega}}\\
+\nonumber\\
+RT1&=&9,263k\Omega \Rightarrow 9,31k\Omega
+\end{eqnarray}
 \\
 \\
 Ein passendes Schaltungslayout wurde mithilfe des Datenblatts \citep{BQ24100} und der Software Multisim\footnote{\url{http://www.ni.com/multisim/d/}} erstellt. Nach der Adaption der Schaltung auf ein passendes Layout wurde über einen Leiterplattenhersteller ein Prototyp auf FR4\footnote{Flame Retarding Number 4; Flammhemmendes Substratmaterial auf Epoxydbasis} bestellt. An der Hochschule Landshut wurde dieser per Hand bestückt und mithilfe der Dampfphasenlötanlage fertig gelötet. Für erste Tests wurde ein handelsüblicher Mobiltelefon-Akku der Firma Huawei verwendet. Dieser war bereits geringfügig vorgeladen und besitzt einen internen NTC-Widerstand von 10k$\Omega$. Somit entsprach diese Testumgebung ziemlich dem realen Einsatzgebiet der Ladeschaltung. Über einen fliegenden Aufbau mithilfe einer Experimentierplatine wurde der Akku an die Schaltung angeschlossen. Diese wurde selbst an eine 5V Konstantspannungsquelle angeschlossen, welche während des Versuchs auch im Spannungspegel verändert wurde. Solange sich die anliegende Gleichspannung innerhalb des im Datenblatt vermerkten Intervalls bewegt, zeigen die Indikationsausgänge des ICs einwandfreien Betrieb auf. Die Funktion des Moduls konnte einwandfrei nachgewiesen werden und stets reproduzierbar. 

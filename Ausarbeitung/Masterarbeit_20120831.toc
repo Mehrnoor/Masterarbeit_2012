@@ -11,6 +11,6 @@
 \contentsline {section}{\numberline {4.2}Energiebereitstellung}{8}
 \contentsline {subsection}{\numberline {4.2.1}Superkondensator}{8}
 \contentsline {subsection}{\numberline {4.2.2}Lithium-Ionen-Akkumulator}{9}
-\contentsline {section}{\numberline {4.3}Arbeitsschaltung}{11}
-\contentsline {subsection}{\numberline {4.3.1}Sensorik}{11}
-\contentsline {chapter}{Literaturverzeichnis}{12}
+\contentsline {section}{\numberline {4.3}Arbeitsschaltung}{15}
+\contentsline {subsection}{\numberline {4.3.1}Sensorik}{15}
+\contentsline {chapter}{Literaturverzeichnis}{16}
