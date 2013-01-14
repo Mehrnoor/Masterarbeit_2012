@@ -1,14 +1,28 @@
-\begin{thebibliography}{LTC10}
+\begin{thebibliography}{eGCK12}
 
 \bibitem[Dem11]{Dembowski2011}
 K.~Dembowski.
 \newblock {\em Energy Harvesting f"ur die Mikroelektronik}.
 \newblock VDE Verlag GmbH, Berlin, 1. edition, 2011.
 
+\bibitem[eGCK12]{Spule}
+W"urth~Elektronik eiSos GmbH \& Co.~KG.
+\newblock {\em WE-WPCC Wireless Power Charging Coil, 760308201}.
+\newblock W"urth Elektronik eiSos GmbH \& Co. KG, Max-Eyth-Str. 1, 74638
+  Waldenburg, Germany, 2012.
+\newblock \\ \url{http://katalog.we-online.de/pbs/datasheet/760308201.pdf}.
+
 \bibitem[ES12]{Schruefer2012}
 B.~Zagar E.~Schr"ufer, L.~Reindl.
 \newblock {\em Elektrische Messtechnik}.
 \newblock Hanser Verlag, 10. edition, 2012.
+
+\bibitem[Ins08]{ADS1232}
+Texas Instruments.
+\newblock {\em ADS1232 24-Bit Analog-to-Digital Converter For Bridge Sensors}.
+\newblock Texas Instruments Incorporated, Post Office Box 655303, Dallas, Texas
+  75265, 2008.
+\newblock \\ \url{http://www.ti.com/lit/ds/symlink/ads1232.pdf}.
 
 \bibitem[Ins12a]{BQ24100}
 Texas Instruments.
@@ -18,7 +32,15 @@ Texas Instruments.
   75265, 2012.
 \newblock \\ \url{http://www.ti.com/lit/ds/symlink/bq24100.pdf}.
 
-\bibitem[Ins12b]{bq51013EVM-725}
+\bibitem[Ins12b]{BQ51013}
+Texas Instruments.
+\newblock {\em BQ51013 INTEGRATED WIRELESS POWER SUPPLY RECEIVER, Qi (WIRELESS
+  POWER CONSORTIUM) COMPLIANT}.
+\newblock Texas Instruments Incorporated, Post Office Box 655303, Dallas, Texas
+  75265, 2012.
+\newblock \\ \url{http://www.ti.com/lit/ds/symlink/bq51013.pdf}.
+
+\bibitem[Ins12c]{bq51013EVM-725}
 Texas Instruments.
 \newblock {\em bq51013EVM-725 Evaluation Module}.
 \newblock Texas Instruments Incorporated, Post Office Box 655303, Dallas, Texas

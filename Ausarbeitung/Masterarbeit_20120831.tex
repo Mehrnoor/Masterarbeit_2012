@@ -91,7 +91,7 @@
 
 \title{Entwicklung und Erprobung einer piezoresistiven Sensor-Schaltung mit drahtloser Energieversorgung im Projekt "MedLast"}
 \author{Stephan Jobstmann}
-\date {31. August 2012}
+\date {}
 \pagenumbering{roman}
 
 %\date{} % Activate to display a given date or no date (if empty),
@@ -111,7 +111,7 @@
 \chapter{Einleitung}
 \pagenumbering{arabic}
 Die moderne Schulmedizin ist mittlerweile an einem Punkt angelangt, an dem die biochemischen Prozesse innerhalb des Körpers als nahezu komplett erfasst gelten. Die Mechanismen der Informationsweitergabe über die Nervenbahnen, die Belastbarkeit der Anatomie oder die Zerlegungsprozesse des Stoffwechsels sind als solche weitestgehend erforscht. Wie jedoch in jedem Forschungsbereich bedeutet dies auch, dass die Lernkurve beziehungsweise die Anzahl der Ergebnisse an innovativen Erkenntnissen drastisch über die letzten Jahrzehnte abnehmen. Weiter lässt sich feststellen, dass die Fortschritte der modernen Medizin sich hauptsächlich auf die Innovationen aus den Bereichen der Pharmazie und der Medizintechnik berufen. So ermöglichen intelligente Kamerasysteme eine bessere Überwachung von Operationen am schlagenden Herzen oder die Abnahme von elektrischen Nervensignalen eine Steuerung von kybernetischen Prothesen.\\
-Die fortschreitende Entwicklung in der Medizintechnik bietet auch Hilfestellung im Genesungsprozess im Fachbereich der Orthopädie. So wird im Projekt MedLast sowohl eine Unterstützung für den Patienten als auch eine Kontrollmöglichkeit während der Heilung einer Beinfraktur erstrebt. Dabei wird das Gewicht auf dem geschienten Fuß und die Häufigkeit der Auftritte aufgezeichnet. Gleichzeitig sollen diese Daten zur zeitnahen Kontrolle an eine visuelle Ausgabeeinheit, ähnlich einer Armbanduhr, weitergegeben werden. Da dies im Ganzen ein sehr umfangreiches Unterfangen darstellt, wird es sinngemäß in Teilbereiche untergliedert. Für die Konstruktion der Elektronik, welche die Werte für Belastung und Schrittzahl aufnimmt, werden die Gebiete Energieversorgung und Sensorik zusammengefasst. Hierbei kann man leider nur sehr schlecht auf proprietäre Komplettlösungen zurückgreifen. Darum sollen in dieser Arbeit die nötigen Schritte unternommen werden, um ein solches System zu erstellen und in Betrieb zu nehmen.
+Die fortschreitende Entwicklung in der Medizintechnik bietet auch Hilfestellung im Genesungsprozess im Fachbereich der Orthopädie. So wird im Projekt "`MedLast"' sowohl eine Unterstützung für den Patienten als auch eine Kontrollmöglichkeit während der Heilung einer Beinfraktur erstrebt. Dabei wird das Gewicht auf dem geschienten Fuß und die Häufigkeit der Auftritte aufgezeichnet. Gleichzeitig sollen diese Daten zur zeitnahen Kontrolle an eine visuelle Ausgabeeinheit, ähnlich einer Armbanduhr, weitergegeben werden. Da dies im Ganzen ein sehr umfangreiches Unterfangen darstellt, wird es sinngemäß in Teilbereiche untergliedert. Für die Konstruktion der Elektronik, welche die Werte für Belastung und Schrittzahl aufnimmt, werden die Gebiete Energieversorgung und Sensorik zusammengefasst. Hierbei kann man leider nur sehr schlecht auf proprietäre Komplettlösungen zurückgreifen. Darum sollen in dieser Arbeit die nötigen Schritte unternommen werden, um ein solches System zu erstellen und in Betrieb zu nehmen.
 \chapter{Anforderungen}
 Als wesentliche Bestandteile der Aufgabenstellung sind zuerst die zu bearbeitenden Teilgebiete zu nennen. Hierzu gehören:
 \begin{itemize}
@@ -122,7 +122,15 @@ Energiebereitstellung
 \item
 Sensorik-Auswertung
 \end{itemize}
-Bei der Energiezuführung sollen dahingehend Überlegungen angestrebt werden, auf welche Art und Weise das komplette Modul mit Spannung versorgt werden kann. Dabei sollen autarke wie auch fremd-gespeiste Quellen betrachtet werden. Die Energiebereitstellung bezieht sich auf die Speicherung im oder am Modul selbst. Hierbei ist die Abstimmung zwischen Bedarf und Bereitstellung ausschlaggebend für die Wahl der zu verwendenden Technologie. In der Sensorik-Auswertung ist natürlich in erster Linie der zu verwendende Sensor ausschlaggebend. Da dieser sich durch den steten Optimierungsverlauf auch im Verhalten sowie in den zu erwartenden Messgrößen ändern kann, sollte diesbezüglich ein Freiheitsgrad in der Implementierung vorhanden sein. Weiter soll im zentralen Mikrocontroller des Moduls eine passende Auslesesoftware erstellt werden. Diese muss die gemessenen Daten aufbereiten und in eine passende SI-Einheit wie Newton [N] oder Kilogramm [kg] zurück rechnen. 
+Bei der Energiezuführung sollen dahingehend Überlegungen angestrebt werden, auf welche Art und Weise das komplette Modul mit Spannung versorgt werden kann. Dabei sollen autarke wie auch fremd-gespeiste Quellen betrachtet werden. Die Energiebereitstellung bezieht sich auf die Speicherung im oder am Modul selbst. Hierbei ist die Abstimmung zwischen Bedarf und Bereitstellung ausschlaggebend für die Wahl der zu verwendenden Technologie. In der Sensorik-Auswertung ist natürlich in erster Linie der zu verwendende Sensor bestimmend. Da dieser sich durch den steten Optimierungsverlauf auch im Verhalten sowie in den zu erwartenden Messgrößen ändern kann, sollte diesbezüglich ein Freiheitsgrad in der Implementierung vorhanden sein. Weiter soll im zentralen Mikrocontroller des Moduls eine passende Auslesesoftware erstellt werden. Diese muss die gemessenen Daten aufbereiten und in eine passende SI-Einheit wie Newton [N] oder Kilogramm [kg] zurück rechnen. Als kleinere Additive sind folgende elektronische Komponenten noch vorgesehen: 
+\begin{itemize}
+\item
+Piezo-Summer samt Treiberschaltung
+\item
+Schutzbeschaltung
+\item
+Temperaturaufnehmer
+\end{itemize}
 \chapter{Grundlagen}
 \section{Energy-Harvesting}
 \subsection{Piezoelektrisch}
@@ -180,7 +188,28 @@ Transmitter, Sender: bq500110EVM-688 Evaluation Module
 Receiver, Empfänger: bq51013EVM-725 Evaluation Module
 \end{itemize}
 Dieses lässt sich mithilfe einer Gleichspannungsquelle, eingestellt auf eine Speisung von $19V$ und einer Stromgrenze über $0,5A$ sehr einfach in Betrieb nehmen. Am Empfängermodul stellt sich bei passgenauer Platzierung der beiden Übertragerspulen des magnetischen Kopplungssystems eine Tätigkeit der Indikationsanzeige ein. Ein Permanentmagnet hilft beim Zentrieren der beiden Luftspulen. Laut Datenblatt \citep[vgl. S.2]{bq51013EVM-725} liefert die Beispielschaltung $5V$ bei $1A$. Zum Testen der Kompatibilität wurde die Schaltung mit der in Kapitel \ref{chap:4.2.2} vorgestellten Ladeeinheit gekoppelt. Das erfolgreiche Zusammenarbeiten konnte reproduzierbar getestet werden.\\
-Für das Gesamtkonzept des Fußmoduls vom Projekt MedLast ist die Empfangseinheit vorrangig. Um eine passendes Zusammenspiel von proprietärer Sendeeinheit und selbstentworfener Empfangsschaltung sicherzustellen, wurde der gleiche Baustein (\textit{BQ51013}) verwendet. Allerdings wurde beim Schaltungsaufbau darauf geachtet, dass der Bauteilumfang sich auf ein Minimum reduziert. Bei dem BQ51013 handelt es sich um ein IC, welches nur in BGA\footnote{Ball Grid Array} Gehäusegröße erhältlich ist. Da dies wiederum für das Layoutdesign bedeutete, dass mit Kontaktflächengrößen von $250\mu m$ gearbeitet werden muss, ergab sich eine weitere Problematik. Die typischen Leiterplattenhersteller für Prototypen und Kleinserien haben eine Vorgabe für den Mindestdurchmesser von Durchkontaktierungen mit $300\mu m$ 
+Für das Gesamtkonzept des Fußmoduls vom Projekt "`MedLast"' ist die Empfangseinheit vorrangig. Um eine passendes Zusammenspiel von proprietärer Sendeeinheit und selbstentworfener Empfangsschaltung sicherzustellen, wurde der gleiche Baustein (\textit{BQ51013}) verwendet. Allerdings wurde beim Schaltungsaufbau darauf geachtet, dass der Bauteilumfang sich auf ein Minimum reduziert. So wurde die Zusatzbeschaltung für eine eventuelle alternative bedrahtete Versorgung weggelassen. Bei dem BQ51013 handelt es sich um ein IC, welches nur in BGA\footnote{Ball Grid Array} Gehäusegröße erhältlich ist. Da dies wiederum für das Layoutdesign bedeutete, dass mit Kontaktflächengrößen von $250\mu m$ gearbeitet werden muss, ergab sich eine weitere Problematik. Die typischen Leiterplattenhersteller für Prototypen und Kleinserien haben eine Vorgabe für den Mindestdurchmesser von Durchkontaktierungen mit $300\mu m$. D.h. über die üblichen Wege war es nicht ohne Mehraufwand möglich, einen Platine zu beschaffen. Da ein Durchmesser der Durchkontaktierungen von $150\mu m$ als maximale Maßgabe anzusehen war, wurde für den Prototypenbau LTCC\footnote{Low Temperature Cofire Ceramic} als Schaltungsträger ausgewählt. Diese können im Hybridlabor in Dickschichttechnik selbstständig aufgebaut werden. Weiter können durch das Laserstruktur-Gerät \textit{ProtoLaser U} die Keramiksubstrate auf $15\mu m$ genau geritzt und gebohrt werden.  Da LTCC im einlagigen Aufbau zu fragil wäre, wurden noch Überlegungen angestrebt um die mechanische Widerstandsfähigkeit zu erhöhen. Ein mehrlagiger Aufbau barg eine zu große Gefahr im Bezug auf die erhöhte Wahrscheinlichkeit einer unterbrochenen Durchkontaktierung. Diese steigt proportional mit der Anzahl der verwendeten Lagen LTCC. Durch einen Hinweis von Herrn Leschik wurde bei einem zweiten Versuch die LTCC-Schicht, welche den beidseitigen Schaltungsdruck aufgetragen hatte, auf eine $Al_2O_3$-Keramik auflaminiert. Diese dient als mechanisch-stabiler Träger. Nach einem ersten Fehlversuch konnten somit auf einem Substrat mit Mehrfach-Nutzen mehrere, passiv einwandfreie Schaltungen aufgebaut werden. Nach deren Bestückung per Hand und Lötung mit der Dampfphasenanlage der Hochschule Landshut wurde diese mit der Einkopplungsspule verbunden. Eine anfängliche Überlegung, diese ebenfalls auf Dickschichttechnik basierend auf LTCC zu der Schaltung zu bringen, wurde aufgrund der nicht einzuhaltenden Kriterien an die Güte der Induktivität wieder verworfen. Darum fiel die Entscheidung auf eine Empfänger-Spule, welche von der Firma Würth Elektronik genau für diesen Zweck bereitgestellt wird \citep{Spule}. Die für den Empfängerschwingkreis noch benötigten Kapazitäten wurden über folgende Formeln des Datenblatts \citep{BQ51013} dimensioniert:
+\begin{eqnarray}
+C1&=&\left[\left(f_S \cdot 2\pi\right)^2 \cdot L'_S\right]^{-1}\\
+C1&=&\left[\left(100kHz \cdot 2\pi\right)^2 \cdot 0,01011mH\right]^{-1}\\
+C1&=&250nF\\
+\nonumber\\
+C2&=&\left[\left(f_D \cdot 2\pi\right)^2 \cdot L_S-\frac 1{C1}\right]^{-1}\\
+\nonumber\\
+C2&=&\left[\left(1MHz \cdot 2\pi\right)^2 \cdot 0,01011mH-\frac 1{250nF}\right]^{-1}\\
+\nonumber\\
+C2&=&2,53nF\\
+\nonumber\\
+Q&=&\frac{2\pi \cdot f_D \cdot L_S}{R}\\
+\nonumber\\
+Q&=&\frac{2\pi \cdot 1MHz \cdot 0,01011mH}{0,1488 \Omega}\\
+\nonumber\\
+Q&=&426,90
+\end{eqnarray}
+Als Mindestmaß wird im Datenblatt \citep[siehe S.23]{BQ51013} eine Güte von 77 festgelegt. Diese wird mit der Luftspule von Würth Elektronik weit überschritten.\\
+Mit jeweils drei %%%%?%%%%
+diskreten Kondensatoren wurden die Kapazitäten $C1$ und $C2$ aufgebaut. Dies wurde auf einer separaten, zwischen Spule und Keramikschaltung gelöteten Platine aufgebaut. Der fertige selbstentworfene Aufbau wurde mit einer geringen Last von $47 \Omega$ %%%%?%%%%%
+auf die von Texas Instruments bereitgestellte Schaltung\footnote{bq500110EVM-688, Sendeeinheit} gesetzt und getestet. Die Reproduzierbarkeit wies noch Defizite auf, so konnte noch nicht sichergestellt werden, dass bei jedem Aufsetzen der Empfängerschaltung eine stabile Verbindung zustande kommt. Weiter können noch keine niederohmigen Lasten ($<50 \Omega$) an das Modul gekoppelt werden. Dies mag zum ein an der unzureichenden Anpassung des Schwingkreises liegen oder auch zum anderen an der Hochohmigkeit der gedruckten Leiterbahnen auf dem Keramiksubstrat. 
 \section{Energiebereitstellung}
 \label{chap:4.2}
 Da die Markttauglichkeit bei diesem Projekt eine wesentliche Rolle spielt, wird eine weitverbreitete, einfach zu realisierende und auch günstige Methode gesucht um die Energie für die Elektronik des eingebetteten Moduls bereitzustellen.
@@ -313,7 +342,8 @@ Ein passendes Schaltungslayout wurde mithilfe des Datenblatts \citep{BQ24100} un
 \section{Arbeitsschaltung}
 \subsection{Sensorik}
 Zentrales Element der Schaltung des Fußmoduls des Projekts "`MedLast"' ist der Druckaufnehmer. Erste Versuche die Druckbelastung über die Kapazitätsänderung von Piezoelementen erwiesen sich als äußerst schwierig. Die Problematik bei dieser Messmethode besteht darin, dass sie aufgrund der Flüchtigkeit der geringen Ladung und der Empfindlichkeit gegenüber parasitären Effekten äußerst aufwendig betrieben werden muss, um repräsentative und reproduzierbare Ergebnisse zu erzielen. Als parasitäre Effekte spielen hier unter anderem Luftfeuchte, Beleuchtung und die Umgebungstemperatur eine entscheidende Rolle. Bei ausführlichen Belastungstests im Bereich bis 200N konnten keine zufriedenstellenden Ergebnisse erzielt werden \citep{Jobstmann2012}. \newline
-Darum wurde die Messmethode auf piezoresistive Dehnungsmessstreifen geändert. Diese Technologie bietet auch den Vorteil, dass aufgrund der eigenen Labor Verarbeitung im Hybridlabor der Hochschule Landshut das Layout beliebig angepasst werden. 
+Darum wurde die Messmethode auf piezoresistive Dehnungsmessstreifen\footnote{kurz: DMS} geändert. Diese Technologie bietet auch den Vorteil, dass aufgrund der eigenen Verarbeitung im Hybridlabor der Hochschule Landshut das Layout beliebig angepasst werden kann. Da generell davon ausgegangen wurde, dass der Widerstand des DMS sich sowohl vergrößern als auch verkleinern kann, musste das Messverfahren dementsprechend ausgelegt sein. Gemessen wird nicht über eine Kelvin-Messschaltung\footnote{auch bekannt als Vierleitermessung} sondern über eine als Wheatstonesche Brücke bekannte Messschaltung. Dabei wird der betreffende DMS in eine Brückenschaltung, genauer in eine Viertelmessbrücke, eingesetzt. Dies hat zum Vorteil, dass bei richtiger Anpassung der restlichen drei Teilwiderstände der Schaltung, sich an den Messpunkten eine Spannungsdifferenz von $0V$ bei Ruhe einstellt. Aus diesem Grund sollte der zu verwendende A/D\footnote{Analog-Digital}-Wandler die differentielle Spannungsmessung beherrschen oder von vornherein speziell für Messbrückenauswertung ausgelegt sein. Da eine weitere Maßgabe die Auflösung der Wandlung darstellt, wurde explizit nach einem Konverter mit mindestens 16-Bit Auflösung gesucht.\\
+All diese Kriterien wurden von dem Baustein ADS1232 von Texas Instruments erfüllt. Dieser verfügt über 24-Bit Auflösung und ist speziell für Brückenschaltungen ausgelegt \citep{ADS1232}. Als weiteren Vorteil beinhaltet dieses IC bereits einen internen Temperatursensor der für einen der Unterpunkte der Anforderungen an die Arbeit erfüllt.
 \bibliography{literatur}
 \bibliographystyle{alpha}
 \end{document}

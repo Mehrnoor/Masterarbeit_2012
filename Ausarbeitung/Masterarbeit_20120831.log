@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=pdflatex 2012.9.6)  14 JAN 2013 09:14
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=pdflatex 2012.9.6)  14 JAN 2013 16:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -879,14 +879,14 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 ]
 Kapitel 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--146
+Underfull \hbox (badness 10000) in paragraph at lines 142--154
 
  []
 
 [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 156--159
+Underfull \hbox (badness 10000) in paragraph at lines 164--167
 
  []
 
@@ -894,76 +894,88 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--159
 Kapitel 4.
 
 Package pdftex.def Warning: Option `bb' does not make sense,
-(pdftex.def)                using `viewport' instead on input line 169.
+(pdftex.def)                using `viewport' instead on input line 177.
 
 <Bilder/LTC3108breakoutSSOC.pdf, id=39, 597.23125pt x 845.1575pt>
 File: Bilder/LTC3108breakoutSSOC.pdf Graphic file (type pdf)
 
 <use Bilder/LTC3108breakoutSSOC.pdf>
-Package pdftex.def Info: Bilder/LTC3108breakoutSSOC.pdf used on input line 169.
+Package pdftex.def Info: Bilder/LTC3108breakoutSSOC.pdf used on input line 177.
 
 (pdftex.def)             Requested size: 401.18307pt x 250.3833pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--173
+Underfull \hbox (badness 10000) in paragraph at lines 172--181
 
  []
 
 [6
 
-] [7] [8 <./Bilder/LTC3108breakoutSSOC.pdf>] [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 203--206
+] [7] [8 <./Bilder/LTC3108breakoutSSOC.pdf>] [9] [10] [11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 232--235
 
  []
 
-[11] [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 283--285
+[13] [14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 312--314
 
  []
 
 
-Overfull \hbox (8.11638pt too wide) in paragraph at lines 295--297
+Overfull \hbox (8.11638pt too wide) in paragraph at lines 324--326
 \OT1/cmr/m/n/12 rech-nen. Als Grund-la-ge wur-den die Wi-der-stands-wer-te vom 
 Da-ten-blatt []ubernommen:
  []
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 309--313
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 338--342
 
  []
 
-[15] (./Masterarbeit_20120831.bbl [16]) [17
+[17] (./Masterarbeit_20120831.bbl
+Overfull \hbox (3.81161pt too wide) in paragraph at lines 344--1
+\OT1/cmr/m/n/12 Darum wur-de die Messme-tho-de auf pie-zo-re-si-sti-ve Deh-nung
+s-mess-strei-fen[] ge[]andert.
+ []
 
-] (./Masterarbeit_20120831.aux) ) 
+
+Overfull \hbox (2.61783pt too wide) in paragraph at lines 344--1
+\OT1/cmr/m/n/12 erf[]ullt. Die-ser verf[]ugt []uber 24-Bit Aufl[]osung und ist 
+spe-zi-ell f[]ur Br[]uckenschaltungen
+ []
+
+[18] [19] [20
+
+]) [21] (./Masterarbeit_20120831.aux) ) 
 Here is how much of TeX's memory you used:
- 7536 strings out of 493488
- 109139 string characters out of 3144749
- 220543 words of memory out of 3000000
- 10670 multiletter control sequences out of 15000+200000
+ 7545 strings out of 493488
+ 109268 string characters out of 3144749
+ 218588 words of memory out of 3000000
+ 10679 multiletter control sequences out of 15000+200000
  17350 words of font info for 58 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 50i,11n,54p,1862b,351s stack positions out of 5000i,500n,10000p,200000b,50000s
-{c:/texlive/2012/texmf-dist/fonts/enc/dvips/ba
-se/8r.enc}<c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texl
-ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2012/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2012/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2012/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr12.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr17.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
-><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texliv
-e/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2012/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2012/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2012/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy8.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmti12.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
-b><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/tex
-live/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on Masterarbeit_20120831.pdf (20 pages, 280405 bytes).
+ 50i,12n,54p,2870b,410s stack positions out of 5000i,500n,10000p,200000b,50000s
+{c:/texlive/2012/texmf-dist/fonts/enc/dv
+ips/base/8r.enc}<c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c
+:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive
+/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2012/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2012/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2012/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr12.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr17.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r6.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/
+texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/201
+2/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2012/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2012/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2012/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy8.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti12.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+t10.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><
+c:/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
+Output written on Masterarbeit_20120831.pdf (24 pages, 291810 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 107 compressed objects within 2 object streams
+ 163 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
