@@ -20,6 +20,56 @@
   timestamp = {2012.10.08}
 }
 
+@BOOK{BQ24100,
+  title = {BQ24100 SYNCHRONOUS SWITCHMODE, LI-ION AND LI-POLYMER CHARGE-MANAGEMENT
+	IC WITH INTEGRATED POWER FETs},
+  publisher = {Texas Instruments Incorporated},
+  year = {2012},
+  author = {Texas Instruments},
+  address = { Post Office Box 655303, Dallas, Texas 75265},
+  note = {\url{http://www.ti.com/lit/ds/symlink/bq24100.pdf}},
+  howpublished = {Datasheet},
+  language = {English},
+  organization = {Texas Instruments Incorporated},
+  owner = {sjobstm},
+  timestamp = {2012.10.09},
+  url = {http://www.ti.com/lit/ds/symlink/bq24100.pdf}
+}
+
+@BOOK{bq51013EVM-725,
+  title = {bq51013EVM-725 Evaluation Module},
+  publisher = {Texas Instruments Incorporated},
+  year = {2012},
+  author = {Texas Instruments},
+  address = {Post Office Box 655303, Dallas, Texas 75265},
+  note = {\\
+	
+	\url{http://www.ti.com/lit/ug/slvu447a/slvu447a.pdf}},
+  howpublished = {Datasheet},
+  language = {English},
+  organization = {Texas Instruments Incorporated},
+  owner = {sjobstm},
+  timestamp = {2012.10.09},
+  url = {http://www.ti.com/lit/ug/slvu447a/slvu447a.pdf}
+}
+
+@BOOK{bq500110EVM-688,
+  title = {bq500110EVM-688 Evaluation Module},
+  publisher = {Texas Instruments Incorporated},
+  year = {2011},
+  author = {Texas Instruments},
+  address = { Post Office Box 655303, Dallas, Texas 75265},
+  note = {\\
+	
+	\url{http://www.ti.com/lit/ug/slvu429a/slvu429a.pdf}},
+  howpublished = {Datasheet},
+  language = {English},
+  organization = {Texas Instruments Incorporated},
+  owner = {sjobstm},
+  timestamp = {2012.10.09},
+  url = {http://www.ti.com/lit/ug/slvu429a/slvu429a.pdf}
+}
+
 @BOOK{Jobstmann2012,
   title = {Auswertung der Messungen "uber Kapazit"ats"anderung von Piezoelementen
 	in Abh"angigkeit von eindimensionaler mechanischer Druckbelastung},
@@ -37,6 +87,9 @@
   year = {2010},
   author = {LTC},
   address = {1630 McCarthy Blvd., Milpitas, CA 95035-7417},
+  note = {\\
+	
+	\url{http://www.linear.com/product/LTC3108}},
   howpublished = {Datasheet},
   language = {English},
   organization = {Linear Technology Corporation},
@@ -45,17 +98,3 @@
   url = {http://www.linear.com/product/LTC3108}
 }
 
-@BOOK{BQ24100,
-  title = {SYNCHRONOUS SWITCHMODE, LI-ION AND LI-POLYMER CHARGE-MANAGEMENT
-IC WITH INTEGRATED POWER FETs},
-  publisher = {Texas Instruments Incorporated},
-  year = {2012},
-  author = {Texas Instruments},
-  address = { Post Office Box 655303, Dallas, Texas 75265},
-  howpublished = {Datasheet},
-  language = {English},
-  organization = {Texas Instruments Incorporated},
-  owner = {sjobstm},
-  timestamp = {2012.10.09},
-  url = {http://www.ti.com/lit/ds/symlink/bq24100.pdf}
-}

@@ -10,12 +10,20 @@ B.~Zagar E.~Schr"ufer, L.~Reindl.
 \newblock {\em Elektrische Messtechnik}.
 \newblock Hanser Verlag, 10. edition, 2012.
 
-\bibitem[Ins12]{BQ24100}
+\bibitem[Ins12a]{BQ24100}
 Texas Instruments.
 \newblock {\em BQ24100 SYNCHRONOUS SWITCHMODE, LI-ION AND LI-POLYMER
   CHARGE-MANAGEMENT IC WITH INTEGRATED POWER FETs}.
 \newblock Texas Instruments Incorporated, Post Office Box 655303, Dallas, Texas
   75265, 2012.
+\newblock \\ \url{http://www.ti.com/lit/ds/symlink/bq24100.pdf}.
+
+\bibitem[Ins12b]{bq51013EVM-725}
+Texas Instruments.
+\newblock {\em bq51013EVM-725 Evaluation Module}.
+\newblock Texas Instruments Incorporated, Post Office Box 655303, Dallas, Texas
+  75265, 2012.
+\newblock \\ \url{http://www.ti.com/lit/ug/slvu447a/slvu447a.pdf}.
 
 \bibitem[Job12]{Jobstmann2012}
 S.~Jobstmann.
@@ -29,5 +37,6 @@ LTC.
 \newblock {\em LTC3108 Ultralow voltage Step-Up Converter and Power Manager}.
 \newblock Linear Technology Corporation, 1630 McCarthy Blvd., Milpitas, CA
   95035-7417, 2010.
+\newblock \\ \url{http://www.linear.com/product/LTC3108}.
 
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=pdflatex 2012.9.6)  11 JAN 2013 17:13
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=pdflatex 2012.9.6)  14 JAN 2013 09:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -910,36 +910,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--173
 
 [6
 
-] [7] [8 <./Bilder/LTC3108breakoutSSOC.pdf>] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 190--193
+] [7] [8 <./Bilder/LTC3108breakoutSSOC.pdf>] [9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 203--206
 
  []
 
-[10] [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 270--272
+[11] [12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 283--285
 
  []
 
 
-Overfull \hbox (8.11638pt too wide) in paragraph at lines 282--284
+Overfull \hbox (8.11638pt too wide) in paragraph at lines 295--297
 \OT1/cmr/m/n/12 rech-nen. Als Grund-la-ge wur-den die Wi-der-stands-wer-te vom 
 Da-ten-blatt []ubernommen:
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 296--300
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 309--313
 
  []
 
-[14] (./Masterarbeit_20120831.bbl [15]) [16
+[15] (./Masterarbeit_20120831.bbl [16]) [17
 
 ] (./Masterarbeit_20120831.aux) ) 
 Here is how much of TeX's memory you used:
- 7524 strings out of 493488
- 108992 string characters out of 3144749
- 220457 words of memory out of 3000000
- 10659 multiletter control sequences out of 15000+200000
- 17181 words of font info for 57 fonts, out of 3000000 for 9000
+ 7536 strings out of 493488
+ 109139 string characters out of 3144749
+ 220543 words of memory out of 3000000
+ 10670 multiletter control sequences out of 15000+200000
+ 17350 words of font info for 58 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  50i,11n,54p,1862b,351s stack positions out of 5000i,500n,10000p,200000b,50000s
 {c:/texlive/2012/texmf-dist/fonts/enc/dvips/ba
@@ -958,11 +958,12 @@ nts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2012/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmsy6.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmsy8.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmti12.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
-b><c:/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on Masterarbeit_20120831.pdf (19 pages, 268246 bytes).
+b><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/tex
+live/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
+Output written on Masterarbeit_20120831.pdf (20 pages, 280405 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
+ 151 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
