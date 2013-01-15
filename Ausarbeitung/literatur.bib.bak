@@ -112,7 +112,7 @@
   publisher = {Texas Instruments Incorporated},
   year = {2008},
   author = {Texas Instruments},
-  address = { Post Office Box 655303, Dallas, Texas 75265},
+  address = {Post Office Box 655303, Dallas, Texas 75265},
   note = {\\
 	
 	\url{http://www.ti.com/lit/ds/symlink/ads1232.pdf}},

@@ -340,10 +340,51 @@ RT1&=&9,263k\Omega \Rightarrow 9,31k\Omega
 \\
 Ein passendes Schaltungslayout wurde mithilfe des Datenblatts \citep{BQ24100} und der Software Multisim\footnote{\url{http://www.ni.com/multisim/d/}} erstellt. Nach der Adaption der Schaltung auf ein passendes Layout wurde über einen Leiterplattenhersteller ein Prototyp auf FR4\footnote{Flame Retarding Number 4; Flammhemmendes Substratmaterial auf Epoxydbasis} bestellt. An der Hochschule Landshut wurde dieser per Hand bestückt und mithilfe der Dampfphasenlötanlage fertig gelötet. Für erste Tests wurde ein handelsüblicher Mobiltelefon-Akku der Firma Huawei verwendet. Dieser war bereits geringfügig vorgeladen und besitzt einen internen NTC-Widerstand von 10k$\Omega$. Somit entsprach diese Testumgebung ziemlich dem realen Einsatzgebiet der Ladeschaltung. Über einen fliegenden Aufbau mithilfe einer Experimentierplatine wurde der Akku an die Schaltung angeschlossen. Diese wurde selbst an eine 5V Konstantspannungsquelle angeschlossen, welche während des Versuchs auch im Spannungspegel verändert wurde. Solange sich die anliegende Gleichspannung innerhalb des im Datenblatt vermerkten Intervalls bewegt, zeigen die Indikationsausgänge des ICs einwandfreien Betrieb auf. Die Funktion des Moduls konnte einwandfrei nachgewiesen werden und war stets reproduzierbar. Auch die kombinierbare Funktion mit dem Modul aus Kapitel \vref{chap:4.1.2} wurde erfolgreich getestet.
 \section{Arbeitsschaltung}
+\subsection{CC2541}
+Um die Sensordaten verarbeiten zu können, wird eine Recheneinheit benötigt. Dabei sollte diese neben der Auswertung und Konvertierung auch eine Möglichkeit bereitstellen, Daten drahtlos zu verschicken. Bei der drahtlosen Datenübertragung war eine weitere Maßgabe, dass diese auf einem lizenzfreien ISM\footnote{Industrial Scientific Medical} seine Nachrichten verschickt. In Europa liegen diese auf den Frequenzen 433MHz, 868MHz und 2,4GHz (es gibt noch weitere ISM-Frequenzbereiche, diese sind allerdings die Gängigsten). Durch eine Vorauswahl von einem Mitarbeiter der Firma SRI\footnote{Sri Radio Systems GmbH; \url{http://www.sri.de/}} wurde der Mikrocontroller CC2541\footnote{\url{http://www.ti.com/product/cc2541}} für erste Layouttests bestimmt. Mithilfe des Controllerdatenblatts \citep{CC2541} wurde eine grundlegende Schaltung aufgebaut. Diese ist in Teilbereiche zu untergliedern:
+\begin{itemize}
+\item
+Eingangsschutzbeschaltung: Überstrom-/Kurzschlussstromschutz durch eine sogenannte "`resetable Fuse"'\footnote{ein temperaturabhängiger Widerstand, der ab einer gewissen Stromstärke sprungartig hochohmiger wird}, Verpolschutz
+\item
+
+\end{itemize}
 \subsection{Sensorik}
 Zentrales Element der Schaltung des Fußmoduls des Projekts "`MedLast"' ist der Druckaufnehmer. Erste Versuche die Druckbelastung über die Kapazitätsänderung von Piezoelementen erwiesen sich als äußerst schwierig. Die Problematik bei dieser Messmethode besteht darin, dass sie aufgrund der Flüchtigkeit der geringen Ladung und der Empfindlichkeit gegenüber parasitären Effekten äußerst aufwendig betrieben werden muss, um repräsentative und reproduzierbare Ergebnisse zu erzielen. Als parasitäre Effekte spielen hier unter anderem Luftfeuchte, Beleuchtung und die Umgebungstemperatur eine entscheidende Rolle. Bei ausführlichen Belastungstests im Bereich bis 200N konnten keine zufriedenstellenden Ergebnisse erzielt werden \citep{Jobstmann2012}. \newline
 Darum wurde die Messmethode auf piezoresistive Dehnungsmessstreifen\footnote{kurz: DMS} geändert. Diese Technologie bietet auch den Vorteil, dass aufgrund der eigenen Verarbeitung im Hybridlabor der Hochschule Landshut das Layout beliebig angepasst werden kann. Da generell davon ausgegangen wurde, dass der Widerstand des DMS sich sowohl vergrößern als auch verkleinern kann, musste das Messverfahren dementsprechend ausgelegt sein. Gemessen wird nicht über eine Kelvin-Messschaltung\footnote{auch bekannt als Vierleitermessung} sondern über eine als Wheatstonesche Brücke bekannte Messschaltung. Dabei wird der betreffende DMS in eine Brückenschaltung, genauer in eine Viertelmessbrücke, eingesetzt. Dies hat zum Vorteil, dass bei richtiger Anpassung der restlichen drei Teilwiderstände der Schaltung, sich an den Messpunkten eine Spannungsdifferenz von $0V$ bei Ruhe einstellt. Aus diesem Grund sollte der zu verwendende A/D\footnote{Analog-Digital}-Wandler die differentielle Spannungsmessung beherrschen oder von vornherein speziell für Messbrückenauswertung ausgelegt sein. Da eine weitere Maßgabe die Auflösung der Wandlung darstellt, wurde explizit nach einem Konverter mit mindestens 16-Bit Auflösung gesucht.\\
-All diese Kriterien wurden von dem Baustein ADS1232 von Texas Instruments erfüllt. Dieser verfügt über 24-Bit Auflösung und ist speziell für Brückenschaltungen ausgelegt \citep{ADS1232}. Als weiteren Vorteil beinhaltet dieses IC bereits einen internen Temperatursensor der für einen der Unterpunkte der Anforderungen an die Arbeit erfüllt.
+All diese Kriterien wurden von dem Baustein ADS1232 von Texas Instruments erfüllt. Dieser verfügt über 24-Bit Auflösung und ist speziell für Brückenschaltungen ausgelegt \citep{ADS1232}. Als weiteren Vorteil beinhaltet dieses IC bereits einen internen Temperatursensor der einen der Unterpunkte der Anforderungen an die Arbeit erfüllt.\\
+Ein erster Schaltungsentwurf wurde mithilfe des an Hochschule Landshut vorhandenen Leiterplatten-Prototypers\footnote{LPKF C60} auf Platine gebracht. Dabei wurden alle Konfigurationsmöglichkeiten sowie Ein- und Ausgänge über Jumper und Stiftleisten nach außen geführt:
+\begin{itemize}
+\item
+Temperatursensor an/aus
+\item
+Eingangsbeschaltung: A1/A2
+\item
+Wandlungsgeschwindigkeit: 10/80 SPS\footnote{samples per second}
+\item
+Vorverstärkung (Gain 0/1)
+\item
+Positve sowie Negative Versorgungsspannung
+\item
+Datenleitungen für SPI\footnote{serial peripheral interface}
+\item
+Eingänge für beide analogen Spannungsaufnehmer AIN1/AIN2
+\end{itemize}
+Da bei der Prototypenschaltung keine allzu gravierenden Spannungs- oder Stromimpulse an der Versorgungsspannung auftreten, können die digitale und die analoge Speisung ebenfalls über einen Jumper zusammengeschlossen werden. Zu Testzwecken wurde eine Viertelbrücke mit einem Potentiometer als variablen Widerstand diskret auf die Platine gebracht. Diese kann über Jumper an den Controller angebunden werden. Für die digitale Anbindung, beispielsweise an einen Mikrocontroller, wird das SPI-Protokoll verwendet. Dabei ist hinzuzufügen, dass lediglich die MISO\footnote{Master Input Slave Output}- und SCK\footnote{Serial Clock}-Leitungen benötigt werden. Zusätzlich verfügt das IC einen PDWN\footnote{Power Down} Eingang, über den der Baustein in einen Ruhemodus versetzt werden kann.\\
+Der Testaufbau wurde weiter dahingehend modifiziert, dass es mit einem experimentellen Sensormodul von Frau Engelsberger, basierend auf einem LTCC-Stahl Verbundwerkstoff, optimale Ergebnisse liefert. Dementsprechend wurde die auf dem Modul befindliche Viertelbrücke aufgetrennt und das Potentiometer entfernt. Dieses wurde durch das Sensormodul ersetzt. Weiter wurden die Widerstände der restlichen Brücke an den Sensor angepasst.
 \bibliography{literatur}
 \bibliographystyle{alpha}
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

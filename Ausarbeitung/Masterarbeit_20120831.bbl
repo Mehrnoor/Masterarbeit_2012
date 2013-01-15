@@ -47,6 +47,14 @@ Texas Instruments.
   75265, 2012.
 \newblock \\ \url{http://www.ti.com/lit/ug/slvu447a/slvu447a.pdf}.
 
+\bibitem[Ins12d]{CC2541}
+Texas Instruments.
+\newblock {\em CC541 2.4-GHz Bluetooth low energy and Proprietary
+  System-on-Chip}.
+\newblock Texas Instruments Incorporated, Post Office Box 655303, Dallas, Texas
+  75265, 2012.
+\newblock \\ \url{http://www.ti.com/lit/ds/symlink/cc2541.pdf}.
+
 \bibitem[Job12]{Jobstmann2012}
 S.~Jobstmann.
 \newblock {\em Auswertung der Messungen "uber Kapazit"ats"anderung von
