@@ -164,6 +164,479 @@ S_3 & =  s_{33}^{\textrm{E}} \cdot T_3 + \textrm{d}_{33} \cdot E_3 \label{formel
 Eine im Vergleich zu piezoelektrischem Energy-Harvesting hohe Energieumwandlung erzielt man mit der thermoelektrischen Transformation. Dabei wird als physikalische Grundlage der Seebeck-Effekt benutzt. Dieser beschreibt, dass bei zwei unterschiedlichen Metalllegierungen bei vorliegender Differenz der Temperaturen am Übergang der Elemente eine Spannung entsteht. Die entstandene Potentialdifferenz nennt man auch Thermospannung \citep[vgl. S.158]{Schruefer2012}. Die Inverse dieses Vorgangs wird mit dem Peltier-Effekt beschrieben. Da das Verhalten der spezifischen Elemente reziprok ist, kann man Peltierelemente auch zur Gewinnung von elektrischer Energie nutzen. \newline
 Der Seebeck-Effekt beruht auf den folgenden molekularen Gegebenheiten: Naturgemäß wandern bei einem Metall, welches einem Temperaturunterschied ausgesetzt ist, die Elektronen von der heißen zur kalten Seite. Dies geschieht aufgrund der natürlichen Diffusionsbewegung innerhalb des Metalls. Bei zwei aneinanderliegenden, verlöteten oder verschweißten Legierungen gibt das Metall mit der niedrigeren Austrittsarbeit Elektronen an das andere Metall ab und wird dadurch positiv geladen. Dadurch bildet sich an der Kontaktfläche ein elektrisches Feld. Dieses kann resultierend als direkte Proportionale zur anliegenden Temperaturdifferenz der zwei Kontaktstellen mit einem Voltmeter gemessen werden. Übliche Werte hierfür sind ca. $10  \frac{\textrm{mV}}{100 \degree \textrm{K}}$.\newline \newline
 Wenn man den technischen Aufbau nun so gestaltet, dass er zur Energieumwandlung und nicht zur Temperaturmessung verwendet werden soll, erweist es sich als zweckmäßig ein oder mehrere Peltierelemente im umgekehrten Betrieb zu verwenden. \citep[vgl. S.30]{Dembowski2011}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Voruntersuchung}
+
+\section{Motivation}
+Ausschlaggebend für diese Messungen ist die Bestimmung von mechanischen Lastwechseln im niederfrequenten Bereich unter 4Hz. Genauer handelt es sich dabei um die Erfassung der Druckbelastung einer medizinischen Schienung eines verletzten Beines, mithilfe von piezoeletrischen Elementen. Diese Messung sollte bereits im Vorfeld der Arbeit eine Aussage zulassen, welche Methode, piezokapazitiv oder piezoresistiv, zur Bestimmung der anliegenden mechanischen Last den größeren Vorteil bietet. Bei diesen Bauelementen kann man anhand von drei Parametern Rückschlüsse auf die mechanische Belastung ziehen:
+\begin{itemize}
+\item Spannung,
+\item Ladung,
+\item Kapazität.
+\end{itemize}
+Dieses Kapitel bezieht sich auf die Untersuchung von Abhängigkeiten zwischen mechanischer Druckbelastung und elektrischer Kapazitätsänderung am Piezoelement. Weiter ist es zu großen Zügen dem Vorbericht \citep{Jobstmann2012} wörtlich entnommen.
+\section{Versuchsaufbau}
+
+Ziel dieser Versuchsreihe ist die Bestimmung der Kapazitätsänderung von piezoelektrischen Elementen bei mechanischer Druckbelastung. Dabei wird das Piezoelement elektrisch isoliert in einem Schraubstock belastet. Über Zuleitungen wird mit einem sogenannten LCR-Meter eine Vierdraht-Impedanz-Messung durchgeführt, die einzelnen Parameter hierfür werden bei den Versuchsreihen angegeben. Mithilfe einer Kraftmessdose, welche eine Vollmessbrücke mit Dehnmessstreifen beinhaltet, wird der angelegte mechanische Druck am Piezoelement abgeleitet. Da zu Messbeginn nur geringe Zusatzinformationen zu diesem Hilfsmittel vorhanden waren, geschahen alle Auswertungen in einem geringen Bereich unterhalb der Maximalbelastbarkeit von 250N. Weiter ist die angelegte Versorgungsspannung an der Messdose stets 10V DC. bei allen Messungen wurde ein LCR-Meter ISO-TECH LCR-821 zur Impedanzmessung und ein Fluke-Hand-Multimeter 179 zur Spannungsmessung verwendet. Als Spannungsquelle stand ein Hameg HM8142 bereit.
+
+\section{Ergebnis}
+
+Im Allgemeinen lassen sich aufgrund der getätigten Messungen folgende Aussagen treffen:
+\begin{itemize}
+\item
+Die Kapazitätsänderung der Piezoelemente unter Last stellt für kleine wirkende Kräfte keine hinreichend reproduzierbare Methode zur Messung von mechanischer Druckbelastung dar. Aufgrund der massiv einwirkenden parasitären Effekte, seien es Veränderungen der Luftfeuchte, Temperaturschwankungen oder pyroelektrische Einflüsse, konnten keine eindeutig wiederholbaren Werte erzielt werden.
+\item
+Die Werkstoffstabilität ist auch in Frage zu stellen. Während der Messung ist ein Element unter Belastung zu Bruch gegangen.
+\item
+Weiter lassen sich die Ergebnisse der einzelnen Prüflinge unterscheiden:
+\begin{itemize}
+\item
+CeramTec, P502, einschichtiger Piezo: Unter steigender Belastung verläuft die dazu korrespondierende Kapazitätskurve wie eine Exponentialfunktion mit negativem Exponenten. Weiter ist dieser während der Messung bei einer nicht mehr nachvollziehbaren Belastung zerbrochen. Die Reproduzierbarkeit einzelner Messergebnisse ist nahezu ausgeschlossen.
+\item
+CeramTec, P505, Mehrschichtiger Piezo: Auch bei diesem Piezoelement verläuft unter steigender Belastung die dazugehörige Kapazitätskurve monoton fallend. Weiter wurde auch hier eine hohe Abhängigkeit von äußeren Einflüssen festgestellt.
+\item
+Elliptec, Mehrschichtiger Piezo: Bei diesem Stack ergab sich eine mit dem Druck steigende Kapazitätskurve. Allerdings erschwerten auch hier parasitäre Effekte eine eventuelle Reproduzierbarkeit.
+\end{itemize}
+\end{itemize}
+
+
+\section{Messungen}
+
+\subsection{Sonox P502} 
+Bei diesem Piezobaustein handelt es sich um ein einfaches, nicht mehrschichtiges Element. Die nachfolgenden Messungen untersuchten das Verhalten der Kapazität unter mechanischer Druckbelastung entlang der elektrischen Feldorientierung. Entgegen der Erwartung, dass die Kapazität mit steigender Druckbelastung ebenfalls steigt, verhält sich diese mehr wie eine Exponentialfunktion mit negativen Exponenten. Dies ist in nahezu allen folgenden Graphen der kommenden Unterkapitel nachzuvollziehen.
+%%%%%%%%%%%%%Kapazität über steigender Druckbelastung%%%%%%%%%%%%%%%
+\subsubsection{Kapazität über steigender Druckbelastung}
+Diese Messung zeigt das kapazitive Verhalten des Piezoelements Sonox P502. Bei den Messwerten wird die Kapazität über die angelegte Kraft, bzw. die Spannung an der Kraftmessdose, aufgetragen, wie in Tabelle \vref{tab:2.1} und Abbildung \vref{fig:2.1} nachzuvollziehen ist. Speisefrequenz der Impedanzmessung war 500Hz bei 1V Amplitude.
+\setlongtables
+\begin{longtable}{| l | l | l |}
+\caption{Messung 1}\\
+\hline
+$U_{diff}$ in mV&$C_{diff}$ in nF&$C_{Piezo}$ in nF\\
+\hline
+\endfirsthead
+\hline
+$U_{diff}$ in mV&$C_{diff}$ in $nF$&$C_{Piezo}$ in nF\\
+\hline
+\endhead
+\hline
+\multicolumn{3}{|c|}{Fortsetzung auf der nächsten Seite}\\
+\hline
+\endfoot
+\hline \hline
+\endlastfoot
+\hline
+\label{tab:2.1}%
+0.02&-0.01795&\\
+0.50&-0.0235&\\
+0.94&-0.02212&\\
+1.48&-0.0235&0.9766\\
+1.93&-0.0244&0.9754\\
+2.49&-0.02529&0.9748\\
+3.00&-0.02801&0.9716\\
+3.60&-0.0294&0.9705\\
+4.10&-0.02995&0.96981\\
+4.56&-0.03057&0.96935\\
+5.00&-0.03137&0.96858\\
+5.51&-0.03184&0.96811\\
+6.11&-0.03231&0.96766\\
+\end{longtable}
+\begin {figure}[htbp]
+      \begin{center}
+        \includegraphics{tabelle2_1_1}
+      \end{center}
+\caption{Messung 1}
+\label{fig:2.1}
+\end{figure}
+
+%%%%%%%%%%%Kapazität über statischer Druckbelastung%%%%%%%%%%%%%%%
+\subsubsection{Kapazität über statischer Druckbelastung}
+Durch die bei der ersten Messung stets ändernden Kapazitäten während einer Druckvorgabe wird dieser Versuch zur Untersuchung bei statischer Belastung angesetzt. Durch die Beobachtung der sinkenden Spannungsdifferenz (der Kraftmessdose) über die Zeit lässt sich die auftretende Kapazitätsänderung (des Piezoelements) auf die elastischen Kunststoffbacken des Schraubstocks zurückführen. Die Werte bzw. die grafische Auswertung ist hierbei aus der Tabelle \vref{tab:2.2} und dem Graphen aus Abbildung \vref{fig:2.2} zu entnehmen. \\
+Aufgrund eines Gegenvergleichs lässt sich an dieser Stelle bereits sagen, dass die sich verringernden Werte auf die fortwährende Entspannung der Kunststoffbacken des Schraubstocks zurückführen lässt.
+
+\setlongtables
+\begin{longtable}{| l | l | l |}
+\caption{Messung 2 }\\
+\hline
+Uhrzeit&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
+\hline
+\endfirsthead
+\hline
+Uhrzeit&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
+\hline
+\endhead
+\hline
+\multicolumn{3}{|c|}{Fortsetzung auf der nächsten Seite}\\
+\hline
+\endfoot
+\hline \hline
+\endlastfoot
+\hline
+\label{tab:2.2}%
+09:50:00&10.12&0.9734\\
+10:20:00&9.59&0.9662\\
+11:40:00&9.37&0.96311\\
+\end{longtable}
+
+\begin {figure}[htbp]
+      \begin{center}
+        \includegraphics{tabelle2_1_2}
+      \end{center}
+\caption{Messung 2}
+\label{fig:2.2}
+\end{figure}
+\newpage
+%%%%%%%%%%%%%%Weitere Messung mithilfe des Maschinenschraubstocks%%%%%%%%%%%%%
+\subsubsection{Weitere Messung mithilfe des Maschinenschraubstocks}
+Bei vorhergehenden Messungen ergab sich der Verdacht, dass die Werte aufgrund der nicht konstanten Druckbelastung durch die Spannvorrichtung verfälscht worden sind. Darum ist diese Messreihe mit einem schweren Maschinenschraubstock mit Stahlbacken erstellt worden. Hierbei wurde zusätzlich noch der Einfluss eines Parallelwiderstands untersucht. Allerdings wurden die Messungen jeweils nach einer Abschätzung der auftretenden Messwertdifferenz abgebrochen, da dies nicht als zielführend erschien. Zum Sicherstellen dieser Annahme wurde jeweils noch ein Messwert bei einer Druckbelastung von einer äquivalenten Spannung von 10mV aufgenommen. Diese ergaben keine feststellbaren Unterschiede zu den letzten dokumentierten Werten. Bei den Messungen wurde jeweils eine Entspannungsphase der Belastungsvorrichtung von 2 Minuten bei jedem Messschritt eingehalten. Die erzielten Messergebnisse sind in den Tabellen \vref{tab:2.3} und \vref{tab:2.4} ersichtlich. Anhand der Abbildung \vref{fig:2.3} lässt sich die unveränderte Charakteristik des Verhaltens unter Last nachvollziehen. Die Skalierung wurde hier zur Veranschaulichung angepasst. 
+
+\setlongtables
+\begin{longtable}{| l | l |}
+\caption{Messung 3; mit 100k$\Omega$ Parallelwiderstand}\\
+\hline
+$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
+\hline
+\endfirsthead
+\hline
+$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{|c|}{Fortsetzung auf der nächsten Seite}\\
+\hline
+\endfoot
+\hline \hline
+\endlastfoot
+\hline
+\label{tab:2.3}%
+0.44&0.9719\\
+0.97&0.9685\\
+1.75&0.9675\\
+2.36&0.9665\\
+3.00&0.9654\\
+3.53&0.9645\\
+4.03&0.9643\\
+4.53&0.963\\
+5.05&0.9625\\
+5.78&0.9626\\
+6.38&0.9625\\
+\end{longtable}
+
+\setlongtables
+\begin{longtable}{| l | l |}
+\caption{Messung 4; ohne Parallelwiderstand}\\
+\hline
+$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
+\hline
+\endfirsthead
+\hline
+$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{|c|}{Fortsetzung auf der nächsten Seite}\\
+\hline
+\endfoot
+\hline \hline
+\endlastfoot
+\hline
+\label{tab:2.4}%
+0.64&0.9683\\
+1.26&0.9640\\
+1.75&0.9620\\
+2.40&0.9603\\
+2.87&0.9587\\
+3.88&0.9570\\
+4.38&0.9540\\
+5.22&0.9538\\
+\end{longtable}
+
+\begin {figure}[htbp]
+      \begin{center}
+        \includegraphics{tabelle2_1_3}
+      \end{center}
+\caption{Messung 3 und 4}
+\label{fig:2.3}
+\end{figure}
+\newpage
+\subsubsection{Messung mit anderer Impedanzmessfrequenz}
+Da generell eine Veränderung des Impedanzverhaltens über die Frequenz bei Piezoelementen zu erwarten ist, wurde diese Messung mit halber Frequenz angestrebt. Allerdings sind die sich ergebenden Unterschiede so gering, dass sie von parasitären Effekten überlagert werden und die äußeren Umwelteinflüsse (Temperatur, relative Luftfeuchte) maßgebend für die Ergebnisse sind. Die erzielten Werte sind der Tabelle \vref{tab:2.5} zu entnehmen. Die weiterhin fallende Kapazitätskurve über die Druckbelastung ist in Abbildung \vref{fig:2.4} ersichtlich.\\
+Um eine weitere qualitative Aussage über das Frequenzverhalten treffen zu können, wurde empirisch die erste Resonanzfrequenz des Piezoelements ermittelt. Hierzu wurde ein Frequenzgenerator mit manuellem Sweep betrieben und mithilfe eines Shuntwiderstands der Strom in Serie auf Extrema beobachtet. Nach dieser Messung lässt sich ein Resonanzverhalten bei ca. 2.84 MHz feststellen. Aufgrund des weiten Abstands zur Messfrequenz kann man weitere Schlüsse ziehen. Daraus lässt sich auch die unveränderte Charakteristik der vorhergehenden Messung bestätigen.
+
+\setlongtables
+\begin{longtable}{| l | l |}
+\caption{Messung 5; 1kHz Messfrequenz}\\
+\hline
+$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
+\hline
+\endfirsthead
+\hline
+$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{|c|}{Fortsetzung auf der nächsten Seite}\\
+\hline
+\endfoot
+\hline \hline
+\endlastfoot
+\hline
+\label{tab:2.5}%
+0.4&0.9705\\
+1.4&0.9709\\
+2.0&0.9690\\
+3.0&0.9681\\
+3.8&0.9675\\
+5.0&0.9670\\
+\end{longtable}
+
+\begin {figure}[htbp]
+      \begin{center}
+        \includegraphics{tabelle2_1_4}
+      \end{center}
+\caption{Messung 5}
+\label{fig:2.4}
+\end{figure}
+
+\newpage
+\subsection{Bürklin Piezo-Stack von Elliptec}
+Da die vorhergehenden Messungen mit dem einfach aufgebauten Piezoelement nicht die erforderlichen Resultate bezüglich Charakteristik und Reproduzierbarkeit brachten, wurde nun eine Versuchsreihe mit gestapelten Piezoelementen angestrebt. Der Messaufbau blieb weiterhin derselbe, d.h. mithilfe eines Schraubstocks mit Kunststoffbacken wurde eine mechanische Druckbelastung an den Piezostack (im Folgenden auch Stack genannt) und einer Kraftmessdose in Serie angelegt. Beim verwendeten LCR-Meter wurden folgende Parameter eingestellt:
+\begin{itemize}
+\item 1kHz
+\item 1V
+\item R.H. off
+\item C.V. off
+\item int B. off
+\end{itemize}
+Weiter wurden bei diesen Messungen die Zuleitungen nicht auf dem Stack direkt aufgelötet, da dies den Messvorgang an sich unmöglich gemacht hätte. Stattdessen wurden Keramikträger als lose Verbindung der Messleitungen zum Piezoelement vewendet. Dadurch kann es bei geringer mechanischer Belastung zu Verfälschungen gekommen sein, da der Kontakt zwischen Stack und Keramik unzureichend war.
+\subsubsection{Messung Piezo-Stack, ohne Entladungsmaßnahme}
+Bei dieser ersten Vermessung des kapazitiven Verhaltens des Piezostacks unter Druckbelastung in elektrischer Feldrichtung wurde eine Entspannungszeit der Kunststoffbacken des Schraubstocks von 2 Minuten berücksichtigt. Es wurde lediglich der Piezo ohne zusätzlichen Parallel- oder Serienwiderstand vermessen. Die auffällig abweichenden Anfangswerte in Abbildung \vref{fig:2.6} sind auf den schlechten Kontakt zwischen Keramikplättchen und Stack bei geringer Druckbelastung zurückzuführen. Die aufgenommenen Werte sind in Tabelle \vref{tab:2.6} zu finden.
+
+\setlongtables
+\begin{longtable}{| l |l| l |}
+\caption{Messung 6; Piezostack; Einführende Messung}\\
+\hline
+$U_{diff}$ in mV&$C_{Piezo}$ in nF&$R_{Parallel}$ in k$\Omega$\\
+\hline
+\endfirsthead
+\hline
+$U_{diff}$ in mV&$C_{Piezo}$ in nF&$R_{Parallel}$ in k$\Omega$\\
+\hline
+\endhead
+\hline
+\multicolumn{3}{|c|}{Fortsetzung auf der nächsten Seite}\\
+\hline
+\endfoot
+\hline \hline
+\endlastfoot
+\hline
+\label{tab:2.6}%
+0.7&253.25&2.39\\
+1.2&270.00&8.01\\
+1.9&271.39&15.48\\
+2.9&271.83&16.98\\
+3.6&271.98&17.40\\
+4.5&272.22&17.42\\
+6.1&272.47&15.80\\
+7.0&272.70&17.72\\
+8.0&272.83&18.28\\
+9.4&273.16&18.30\\
+10.9&273.62&17.21\\
+\end{longtable}
+
+\begin {figure}[htbp]
+      \begin{center}
+        \includegraphics{tabelle2_2_1}
+      \end{center}
+\caption{Messung 6; Einführende Messung Piezostack}
+\label{fig:2.6}
+\end{figure}
+
+\newpage
+\subsubsection{Messung Piezo-Stack, mit Entladung, ohne Setz-Zeit}
+Um störende, vom Stack selbst erzeugte Ladungsquellen ausschließen zu können, wurde diese Messung in jeweils zwei Schritten ausgeführt. Beim ersten Schritt wird die Kraft angelegt und der Piezo-Stack kurzgeschlossen, um so möglicherweise erzeugte Ladungen zu eliminieren. Als zweiten Schritt wird mithilfe des LCR-821 eine Impedanzmessung durchgeführt. Diese beiden Schritte wurden je unter 30 Sekunden durchgeführt, um ein möglichst isochrones Ergebnis zu erhalten. 
+Weiter wurde die Messung ein zweites Mal durchgeführt, um eine Aussage über die Reproduzierbarkeit treffen zu können. Beim Vergleich der Graphen in Abbildung \vref{fig:2.7} wird deutlich, dass selbst bei unmittelbar aufeinanderfolgenden Messungen keine zureichende Wiederholbarkeit der Messvorgänge erreicht werden kann. Die korrespondierenden Werte beider Messungen sind in Tabelle \vref{tab:2.7} zu finden.
+Um Rückschlüsse auf das $\varepsilon$ des Piezomaterials zu ermöglichen, wurde der Parallelwiderstand bei diesem Messvorgang mit aufgezeichnet. Die Resultate sind in der Tabelle \vref{tab:2.8} und Abbildung \vref{fig:2.8} ersichtlich.
+
+\setlongtables
+\begin{longtable}{| l | l | l | l |}
+\caption{Messung 7; Piezostack; mit Entladung, ohne Setz-Zeit; Kapazität}\\
+\hline
+\multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
+\hline
+$U_{diff}$ in mV&$C_{Piezo}$ in nF&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
+\hline
+\endfirsthead
+\hline
+\multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
+\hline
+$U_{diff}$ in mV&$C_{Piezo}$ in nF&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
+\hline
+\endhead
+\hline
+\multicolumn{4}{|c|}{Fortsetzung auf der nächsten Seite}\\
+\hline
+\endfoot
+\hline \hline
+\endlastfoot
+\hline
+\label{tab:2.7}%
+0.15&266.66&0.49&269.02\\
+1.15&267.14&1.55&268.98\\
+2.55&267.72&2.82&269.26\\
+3.24&267.93&3.63&269.36\\
+4.39&268.6&4.60&269.55\\
+5.10&268.88&5.57&269.78\\
+6.14&269.32&6.39&269.90\\
+7.55&268.95&7.74&270.25\\
+8.24&270.16&8.40&270.40\\
+9.82&270.71&9.52&270.70\\
+10.45&270.76&10.49&270.84\\
+\end{longtable}
+
+\begin {figure}[htbp]
+      \begin{center}
+        \includegraphics{tabelle2_2_2}
+      \end{center}
+\caption{Messung 7; mit Entladung, ohne Setz-Zeit; Piezostack; Kapazität}
+\label{fig:2.7}
+\end{figure}
+
+\setlongtables
+\begin{longtable}{| l | l | l | l |}
+\caption{Messung 8; Piezostack; mit Entladung, ohne Setz-Zeit; Parallelwiderstand}\\
+\hline
+\multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
+\hline
+$U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$&$U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$\\
+\hline
+\endfirsthead
+\hline
+\multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
+\hline
+$U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$&$U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$\\
+\hline
+\endhead
+\hline
+\multicolumn{4}{|c|}{Fortsetzung auf der nächsten Seite}\\
+\hline
+\endfoot
+\hline \hline
+\endlastfoot
+\hline
+\label{tab:2.8}%
+0.15&16.53&0.49&17.42\\
+1.15&19.24&1.55&18.38\\
+2.55&19.25&2.82&18.68\\
+3.24&19.58&3.63&18.63\\
+4.39&19.19&4.60&18.72\\
+5.10&19.15&5.57&17.72\\
+6.14&18.93&6.39&18.70\\
+7.55&18.62&7.74&18.65\\
+8.24&18.58&8.40&17.63\\
+9.82&18.38&9.52&18.55\\
+10.45&18.51&10.49&18.60\\
+\end{longtable}
+
+\begin {figure}[htbp]
+      \begin{center}
+        \includegraphics{tabelle2_2_3}
+      \end{center}
+\caption{Messung 8; mit Entladung, ohne Setz-Zeit; Piezostack; Parallelwiderstand}
+\label{fig:2.8}
+\end{figure}
+
+\newpage
+\subsubsection{Messung Piezo-Stack, mit Entladung, mit 2 Minuten Setz-Zeit}
+Um eine treffen Aussage fassen zu können, wurde die vorhergehende Messung komplett wiederholt. Jedoch wurde dieses mal bei den einzelnen Werten eine Setz-Zeit von 2 Minuten eingehalten, um etwaige Fehler aufgrund des elastischen Materials der Schraubstockbacken zu minimieren. Allerdings sieht man auch hier anhand von Abbildung \vref{fig:2.9} die deutliche Abweichung zwischen den Kapazitätslinien. Die dazugehörigen Werte sind in Tabelle \vref{tab:2.9} zu finden.\\
+Auch hier wurde eine Messung des auftretenden Parallelwiderstands angestoßen. Die Resultate sind in Tabelle \vref{tab:2.10} und Abbildung \vref{fig:2.10} nachzulesen.
+
+\setlongtables
+\begin{longtable}{| l | l | l | l |}
+\caption{Messung 9; Piezostack; mit Entladung, 2 Minuten Setz-Zeit; Kapazität}\\
+\hline
+\multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
+\hline
+$U_{diff}$ in mV&$C_{Piezo}$ in nF&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
+\hline
+\endfirsthead
+\hline
+\multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
+\hline
+$U_{diff}$ in mV&$C_{Piezo}$ in nF&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
+\hline
+\endhead
+\hline
+\multicolumn{4}{|c|}{Fortsetzung auf der nächsten Seite}\\
+\hline
+\endfoot
+\hline \hline
+\endlastfoot
+\hline
+\label{tab:2.9}%
+0.55&268.80&1.16&268.90\\
+1.17&268.55&2.33&269.23\\
+2.26&268.73&3.34&269.35\\
+3.27&268.94&4.33&269.43\\
+4.27&269.13&4.99&269.51\\
+4.93&269.14&6.20&269.85\\
+6.10&269.37&7.03&269.90\\
+6.95&269.50&8.32&270.30\\
+8.21&269.70&9.31&269.99\\
+9.24&269.60&10.41&270.33\\
+10.30&269.83&&\\
+\end{longtable}
+
+\begin {figure}[htbp]
+      \begin{center}
+        \includegraphics{tabelle2_2_4}
+      \end{center}
+\caption{Messung 9; mit Entladung, 2 Minuten Setz-Zeit; Piezostack; Kapazität}
+\label{fig:2.9}
+\end{figure}
+\setlongtables
+\begin{longtable}{| l | l | l | l |}
+\caption{Messung 10; Piezostack; mit Entladung, 2 Minuten Setz-Zeit; Parallelwiderstand}\\
+\hline
+\multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
+\hline
+$U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$&$U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$\\
+\hline
+\endfirsthead
+\hline
+\multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
+\hline
+$U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$&$U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$\\
+\hline
+\endhead
+\hline
+\multicolumn{4}{|c|}{Fortsetzung auf der nächsten Seite}\\
+\hline
+\endfoot
+\hline \hline
+\endlastfoot
+\hline
+\label{tab:2.10}%
+0.55&17.38&1.16&17.80\\
+1.17&18.08&2.33&18.65\\
+2.26&19.07&3.34&18.80\\
+3.27&19.15&4.33&18.88\\
+4.27&19.18&4.99&18.89\\
+4.93&19.30&6.20&18.87\\
+6.10&19.29&7.03&18.69\\
+6.95&19.30&8.32&18.82\\
+8.21&19.29&9.31&19.10\\
+9.24&19.44&10.41&19.00\\
+10.30&19.49&&\\
+\end{longtable}
+
+\begin {figure}[htbp]
+      \begin{center}
+        \includegraphics{tabelle2_2_5}
+      \end{center}
+\caption{Messung 10; mit Entladung, 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand}
+\label{fig:2.10}
+\end{figure}
+%
 \chapter{Hardware}
 Im Folgenden werden die Fortschritte in der Hardware-Entwicklung chronologisch geordnet und in Teilbereiche separiert aufgeführt.
 \section{Energiezuführung}
@@ -187,29 +660,27 @@ Transmitter, Sender: bq500110EVM-688 Evaluation Module
 \item
 Receiver, Empfänger: bq51013EVM-725 Evaluation Module
 \end{itemize}
-Dieses lässt sich mithilfe einer Gleichspannungsquelle, eingestellt auf eine Speisung von $19V$ und einer Stromgrenze über $0,5A$ sehr einfach in Betrieb nehmen. Am Empfängermodul stellt sich bei passgenauer Platzierung der beiden Übertragerspulen des magnetischen Kopplungssystems eine Tätigkeit der Indikationsanzeige ein. Ein Permanentmagnet hilft beim Zentrieren der beiden Luftspulen. Laut Datenblatt \citep[vgl. S.2]{bq51013EVM-725} liefert die Beispielschaltung $5V$ bei $1A$. Zum Testen der Kompatibilität wurde die Schaltung mit der in Kapitel \ref{chap:4.2.2} vorgestellten Ladeeinheit gekoppelt. Das erfolgreiche Zusammenarbeiten konnte reproduzierbar getestet werden.\\
-Für das Gesamtkonzept des Fußmoduls vom Projekt "`MedLast"' ist die Empfangseinheit vorrangig. Um eine passendes Zusammenspiel von proprietärer Sendeeinheit und selbstentworfener Empfangsschaltung sicherzustellen, wurde der gleiche Baustein (\textit{BQ51013}) verwendet. Allerdings wurde beim Schaltungsaufbau darauf geachtet, dass der Bauteilumfang sich auf ein Minimum reduziert. So wurde die Zusatzbeschaltung für eine eventuelle alternative bedrahtete Versorgung weggelassen. Bei dem BQ51013 handelt es sich um ein IC, welches nur in BGA\footnote{Ball Grid Array} Gehäusegröße erhältlich ist. Da dies wiederum für das Layoutdesign bedeutete, dass mit Kontaktflächengrößen von $250\mu m$ gearbeitet werden muss, ergab sich eine weitere Problematik. Die typischen Leiterplattenhersteller für Prototypen und Kleinserien haben eine Vorgabe für den Mindestdurchmesser von Durchkontaktierungen mit $300\mu m$. D.h. über die üblichen Wege war es nicht ohne Mehraufwand möglich, einen Platine zu beschaffen. Da ein Durchmesser der Durchkontaktierungen von $150\mu m$ als maximale Maßgabe anzusehen war, wurde für den Prototypenbau LTCC\footnote{Low Temperature Cofire Ceramic} als Schaltungsträger ausgewählt. Diese können im Hybridlabor in Dickschichttechnik selbstständig aufgebaut werden. Weiter können durch das Laserstruktur-Gerät \textit{ProtoLaser U} die Keramiksubstrate auf $15\mu m$ genau geritzt und gebohrt werden.  Da LTCC im einlagigen Aufbau zu fragil wäre, wurden noch Überlegungen angestrebt um die mechanische Widerstandsfähigkeit zu erhöhen. Ein mehrlagiger Aufbau barg eine zu große Gefahr im Bezug auf die erhöhte Wahrscheinlichkeit einer unterbrochenen Durchkontaktierung. Diese steigt proportional mit der Anzahl der verwendeten Lagen LTCC. Durch einen Hinweis von Herrn Leschik wurde bei einem zweiten Versuch die LTCC-Schicht, welche den beidseitigen Schaltungsdruck aufgetragen hatte, auf eine $Al_2O_3$-Keramik auflaminiert. Diese dient als mechanisch-stabiler Träger. Nach einem ersten Fehlversuch konnten somit auf einem Substrat mit Mehrfach-Nutzen mehrere, passiv einwandfreie Schaltungen aufgebaut werden. Nach deren Bestückung per Hand und Lötung mit der Dampfphasenanlage der Hochschule Landshut wurde diese mit der Einkopplungsspule verbunden. Eine anfängliche Überlegung, diese ebenfalls auf Dickschichttechnik basierend auf LTCC zu der Schaltung zu bringen, wurde aufgrund der nicht einzuhaltenden Kriterien an die Güte der Induktivität wieder verworfen. Darum fiel die Entscheidung auf eine Empfänger-Spule, welche von der Firma Würth Elektronik genau für diesen Zweck bereitgestellt wird \citep{Spule}. Die für den Empfängerschwingkreis noch benötigten Kapazitäten wurden über folgende Formeln des Datenblatts \citep{BQ51013} dimensioniert:
+Dieses lässt sich mithilfe einer Gleichspannungsquelle, eingestellt auf eine Speisung von 19V und einer Stromgrenze über 0,5A sehr einfach in Betrieb nehmen. Am Empfängermodul stellt sich bei passgenauer Platzierung der beiden Übertragerspulen des magnetischen Kopplungssystems eine Tätigkeit der Indikationsanzeige ein. Ein Permanentmagnet hilft beim Zentrieren der beiden Luftspulen. Laut Datenblatt \citep[vgl. S.2]{bq51013EVM-725} liefert die Beispielschaltung 5V bei 1A. Zum Testen der Kompatibilität wurde die Schaltung mit der in Kapitel \ref{chap:4.2.2} vorgestellten Ladeeinheit gekoppelt. Das erfolgreiche Zusammenarbeiten konnte reproduzierbar getestet werden.\\
+Für das Gesamtkonzept des Fußmoduls vom Projekt "`MedLast"' ist die Empfangseinheit vorrangig. Um eine passendes Zusammenspiel von proprietärer Sendeeinheit und selbstentworfener Empfangsschaltung sicherzustellen, wurde der gleiche Baustein (\textit{BQ51013}) verwendet. Allerdings wurde beim Schaltungsaufbau darauf geachtet, dass der Bauteilumfang sich auf ein Minimum reduziert. So wurde die Zusatzbeschaltung für eine eventuelle alternative bedrahtete Versorgung weggelassen. Bei dem BQ51013 handelt es sich um ein IC, welches nur in BGA\footnote{Ball Grid Array} Gehäusegröße erhältlich ist. Da dies wiederum für das Layoutdesign bedeutete, dass mit Kontaktflächengrößen von $250\mu$m gearbeitet werden muss, ergab sich eine weitere Problematik. Die typischen Leiterplattenhersteller für Prototypen und Kleinserien haben eine Vorgabe für den Mindestdurchmesser von Durchkontaktierungen mit $300\mu$m. D.h. über die üblichen Wege war es nicht ohne Mehraufwand möglich, einen Platine zu beschaffen. Da ein Durchmesser der Durchkontaktierungen von $150\mu$m als maximale Maßgabe anzusehen war, wurde für den Prototypenbau LTCC\footnote{Low Temperature Cofire Ceramic} als Schaltungsträger ausgewählt. Diese können im Hybridlabor in Dickschichttechnik selbstständig aufgebaut werden. Weiter können durch das Laserstruktur-Gerät \textit{ProtoLaser U} die Keramiksubstrate auf $15\mu$m genau geritzt und gebohrt werden.  Da LTCC im einlagigen Aufbau zu fragil wäre, wurden noch Überlegungen angestrebt um die mechanische Widerstandsfähigkeit zu erhöhen. Ein mehrlagiger Aufbau barg eine zu große Gefahr im Bezug auf die erhöhte Wahrscheinlichkeit einer unterbrochenen Durchkontaktierung. Diese steigt proportional mit der Anzahl der verwendeten Lagen LTCC. Durch einen Hinweis von Herrn Leschik wurde bei einem zweiten Versuch die LTCC-Schicht, welche den beidseitigen Schaltungsdruck aufgetragen hatte, auf eine $Al_2O_3$-Keramik auflaminiert. Diese dient als mechanisch-stabiler Träger. Nach einem ersten Fehlversuch konnten somit auf einem Substrat mit Mehrfach-Nutzen mehrere, passiv einwandfreie Schaltungen aufgebaut werden. Nach deren Bestückung per Hand und Lötung mit der Dampfphasenanlage der Hochschule Landshut wurde diese mit der Einkopplungsspule verbunden. Eine anfängliche Überlegung, diese ebenfalls auf Dickschichttechnik basierend auf LTCC zu der Schaltung zu bringen, wurde aufgrund der nicht einzuhaltenden Kriterien an die Güte der Induktivität wieder verworfen. Darum fiel die Entscheidung auf eine Empfänger-Spule, welche von der Firma Würth Elektronik genau für diesen Zweck bereitgestellt wird \citep{Spule}. Die für den Empfängerschwingkreis noch benötigten Kapazitäten wurden über folgende Formeln des Datenblatts \citep{BQ51013} dimensioniert: 
 \begin{eqnarray}
 C1&=&\left[\left(f_S \cdot 2\pi\right)^2 \cdot L'_S\right]^{-1}\\
-C1&=&\left[\left(100kHz \cdot 2\pi\right)^2 \cdot 0,01011mH\right]^{-1}\\
-C1&=&250nF\\
+C1&=&\left[\left(100\text{kHz} \cdot 2\pi\right)^2 \cdot 0,01011\text{mH}\right]^{-1}\\
+C1&=&250\text{nF}\\
 \nonumber\\
 C2&=&\left[\left(f_D \cdot 2\pi\right)^2 \cdot L_S-\frac 1{C1}\right]^{-1}\\
 \nonumber\\
-C2&=&\left[\left(1MHz \cdot 2\pi\right)^2 \cdot 0,01011mH-\frac 1{250nF}\right]^{-1}\\
+C2&=&\left[\left(1\text{MHz} \cdot 2\pi\right)^2 \cdot 0,01011\text{mH}-\frac 1{250\text{nF}}\right]^{-1}\\
 \nonumber\\
-C2&=&2,53nF\\
+C2&=&2,53\text{nF}\\
 \nonumber\\
 Q&=&\frac{2\pi \cdot f_D \cdot L_S}{R}\\
 \nonumber\\
-Q&=&\frac{2\pi \cdot 1MHz \cdot 0,01011mH}{0,1488 \Omega}\\
+Q&=&\frac{2\pi \cdot 1\text{MHz} \cdot 0,01011\text{mH}}{0,1488 \Omega}\\
 \nonumber\\
 Q&=&426,90
 \end{eqnarray}
 Als Mindestmaß wird im Datenblatt \citep[siehe S.23]{BQ51013} eine Güte von 77 festgelegt. Diese wird mit der Luftspule von Würth Elektronik weit überschritten.\\
-Mit jeweils drei %%%%?%%%%
-diskreten Kondensatoren wurden die Kapazitäten $C1$ und $C2$ aufgebaut. Dies wurde auf einer separaten, zwischen Spule und Keramikschaltung gelöteten Platine aufgebaut. Der fertige selbstentworfene Aufbau wurde mit einer geringen Last von $47 \Omega$ %%%%?%%%%%
-auf die von Texas Instruments bereitgestellte Schaltung\footnote{bq500110EVM-688, Sendeeinheit} gesetzt und getestet. Die Reproduzierbarkeit wies noch Defizite auf, so konnte noch nicht sichergestellt werden, dass bei jedem Aufsetzen der Empfängerschaltung eine stabile Verbindung zustande kommt. Weiter können noch keine niederohmigen Lasten ($<50 \Omega$) an das Modul gekoppelt werden. Dies mag zum ein an der unzureichenden Anpassung des Schwingkreises liegen oder auch zum anderen an der Hochohmigkeit der gedruckten Leiterbahnen auf dem Keramiksubstrat. 
+Mit drei, beziehungsweise zwei diskreten Kondensatoren wurden die Kapazitäten $C1$ und $C2$ aufgebaut. Dies wurde auf einer separaten, zwischen Spule und Keramikschaltung gelöteten Platine aufgebaut. Der fertige selbstentworfene Aufbau wurde mit einer geringen Last von $47 \Omega$ auf die von Texas Instruments bereitgestellte Schaltung\footnote{bq500110EVM-688, Sendeeinheit} gesetzt und getestet. Die Reproduzierbarkeit wies noch Defizite auf, so konnte noch nicht sichergestellt werden, dass bei jedem Aufsetzen der Empfängerschaltung eine stabile Verbindung zustande kommt. Weiter können noch keine niederohmigen Lasten ($<50 \Omega$) an das Modul gekoppelt werden. Dies mag zum ein an der unzureichenden Anpassung des Schwingkreises liegen oder auch zum anderen an der Hochohmigkeit der gedruckten Leiterbahnen auf dem Keramiksubstrat. 
 \section{Energiebereitstellung}
 \label{chap:4.2}
 Da die Markttauglichkeit bei diesem Projekt eine wesentliche Rolle spielt, wird eine weitverbreitete, einfach zu realisierende und auch günstige Methode gesucht um die Energie für die Elektronik des eingebetteten Moduls bereitzustellen.
@@ -234,107 +705,107 @@ Nach hinreichendem Vergleich fiel die Wahl des zu verwendenden Bausteins auf den
 Berechnungsschritte nach Datenblatt \citep{BQ24100}
 \begin{eqnarray}
 \Delta I_L &=& I_{Charge} \cdot I_{Charge^{Ripple}}\\
-\Delta I_L &=& 1,33 A \cdot 30 \% = 0,4A
+\Delta I_L &=& 1,33 \text{A} \cdot 30 \% = 0,4\text{A}
 \end{eqnarray}
 \begin{eqnarray}
 L_{OUT}&=&\frac{V_{BAT} \cdot \left( V_{INMAX} - V_{BAT} \right)}{V_{INMAX} \cdot f \cdot \Delta I_L}\\
 \nonumber\\
-L_{OUT}&=&\frac{4,2V \cdot \left(5V-4,2V\right)}{5V \cdot 1,1 \cdot 10^6 \frac{1}{s} \cdot 0,4A}\\
+L_{OUT}&=&\frac{4,2\text{V}\cdot \left(5\text{V}-4,2\text{V}\right)}{5\text{V} \cdot 1,1 \cdot 10^6 \frac{1}{\text{s}} \cdot 0,4\text{A}}\\
 \nonumber\\
-L_{OUT}&=&\frac{3,36 V^2}{2,2 \cdot 10^6  \frac{VA}{s}} = 1,527 \mu \frac{Vs}{A} = 1,527 \mu H
+L_{OUT}&=&\frac{3,36 \text{V}^2}{2,2 \cdot 10^6  \frac{\text{VA}}{\text{s}}} = 1,527 \mu \frac{\text{Vs}}{\text{A}} = 1,527 \mu \text{H}
 \end{eqnarray}
-Da das Hybridlabor der Hochschule Landshut während des Aufbaus Induktivitäten mit $6,2\mu H$ im Lager hatte, wurde folgende Rechnung zur Anpassung vorgenommen:
+Da das Hybridlabor der Hochschule Landshut während des Aufbaus Induktivitäten mit 6,2$\mu$H im Lager hatte, wurde folgende Rechnung zur Anpassung vorgenommen:
 \begin{eqnarray}
 \Delta I_L&=&\frac{V_{BAT} \cdot \left( V_{INMAX} - V_{BAT} \right)}{V_{INMAX} \cdot f \cdot L_{OUT}}\\
 \nonumber\\
-\Delta I_L&=&\frac{4,2V \cdot \left(5V-4,2V\right)}{5V \cdot 1,1 \cdot 10^6 \frac{1}{s} \cdot 6,2 \cdot 10^{-6} \frac{Vs}{A}} \\
+\Delta I_L&=&\frac{4,2\text{V} \cdot \left(5\text{V}-4,2\text{V}\right)}{5\text{V} \cdot 1,1 \cdot 10^6 \frac{1}{\text{s}} \cdot 6,2 \cdot 10^{-6} \frac{\text{Vs}}{\text{A}}} \\
 \nonumber\\
-\Delta I_L& = & \frac{3,36 V^2}{34,1 \frac{V^2s}{sA}}=0,0985A = 98,5mA\\
+\Delta I_L& = & \frac{3,36 \text{V}^2}{34,1 \frac{\text{V}^2\text{s}}{\text{sA}}}=0,0985\text{A} = 98,5\text{mA}\\
 \end{eqnarray}
 Resultierender Spitzenstrom $I_{IPK}$ an der Induktivität:
 \begin{eqnarray}
 I_{IPK} &=& I_{OUT}+\frac{\Delta I_L}{2}\\
 \nonumber\\
-I_{IPK}&=& 1,33A + \frac{0,0985A}{2} = 1,379 A
+I_{IPK}&=& 1,33\text{A} + \frac{0,0985\text{A}}{2} = 1,379 \text{A}
 \end{eqnarray}
-Die ideale Ausgangskapazität berechnet sich über eine optimale Resonanzfrequenz von $16kHz$. Grundsätzlich bewegt sich die zulässige Frequenz zwischen $8kHz$ und $32kHz$ laut Datenblatt \citep{BQ24100}. 
+Die ideale Ausgangskapazität berechnet sich über eine optimale Resonanzfrequenz von 16kHz. Grundsätzlich bewegt sich die zulässige Frequenz zwischen 8kHz und 32kHz laut Datenblatt \citep{BQ24100}. 
 \begin{eqnarray}
 f_O&=&\frac{1}{2 \pi \sqrt{L_{OUT} \cdot C_{OUT}}}\\
 C_{OUT}&=&\frac{1}{4 \pi^2 \cdot f_O^2 \cdot L_{OUT}}\\
-C_{OUT}&=&\frac{1}{4 \pi^2 \cdot \left( 16 \cdot 10^3 \frac{1}{s} \right)^2 \cdot 6,2 \cdot 10^{-6} \frac{Vs}{A}}\\
-C_{OUT}&=&1,595 \cdot 10^{-5} \frac{As}{V} \Rightarrow 16 \mu F
+C_{OUT}&=&\frac{1}{4 \pi^2 \cdot \left( 16 \cdot 10^3 \frac{1}{\text{s}} \right)^2 \cdot 6,2 \cdot 10^{-6} \frac{\text{Vs}}{\text{A}}}\\
+C_{OUT}&=&1,595 \cdot 10^{-5} \frac{\text{As}}{\text{V}} \Rightarrow 16 \mu \text{F}
 \end{eqnarray}
-Wieder wurde Aufgrund von Lagerbeständen eine andere Kapazität gewählt: $10 \mu F$ 
+Wieder wurde Aufgrund von Lagerbeständen eine andere Kapazität gewählt: 10$\mu$F 
 \begin{eqnarray}
 f_O&=&\frac{1}{2 \pi \sqrt{L_{OUT} \cdot C_{OUT}}}\\
-f_O&=&\frac{1}{2 \pi \sqrt{6,2 \cdot 10^{-6} \frac{Vs}{A} \cdot 10 \cdot 10^{-5} \frac{As}{V}}}\\
-f_O&=& 20,212kHz
+f_O&=&\frac{1}{2 \pi \sqrt{6,2 \cdot 10^{-6} \frac{\text{Vs}}{\text{A}} \cdot 10 \cdot 10^{-5} \frac{\text{As}}{\text{V}}}}\\
+f_O&=& 20,212\text{kHz}
 \end{eqnarray}
-Die Resonanzfrequenz der passiven Leistungsbauteile am Schaltungsausgang liegen mit rund $20kHz$ noch innerhalb des gültigen Bereichs.\\
-Der angelegte Speisestrom für den Ladevorgang wird vom IC über einen Shunt-Widerstand $\left( R_{SNS} \right)$ bestimmt. Dieser wird über geforderten Ladestrom $\left( I_{CHARGE} \right)$ und einer Shuntspannung $\left( V_{RSNS} \right)$ dimensioniert. Die Shuntspannung sollte laut Vorgabe zwischen $100mV$ und $200mV$ betragen. Für die Berechnung wurde daher ein arithmetisches Mittel von $150mV$ gewählt.
+Die Resonanzfrequenz der passiven Leistungsbauteile am Schaltungsausgang liegen mit rund 20kHz noch innerhalb des gültigen Bereichs.\\
+Der angelegte Speisestrom für den Ladevorgang wird vom IC über einen Shunt-Widerstand $\left( R_{SNS} \right)$ bestimmt. Dieser wird über geforderten Ladestrom $\left( I_{CHARGE} \right)$ und einer Shuntspannung $\left( V_{RSNS} \right)$ dimensioniert. Die Shuntspannung sollte laut Vorgabe zwischen 100mV und 200mV betragen. Für die Berechnung wurde daher ein arithmetisches Mittel von 150mV gewählt.
 \begin{eqnarray}
 R_{SNS}&=&\frac{V_{RSNS}}{I_{CHARGE}}\\
 \nonumber\\
-R_{SNS}&=&\frac{150mV}{1,33A} = 0,1128 \Omega \Rightarrow 0,1 \Omega \\
+R_{SNS}&=&\frac{150\text{mV}}{1,33\text{A}} = 0,1128 \Omega \Rightarrow 0,1 \Omega \\
 \nonumber\\
 &&\textrm{resultierende Shuntspannung} \nonumber \\
 &&\textrm{bei einem Widerstand von } 0,1 \Omega : \nonumber \\
 \nonumber\\
-V_{RSNS}&=&R_{SNS} \cdot I_{CHARGE} = 0,1 \Omega \cdot 1,33A \Rightarrow 133mV
+V_{RSNS}&=&R_{SNS} \cdot I_{CHARGE} = 0,1 \Omega \cdot 1,33\text{A} \Rightarrow 133\text{mV}
 \end{eqnarray}
 Berechnung der Verlustleistung am Shuntwiderstand:
 \begin{eqnarray}
 P_{RSNS}&=& I_{CHARGE}^2 \cdot R_{SNS}\\
-P_{RSNS}&=& \left( 1,33A \right)^2 \cdot 0,1 \Omega = 176,9mW
+P_{RSNS}&=& \left( 1,33\text{A} \right)^2 \cdot 0,1 \Omega = 176,9\text{mW}
 \end{eqnarray}
 Die Steuerwiderstände für die Stromgrenzen berechnen sich wie folgt:
 \begin{eqnarray}
 R_{ISET1}&=&\frac{K_{ISET1} \cdot V_{ISET1}}{R_{SNS} \cdot I_{CHARGE}}\\
  \nonumber \\
-R_{ISET1}&=&\frac{1000 \frac{V}{A} \cdot 1,0V}{0,1\Omega \cdot 1,33A}\\
+R_{ISET1}&=&\frac{1000 \frac{\text{V}}{\text{A}} \cdot 1,0\text{V}}{0,1\Omega \cdot 1,33\text{A}}\\
  \nonumber \\
-R_{ISET1}&=&7,5k\Omega
+R_{ISET1}&=&7,5\text{k}\Omega
 \end{eqnarray}
 \begin{eqnarray}
 R_{ISET2}&=&\frac{K_{ISET2} \cdot V_{ISET2}}{R_{SNS} \cdot I_{PRECHARGE}}\\
  \nonumber \\
-R_{ISET2}&=&\frac{1000 \frac{V}{A} \cdot 0,1V}{0,1\Omega \cdot 0,133A}\\
+R_{ISET2}&=&\frac{1000 \frac{\text{V}}{\text{A}} \cdot 0,1\text{V}}{0,1\Omega \cdot 0,133\text{A}}\\
  \nonumber \\
-R_{ISET2}&=&7,5k\Omega
+R_{ISET2}&=&7,5\text{k}\Omega
 \end{eqnarray}
 Das IC verfügt ebenfalls über eine zeitgesteuerte Sicherheitsabschaltung. Dessen Zeitintervall wird über einen externen Kondensator eingestellt. Man geht im Allgemeinen von einer sicheren Ladezeit von 5 Stunden aus. 
 \begin{eqnarray}
 C_{TTC}&=&\frac{t_{CHARGE}}{K_{TTC}}\\
 \nonumber\\
-C_{TTC}&=&\frac{300 \text{ Minuten} }{2,6 \frac{\text{ Minuten}}{nF}}\\
+C_{TTC}&=&\frac{300 \text{ Minuten} }{2,6 \frac{\text{ Minuten}}{\text{nF}}}\\
 \nonumber\\
-C_{TTC}&=& 115,4 nF
+C_{TTC}&=& 115,4\text{ nF}
 \end{eqnarray}
-Ähnlich wie im Beispiel des Datenblatts wurde beim Versuchsaufbau der Berechnungsgrundlage ein NTC-Widerstand des Li-Ionen Akkus von $10k\Omega$  verwendet.\\
+Ähnlich wie im Beispiel des Datenblatts wurde beim Versuchsaufbau der Berechnungsgrundlage ein NTC-Widerstand des Li-Ionen Akkus von 10k$\Omega$  verwendet.\\
 \begin{eqnarray}
 \text{Mit }&& \nonumber\\
 V_{LTF}&=&\frac{V_{O(VTSB)} \cdot \%_{LTF+100}}{100}\\
 \nonumber\\
-V_{LTF}&=&\frac{3,15V \cdot 73,5\%}{100} = 2,31525V\\
+V_{LTF}&=&\frac{3,15\text{V} \cdot 73,5\%}{100} = 2,31525\text{V}\\
 \nonumber\\
 \text{und } && \nonumber\\
 V_{HTF}&=&\frac{V_{O(VTSB)} \cdot \%_{HTF+100}}{100}\\
 \nonumber\\
-V_{HTF}&=&\frac{3,15V \cdot 34,4\%}{100} = 1,0836V
+V_{HTF}&=&\frac{3,15\text{V} \cdot 34,4\%}{100} = 1,0836\text{V}
 \end{eqnarray}
-Lassen sich die begrenzenden Widerstände für die interne Sicherheitsschaltung berechnen. Als Grundlage wurden die Widerstandswerte vom Datenblatt übernommen: $RTH_{COLD} = 27,28k\Omega$ und $RTH_{HOT} = 4,912k\Omega$.
+Lassen sich die begrenzenden Widerstände für die interne Sicherheitsschaltung berechnen. Als Grundlage wurden die Widerstandswerte vom Datenblatt übernommen: $RTH_{COLD} = 27,28\text{k}\Omega$ und $RTH_{HOT} = 4,912\text{k}\Omega$.
 \begin{eqnarray}
 RT2&=&\frac{V_{O(VTSB)} \cdot RTH_{COLD} \cdot RTH_{HOT} \cdot \left( \frac{1}{V_{LTF}}-\frac{1}{V_{HTF}}\right)}{RTH_{HOT} \cdot \left( \frac{V_{O(VTSB)}}{V_{HTF}}-1\right)-RTH_{COLD} \cdot \left( \frac{V_{O(VTSB)}}{V_{LTF}}-1 \right)}\\
 \nonumber\\
-RT2&=&\frac{3,15V \cdot 27,28k\Omega \cdot4,912k\Omega \cdot \left( \frac{1}{2,31525V}-\frac{1}{1,0836V}\right)}{4,912k\Omega \cdot \left( \frac{3,15V}{1,0836V}-1\right)-27,28k\Omega \cdot \left( \frac{3,15V}{2,31525V}-1 \right)}\\
+RT2&=&\frac{3,15\text{V} \cdot 27,28\text{k}\Omega \cdot4,912\text{k}\Omega \cdot \left( \frac{1}{2,31525\text{V}}-\frac{1}{1,0836\text{V}}\right)}{4,912\text{k}\Omega \cdot \left( \frac{3,15\text{V}}{1,0836\text{V}}-1\right)-27,28\text{k}\Omega \cdot \left( \frac{3,15\text{V}}{2,31525\text{V}}-1 \right)}\\
 \nonumber\\
-RT2&=& 442,235 k \Omega \Rightarrow 442k \Omega\\
+RT2&=& 442,235 \text{k} \Omega \Rightarrow 442\text{k} \Omega\\
 \nonumber\\
 RT1&=&\frac{\frac{V_{O(VTSB)}}{V_{LTF}}-1}{\frac{1}{RT2}+\frac{1}{RTH_{COLD}}}\\
 \nonumber\\
-RT1&=&\frac{\frac{3,15V}{2,31525V}-1}{\frac{1}{442k \Omega}+\frac{1}{27,28k\Omega}}\\
+RT1&=&\frac{\frac{3,15\text{V}}{2,31525\text{V}}-1}{\frac{1}{442\text{k} \Omega}+\frac{1}{27,28\text{k}\Omega}}\\
 \nonumber\\
-RT1&=&9,263k\Omega \Rightarrow 9,31k\Omega
+RT1&=&9,263\text{k}\Omega \Rightarrow 9,31\text{k}\Omega
 \end{eqnarray}
 \\
 \\
@@ -344,10 +815,20 @@ Ein passendes Schaltungslayout wurde mithilfe des Datenblatts \citep{BQ24100} un
 Um die Sensordaten verarbeiten zu können, wird eine Recheneinheit benötigt. Dabei sollte diese neben der Auswertung und Konvertierung auch eine Möglichkeit bereitstellen, Daten drahtlos zu verschicken. Bei der drahtlosen Datenübertragung war eine weitere Maßgabe, dass diese auf einem lizenzfreien ISM\footnote{Industrial Scientific Medical} seine Nachrichten verschickt. In Europa liegen diese auf den Frequenzen 433MHz, 868MHz und 2,4GHz (es gibt noch weitere ISM-Frequenzbereiche, diese sind allerdings die Gängigsten). Durch eine Vorauswahl von einem Mitarbeiter der Firma SRI\footnote{Sri Radio Systems GmbH; \url{http://www.sri.de/}} wurde der Mikrocontroller CC2541\footnote{\url{http://www.ti.com/product/cc2541}} für erste Layouttests bestimmt. Mithilfe des Controllerdatenblatts \citep{CC2541} wurde eine grundlegende Schaltung aufgebaut. Diese ist in Teilbereiche zu untergliedern:
 \begin{itemize}
 \item
-Eingangsschutzbeschaltung: Überstrom-/Kurzschlussstromschutz durch eine sogenannte "`resetable Fuse"'\footnote{ein temperaturabhängiger Widerstand, der ab einer gewissen Stromstärke sprungartig hochohmiger wird}, Verpolschutz
+Eingangsschutzbeschaltung:  "`resetable Fuse"'\footnote{ein temperaturabhängiger Widerstand, zu deutsch: selbstrückstellende Sicherung}, Verpolschutz
 \item
-
+DC/DC-Wandler: TPS62730 plus Peripherie
+\item
+Mikrocontroller CC2541 mit integrierter Transmitter-Einheit
+\item
+Balun\footnote{Balanced to unbalanced} plus Antennenkupplung und diskreter Antenne
 \end{itemize}
+Diese Teilgebiete sollen nun im Folgenden noch einzeln näher erklärt werden.
+\subsubsection{Eingangsschutzbeschaltung}
+Die Eingangsschutzbeschaltung besteht im Wesentlichen aus zwei Komponenten. Zuerst wäre da die "`resetable Fuse"' welche einen zureichenden Schutz gegenüber Überströme bietet. Diese könnten im ungünstigsten Fall den speisenden Akku irreparabel beschädigen oder diesen zerstören. Die selbstrückstellende Sicherung ist im Grunde ein PTC-Widerstand\footnote{Positive Temperature Coefficient; Wert steigt mit steigender Temperatur}. Allerdings hat dieser eine sprungförmige Kennlinie, d. h. ab einem Schwellenwert wird der Widerstand hochohmig, sodass die gesamte Spannung der Schaltung an der Sicherung abfällt.\\
+Der zweite Teil wird zum Schutz der elektronischen Schaltung vor Verpolung benötigt. Die Schutzelektronik besteht aus einem P-Kanal-MOSFET\footnote{Metal Oxid Semiconductor Field Effect Transistor} und einem 10k$\Omega$ Widerstand, der dessen Gate-Eingang vor Leistungsspitzen schützt. Die Funktion ist folgende: Damit der Transistor durchschaltet, muss dessen Source ein positiveres elektrisches Potential haben, als das Gate. Letzteres wird grundsätzlich über den Widerstand auf Massepotential gezogen. Bei richtig gepoltem Anschluss des Akkus leitet die Body-oder Bulk-Diode und das positive Potential der Akkuspannung liegt somit auch an Source an. Der Transistor steuert in Folge dessen auf. Bei Verpolung liegt am Gate grundsätzlich das höhere Potential an und auch die Body-Diode sperrt den Stromfluss. Die Schaltung hinter diesem Schutz bleibt im Fehlerfall unbehelligt. 
+\subsubsection{DC/DC Wandler}
+Da der CC2541 Baustein unabhängig von der Speisespannung nahezu die gleiche Stromaufnahme hat \citep[vgl. S. 21]{CC2541} wird von der Firma Texas Instruments der Einsatz eines TPS62730 Abwärtswandlers vorgeschlagen. Dieser wandelt eingehende Spannungen von 1,9V bis 3,9V auf eine feste Spannung von 2,10V um.
 \subsection{Sensorik}
 Zentrales Element der Schaltung des Fußmoduls des Projekts "`MedLast"' ist der Druckaufnehmer. Erste Versuche die Druckbelastung über die Kapazitätsänderung von Piezoelementen erwiesen sich als äußerst schwierig. Die Problematik bei dieser Messmethode besteht darin, dass sie aufgrund der Flüchtigkeit der geringen Ladung und der Empfindlichkeit gegenüber parasitären Effekten äußerst aufwendig betrieben werden muss, um repräsentative und reproduzierbare Ergebnisse zu erzielen. Als parasitäre Effekte spielen hier unter anderem Luftfeuchte, Beleuchtung und die Umgebungstemperatur eine entscheidende Rolle. Bei ausführlichen Belastungstests im Bereich bis 200N konnten keine zufriedenstellenden Ergebnisse erzielt werden \citep{Jobstmann2012}. \newline
 Darum wurde die Messmethode auf piezoresistive Dehnungsmessstreifen\footnote{kurz: DMS} geändert. Diese Technologie bietet auch den Vorteil, dass aufgrund der eigenen Verarbeitung im Hybridlabor der Hochschule Landshut das Layout beliebig angepasst werden kann. Da generell davon ausgegangen wurde, dass der Widerstand des DMS sich sowohl vergrößern als auch verkleinern kann, musste das Messverfahren dementsprechend ausgelegt sein. Gemessen wird nicht über eine Kelvin-Messschaltung\footnote{auch bekannt als Vierleitermessung} sondern über eine als Wheatstonesche Brücke bekannte Messschaltung. Dabei wird der betreffende DMS in eine Brückenschaltung, genauer in eine Viertelmessbrücke, eingesetzt. Dies hat zum Vorteil, dass bei richtiger Anpassung der restlichen drei Teilwiderstände der Schaltung, sich an den Messpunkten eine Spannungsdifferenz von $0V$ bei Ruhe einstellt. Aus diesem Grund sollte der zu verwendende A/D\footnote{Analog-Digital}-Wandler die differentielle Spannungsmessung beherrschen oder von vornherein speziell für Messbrückenauswertung ausgelegt sein. Da eine weitere Maßgabe die Auflösung der Wandlung darstellt, wurde explizit nach einem Konverter mit mindestens 16-Bit Auflösung gesucht.\\
