@@ -29,6 +29,7 @@
 \usepackage[german]{babel}
 \usepackage{helvet}
 \usepackage{amsmath}
+\usepackage{hyperref}
 \usepackage{amssymb}
 \usepackage{gensymb}
 \usepackage{picinpar}
@@ -191,7 +192,7 @@ Die Werkstoffstabilität ist auch in Frage zu stellen. Während der Messung ist 
 Weiter lassen sich die Ergebnisse der einzelnen Prüflinge unterscheiden:
 \begin{itemize}
 \item
-CeramTec, P502, einschichtiger Piezo: Unter steigender Belastung verläuft die dazu korrespondierende Kapazitätskurve wie eine Exponentialfunktion mit negativem Exponenten. Weiter ist dieser während der Messung bei einer nicht mehr nachvollziehbaren Belastung zerbrochen. Die Reproduzierbarkeit einzelner Messergebnisse ist nahezu ausgeschlossen.
+CeramTec, P502, einschichtiger Piezo: Bei steigender Belastung verläuft die dazu korrespondierende Kapazitätskurve wie eine Exponentialfunktion mit negativem Exponenten. Weiter ist dieser während der Messung bei einer nicht mehr nachvollziehbaren Belastung zerbrochen. Die Reproduzierbarkeit einzelner Messergebnisse ist nahezu ausgeschlossen.
 \item
 CeramTec, P505, Mehrschichtiger Piezo: Auch bei diesem Piezoelement verläuft unter steigender Belastung die dazugehörige Kapazitätskurve monoton fallend. Weiter wurde auch hier eine hohe Abhängigkeit von äußeren Einflüssen festgestellt.
 \item
@@ -409,7 +410,7 @@ Da die vorhergehenden Messungen mit dem einfach aufgebauten Piezoelement nicht d
 \end{itemize}
 Weiter wurden bei diesen Messungen die Zuleitungen nicht auf dem Stack direkt aufgelötet, da dies den Messvorgang an sich unmöglich gemacht hätte. Stattdessen wurden Keramikträger als lose Verbindung der Messleitungen zum Piezoelement vewendet. Dadurch kann es bei geringer mechanischer Belastung zu Verfälschungen gekommen sein, da der Kontakt zwischen Stack und Keramik unzureichend war.
 \subsubsection{Messung Piezo-Stack, ohne Entladungsmaßnahme}
-Bei dieser ersten Vermessung des kapazitiven Verhaltens des Piezostacks unter Druckbelastung in elektrischer Feldrichtung wurde eine Entspannungszeit der Kunststoffbacken des Schraubstocks von 2 Minuten berücksichtigt. Es wurde lediglich der Piezo ohne zusätzlichen Parallel- oder Serienwiderstand vermessen. Die auffällig abweichenden Anfangswerte in Abbildung \vref{fig:2.6} sind auf den schlechten Kontakt zwischen Keramikplättchen und Stack bei geringer Druckbelastung zurückzuführen. Die aufgenommenen Werte sind in Tabelle \vref{tab:2.6} zu finden.
+Bei dieser ersten Vermessung des kapazitiven Verhaltens des Piezostacks unter Druckbelastung in elektrischer Feldrichtung wurde eine Entspannungs-Zeit der Kunststoffbacken des Schraubstocks von 2 Minuten berücksichtigt. Es wurde lediglich der Piezo ohne zusätzlichen Parallel- oder Serienwiderstand vermessen. Die auffällig abweichenden Anfangswerte in Abbildung \vref{fig:2.6} sind auf den schlechten Kontakt zwischen Keramikplättchen und Stack bei geringer Druckbelastung zurückzuführen. Die aufgenommenen Werte sind in Tabelle \vref{tab:2.6} zu finden.
 
 \setlongtables
 \begin{longtable}{| l |l| l |}
@@ -793,7 +794,7 @@ V_{HTF}&=&\frac{V_{O(VTSB)} \cdot \%_{HTF+100}}{100}\\
 \nonumber\\
 V_{HTF}&=&\frac{3,15\text{V} \cdot 34,4\%}{100} = 1,0836\text{V}
 \end{eqnarray}
-Lassen sich die begrenzenden Widerstände für die interne Sicherheitsschaltung berechnen. Als Grundlage wurden die Widerstandswerte vom Datenblatt übernommen: $RTH_{COLD} = 27,28\text{k}\Omega$ und $RTH_{HOT} = 4,912\text{k}\Omega$.
+Lassen sich die begrenzenden Widerstände für die interne Sicherheitsschaltung berechnen. Als Grundlage wurden die Werte für die Widerstände vom Datenblatt übernommen: $RTH_{COLD} = 27,28\text{k}\Omega$ und $RTH_{HOT} = 4,912\text{k}\Omega$.
 \begin{eqnarray}
 RT2&=&\frac{V_{O(VTSB)} \cdot RTH_{COLD} \cdot RTH_{HOT} \cdot \left( \frac{1}{V_{LTF}}-\frac{1}{V_{HTF}}\right)}{RTH_{HOT} \cdot \left( \frac{V_{O(VTSB)}}{V_{HTF}}-1\right)-RTH_{COLD} \cdot \left( \frac{V_{O(VTSB)}}{V_{LTF}}-1 \right)}\\
 \nonumber\\
@@ -819,20 +820,55 @@ Eingangsschutzbeschaltung:  "`resetable Fuse"'\footnote{ein temperaturabhängige
 \item
 DC/DC-Wandler: TPS62730 plus Peripherie
 \item
-Mikrocontroller CC2541 mit integrierter Transmitter-Einheit
+System on a Chip, kurz SoC\footnote{IC, welches Mikrocontroller und komplexe Peripherie auf einem Siliziumträger vereint}, CC2541 mit integrierter Transmitter-Einheit
 \item
 Balun\footnote{Balanced to unbalanced} plus Antennenkupplung und diskreter Antenne
+\item
+Piezosignalgeber: MAS6240\footnote{\url{http://www.mas-oy.com/products/audio/mas6240/}} 
 \end{itemize}
 Diese Teilgebiete sollen nun im Folgenden noch einzeln näher erklärt werden.
 \subsubsection{Eingangsschutzbeschaltung}
 Die Eingangsschutzbeschaltung besteht im Wesentlichen aus zwei Komponenten. Zuerst wäre da die "`resetable Fuse"' welche einen zureichenden Schutz gegenüber Überströme bietet. Diese könnten im ungünstigsten Fall den speisenden Akku irreparabel beschädigen oder diesen zerstören. Die selbstrückstellende Sicherung ist im Grunde ein PTC-Widerstand\footnote{Positive Temperature Coefficient; Wert steigt mit steigender Temperatur}. Allerdings hat dieser eine sprungförmige Kennlinie, d. h. ab einem Schwellenwert wird der Widerstand hochohmig, sodass die gesamte Spannung der Schaltung an der Sicherung abfällt.\\
 Der zweite Teil wird zum Schutz der elektronischen Schaltung vor Verpolung benötigt. Die Schutzelektronik besteht aus einem P-Kanal-MOSFET\footnote{Metal Oxid Semiconductor Field Effect Transistor} und einem 10k$\Omega$ Widerstand, der dessen Gate-Eingang vor Leistungsspitzen schützt. Die Funktion ist folgende: Damit der Transistor durchschaltet, muss dessen Source ein positiveres elektrisches Potential haben, als das Gate. Letzteres wird grundsätzlich über den Widerstand auf Massepotential gezogen. Bei richtig gepoltem Anschluss des Akkus leitet die Body-oder Bulk-Diode und das positive Potential der Akkuspannung liegt somit auch an Source an. Der Transistor steuert in Folge dessen auf. Bei Verpolung liegt am Gate grundsätzlich das höhere Potential an und auch die Body-Diode sperrt den Stromfluss. Die Schaltung hinter diesem Schutz bleibt im Fehlerfall unbehelligt. 
 \subsubsection{DC/DC Wandler}
-Da der CC2541 Baustein unabhängig von der Speisespannung nahezu die gleiche Stromaufnahme hat \citep[vgl. S. 21]{CC2541} wird von der Firma Texas Instruments der Einsatz eines TPS62730 Abwärtswandlers vorgeschlagen. Dieser wandelt eingehende Spannungen von 1,9V bis 3,9V auf eine feste Spannung von 2,10V um.
+Da der CC2541 Baustein unabhängig von der Speisespannung nahezu die gleiche Stromaufnahme hat \citep[vgl. S. 21]{CC2541} wird von der Firma Texas Instruments der Einsatz eines TPS62730 Abwärtswandlers vorgeschlagen. Dieser wandelt eingehende Spannungen von 1,9V bis 3,9V auf eine feste Spannung von 2,10V um.  Durch die geringen Verluste durch den hohen Wirkungsgrad des Spannungswandlers (ca. 86\% am aktuellen Arbeitspunkt) bleibt die anfallende Leistung Eingangs- sowie Ausgangsseitig relativ gleich. Dadurch kann resultierend die Stromaufnahme vor dem TPS62730 reduziert werden. Zur Veranschaulichung folgende Beispielrechnung mit Zahlen aus dem Datenblatt:
+\begin{eqnarray}
+\text{Active-Mode RX,}&&\nonumber\\
+\text{ ohne TPS62730}&&\nonumber\\
+&:&17,9\text{mA}\nonumber\\
+\text{Active-Mode RX,}&&\nonumber\\
+\text{ mit TPS62730}&&\nonumber\\
+&:&14,7\text{mA}\nonumber\\
+\nonumber\\
+P_{Controllereingang}&=&U \cdot I\\
+P_{Controllereingang}&=&2,1\text{V} \cdot 17,9 \text{mA}\\
+P_{Controllereingang}&=&37,59 \text{mW}\\
+\nonumber\\
+P_{Wandlereingang}&=& U \cdot I\\
+P_{Wandlereingang}&=&3\text{V} \cdot 14,7 \text{mA}\\
+P_{Wandlereingang}&=&44,1 \text{mW}\\
+\nonumber\\
+\eta&=&\frac{37,59\text{mW}}{44,1\text{mW}}\\
+\eta&=&0,85
+\end{eqnarray}
+Wie die Rechnung zeigt, bestätigt sich die Vorüberlegung und der 85\%ige Wirkungsgrad fällt mit einen Mehraufwand an Leistung von 6,51mW kaum ins Gewicht. Gravierender ist dabei die Ersparnis in der Stromstärke um 3,2mA. Diese hat eine rechnerische Verlängerung der Akkulaufzeit um 17,8\% zur Folge.
+\subsubsection{System on a Chip}
+Der CC2541 SoC vereint einen Mikrocontroller mit 8051-Architektur und eine Radiotransmitter-Einheit, welche eine Funkverbindung auf dem 2,4GHz ISM-Band erzeugt. Er ist die zentrale Verarbeitungseinheit des Systems und beherbergt die Arbitrierung der Messdatenverarbeitung und die Datenübermittlung.  Theoretisch könnte man mit diesem Chip auch Bluetooth-Übertragungen aufbauen. Da aber hierfür Lizenzgebühren anfallen würden, wurden im Projekt erst proprietäre Protokolle zum Erstellen einer Funkverbindung angestrebt. Dies ist allerdings Aufgabe einer anderen Abschlussarbeit. Programmiert wird der SoC über eine TI\footnote{Texas Instruments}-Schnittstelle, welche mit deren CC-Debugger\footnote{\url{http://www.ti.com/tool/cc-debugger}} kompatibel ist. Zur Programmierung sind nähere Informationen in Kapitel \vref{Software} zu finden. Zu der peripheren Beschaltung kann man noch auf die zwei Quarze eingehen. Diese geben zum einen den Arbeitstakt im aktiven Modus vor (der 32MHz Quarz), zum anderen gibt es für den Low-Power-Mode\footnote{kurz: LPM} einen 32,768kHz Quarz. Dieser birgt den Vorteil, dass bei niedrigeren Taktfrequenzen deutlich weniger Leistung benötigt wird. Weiter wurden vier Portpins (P0.0 - P0.4) zum etwaigen Erweitern der Funktionalität herausgeführt. 
+\subsubsection{Balun}
+Der Balun samt Filter wurde von dem Referenzdesign übernommen. So konnte die Berechnung der Bauteilwerte umgangen werden. Die Leitungsdimensionierung wurde mit der Software TXLine\footnote{\url{http://www.awrcorp.com/products/}\\\url{optional-products/tx-line-transmission-line-calculator}} vorgenommen. Mit diesem Programm lässt sich ohne größere Kenntnis der Berechnungen die Dimension der Leiterbahnführung bestimmen. Abbildung \vref{TXLine} zeigt als Beispiel die Leiterbahnbreitenberechnung für diese Schaltung.
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Bilder/TXLine.png}
+\caption{Programm TXLine; Berechnung der Leiterbahnbreite}
+\label{TXLine}
+\end{figure}
+\subsubsection{Piezosignalgeber}
+Als zusätzliches Element soll die Schaltung über einen akustischen Signalgeber Warnhinweise an den Patienten bei akuter Überbelastung ausgeben. Hierfür soll ein Piezobuzzer, wie er beispielsweise in Weckern oder digitalen Armbanduhren verwendet, wird angefügt werden. Der nötigen Spannungshub an dem hochohmigen Eingangswiderstand des Piezokristalls wird über einen Treiberbaustein erzeugt. Der MAS6240 befindet sich seit Längerem im Hybridlabor der Hochschule Landshut im Einsatz. Lediglich die korrekte Ansteuerung über Software fehlte bisher für eine erfolgreiche Inbetriebnahme. Das IC hat eine integrierte dreistufige Ladungspumpe, welche die Eingangsspannung von 3V auf 18$\text{V}_{pp}$ hochzieht. Das Signal wird einfach durch Anlegen der passenden Wechselspannung im für den Menschen hörbaren Bereich erzeugt. Für dieses Projekt wird über eine Zuleitung vom Mikrocontroller eine 4kHz Rechteckspannung angelegt. Diese Frequenz hat weiter den Vorteil, dass sie im psychoakustisch optimalen Bereich der menschlichen Wahrnehmung liegt \citep{Psych}. Hinzukommen noch zwei Steuerleitungen, welche für gewöhnlich ebenfalls vom SoC angesteuert werden sollen, allerdings spielt bei diesem Testaufbau vorerst die Stromaufnahme keine allzu große Rolle. Darum wurden diese Steuereingänge für dauerhaften Betrieb schaltungstechnisch auf High-Pegel gelegt. Weiter enthalten Rechtecksignale Oberschwingungen, die für den Menschen ab einem gewissen Klirrfaktor als unangenehm empfunden werden. Dieser Effekt ist besonders für Warnsignale sehr hilfreich.
+\subsubsection{Fazit}
+Da sich im Laufe grundlegender Messungen einer anderen Abschlussarbeit herausgestellt hat, dass 2,4GHz äußerst ungünstig als Übertragungsfrequenz für Funkverbindungen in Körpernähe ist, wurde der Aufbau dieses Moduls wieder verworfen und ist somit obsolet. Die Funkverbindung wurde nicht getestet und eine Verbindung mit der Sensorik kam nicht zustande. Lediglich die Ansteuerung und das Layout des Piezotreiberbausteins  wird für zukünftige weiterführende Arbeiten als Grundlage wiederverwendet werden. Ansonsten ist konnten alle erstrebten Funktionen des Moduls erfolgreich im autarken Betrieb validiert werden.
 \subsection{Sensorik}
-Zentrales Element der Schaltung des Fußmoduls des Projekts "`MedLast"' ist der Druckaufnehmer. Erste Versuche die Druckbelastung über die Kapazitätsänderung von Piezoelementen erwiesen sich als äußerst schwierig. Die Problematik bei dieser Messmethode besteht darin, dass sie aufgrund der Flüchtigkeit der geringen Ladung und der Empfindlichkeit gegenüber parasitären Effekten äußerst aufwendig betrieben werden muss, um repräsentative und reproduzierbare Ergebnisse zu erzielen. Als parasitäre Effekte spielen hier unter anderem Luftfeuchte, Beleuchtung und die Umgebungstemperatur eine entscheidende Rolle. Bei ausführlichen Belastungstests im Bereich bis 200N konnten keine zufriedenstellenden Ergebnisse erzielt werden \citep{Jobstmann2012}. \newline
-Darum wurde die Messmethode auf piezoresistive Dehnungsmessstreifen\footnote{kurz: DMS} geändert. Diese Technologie bietet auch den Vorteil, dass aufgrund der eigenen Verarbeitung im Hybridlabor der Hochschule Landshut das Layout beliebig angepasst werden kann. Da generell davon ausgegangen wurde, dass der Widerstand des DMS sich sowohl vergrößern als auch verkleinern kann, musste das Messverfahren dementsprechend ausgelegt sein. Gemessen wird nicht über eine Kelvin-Messschaltung\footnote{auch bekannt als Vierleitermessung} sondern über eine als Wheatstonesche Brücke bekannte Messschaltung. Dabei wird der betreffende DMS in eine Brückenschaltung, genauer in eine Viertelmessbrücke, eingesetzt. Dies hat zum Vorteil, dass bei richtiger Anpassung der restlichen drei Teilwiderstände der Schaltung, sich an den Messpunkten eine Spannungsdifferenz von $0V$ bei Ruhe einstellt. Aus diesem Grund sollte der zu verwendende A/D\footnote{Analog-Digital}-Wandler die differentielle Spannungsmessung beherrschen oder von vornherein speziell für Messbrückenauswertung ausgelegt sein. Da eine weitere Maßgabe die Auflösung der Wandlung darstellt, wurde explizit nach einem Konverter mit mindestens 16-Bit Auflösung gesucht.\\
-All diese Kriterien wurden von dem Baustein ADS1232 von Texas Instruments erfüllt. Dieser verfügt über 24-Bit Auflösung und ist speziell für Brückenschaltungen ausgelegt \citep{ADS1232}. Als weiteren Vorteil beinhaltet dieses IC bereits einen internen Temperatursensor der einen der Unterpunkte der Anforderungen an die Arbeit erfüllt.\\
+Zentrales Element der Schaltung des Fußmoduls des Projekts "`MedLast"' ist der Druckaufnehmer. Erste Versuche die Druckbelastung über die Kapazitätsänderung von Piezoelementen erwiesen sich als äußerst schwierig. Die Problematik bei dieser Messmethode besteht darin, dass sie aufgrund der Flüchtigkeit der geringen Ladung und der Empfindlichkeit gegenüber parasitären Effekten äußerst aufwendig betrieben werden muss, um repräsentative und reproduzierbare Ergebnisse zu erzielen. Als parasitäre Effekte spielen hier unter anderem Luftfeuchte, Beleuchtung und die Umgebungstemperatur eine entscheidende Rolle. Bei ausführlichen Belastungstests im Bereich bis 200N konnten keine zufriedenstellenden Ergebnisse erzielt werden \citep{Jobstmann2012}. Darum wurde die Messmethode auf piezoresistive Dehnungsmessstreifen\footnote{kurz: DMS} geändert. Diese Technologie bietet auch den Vorteil, dass aufgrund der eigenen Verarbeitung im Hybridlabor der Hochschule Landshut das Layout beliebig angepasst werden kann. Da generell davon ausgegangen wurde, dass der Widerstand des DMS sich sowohl vergrößern als auch verkleinern kann, musste das Messverfahren dementsprechend ausgelegt sein. Gemessen wird nicht über eine Kelvin-Messschaltung\footnote{auch bekannt als Vierleitermessung} sondern über eine als Wheatstonesche Brücke bekannte Messschaltung. Dabei wird der betreffende DMS in eine Brückenschaltung, genauer in eine Viertelmessbrücke, eingesetzt. Dies hat zum Vorteil, dass bei richtiger Anpassung der restlichen drei Teilwiderstände der Schaltung, sich an den Messpunkten eine Spannungsdifferenz von $0V$ bei Ruhe einstellt. Aus diesem Grund sollte der zu verwendende A/D\footnote{Analog-Digital}-Wandler die differentielle Spannungsmessung beherrschen oder von vornherein speziell für Messbrückenauswertung ausgelegt sein. Da eine weitere Maßgabe die Auflösung der Wandlung darstellt, wurde explizit nach einem Konverter mit mindestens 16-Bit Auflösung gesucht.\\
+All diese Kriterien wurden von dem Baustein ADS1232 von Texas Instruments erfüllt. Dieser verfügt über 24-Bit Auflösung und ist speziell für rein resistive Brückenschaltungen ausgelegt \citep{ADS1232}. Als weiteren Vorteil beinhaltet dieses IC bereits einen internen Temperatursensor der einen der Unterpunkte der Anforderungen an die Arbeit erfüllt.\\
 Ein erster Schaltungsentwurf wurde mithilfe des an Hochschule Landshut vorhandenen Leiterplatten-Prototypers\footnote{LPKF C60} auf Platine gebracht. Dabei wurden alle Konfigurationsmöglichkeiten sowie Ein- und Ausgänge über Jumper und Stiftleisten nach außen geführt:
 \begin{itemize}
 \item
@@ -852,9 +888,13 @@ Eingänge für beide analogen Spannungsaufnehmer AIN1/AIN2
 \end{itemize}
 Da bei der Prototypenschaltung keine allzu gravierenden Spannungs- oder Stromimpulse an der Versorgungsspannung auftreten, können die digitale und die analoge Speisung ebenfalls über einen Jumper zusammengeschlossen werden. Zu Testzwecken wurde eine Viertelbrücke mit einem Potentiometer als variablen Widerstand diskret auf die Platine gebracht. Diese kann über Jumper an den Controller angebunden werden. Für die digitale Anbindung, beispielsweise an einen Mikrocontroller, wird das SPI-Protokoll verwendet. Dabei ist hinzuzufügen, dass lediglich die MISO\footnote{Master Input Slave Output}- und SCK\footnote{Serial Clock}-Leitungen benötigt werden. Zusätzlich verfügt das IC einen PDWN\footnote{Power Down} Eingang, über den der Baustein in einen Ruhemodus versetzt werden kann.\\
 Der Testaufbau wurde weiter dahingehend modifiziert, dass es mit einem experimentellen Sensormodul von Frau Engelsberger, basierend auf einem LTCC-Stahl Verbundwerkstoff, optimale Ergebnisse liefert. Dementsprechend wurde die auf dem Modul befindliche Viertelbrücke aufgetrennt und das Potentiometer entfernt. Dieses wurde durch das Sensormodul ersetzt. Weiter wurden die Widerstände der restlichen Brücke an den Sensor angepasst.
+\chapter{Software}
+\label{Software}
 \bibliography{literatur}
 \bibliographystyle{alpha}
 \end{document}
+
+
 
 
 
