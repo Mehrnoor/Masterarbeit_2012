@@ -34,6 +34,7 @@
 \contentsline {subsubsection}{Balun}{43}{section*.23}
 \contentsline {subsubsection}{Piezosignalgeber}{43}{section*.25}
 \contentsline {subsubsection}{Fazit}{45}{section*.26}
-\contentsline {subsection}{\numberline {5.3.2}Sensorik}{45}{subsection.5.3.2}
-\contentsline {chapter}{\numberline {6}Software}{48}{chapter.6}
-\contentsline {chapter}{Literaturverzeichnis}{49}{chapter*.27}
+\contentsline {subsection}{\numberline {5.3.2}CC430F6137}{45}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Sensorik}{47}{subsection.5.3.3}
+\contentsline {chapter}{\numberline {6}Software}{50}{chapter.6}
+\contentsline {chapter}{Literaturverzeichnis}{51}{chapter*.27}
