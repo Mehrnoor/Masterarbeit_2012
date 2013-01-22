@@ -107,6 +107,27 @@
   url = {http://www.ti.com/lit/ds/symlink/cc2541.pdf}
 }
 
+@BOOK{CC2541_full,
+  title = {swru191c CC2540/41 System-on-Chip Solution for
+	
+	2.4-GHz Bluetooth ® low energy Applications
+	
+	User's Guide},
+  publisher = {Texas Instruments Incorporated},
+  year = {2012},
+  author = {Texas Instruments},
+  address = { Post Office Box 655303, Dallas, Texas 75265},
+  note = {\\
+	
+	\url{http://www.ti.com/lit/ug/swru191c/swru191c.pdf}},
+  howpublished = {Datasheet},
+  language = {English},
+  organization = {Texas Instruments Incorporated},
+  owner = {sjobstm},
+  timestamp = {2012.10.09},
+  url = {http://www.ti.com/lit/ug/swru191c/swru191c.pdf}
+}
+
 @BOOK{bq500110EVM-688,
   title = {bq500110EVM-688 Evaluation Module},
   publisher = {Texas Instruments Incorporated},
@@ -169,7 +190,7 @@
   url = {http://www.linear.com/product/LTC3108}
 }
 
-@BOOK{,
+@BOOK{Psych,
   title = {Taschenbuch der Angewandten Psychoakustik},
   publisher = {Springer Technik},
   year = {1998},

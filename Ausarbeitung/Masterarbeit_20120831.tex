@@ -39,6 +39,9 @@
 \usepackage[german]{varioref}
 \usepackage{natbib}
 \usepackage{url}
+\usepackage{color, listings}
+\definecolor{brown}{cmyk}{0,0.81,1,0.60}
+\definecolor{lightgray}{cmyk}{0.05,0.05,0.05,0.01}
 %\usepackage{cite}
 %\usepackage[round]{natbib}
 %\bibliographystyle{alphadin}
@@ -104,11 +107,29 @@
 \begin{document}
 \maketitle
 \setcounter {page}{1}
+\def\chapterpagestyle{fancy}
 \tableofcontents
 \listoffigures
-
-\def\chapterpagestyle{fancy}
-
+\listoftables
+\lstset{language =C}
+\lstset{basicstyle =\ttfamily \color{black}\small,
+keywordstyle =\bfseries \color{blue},
+commentstyle =\color{red},
+numbers=left,
+tabsize=2,
+showspaces=false,           % Leerzeichen anzeigen ?
+showtabs=false,             % Tabs anzeigen ?
+extendedchars=true,         %
+breaklines=true,            % Zeilen werden Umgebrochen
+xleftmargin=17pt,
+framexleftmargin=17pt,
+framexrightmargin=5pt,
+ framexbottommargin=4pt,
+backgroundcolor=\color{lightgray},
+showstringspaces=false      % Leerzeichen in Strings anzeigen ? 
+numberstyle = \color{brown},
+stringstyle =\itshape \color{green},
+captionpos=b}
 \chapter{Einleitung}
 \pagenumbering{arabic}
 Die moderne Schulmedizin ist mittlerweile an einem Punkt angelangt, an dem die biochemischen Prozesse innerhalb des Körpers als nahezu komplett erfasst gelten. Die Mechanismen der Informationsweitergabe über die Nervenbahnen, die Belastbarkeit der Anatomie oder die Zerlegungsprozesse des Stoffwechsels sind als solche weitestgehend erforscht. Wie jedoch in jedem Forschungsbereich bedeutet dies auch, dass die Lernkurve beziehungsweise die Anzahl der Ergebnisse an innovativen Erkenntnissen drastisch über die letzten Jahrzehnte abnehmen. Weiter lässt sich feststellen, dass die Fortschritte der modernen Medizin sich hauptsächlich auf die Innovationen aus den Bereichen der Pharmazie und der Medizintechnik berufen. So ermöglichen intelligente Kamerasysteme eine bessere Überwachung von Operationen am schlagenden Herzen oder die Abnahme von elektrischen Nervensignalen eine Steuerung von kybernetischen Prothesen.\\
@@ -888,11 +909,11 @@ Der Piezosignalgeber wurde für den ersten Prototypen weggelassen. Bei erfolgrei
 \item
 der Abwärtswandler wurde aufgrund der mangelnden Empfehlung durch TI nicht integriert. Dieser soll aber beim nächsten Layout ebenfalls als Option bestückbar sein.
 \end{itemize}
-Die einzelnen 
-
+Die einzelnen Baugruppen sind nach demselben Schema wie dem des Modul des CC2541 aufgebaut. So wurde der Balun und dessen Dimensionierung wieder aus dem Referenz-Design von TI übernommen und die Leiterbahnbreite mit TXLine berechnet. 
+Die Verifizierung des Aufbaus konnte aufgrund eines Layoutfehlers am Quarz des CC2541 nicht durchgeführt werden. Es steht ein Redesign für das Schaltungslayout zum Zeitpunkt dieser Arbeit noch aus. 
 \subsection{Sensorik}
 \label{Sensorik}
-Zentrales Element der Schaltung des Fußmoduls des Projekts "`MedLast"' ist der Druckaufnehmer. Erste Versuche die Druckbelastung über die Kapazitätsänderung von Piezoelementen erwiesen sich als äußerst schwierig. Die Problematik bei dieser Messmethode besteht darin, dass sie aufgrund der Flüchtigkeit der geringen Ladung und der Empfindlichkeit gegenüber parasitären Effekten äußerst aufwendig betrieben werden muss, um repräsentative und reproduzierbare Ergebnisse zu erzielen. Als parasitäre Effekte spielen hier unter anderem Luftfeuchte, Beleuchtung und die Umgebungstemperatur eine entscheidende Rolle. Bei ausführlichen Belastungstests im Bereich bis 200N konnten keine zufriedenstellenden Ergebnisse erzielt werden \citep{Jobstmann2012}. Darum wurde die Messmethode auf piezoresistive Dehnungsmessstreifen\footnote{kurz: DMS} geändert. Diese Technologie bietet auch den Vorteil, dass aufgrund der eigenen Verarbeitung im Hybridlabor der Hochschule Landshut das Layout beliebig angepasst werden kann. Da generell davon ausgegangen wurde, dass der Widerstand des DMS sich sowohl vergrößern als auch verkleinern kann, musste das Messverfahren dementsprechend ausgelegt sein. Gemessen wird nicht über eine Kelvin-Messschaltung\footnote{auch bekannt als Vierleitermessung} sondern über eine als Wheatstonesche Brücke bekannte Messschaltung. Dabei wird der betreffende DMS in eine Brückenschaltung, genauer in eine Viertelmessbrücke, eingesetzt. Dies hat zum Vorteil, dass bei richtiger Anpassung der restlichen drei Teilwiderstände der Schaltung, sich an den Messpunkten eine Spannungsdifferenz von $0V$ bei Ruhe einstellt. Aus diesem Grund sollte der zu verwendende A/D\footnote{Analog-Digital}-Wandler die differentielle Spannungsmessung beherrschen oder von vornherein speziell für Messbrückenauswertung ausgelegt sein. Da eine weitere Maßgabe die Auflösung der Wandlung darstellt, wurde explizit nach einem Konverter mit mindestens 16-Bit Auflösung gesucht.\\
+Zentrales Element der Schaltung des Fußmoduls des Projekts "`MedLast"' ist der Druckaufnehmer. Erste Versuche die Druckbelastung über die Kapazitätsänderung von Piezoelementen erwiesen sich als äußerst schwierig. Die Problematik bei dieser Messmethode besteht darin, dass sie aufgrund der Flüchtigkeit der geringen Ladung und der Empfindlichkeit gegenüber parasitären Effekten äußerst aufwendig betrieben werden muss, um repräsentative und reproduzierbare Ergebnisse zu erzielen. Als parasitäre Effekte spielen hier unter anderem Luftfeuchte, Beleuchtung und die Umgebungstemperatur eine entscheidende Rolle. Bei ausführlichen Belastungstests im Bereich bis 200N konnten keine zufriedenstellenden Ergebnisse erzielt werden \citep{Jobstmann2012}. Darum wurde die Messmethode auf piezoresistive Dehnungsmessstreifen\footnote{kurz: DMS} geändert. Diese Technologie bietet auch den Vorteil, dass aufgrund der eigenen Verarbeitung im Hybridlabor der Hochschule Landshut das Layout beliebig angepasst werden kann. Da generell davon ausgegangen wurde, dass der Widerstand des DMS sich sowohl vergrößern als auch verkleinern kann, musste das Messverfahren dementsprechend ausgelegt sein. Gemessen wird nicht über eine Kelvin-Messschaltung\footnote{auch bekannt als Vierleitermessung} sondern über eine als Wheatstonesche Brücke bekannte Messschaltung. Dabei wird der betreffende DMS in eine Brückenschaltung, genauer in eine Viertelmessbrücke, eingesetzt. Dies hat zum Vorteil, dass bei richtiger Anpassung der restlichen drei Teilwiderstände der Schaltung, sich an den Messpunkten eine Spannungsdifferenz von $0V$ bei Ruhe einstellt. Aus diesem Grund sollte der zu verwendende A/D\footnote{Analog-Digital}-Wandler die differentielle Spannungsmessung beherrschen oder von vornherein speziell für Messbrückenauswertung ausgelegt sein. Da eine weitere Maßgabe die Auflösung der Wandlung darstellt, wurde explizit nach einem Konverter mit mindestens 12-Bit Auflösung gesucht.\\
 All diese Kriterien wurden von dem Baustein ADS1232 von Texas Instruments erfüllt. Dieser verfügt über 24-Bit Auflösung und ist speziell für rein resistive Brückenschaltungen ausgelegt \citep{ADS1232}. Als weiteren Vorteil beinhaltet dieses IC bereits einen internen Temperatursensor der einen der Unterpunkte der Anforderungen an die Arbeit erfüllt.\\
 Ein erster Schaltungsentwurf wurde mithilfe des an Hochschule Landshut vorhandenen Leiterplatten-Prototypers\footnote{LPKF C60} auf Platine gebracht. Dabei wurden alle Konfigurationsmöglichkeiten sowie Ein- und Ausgänge über Jumper und Stiftleisten nach außen geführt:
 \begin{itemize}
@@ -915,6 +936,19 @@ Da bei der Prototypenschaltung keine allzu gravierenden Spannungs- oder Stromimp
 Der Testaufbau wurde weiter dahingehend modifiziert, dass es mit einem experimentellen Sensormodul von Frau Engelsberger, basierend auf einem LTCC-Stahl Verbundwerkstoff, optimale Ergebnisse liefert. Dementsprechend wurde die auf dem Modul befindliche Viertelbrücke aufgetrennt und das Potentiometer entfernt. Dieses wurde durch das Sensormodul ersetzt. Weiter wurden die Widerstände der restlichen Brücke an den Sensor angepasst.
 \chapter{Software}
 \label{Software}
+Für diverse Testläufe und die Auswertung der Sensordaten des AD1232-Bausteins sowie der Ansteuerung der erweiterten Peripherie werden verschiedene Programme benötigt. Unter Peripherie versteht man im Rahmen dieser Arbeit den Piezotreiber und die Interruptsteuerung von externen Signalen. Trotz der verschiedenen Entwicklungsumgebungen haben alle geschriebenen Programme als gemeinsame Sprache \textit{C}. In den folgenden Unterkapiteln werden nur die eigens für diese Arbeit erstellten Routinen und Subroutinen vorgestellt. Falls ein proprietärer Softwarerahmen oder eine Bibliothek vom Hersteller verwendet wurde, ist dies an entsprechender Stelle ausdrücklich erwähnt.
+\section{Frequenzgenerierung}
+Zur Frequenzgenerierung wurde vorerst als Zielbaustein der CC2541 aufgrund des bestehenden Hardware-Aufbaus (vergleiche Kapitel \vref{CC2541}) in den Vordergrund gerückt. Zum Erstellen wurde die Entwicklungsumgebung IAR Embedded Workbench IDE for 8051\footnote{\url{http://www.iar.com/en/Products/IAR-Embedded-Workbench/8051/}} verwendet. Zuerst wurden die grundlegenden Strukturen der Clock-Generierung, der Timer-Funktion und die der Port-Adressierung mithilfe des User's Guide \citep{CC2541_full} ausreichend eruiert. Um den Code auch für Dritte möglichst lesbar zu halten, wurden statt einfachen hexadezimalen Werten zur Registerkonfiguration lesbare Akronyme in einer separaten Header-Datei erstellt. Der ganze Code wurde wiederum mit Kommentaren versehen um einen schnellen Überblick über dessen Funktion wiederzugeben. 
+
+\begin {lstlisting}
+for (int i = 2; i < ++i; i--)
+{
+	printf (" Noch %d Minuten ", i);
+} // Kommentar
+\end{lstlisting}
+
+\section{Sensorauswertung \& ISR}
+
 \bibliography{literatur}
 \bibliographystyle{alpha}
 \end{document}
