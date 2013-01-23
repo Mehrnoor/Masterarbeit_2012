@@ -110,25 +110,26 @@
 \def\chapterpagestyle{fancy}
 \tableofcontents
 \listoffigures
+\lstlistoflistings
 \listoftables
 \lstset{language =C}
 \lstset{basicstyle =\ttfamily \color{black}\small,
 keywordstyle =\bfseries \color{blue},
-commentstyle =\color{red},
+commentstyle =\color{green},
 numbers=left,
-tabsize=2,
+tabsize=4,
 showspaces=false,           % Leerzeichen anzeigen ?
 showtabs=false,             % Tabs anzeigen ?
 extendedchars=true,         %
 breaklines=true,            % Zeilen werden Umgebrochen
-xleftmargin=17pt,
-framexleftmargin=17pt,
+xleftmargin=27pt, %17pt
+framexleftmargin=27pt, %17pt
 framexrightmargin=5pt,
- framexbottommargin=4pt,
+framexbottommargin=4pt,
 backgroundcolor=\color{lightgray},
 showstringspaces=false      % Leerzeichen in Strings anzeigen ? 
-numberstyle = \color{brown},
-stringstyle =\itshape \color{green},
+%numberstyle = \color{brown},
+stringstyle =\itshape \color{red},
 captionpos=b}
 \chapter{Einleitung}
 \pagenumbering{arabic}
@@ -903,7 +904,7 @@ Es wurden dieses mal gezielt Portpins für die SPI-Verbindung und für den Inter
 \item
 Es ist kein Low-Power Quarz (32,768kHz) implementiert.
 \item
-Es wurde auf die Option einer diskret angebrachten Antenne verzichtet. Stattdessen befindet sich zum Testen eine Kupplung für Antennen mit Koaxial-Anschluss.
+Es wurde auf die Option einer diskret angebrachten Antenne verzichtet. Stattdessen befindet sich zum Testen eine Kupplung für Antennen mit koaxialem Anschluss.
 \item
 Der Piezosignalgeber wurde für den ersten Prototypen weggelassen. Bei erfolgreichem Aufbau eines Moduls, welches die grundlegenden Funktionen beherrscht wird dieser wieder mit auf die Platine aufgenommen.
 \item
@@ -938,17 +939,24 @@ Der Testaufbau wurde weiter dahingehend modifiziert, dass es mit einem experimen
 \label{Software}
 Für diverse Testläufe und die Auswertung der Sensordaten des AD1232-Bausteins sowie der Ansteuerung der erweiterten Peripherie werden verschiedene Programme benötigt. Unter Peripherie versteht man im Rahmen dieser Arbeit den Piezotreiber und die Interruptsteuerung von externen Signalen. Trotz der verschiedenen Entwicklungsumgebungen haben alle geschriebenen Programme als gemeinsame Sprache \textit{C}. In den folgenden Unterkapiteln werden nur die eigens für diese Arbeit erstellten Routinen und Subroutinen vorgestellt. Falls ein proprietärer Softwarerahmen oder eine Bibliothek vom Hersteller verwendet wurde, ist dies an entsprechender Stelle ausdrücklich erwähnt.
 \section{Frequenzgenerierung}
-Zur Frequenzgenerierung wurde vorerst als Zielbaustein der CC2541 aufgrund des bestehenden Hardware-Aufbaus (vergleiche Kapitel \vref{CC2541}) in den Vordergrund gerückt. Zum Erstellen wurde die Entwicklungsumgebung IAR Embedded Workbench IDE for 8051\footnote{\url{http://www.iar.com/en/Products/IAR-Embedded-Workbench/8051/}} verwendet. Zuerst wurden die grundlegenden Strukturen der Clock-Generierung, der Timer-Funktion und die der Port-Adressierung mithilfe des User's Guide \citep{CC2541_full} ausreichend eruiert. Um den Code auch für Dritte möglichst lesbar zu halten, wurden statt einfachen hexadezimalen Werten zur Registerkonfiguration lesbare Akronyme in einer separaten Header-Datei erstellt. Der ganze Code wurde wiederum mit Kommentaren versehen um einen schnellen Überblick über dessen Funktion wiederzugeben. 
+Zur Frequenzgenerierung wurde vorerst als Zielbaustein der CC2541 aufgrund des bestehenden Hardware-Aufbaus (vergleiche Kapitel \vref{CC2541}) in den Vordergrund gerückt. Zum Erstellen wurde die Entwicklungsumgebung IAR Embedded Workbench IDE for 8051\footnote{\url{http://www.iar.com/en/Products/IAR-Embedded-Workbench/8051/}} verwendet. Zuerst wurden die grundlegenden Strukturen der Clock-Generierung, der Timer-Funktion und die der Port-Adressierung mithilfe des User's Guide \citep{CC2541_full} ausreichend eruiert. Um den Code auch für Dritte möglichst lesbar zu halten, wurden statt einfachen hexadezimalen Werten zur Registerkonfiguration lesbare Akronyme in einer separaten Header-Datei erstellt. Diese findet man ab Seite \pageref{CC2541_porting_defines}. Der ganze Code wurde wiederum mit Kommentaren versehen um einen schnellen Überblick über dessen Funktion wiederzugeben. Auf Seite \pageref{CC2541_main} findet man die Hauptroutine. Von Zeile \texttt{6} bis \texttt{8} wird als Taktquelle für den Prozessor der externe Quarz eingestellt. Die Port-Konfiguration wurde in der Passage von \texttt{10} bis \texttt{13} modifiziert. Dabei wurde die zweite alternative Portbelegung für den Timerausgang vorgenommen. Timer 1 wird in Zeile \texttt{15} mit \texttt{MODULU} zum einfachen Hochzählen bis zu einem festgelegten Wert (Zeile \texttt{22} bis \texttt{24}) konfiguriert. Mit den Passagen \texttt{22}, \texttt{26} bis \texttt{28} wird ein Puls-Breiten-moduliertes\footnote{PWM: Puls Width Modulation} Signal mit 50\% Taktverhältnis erzeugt. 
+\newpage
+\lstinputlisting[caption={main.c, Umgebung IAR Embedded Workbench for 8051},label=CC2541_main]{main.c}
+\newpage
+\lstinputlisting[caption={porting\_defines.h, Umgebung IAR Embedded Workbench for 8051},label=CC2541_porting_defines]{porting_defines.h}
 
-\begin {lstlisting}
-for (int i = 2; i < ++i; i--)
-{
-	printf (" Noch %d Minuten ", i);
-} // Kommentar
-\end{lstlisting}
 
 \section{Sensorauswertung \& ISR}
-
+Um die Funktion des Sensors festzustellen wurde zunächst eine Plattform gewählt, deren Funktion sich bewährt hat. Somit wurde der AD1232 mit dem 8051 Mikrocontroller Board\footnote{C8051F020 von SiLabs, 8-Bit Mikrocontroller} der Hochschule Landshut in Betrieb genommen. Dies hatte den Vorteil, dass Messwerte über eine bereits im Vorfeld angelegte Code-Bibliothek auf dem LCD\footnote{Liquid Crystal Display} der Zusatzplatine ohne großen Programmieraufwand ausgegeben werden kann. Darum werden im Folgenden auch nur die für den Sensor relevanten Teile erläutert. Auf Seite \pageref{CC430_SPI} werden die Routinen zur Sensordatenverarbeitung der Quelldatei \texttt{SPI.c} dargestellt. Der String am Anfang dient zur etwaigen Ausgabe auf dem LC-Display. Die \lstinline$union$ vereint die einzelnen empfangen 8-Bit Fragmente des ausgelesenen Wertes des 24-Bit A/D-Wandlers zu einem \lstinline$ unsigned long$-Wert (\lstinline{longre}). Über Präprozessor-Anweisungen kann eine Vorselektion der unterschiedlichen Programmabschnitte erzielt werden (\lstinline$MV_OUT, UV_OUT, TEMP, EVAL_BOARD$). So spart man sich einen Großteil des Programmcodes. Darum kann auch eine Vielzahl an Variationen der Signalaufbereitung in eine Quelldatei untergebracht werden, ohne die maximale Codegröße von 4kByte zu überschreiten. Diese ist von der lizenzfreien Version der Entwicklungsumgebung $\mu$Vision4 von Keil vorgegeben. Im Unterprogramm \lstinline{void wandlascii_signed(unsigned int e)} wird unabhängig von der Vorselektion der empfangene AD-Wert in \texttt{ASCII}-Zeichen umgewandelt. Lediglich die arithmetische Aufbereitung ist unterschiedlich. Ebenfalls ist eine Vorzeichenanalyse allen gemein, diese wird über Bitmanipulation durchgeführt: \lstinline$ken5[x] = (e > 0x7FFF) ? 0x2D : 0x2B;$. Über den Aufruf der Subroutine wird über das Polling-Verfahren der 24-Bit Wert des A/D-Wandlers eingelesen. Dies geschieht über 4 in Reihe folgende Aufrufe einer 8-Bit Empfangsschleife. \\
+In der Headerdatei \texttt{dependencies.h} auf Seite \pageref{CC430_dependencies} werden die Anweisungen für den Präprozessor definiert. Dazu kommen noch Kalibrationswerte für den internen Temperatursensor des AD1232, welche durch empirische Analyse festgelegt wurden.
+Nach erfolgreicher Inbetriebnahme des A/D-Wandlers mit dem Hochschul-Board, wurde eine Adaption auf die ez-Chronos Uhr vollzogen. Dafür wurde ein Programmbeispiel\footnote{CC430F613x Demo - USCI\_A0, SPI 3-Wire Master Increment Data\\ \url{http://www.ti.com/product/cc430f6137}\texttt{:Software/CC430F613x C Examples (IAR and CCS) (Rev. C) }} von Texas Instruments als Grundlage verwendet und dementsprechend angepasst. Um eine eventuelle weitere Portierung zu vereinfachen, beginnt die Quelldatei auf Seite \pageref{CC430_ADS1232} mit \lstinline$#define$-Anweisungen die ein schnelles Angleichen ermöglichen. Nach dem Abschalten des Watchdog-Timers in der \lstinline$void main(void)$-Routine werden die Ports gesetzt und der SPI-Port konfiguriert. Eine Besonderheit des Controllers fällt dabei auf: es ist beim Betrieb der SPI-Schnittstelle nicht nötig, alle drei Standardleitungen (MOSI, MISO, SCK) zu setzen. So kann bei PIN/PORT-Mangel auch beispielsweise ein MOSI-PIN als GPIO\footnote{General Purpose Input Output} verwendet werden, wenn über SPI ausschließlich Daten eingelesen werden. Weiter wird ein Interrupt-Eingang für den Piezo-Taster und der zugehörige Vector eingeschalten. 
+In der \lstinline$__interrupt void PORT1_ISR(void)$ (Zeile \texttt{109}) wird mit ankommenden Interrupt zuerst geprüft, ob am A/D-Wandler gültige Daten anliegen. Danach werden wie im vorhergehenden Programm für den 8051 Controller die 4 8-Bit Werte des 24-Bit ADC-Werts eingelesen.
+\newpage
+\lstinputlisting[caption={SPI.c, Umgebung $\mu$Vision4 Keil},label=CC430_SPI]{SPI.c}
+\newpage
+\lstinputlisting[caption={dependencies.h, Umgebung $\mu$Vision4 Keil},label=CC430_dependencies]{dependencies.h}
+\newpage
+\lstinputlisting[caption={ADS1232.c, Umgebung Code Composer Studio v4},label=CC430_ADS1232]{ADS1232.c}
 \bibliography{literatur}
 \bibliographystyle{alpha}
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=pdflatex 2012.9.6)  22 JAN 2013 19:58
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=pdflatex 2012.9.6)  23 JAN 2013 16:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -995,11 +995,26 @@ l.39 ...r}{\numberline {6}Software}{50}{chapter.6}
 \tf@lof=\write5
 \openout5 = `Masterarbeit_20120831.lof'.
 
- [3
+
+
+Class scrreprt Warning: Usage of deprecated \float@listhead!
+(scrreprt)              You should use the features of package `tocbasic'
+(scrreprt)              instead of \float@listhead.
+(scrreprt)              Definition of \float@listhead my be removed from
+(scrreprt)              `scrreprt' soon, so it should not be used  on input lin
+e 113.
+
+[3
+
+] (./Masterarbeit_20120831.lol)
+\tf@lol=\write6
+\openout6 = `Masterarbeit_20120831.lol'.
+
+ [4
 
 ] (./Masterarbeit_20120831.lot)
-\tf@lot=\write6
-\openout6 = `Masterarbeit_20120831.lot'.
+\tf@lot=\write7
+\openout7 = `Masterarbeit_20120831.lot'.
 
 
 (c:/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1007,7 +1022,7 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (c:/texlive/2012/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-) [4
+) [5
 
 ]
 Kapitel 1.
@@ -1022,26 +1037,26 @@ Class scrreprt Warning: \float@addtolists detected!
 
 ]
 Kapitel 2.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 141.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 142.
 
 (c:/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 141.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 142.
  [2
 
 ]
 Kapitel 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--176
+Underfull \hbox (badness 10000) in paragraph at lines 165--177
 
  []
 
 [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 186--190
+Underfull \hbox (badness 10000) in paragraph at lines 187--191
 
  []
 
@@ -1050,7 +1065,7 @@ Kapitel 4.
 [6
 
 ] [7]
-Underfull \vbox (badness 10000) detected at line 264
+Underfull \vbox (badness 10000) detected at line 265
  []
 
 [8]
@@ -1062,17 +1077,17 @@ Package epstopdf Info: Source file: <tabelle2_1_1.eps>
 (epstopdf)                    size: 7870 bytes
 (epstopdf)             Command: <repstopdf --outfile=tabelle2_1_1-eps-converted
 -to.pdf tabelle2_1_1.eps>
-(epstopdf)             \includegraphics on input line 267.
+(epstopdf)             \includegraphics on input line 268.
 Package epstopdf Info: Output file is already uptodate.
- <tabelle2_1_1-eps-converted-to.pdf, id=288, 361.35pt x 505.89pt>
+ <tabelle2_1_1-eps-converted-to.pdf, id=303, 361.35pt x 505.89pt>
 File: tabelle2_1_1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use tabelle2_1_1-eps-converted-to.pdf>
 Package pdftex.def Info: tabelle2_1_1-eps-converted-to.pdf used on input line 2
-67.
+68.
 (pdftex.def)             Requested size: 361.34912pt x 505.88875pt.
 
-Underfull \vbox (badness 10000) detected at line 300
+Underfull \vbox (badness 10000) detected at line 301
  []
 
 Package epstopdf Info: Source file: <tabelle2_1_2.eps>
@@ -1083,22 +1098,22 @@ Package epstopdf Info: Source file: <tabelle2_1_2.eps>
 (epstopdf)                    size: 7650 bytes
 (epstopdf)             Command: <repstopdf --outfile=tabelle2_1_2-eps-converted
 -to.pdf tabelle2_1_2.eps>
-(epstopdf)             \includegraphics on input line 304.
+(epstopdf)             \includegraphics on input line 305.
 Package epstopdf Info: Output file is already uptodate.
-<tabelle2_1_2-eps-converted-to.pdf, id=291, 324.21124pt x 454.69875pt>
+<tabelle2_1_2-eps-converted-to.pdf, id=306, 324.21124pt x 454.69875pt>
 File: tabelle2_1_2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use tabelle2_1_2-eps-converted-to.pdf>
 Package pdftex.def Info: tabelle2_1_2-eps-converted-to.pdf used on input line 3
-04.
+05.
 (pdftex.def)             Requested size: 324.21045pt x 454.69763pt.
  [9] [10 <./tabelle2_1_1-eps-converted-to.pdf>] [11 <./tabelle2_1_2-eps-convert
 ed-to.pdf>]
-Underfull \vbox (badness 10000) detected at line 344
+Underfull \vbox (badness 10000) detected at line 345
  []
 
 
-Underfull \vbox (badness 10000) detected at line 373
+Underfull \vbox (badness 10000) detected at line 374
  []
 
 [12]
@@ -1110,17 +1125,17 @@ Package epstopdf Info: Source file: <tabelle2_1_3.eps>
 (epstopdf)                    size: 8596 bytes
 (epstopdf)             Command: <repstopdf --outfile=tabelle2_1_3-eps-converted
 -to.pdf tabelle2_1_3.eps>
-(epstopdf)             \includegraphics on input line 377.
+(epstopdf)             \includegraphics on input line 378.
 Package epstopdf Info: Output file is already uptodate.
- <tabelle2_1_3-eps-converted-to.pdf, id=324, 324.21124pt x 454.69875pt>
+ <tabelle2_1_3-eps-converted-to.pdf, id=339, 324.21124pt x 454.69875pt>
 File: tabelle2_1_3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use tabelle2_1_3-eps-converted-to.pdf>
 Package pdftex.def Info: tabelle2_1_3-eps-converted-to.pdf used on input line 3
-77.
+78.
 (pdftex.def)             Requested size: 324.21045pt x 454.69763pt.
  [13] [14 <./tabelle2_1_3-eps-converted-to.pdf>]
-Underfull \vbox (badness 10000) detected at line 412
+Underfull \vbox (badness 10000) detected at line 413
  []
 
 Package epstopdf Info: Source file: <tabelle2_1_4.eps>
@@ -1131,17 +1146,17 @@ Package epstopdf Info: Source file: <tabelle2_1_4.eps>
 (epstopdf)                    size: 7364 bytes
 (epstopdf)             Command: <repstopdf --outfile=tabelle2_1_4-eps-converted
 -to.pdf tabelle2_1_4.eps>
-(epstopdf)             \includegraphics on input line 416.
+(epstopdf)             \includegraphics on input line 417.
 Package epstopdf Info: Output file is already uptodate.
-<tabelle2_1_4-eps-converted-to.pdf, id=341, 324.21124pt x 454.69875pt>
+<tabelle2_1_4-eps-converted-to.pdf, id=356, 324.21124pt x 454.69875pt>
 File: tabelle2_1_4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use tabelle2_1_4-eps-converted-to.pdf>
 Package pdftex.def Info: tabelle2_1_4-eps-converted-to.pdf used on input line 4
-16.
+17.
 (pdftex.def)             Requested size: 324.21045pt x 454.69763pt.
  [15] [16 <./tabelle2_1_4-eps-converted-to.pdf>]
-Underfull \vbox (badness 10000) detected at line 466
+Underfull \vbox (badness 10000) detected at line 467
  []
 
 [17]
@@ -1153,17 +1168,17 @@ Package epstopdf Info: Source file: <tabelle2_2_1.eps>
 (epstopdf)                    size: 8855 bytes
 (epstopdf)             Command: <repstopdf --outfile=tabelle2_2_1-eps-converted
 -to.pdf tabelle2_2_1.eps>
-(epstopdf)             \includegraphics on input line 470.
+(epstopdf)             \includegraphics on input line 471.
 Package epstopdf Info: Output file is already uptodate.
- <tabelle2_2_1-eps-converted-to.pdf, id=364, 324.21124pt x 454.69875pt>
+ <tabelle2_2_1-eps-converted-to.pdf, id=379, 324.21124pt x 454.69875pt>
 File: tabelle2_2_1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use tabelle2_2_1-eps-converted-to.pdf>
 Package pdftex.def Info: tabelle2_2_1-eps-converted-to.pdf used on input line 4
-70.
+71.
 (pdftex.def)             Requested size: 324.21045pt x 454.69763pt.
  [18] [19 <./tabelle2_2_1-eps-converted-to.pdf>]
-Underfull \vbox (badness 10000) detected at line 516
+Underfull \vbox (badness 10000) detected at line 517
  []
 
 Package epstopdf Info: Source file: <tabelle2_2_2.eps>
@@ -1174,17 +1189,17 @@ Package epstopdf Info: Source file: <tabelle2_2_2.eps>
 (epstopdf)                    size: 7653 bytes
 (epstopdf)             Command: <repstopdf --outfile=tabelle2_2_2-eps-converted
 -to.pdf tabelle2_2_2.eps>
-(epstopdf)             \includegraphics on input line 520.
+(epstopdf)             \includegraphics on input line 521.
 Package epstopdf Info: Output file is already uptodate.
-<tabelle2_2_2-eps-converted-to.pdf, id=386, 324.21124pt x 454.69875pt>
+<tabelle2_2_2-eps-converted-to.pdf, id=402, 324.21124pt x 454.69875pt>
 File: tabelle2_2_2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use tabelle2_2_2-eps-converted-to.pdf>
 Package pdftex.def Info: tabelle2_2_2-eps-converted-to.pdf used on input line 5
-20.
+21.
 (pdftex.def)             Requested size: 324.21045pt x 454.69763pt.
 
-Underfull \vbox (badness 10000) detected at line 560
+Underfull \vbox (badness 10000) detected at line 561
  []
 
 [20] [21 <./tabelle2_2_2-eps-converted-to.pdf>]
@@ -1196,18 +1211,18 @@ Package epstopdf Info: Source file: <tabelle2_2_3.eps>
 (epstopdf)                    size: 8822 bytes
 (epstopdf)             Command: <repstopdf --outfile=tabelle2_2_3-eps-converted
 -to.pdf tabelle2_2_3.eps>
-(epstopdf)             \includegraphics on input line 564.
+(epstopdf)             \includegraphics on input line 565.
 Package epstopdf Info: Output file is already uptodate.
 
-<tabelle2_2_3-eps-converted-to.pdf, id=403, 324.21124pt x 454.69875pt>
+<tabelle2_2_3-eps-converted-to.pdf, id=418, 324.21124pt x 454.69875pt>
 File: tabelle2_2_3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use tabelle2_2_3-eps-converted-to.pdf>
 Package pdftex.def Info: tabelle2_2_3-eps-converted-to.pdf used on input line 5
-64.
+65.
 (pdftex.def)             Requested size: 324.21045pt x 454.69763pt.
  [22] [23 <./tabelle2_2_3-eps-converted-to.pdf>]
-Underfull \vbox (badness 10000) detected at line 609
+Underfull \vbox (badness 10000) detected at line 610
  []
 
 Package epstopdf Info: Source file: <tabelle2_2_4.eps>
@@ -1218,17 +1233,17 @@ Package epstopdf Info: Source file: <tabelle2_2_4.eps>
 (epstopdf)                    size: 7485 bytes
 (epstopdf)             Command: <repstopdf --outfile=tabelle2_2_4-eps-converted
 -to.pdf tabelle2_2_4.eps>
-(epstopdf)             \includegraphics on input line 613.
+(epstopdf)             \includegraphics on input line 614.
 Package epstopdf Info: Output file is already uptodate.
-<tabelle2_2_4-eps-converted-to.pdf, id=426, 324.21124pt x 454.69875pt>
+<tabelle2_2_4-eps-converted-to.pdf, id=441, 324.21124pt x 454.69875pt>
 File: tabelle2_2_4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use tabelle2_2_4-eps-converted-to.pdf>
 Package pdftex.def Info: tabelle2_2_4-eps-converted-to.pdf used on input line 6
-13.
+14.
 (pdftex.def)             Requested size: 324.21045pt x 454.69763pt.
 
-Underfull \vbox (badness 10000) detected at line 652
+Underfull \vbox (badness 10000) detected at line 653
  []
 
 [24]
@@ -1240,113 +1255,119 @@ Package epstopdf Info: Source file: <tabelle2_2_5.eps>
 (epstopdf)                    size: 8790 bytes
 (epstopdf)             Command: <repstopdf --outfile=tabelle2_2_5-eps-converted
 -to.pdf tabelle2_2_5.eps>
-(epstopdf)             \includegraphics on input line 656.
+(epstopdf)             \includegraphics on input line 657.
 Package epstopdf Info: Output file is already uptodate.
- <tabelle2_2_5-eps-converted-to.pdf, id=432, 324.21124pt x 454.69875pt>
+ <tabelle2_2_5-eps-converted-to.pdf, id=447, 324.21124pt x 454.69875pt>
 File: tabelle2_2_5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use tabelle2_2_5-eps-converted-to.pdf>
 Package pdftex.def Info: tabelle2_2_5-eps-converted-to.pdf used on input line 6
-56.
+57.
 (pdftex.def)             Requested size: 324.21045pt x 454.69763pt.
  [25] [26 <./tabelle2_2_4-eps-converted-to.pdf>] [27 <./tabelle2_2_5-eps-conver
 ted-to.pdf>]
 Kapitel 5.
 
 Package pdftex.def Warning: Option `bb' does not make sense,
-(pdftex.def)                using `viewport' instead on input line 672.
+(pdftex.def)                using `viewport' instead on input line 673.
 
-<Bilder/LTC3108breakoutSSOC.pdf, id=468, 597.23125pt x 845.1575pt>
+<Bilder/LTC3108breakoutSSOC.pdf, id=483, 597.23125pt x 845.1575pt>
 File: Bilder/LTC3108breakoutSSOC.pdf Graphic file (type pdf)
 
 <use Bilder/LTC3108breakoutSSOC.pdf>
-Package pdftex.def Info: Bilder/LTC3108breakoutSSOC.pdf used on input line 672.
+Package pdftex.def Info: Bilder/LTC3108breakoutSSOC.pdf used on input line 673.
 
 (pdftex.def)             Requested size: 401.18307pt x 250.3833pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 667--676
+Underfull \hbox (badness 10000) in paragraph at lines 668--677
 
  []
 
 [28
 
 ] [29] [30 <./Bilder/LTC3108breakoutSSOC.pdf>] [31] [32] [33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 725--728
+Underfull \hbox (badness 10000) in paragraph at lines 726--729
 
  []
 
 [35] [36] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 805--807
+Underfull \hbox (badness 10000) in paragraph at lines 806--808
 
  []
 
 [38]
-Underfull \hbox (badness 10000) in paragraph at lines 831--835
+Underfull \hbox (badness 10000) in paragraph at lines 832--836
 
  []
 
-[39] [40] [41] [42] <Bilder/TXLine.png, id=636, 502.87875pt x 297.36093pt>
+[39] [40] [41] [42] <Bilder/TXLine.png, id=651, 502.87875pt x 297.36093pt>
 File: Bilder/TXLine.png Graphic file (type png)
 
 <use Bilder/TXLine.png>
-Package pdftex.def Info: Bilder/TXLine.png used on input line 883.
+Package pdftex.def Info: Bilder/TXLine.png used on input line 884.
 (pdftex.def)             Requested size: 418.25368pt x 247.31769pt.
- [43] [44 <./Bilder/TXLine.png>] [45]
-Overfull \hbox (8.58078pt too wide) in paragraph at lines 906--908
-\OT1/cmr/m/n/12 Statt-des-sen be-fin-det sich zum Te-sten ei-ne Kupp-lung f[]ur
- An-ten-nen mit Koaxial-
- []
-
-[46] [47] [48] [49]
+ [43] [44 <./Bilder/TXLine.png>] [45] [46] [47] [48]
+[49]
 Kapitel 6.
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 944.
 [50
 
-] (./Masterarbeit_20120831.bbl [51] [52
+] [51]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 944.
+ (./main.c
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1.
+) [52] (./porting_defines.h [53])
+Underfull \hbox (badness 10000) in paragraph at lines 952--952
+[]$\OT1/cmtt/m/n/10 http : / / www . ti . com / product / cc430f6137$[]:Softwar
+e/CC430F613x C Examples (IAR and
+ []
+
+[54] [55] (./SPI.c [56] [57] [58] [59] [60]) [61] (./dependencies.h) [62]
+(./ADS1232.c [63] [64] [65] [66]) (./Masterarbeit_20120831.bbl [67] [68
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 954.
- [53]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 954.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 962.
+
+[69]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 962.
  (./Masterarbeit_20120831.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 954.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 954.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 962.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 962.
 Package rerunfilecheck Info: File `Masterarbeit_20120831.out' has not changed.
-(rerunfilecheck)             Checksum: 7C2ED5CC75A20D2AD88C0F906FC36BF1;1740.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 954.
+(rerunfilecheck)             Checksum: 4FF1E2D743C3F535910BE1D73C1DA3D2;1740.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 962.
  ) 
 Here is how much of TeX's memory you used:
- 13083 strings out of 493488
- 190567 string characters out of 3144749
- 331833 words of memory out of 3000000
- 15945 multiletter control sequences out of 15000+200000
- 17986 words of font info for 61 fonts, out of 3000000 for 9000
+ 13896 strings out of 493488
+ 201986 string characters out of 3144749
+ 409183 words of memory out of 3000000
+ 16273 multiletter control sequences out of 15000+200000
+ 17818 words of font info for 60 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 50i,13n,54p,2867b,1176s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 50i,13n,54p,2867b,1872s stack positions out of 5000i,500n,10000p,200000b,50000s
 {c:/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2012/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2012/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2012/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmitt10.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi12.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi6.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.p
-fb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/tex
-live/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2012/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2012/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2012/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr8.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msl12.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texli
-ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2012/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2012/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2012/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2012/texmf-dist/fonts/type1/urw/he
-lvetic/uhvb8a.pfb>
-Output written on Masterarbeit_20120831.pdf (58 pages, 447260 bytes).
+/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi6.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi8.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texli
+ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2012/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2012/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2012/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsl12.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb><c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><
+c:/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive
+/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2012/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2012/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2012/texmf-dist/fonts/type
+1/urw/helvetic/uhvb8a.pfb>
+Output written on Masterarbeit_20120831.pdf (75 pages, 495597 bytes).
 PDF statistics:
- 859 PDF objects out of 1000 (max. 8388607)
- 747 compressed objects within 8 object streams
- 204 named destinations out of 1000 (max. 500000)
+ 1493 PDF objects out of 1728 (max. 8388607)
+ 1359 compressed objects within 14 object streams
+ 670 named destinations out of 1000 (max. 500000)
  280 words of extra memory for PDF output out of 10000 (max. 10000000)
 
