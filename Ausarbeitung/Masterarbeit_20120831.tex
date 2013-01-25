@@ -173,7 +173,7 @@ E & : & \textrm{Elektrische Feldstärke} \\
  s^{\textrm{E}}  & : & \textrm{Elastizitätskonstante, E = konstant} \\
  \varepsilon^{\textrm{T}}  & : & \textrm{Permittivität, T = konstant}\\
 \end{array}\\ \newline
-Zum Energy-Harvesting werden vorzüglich Biegebalken\footnote{im Englischen auch bekannt als Cantilever} verwendet. Diese können technologisch an die angeforderte Kraftaufnahme, die Schwingungsfrequenz und die Amplitude der resultierenden Spannung angepasst werden. Der Aufbau als Biegebalken liefert sein Optimum der Energieumwandlung bei seiner Resonanzfrequenz. Dabei unterscheidet man weiter zwischen Transversalschwingern\footnote{31-Schwingungsmodus} (Formel \ref{formel:3.3} und \ref{formel:3.4}) und Longitudinalschwingern\footnote{33-Schwingungsmodus}  (Formel \ref{formel:3.5} und \ref{formel:3.6}). 
+Zum Energy-Harvesting werden bevorzugt Biegebalken\footnote{im Englischen auch bekannt als Cantilever} verwendet. Diese können technologisch an die angeforderte Kraftaufnahme, die Schwingungsfrequenz und die Amplitude der resultierenden Spannung angepasst werden. Der Aufbau als Biegebalken liefert sein Optimum der Energieumwandlung bei seiner Resonanzfrequenz. Dabei unterscheidet man weiter zwischen Transversalschwingern\footnote{31-Schwingungsmodus} (Formel \ref{formel:3.3} und \ref{formel:3.4}) und Longitudinalschwingern\footnote{33-Schwingungsmodus}  (Formel \ref{formel:3.5} und \ref{formel:3.6}). 
 \begin{align}
 D_3 & =  \textrm{d}_{31} \cdot T_1 + \varepsilon_{33}^{\textrm{T}} \cdot E_3 \label{formel:3.3} \\
 S_1 & =  s_{11}^{\textrm{E}} \cdot T_3 + \textrm{d}_{31} \cdot E_3 \label{formel:3.4}
@@ -672,6 +672,7 @@ Als zentralen Baustein für die Erprobung von Micro-Energy-Harvesting Systemen i
 \centering
 \includegraphics[bb=3.4cm 10.6cm 17.5cm 19.4cm]{Bilder/LTC3108breakoutSSOC}
 \caption{LTC3108 Board von Ambient Sensors}
+Quelle: Stephan Jobstmann
 \label{fig:4.1}
 \end{figure}
 \subsection{Drahtlose Energieübertragung}
@@ -679,10 +680,24 @@ Als zentralen Baustein für die Erprobung von Micro-Energy-Harvesting Systemen i
 Zum Laden der internen Speicher, die in Kapitel \vref{chap:4.2} vorgestellt werden, wird eine vielfach höhere Leistung benötigt als jene, die mit den Mitteln des Energy-Harvesting bereitgestellt werden kann. Allerdings sollen bei die durch die Grundvoraussetzung festgelegten Richtlinien nicht verletzt werden. Durch den betreuenden Professor Harasim kam die Vorgabe ein Evaluations-Kit der Firma Texas Instruments genauer zu untersuchen. Dabei handelte es sich um ein System, welches aus zwei Komponenten bestand:
 \begin{itemize}
 \item
-Transmitter, Sender: bq500110EVM-688 Evaluation Module
+Transmitter, Sender: bq500110EVM-688 Evaluation Module (Abbildung \ref{BQ_transm})
 \item
-Receiver, Empfänger: bq51013EVM-725 Evaluation Module
+Receiver, Empfänger: bq51013EVM-725 Evaluation Module (Abbildung \ref{BQ_rec})
 \end{itemize}
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{Bilder/BQ_Tesla_transmitter.JPG}
+\caption{Transmitter-Modul des Evaluation-Packs}
+Quelle: Stephan Jobstmann
+\label{BQ_transm}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{Bilder/BQ_Tesla_receiver.JPG}
+\caption{Receiver-Modul des Evaluation-Packs}
+Quelle: Stephan Jobstmann
+\label{BQ_rec}
+\end{figure}
 Dieses lässt sich mithilfe einer Gleichspannungsquelle, eingestellt auf eine Speisung von 19V und einer Stromgrenze über 0,5A sehr einfach in Betrieb nehmen. Am Empfängermodul stellt sich bei passgenauer Platzierung der beiden Übertragerspulen des magnetischen Kopplungssystems eine Tätigkeit der Indikationsanzeige ein. Ein Permanentmagnet hilft beim Zentrieren der beiden Luftspulen. Laut Datenblatt \citep[vgl. S.2]{bq51013EVM-725} liefert die Beispielschaltung 5V bei 1A. Zum Testen der Kompatibilität wurde die Schaltung mit der in Kapitel \ref{chap:4.2.2} vorgestellten Ladeeinheit gekoppelt. Das erfolgreiche Zusammenarbeiten konnte reproduzierbar getestet werden.\\
 Für das Gesamtkonzept des Fußmoduls vom Projekt "`MedLast"' ist die Empfangseinheit vorrangig. Um eine passendes Zusammenspiel von proprietärer Sendeeinheit und selbstentworfener Empfangsschaltung sicherzustellen, wurde der gleiche Baustein (\textit{BQ51013}) verwendet. Allerdings wurde beim Schaltungsaufbau darauf geachtet, dass der Bauteilumfang sich auf ein Minimum reduziert. So wurde die Zusatzbeschaltung für eine eventuelle alternative bedrahtete Versorgung weggelassen. Bei dem BQ51013 handelt es sich um ein IC, welches nur in BGA\footnote{Ball Grid Array} Gehäusegröße erhältlich ist. Da dies wiederum für das Layoutdesign bedeutete, dass mit Kontaktflächengrößen von $250\mu$m gearbeitet werden muss, ergab sich eine weitere Problematik. Die typischen Leiterplattenhersteller für Prototypen und Kleinserien haben eine Vorgabe für den Mindestdurchmesser von Durchkontaktierungen mit $300\mu$m. D.h. über die üblichen Wege war es nicht ohne Mehraufwand möglich, einen Platine zu beschaffen. Da ein Durchmesser der Durchkontaktierungen von $150\mu$m als maximale Maßgabe anzusehen war, wurde für den Prototypenbau LTCC\footnote{Low Temperature Cofire Ceramic} als Schaltungsträger ausgewählt. Diese können im Hybridlabor in Dickschichttechnik selbstständig aufgebaut werden. Weiter können durch das Laserstruktur-Gerät \textit{ProtoLaser U} die Keramiksubstrate auf $15\mu$m genau geritzt und gebohrt werden.  Da LTCC im einlagigen Aufbau zu fragil wäre, wurden noch Überlegungen angestrebt um die mechanische Widerstandsfähigkeit zu erhöhen. Ein mehrlagiger Aufbau barg eine zu große Gefahr im Bezug auf die erhöhte Wahrscheinlichkeit einer unterbrochenen Durchkontaktierung. Diese steigt proportional mit der Anzahl der verwendeten Lagen LTCC. Durch einen Hinweis von Herrn Leschik wurde bei einem zweiten Versuch die LTCC-Schicht, welche den beidseitigen Schaltungsdruck aufgetragen hatte, auf eine $Al_2O_3$-Keramik auflaminiert. Diese dient als mechanisch-stabiler Träger. Nach einem ersten Fehlversuch konnten somit auf einem Substrat mit Mehrfach-Nutzen mehrere, passiv einwandfreie Schaltungen aufgebaut werden. Nach deren Bestückung per Hand und Lötung mit der Dampfphasenanlage der Hochschule Landshut wurde diese mit der Einkopplungsspule verbunden. Eine anfängliche Überlegung, diese ebenfalls auf Dickschichttechnik basierend auf LTCC zu der Schaltung zu bringen, wurde aufgrund der nicht einzuhaltenden Kriterien an die Güte der Induktivität wieder verworfen. Darum fiel die Entscheidung auf eine Empfänger-Spule, welche von der Firma Würth Elektronik genau für diesen Zweck bereitgestellt wird \citep{Spule}. Die für den Empfängerschwingkreis noch benötigten Kapazitäten wurden über folgende Formeln des Datenblatts \citep{BQ51013} dimensioniert: 
 \begin{eqnarray}
@@ -703,7 +718,14 @@ Q&=&\frac{2\pi \cdot 1\text{MHz} \cdot 0,01011\text{mH}}{0,1488 \Omega}\\
 Q&=&426,90
 \end{eqnarray}
 Als Mindestmaß wird im Datenblatt \citep[siehe S.23]{BQ51013} eine Güte von 77 festgelegt. Diese wird mit der Luftspule von Würth Elektronik weit überschritten.\\
-Mit drei, beziehungsweise zwei diskreten Kondensatoren wurden die Kapazitäten $C1$ und $C2$ aufgebaut. Dies wurde auf einer separaten, zwischen Spule und Keramikschaltung gelöteten Platine aufgebaut. Der fertige selbstentworfene Aufbau wurde mit einer geringen Last von $47 \Omega$ auf die von Texas Instruments bereitgestellte Schaltung\footnote{bq500110EVM-688, Sendeeinheit} gesetzt und getestet. Die Reproduzierbarkeit wies noch Defizite auf, so konnte noch nicht sichergestellt werden, dass bei jedem Aufsetzen der Empfängerschaltung eine stabile Verbindung zustande kommt. Weiter können noch keine niederohmigen Lasten ($<50 \Omega$) an das Modul gekoppelt werden. Dies mag zum ein an der unzureichenden Anpassung des Schwingkreises liegen oder auch zum anderen an der Hochohmigkeit der gedruckten Leiterbahnen auf dem Keramiksubstrat. 
+Mit drei, beziehungsweise zwei diskreten Kondensatoren wurden die Kapazitäten $C1$ und $C2$ aufgebaut. Dies wurde auf einer separaten, zwischen Spule und Keramikschaltung gelöteten Platine aufgebaut. Der fertige selbstentworfene Aufbau wurde mit einer geringen Last von $47 \Omega$ auf die von Texas Instruments bereitgestellte Schaltung\footnote{bq500110EVM-688, Sendeeinheit} gesetzt und getestet. Dieser ist auf Grafik \vref{self_rec} zu sehen. Die Reproduzierbarkeit wies noch Defizite auf, so konnte noch nicht sichergestellt werden, dass bei jedem Aufsetzen der Empfängerschaltung eine stabile Verbindung zustande kommt. Weiter können noch keine niederohmigen Lasten ($<50 \Omega$) an das Modul gekoppelt werden. Dies mag zum ein an der unzureichenden Anpassung des Schwingkreises liegen oder auch zum anderen an der Hochohmigkeit der gedruckten Leiterbahnen auf dem Keramiksubstrat. 
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Bilder/self_receiver.JPG}
+\caption{Receiver-Modul, hergestellt im Hybridlabor der Hochschule Landshut}
+Quelle: Stephan Jobstmann
+\label{self_rec}
+\end{figure}
 \section{Energiebereitstellung}
 \label{chap:4.2}
 Da die Markttauglichkeit bei diesem Projekt eine wesentliche Rolle spielt, wird eine weitverbreitete, einfach zu realisierende und auch günstige Methode gesucht um die Energie für die Elektronik des eingebetteten Moduls bereitzustellen.
@@ -883,17 +905,32 @@ Der Balun samt Filter wurde von dem Referenzdesign übernommen. So konnte die Be
 \centering
 \includegraphics[width=1\textwidth]{Bilder/TXLine.png}
 \caption{Programm TXLine; Berechnung der Leiterbahnbreite}
+Quelle: Stephan Jobstmann
 \label{TXLine}
 \end{figure}
 \subsubsection{Piezosignalgeber}
 Als zusätzliches Element soll die Schaltung über einen akustischen Signalgeber Warnhinweise an den Patienten bei akuter Überbelastung ausgeben. Hierfür soll ein Piezobuzzer, wie er beispielsweise in Weckern oder digitalen Armbanduhren verwendet, wird angefügt werden. Der nötigen Spannungshub an dem hochohmigen Eingangswiderstand des Piezokristalls wird über einen Treiberbaustein erzeugt. Der MAS6240 befindet sich seit Längerem im Hybridlabor der Hochschule Landshut im Einsatz. Lediglich die korrekte Ansteuerung über Software fehlte bisher für eine erfolgreiche Inbetriebnahme. Das IC hat eine integrierte dreistufige Ladungspumpe, welche die Eingangsspannung von 3V auf 18$\text{V}_{pp}$ hochzieht. Das Signal wird einfach durch Anlegen der passenden Wechselspannung im für den Menschen hörbaren Bereich erzeugt. Für dieses Projekt wird über eine Zuleitung vom Mikrocontroller eine 4kHz Rechteckspannung angelegt. Diese Frequenz hat weiter den Vorteil, dass sie im psychoakustisch optimalen Bereich der menschlichen Wahrnehmung liegt \citep{Psych}. Hinzukommen noch zwei Steuerleitungen, welche für gewöhnlich ebenfalls vom SoC angesteuert werden sollen, allerdings spielt bei diesem Testaufbau vorerst die Stromaufnahme keine allzu große Rolle. Darum wurden diese Steuereingänge für dauerhaften Betrieb schaltungstechnisch auf High-Pegel gelegt. Weiter enthalten Rechtecksignale Oberschwingungen, die für den Menschen ab einem gewissen Klirrfaktor als unangenehm empfunden werden. Dieser Effekt ist besonders für Warnsignale sehr hilfreich.
 \subsubsection{Fazit}
-Da sich im Laufe grundlegender Messungen einer anderen Abschlussarbeit herausgestellt hat, dass 2,4GHz äußerst ungünstig als Übertragungsfrequenz für Funkverbindungen in Körpernähe ist, wurde der Aufbau dieses Moduls wieder verworfen und ist somit obsolet. Die Funkverbindung wurde nicht getestet und eine Verbindung mit der Sensorik kam nicht zustande. Lediglich die Ansteuerung und das Layout des Piezotreiberbausteins  wird für zukünftige weiterführende Arbeiten als Grundlage wiederverwendet werden. Ansonsten ist konnten alle erstrebten Funktionen des Moduls erfolgreich im autarken Betrieb validiert werden.
+Da sich im Laufe grundlegender Messungen einer anderen Abschlussarbeit herausgestellt hat, dass 2,4GHz äußerst ungünstig als Übertragungsfrequenz für Funkverbindungen in Körpernähe ist, wurde der Aufbau dieses Moduls wieder verworfen und ist somit obsolet. Die Funkverbindung wurde nicht getestet und eine Verbindung mit der Sensorik kam nicht zustande. Lediglich die Ansteuerung und das Layout des Piezotreiberbausteins  wird für zukünftige weiterführende Arbeiten als Grundlage wiederverwendet werden. Ansonsten ist konnten alle erstrebten Funktionen des Moduls (Abbildung \vref{pic.CC2541} erfolgreich im autarken Betrieb validiert werden.
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Bilder/CC2541.JPG}
+\caption{Modul CC2541; Hergestellt an der Hochschule Landshut}
+Quelle: Stephan Jobstmann
+\label{pic.CC2541}
+\end{figure}
 \subsection{CC430F6137}
 Genauso wie der CC2541 in Kapitel \vref{CC2541} ist der CC430F6137 ein SoC. Nachdem Ersterer aufgrund seiner schlechten Anpassung der Funkverbindung für den Einsatzzweck für unzureichend eingestuft wurde, sind erste Versuche mit diesem Chip unternommen worden. Dabei wurde vorerst noch keine Modulplatine aufgebaut, sondern eine Entwicklungsplattform von TI verwendet: eine ez430-Chronos Uhr\footnote{\url{http://processors.wiki.ti.com/index.php/EZ430-Chronos}}. Diese kann je nach Ausführung auf einem ISM-Band eine Funkverbindung mit einer zweiten Uhr oder einer Basisstation aufbauen. Da diese Uhren bereits an der Hochschule Landshut zur Verfügung standen, wurde die Variante mit dem CC430F6137 verwendet.  Dieser ist ähnlich aufgebaut wie der bereits vorgestellte SoC, allerdings wurde hier ein CC1101\footnote{Transceiver Chip von TI: \url{http://www.ti.com/lit/ds/symlink/cc1101.pdf}} Chip implementiert, welcher auf 868MHz im ISM-Band sendet. Trotz der geringen Abmaße des 64-Pin QFN\footnote{Quadrature Flat No Lead} wurden mit Fädeldraht die Kontakte für die SPI\footnote{serial peripheral interface}-Schnittstelle und für einen Interrupteingang herausgeführt. Dieser wurde mit der im nächsten Unterkapitel (Nummer \vref{Sensorik}) beschriebenen Sensorik verbunden. Schaltungstechnisch ergab sich bei diesem Versuchsaufbau kein allzu großer Mehraufwand. Eine Besonderheit ist die Interruptsteuerung: Anforderung war eine verschleißfreie Möglichkeit den Controller in die Routine für die Datenaufnahme zu überführen. Dabei erwies sich folgender Testaufbau als zielführend:
 \begin{itemize}
 \item
-Für den Taster wurde eine Ersatzschaltung aus einem einfachen Piezobuzzer und einer dazu parallelgeschalteten Zenerdiode (Zenerspannung bei 3,3V) aufgebaut. Der durch einen Druck auf den Piezo erzeugte Spannungshub von mehreren Volt (bis zu 20V) und dessen geringe Ladungsausschüttung genügen zur Signalverarbeitung. Allerdings muss der SoC vor dem großen Spannungspegel wirksam geschützt werden. Darum befindet sich unmittelbar an dem Piezobuzzer gekoppelt eine Diode, welche den anfallenden Pegel auf maximal 3,3V herunterzieht. Da die freigesetzte Ladung des Piezokristalls nicht genügt, um die Diode im Arbeitsbereich zu betreiben, erhält man beim praktischen Versuchaufbau lediglich Spannungspegel von maximal ca. 2,1V. Dieser reicht aber immer noch aus um eine Flanke bzw. einen Pegel zur Interrupt-Generierung zu erzeugen. 
+Für den Taster wurde eine Ersatzschaltung aus einem einfachen Piezobuzzer und einer dazu parallelgeschalteten Zenerdiode (Zenerspannung bei 3,3V) aufgebaut (Siehe Abbildung \vref{pic.breakout}). Der durch einen Druck auf den Piezo erzeugte Spannungshub von mehreren Volt (bis zu 20V) und dessen geringe Ladungsausschüttung genügen zur Signalverarbeitung. Allerdings muss der SoC vor dem großen Spannungspegel wirksam geschützt werden. Darum befindet sich unmittelbar an dem Piezobuzzer gekoppelt eine Diode, welche den anfallenden Pegel auf maximal 3,3V herunterzieht. Da die freigesetzte Ladung des Piezokristalls nicht genügt, um die Diode im Arbeitsbereich zu betreiben, erhält man beim praktischen Versuchaufbau lediglich Spannungspegel von maximal ca. 2,1V. Dieser reicht aber immer noch aus um eine Flanke bzw. einen Pegel zur Interrupt-Generierung zu erzeugen. 
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Bilder/breakout.JPG}
+\caption{Modifizierte ez430-Chronos Uhr mit Piezo-Interrupt Taster und Erweiterungsstiftleisten}
+Quelle: Stephan Jobstmann
+\label{pic.breakout}
+\end{figure}
 \end{itemize}
 Weiter wurde nach dieser Modifizierung der Entwicklungsplattform auch wieder ein Aufbau in Modulbauweise angestrebt. Dieser hat grundsätzlich die selben Teilbereiche wie der Aufbau des CC2541 in Kapitel \vref{CC2541}. Folgende Unterschiede sind dennoch zu erwähnen:
 \begin{itemize}
@@ -911,12 +948,26 @@ Der Piezosignalgeber wurde für den ersten Prototypen weggelassen. Bei erfolgrei
 der Abwärtswandler wurde aufgrund der mangelnden Empfehlung durch TI nicht integriert. Dieser soll aber beim nächsten Layout ebenfalls als Option bestückbar sein.
 \end{itemize}
 Die einzelnen Baugruppen sind nach demselben Schema wie dem des Modul des CC2541 aufgebaut. So wurde der Balun und dessen Dimensionierung wieder aus dem Referenz-Design von TI übernommen und die Leiterbahnbreite mit TXLine berechnet. 
-Die Verifizierung des Aufbaus konnte aufgrund eines Layoutfehlers am Quarz des CC2541 nicht durchgeführt werden. Es steht ein Redesign für das Schaltungslayout zum Zeitpunkt dieser Arbeit noch aus. 
+Die Verifizierung des Aufbaus (Abbildung \vref{pic.CC430}) konnte aufgrund eines Layoutfehlers am Quarz des CC2541 nicht durchgeführt werden. Es steht ein Redesign für das Schaltungslayout zum Zeitpunkt dieser Arbeit noch aus. 
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Bilder/CC430.JPG}
+\caption{Modul CC430F6137; Hergestellt an der Hochschule Landshut}
+Quelle: Stephan Jobstmann
+\label{pic.CC430}
+\end{figure}
 \subsection{Sensorik}
 \label{Sensorik}
 Zentrales Element der Schaltung des Fußmoduls des Projekts "`MedLast"' ist der Druckaufnehmer. Erste Versuche die Druckbelastung über die Kapazitätsänderung von Piezoelementen erwiesen sich als äußerst schwierig. Die Problematik bei dieser Messmethode besteht darin, dass sie aufgrund der Flüchtigkeit der geringen Ladung und der Empfindlichkeit gegenüber parasitären Effekten äußerst aufwendig betrieben werden muss, um repräsentative und reproduzierbare Ergebnisse zu erzielen. Als parasitäre Effekte spielen hier unter anderem Luftfeuchte, Beleuchtung und die Umgebungstemperatur eine entscheidende Rolle. Bei ausführlichen Belastungstests im Bereich bis 200N konnten keine zufriedenstellenden Ergebnisse erzielt werden \citep{Jobstmann2012}. Darum wurde die Messmethode auf piezoresistive Dehnungsmessstreifen\footnote{kurz: DMS} geändert. Diese Technologie bietet auch den Vorteil, dass aufgrund der eigenen Verarbeitung im Hybridlabor der Hochschule Landshut das Layout beliebig angepasst werden kann. Da generell davon ausgegangen wurde, dass der Widerstand des DMS sich sowohl vergrößern als auch verkleinern kann, musste das Messverfahren dementsprechend ausgelegt sein. Gemessen wird nicht über eine Kelvin-Messschaltung\footnote{auch bekannt als Vierleitermessung} sondern über eine als Wheatstonesche Brücke bekannte Messschaltung. Dabei wird der betreffende DMS in eine Brückenschaltung, genauer in eine Viertelmessbrücke, eingesetzt. Dies hat zum Vorteil, dass bei richtiger Anpassung der restlichen drei Teilwiderstände der Schaltung, sich an den Messpunkten eine Spannungsdifferenz von $0V$ bei Ruhe einstellt. Aus diesem Grund sollte der zu verwendende A/D\footnote{Analog-Digital}-Wandler die differentielle Spannungsmessung beherrschen oder von vornherein speziell für Messbrückenauswertung ausgelegt sein. Da eine weitere Maßgabe die Auflösung der Wandlung darstellt, wurde explizit nach einem Konverter mit mindestens 12-Bit Auflösung gesucht.\\
 All diese Kriterien wurden von dem Baustein ADS1232 von Texas Instruments erfüllt. Dieser verfügt über 24-Bit Auflösung und ist speziell für rein resistive Brückenschaltungen ausgelegt \citep{ADS1232}. Als weiteren Vorteil beinhaltet dieses IC bereits einen internen Temperatursensor der einen der Unterpunkte der Anforderungen an die Arbeit erfüllt.\\
-Ein erster Schaltungsentwurf wurde mithilfe des an Hochschule Landshut vorhandenen Leiterplatten-Prototypers\footnote{LPKF C60} auf Platine gebracht. Dabei wurden alle Konfigurationsmöglichkeiten sowie Ein- und Ausgänge über Jumper und Stiftleisten nach außen geführt:
+Ein erster Schaltungsentwurf wurde mithilfe des an Hochschule Landshut vorhandenen Leiterplatten-Prototypers\footnote{LPKF C60} auf Platine gebracht, wie auf Abbildung \vref{pic.ad1232}. Dabei wurden alle Konfigurationsmöglichkeiten sowie Ein- und Ausgänge über Jumper und Stiftleisten nach außen geführt:
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Bilder/ad1232.JPG}
+\caption{AD1232 A/D-Wandler Modul mit Drucksensor auf Keramik-Stahl Verbundmaterial}
+Quelle: Stephan Jobstmann
+\label{pic.ad1232}
+\end{figure}
 \begin{itemize}
 \item
 Temperatursensor an/aus

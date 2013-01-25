@@ -23,20 +23,20 @@
 \contentsline {section}{\numberline {5.1}Energiezuf\IeC {\"u}hrung}{28}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Energy-Harvesting}{28}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2}Drahtlose Energie\IeC {\"u}bertragung}{30}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Energiebereitstellung}{33}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Superkondensator}{33}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Lithium-Ionen-Akkumulator}{34}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Arbeitsschaltung}{40}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}CC2541}{40}{subsection.5.3.1}
-\contentsline {subsubsection}{Eingangsschutzbeschaltung}{41}{section*.22}
-\contentsline {subsubsection}{DC/DC Wandler}{41}{section*.23}
-\contentsline {subsubsection}{System on a Chip}{42}{section*.24}
-\contentsline {subsubsection}{Balun}{43}{section*.25}
-\contentsline {subsubsection}{Piezosignalgeber}{43}{section*.27}
-\contentsline {subsubsection}{Fazit}{45}{section*.28}
-\contentsline {subsection}{\numberline {5.3.2}CC430F6137}{45}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Sensorik}{47}{subsection.5.3.3}
-\contentsline {chapter}{\numberline {6}Software}{50}{chapter.6}
-\contentsline {section}{\numberline {6.1}Frequenzgenerierung}{50}{section.6.1}
-\contentsline {section}{\numberline {6.2}Sensorauswertung \& ISR}{54}{section.6.2}
-\contentsline {chapter}{Literaturverzeichnis}{68}{chapter*.29}
+\contentsline {section}{\numberline {5.2}Energiebereitstellung}{34}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Superkondensator}{34}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Lithium-Ionen-Akkumulator}{36}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Arbeitsschaltung}{42}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}CC2541}{42}{subsection.5.3.1}
+\contentsline {subsubsection}{Eingangsschutzbeschaltung}{43}{section*.25}
+\contentsline {subsubsection}{DC/DC Wandler}{43}{section*.26}
+\contentsline {subsubsection}{System on a Chip}{44}{section*.27}
+\contentsline {subsubsection}{Balun}{45}{section*.28}
+\contentsline {subsubsection}{Piezosignalgeber}{45}{section*.30}
+\contentsline {subsubsection}{Fazit}{47}{section*.31}
+\contentsline {subsection}{\numberline {5.3.2}CC430F6137}{48}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Sensorik}{50}{subsection.5.3.3}
+\contentsline {chapter}{\numberline {6}Software}{55}{chapter.6}
+\contentsline {section}{\numberline {6.1}Frequenzgenerierung}{55}{section.6.1}
+\contentsline {section}{\numberline {6.2}Sensorauswertung \& ISR}{59}{section.6.2}
+\contentsline {chapter}{Literaturverzeichnis}{73}{chapter*.36}

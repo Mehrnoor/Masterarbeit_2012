@@ -14,5 +14,12 @@
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Messung 10; mit Entladung, 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand\relax }}{27}{figure.caption.20}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces LTC3108 Board von Ambient Sensors\relax }}{30}{figure.caption.21}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Programm TXLine; Berechnung der Leiterbahnbreite\relax }}{44}{figure.caption.26}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Transmitter-Modul des Evaluation-Packs\relax }}{31}{figure.caption.22}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Receiver-Modul des Evaluation-Packs\relax }}{31}{figure.caption.23}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Receiver-Modul, hergestellt im Hybridlabor der Hochschule Landshut\relax }}{35}{figure.caption.24}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Programm TXLine; Berechnung der Leiterbahnbreite\relax }}{46}{figure.caption.29}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Modul CC2541; Hergestellt an der Hochschule Landshut\relax }}{47}{figure.caption.32}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Modifizierte ez430-Chronos Uhr mit Piezo-Interrupt Taster und Erweiterungsstiftleisten\relax }}{49}{figure.caption.33}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Modul CC430F6137; Hergestellt an der Hochschule Landshut\relax }}{51}{figure.caption.34}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces AD1232 A/D-Wandler Modul mit Drucksensor auf Keramik-Stahl Verbundmaterial\relax }}{53}{figure.caption.35}
 \addvspace {10\p@ }
