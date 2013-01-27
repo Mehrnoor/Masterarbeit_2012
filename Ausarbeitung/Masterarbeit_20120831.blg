@@ -3,44 +3,77 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Masterarbeit_20120831.aux
 The style file: alpha.bst
 Database file #1: literatur.bib
-You've used 12 entries,
+Warning--to sort, need author, editor, or key in DLR
+Warning--to sort, need author, editor, or key in DLR2
+Warning--to sort, need author, editor, or key in git
+Warning--to sort, need author, editor, or key in LTC
+Warning--to sort, need author, editor, or key in tonline
+Warning--to sort, need author, editor, or key in TIBQ24100
+Warning--to sort, need author, editor, or key in multisim
+Warning--to sort, need author, editor, or key in sri
+Warning--to sort, need author, editor, or key in TICC2541
+Warning--to sort, need author, editor, or key in MAS
+Warning--to sort, need author, editor, or key in CCDEBUG
+Warning--to sort, need author, editor, or key in txline
+Warning--to sort, need author, editor, or key in ez430
+Warning--to sort, need author, editor, or key in cc1101
+Warning--to sort, need author, editor, or key in iar
+Warning--to sort, need author, editor, or key in cc430f6137
+Warning--empty author and editor in cc1101
+Warning--empty author and editor in cc430f6137
+Warning--empty author and editor in CCDEBUG
+Warning--empty author and editor in DLR
+Warning--empty author and editor in DLR2
+Warning--empty author and editor in ez430
+Warning--empty author and editor in git
+Warning--empty author and editor in iar
+Warning--empty author and editor in LTC
+Warning--empty author and editor in MAS
+Warning--empty author and editor in multisim
+Warning--empty author and editor in sri
+Warning--empty author and editor in TIBQ24100
+Warning--empty author and editor in TICC2541
+Warning--empty author and editor in tonline
+Warning--empty author and editor in txline
+You've used 28 entries,
             2543 wiz_defined-function locations,
-            627 strings with 6363 characters,
-and the built_in function-call counts, 3362 in all, are:
-= -- 305
-> -- 96
+            688 strings with 8489 characters,
+and the built_in function-call counts, 7064 in all, are:
+= -- 641
+> -- 112
 < -- 12
-+ -- 28
++ -- 29
 - -- 24
-* -- 171
-:= -- 578
-add.period$ -- 44
-call.type$ -- 12
-change.case$ -- 50
-chr.to.int$ -- 8
-cite$ -- 12
-duplicate$ -- 192
-empty$ -- 301
+* -- 427
+:= -- 1048
+add.period$ -- 92
+call.type$ -- 28
+change.case$ -- 98
+chr.to.int$ -- 23
+cite$ -- 76
+duplicate$ -- 448
+empty$ -- 765
 format.name$ -- 45
-if$ -- 691
-int.to.chr$ -- 5
+if$ -- 1523
+int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 24
-newline$ -- 71
+missing$ -- 40
+newline$ -- 151
 num.names$ -- 36
-pop$ -- 86
+pop$ -- 182
 preamble$ -- 1
-purify$ -- 72
+purify$ -- 152
 quote$ -- 0
-skip$ -- 122
+skip$ -- 278
 stack$ -- 0
-substring$ -- 84
-swap$ -- 12
+substring$ -- 212
+swap$ -- 28
 text.length$ -- 12
 text.prefix$ -- 9
 top$ -- 0
-type$ -- 48
-warning$ -- 0
+type$ -- 112
+warning$ -- 32
 while$ -- 24
-width$ -- 14
-write$ -- 173
+width$ -- 33
+write$ -- 365
+(There were 32 warnings)

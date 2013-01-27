@@ -110,7 +110,7 @@
 @BOOK{CC2541_full,
   title = {swru191c CC2540/41 System-on-Chip Solution for
 	
-	2.4-GHz Bluetooth ® low energy Applications
+	2.4-GHz Bluetooth low energy Applications
 	
 	User's Guide},
   publisher = {Texas Instruments Incorporated},
@@ -197,5 +197,183 @@
   author = {Manfred T. Kalivoda, Johannes W. Steiner},
   owner = {sjobstm},
   timestamp = {2013.01.21}
+}
+
+@BOOK{cc1101,
+  title = {cc1101.pdf},
+  publisher = {Texas Instruments Incorporated},
+  note = {\\
+	
+	\url{www.ti.com/lit/ds/symlink/cc1101.pdf}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{cc430f6137,
+  title = {MSP430 16-Bit Ultra-Low Power MCUs - RF SoC Series - CC430F6137},
+  publisher = {Texas Instruments Incorporated},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{http://www.ti.com/product/cc430f6137}\texttt{:Software/CC430F613x
+	C Examples (IAR and CCS) (Rev. C) }},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{CCDEBUG,
+  title = {Debugger and Programmer for RF-System-on-Chips - CC-Debugger},
+  publisher = {Texas Instruments Incorporated},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{http://www.ti.com/tool/cc-debugger}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{DLR,
+  title = {DLR -Institut f"ur Robotik und Mechatronik - Motion Compensation
+	in Minimally Invasive Heart Surgery},
+  publisher = {DLR},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{http://www.dlr.de/rm/desktopdefault.aspx/tabid-3830/6256_read-9016/}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{DLR2,
+  title = {Paralyzed individuals control robotic arms to reach and grasp using
+	brain computer interface},
+  publisher = {DLR},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{http://medicalxpress.com/news/2012-05-paralyzed-individuals-robotic-arms-grasp.html}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{ez430,
+  title = {EZ430-Chronos Texas Instruments Embedde Processors Wiki},
+  publisher = {Texas Instruments Incorporated},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{http://processors.wiki.ti.com/index.php/EZ430-Chronos}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{git,
+  title = {Github Repository of wa7iut},
+  publisher = {Robert Davidson},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{https://github.com/wa7iut}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{iar,
+  title = {C/C++ Compiler 8051 - IAR Embedded Workbench for 8051},
+  publisher = {IAR Systems},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{http://www.iar.com/en/Products/IAR-Embedded-Workbench/8051/}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{LTC,
+  title = {LTC3108 - Ultralow voltage Step-Up Converter and Power Manager},
+  publisher = {LTC},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{http://www.linear.com/product/LTC3108}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{MAS,
+  title = {Low Noise/EMI Piezo Buzzer Driver - Micro Analog Systems},
+  publisher = {Micro Analog Systems},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{http://www.mas-oy.com/products/audio/mas6240/}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{multisim,
+  title = {Software f"ur den Schaltungsentwurf: NI Multisim},
+  publisher = {National Instruments},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{http://www.ni.com/multisim/d/}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{sri,
+  title = {SRI - Spezialist f"ur Elektronikfertigung, Entwicklung und Lean Consulting},
+  publisher = {SRI Radio Systems GmbH},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{http://www.sri.de/}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{TIBQ24100,
+  title = {Battery Management Products - Battery Charger Solutions BQ24100},
+  publisher = {Texas Instruments Incorporated},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{https://www.ti.com/product/bq24100}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{TICC2541,
+  title = {Personal Area Networks - Bluetooth Low Energy Technology - CC2541},
+  publisher = {Texas Instruments Incorporated},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{http://www.ti.com/product/cc2541}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{tonline,
+  title = {Uelzen: Explodiertes Notebook l"ost Feuerwehreinsatz aus},
+  publisher = {T-Online},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{http://computer.t-online.de/uelzen-explodiertes-notebook-loest-feuerwehreinsatz-aus/id_42553726/index}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{txline,
+  title = {TX-Line: Transmission Line Calculator AWR Corporation},
+  publisher = {AWR Corporation},
+  year = {26. 01. 2013},
+  note = {\\
+	
+	\url{http://www.awrcorp.com/products/optional-products/tx-line-transmission-line-calculator}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
 }
 

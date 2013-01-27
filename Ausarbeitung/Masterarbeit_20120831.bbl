@@ -1,9 +1,40 @@
 \begin{thebibliography}{eGCK12}
 
+\bibitem[cc113]{cc1101}
+{\em cc1101.pdf}.
+\newblock Texas Instruments Incorporated, Stand: 26. 01. 2013.
+\newblock \\ \url{www.ti.com/lit/ds/symlink/cc1101.pdf}.
+
+\bibitem[cc413]{cc430f6137}
+{\em MSP430 16-Bit Ultra-Low Power MCUs - RF SoC Series - CC430F6137}.
+\newblock Texas Instruments Incorporated, Stand: 26. 01. 2013.
+\newblock \\
+  \url{http://www.ti.com/product/cc430f6137}\texttt{:Software/CC430F613x C
+  Examples (IAR and CCS) (Rev. C) }.
+
+\bibitem[CCD13]{CCDEBUG}
+{\em Debugger and Programmer for RF-System-on-Chips - CC-Debugger}.
+\newblock Texas Instruments Incorporated, Stand: 26. 01. 2013.
+\newblock \\ \url{http://www.ti.com/tool/cc-debugger}.
+
 \bibitem[Dem11]{Dembowski2011}
 K.~Dembowski.
 \newblock {\em Energy Harvesting f"ur die Mikroelektronik}.
 \newblock VDE Verlag GmbH, Berlin, 1. edition, 2011.
+
+\bibitem[DLR13a]{DLR}
+{\em DLR -Institut f"ur Robotik und Mechatronik - Motion Compensation in
+  Minimally Invasive Heart Surgery}.
+\newblock DLR, Stand: 26. 01. 2013.
+\newblock \\
+  \url{http://www.dlr.de/rm/desktopdefault.aspx/tabid-3830/6256_read-9016/}.
+
+\bibitem[DLR13b]{DLR2}
+{\em Paralyzed individuals control robotic arms to reach and grasp using brain
+  computer interface}.
+\newblock DLR, Stand: 26. 01. 2013.
+\newblock \\
+  \url{http://medicalxpress.com/news/2012-05-paralyzed-individuals-robotic-arms-grasp.html}.
 
 \bibitem[eGCK12]{Spule}
 W"urth~Elektronik eiSos GmbH \& Co.~KG.
@@ -16,6 +47,21 @@ W"urth~Elektronik eiSos GmbH \& Co.~KG.
 B.~Zagar E.~Schr"ufer, L.~Reindl.
 \newblock {\em Elektrische Messtechnik}.
 \newblock Hanser Verlag, 10. edition, 2012.
+
+\bibitem[ez413]{ez430}
+{\em EZ430-Chronos Texas Instruments Embedde Processors Wiki}.
+\newblock Texas Instruments Incorporated, Stand: 26. 01. 2013.
+\newblock \\ \url{http://processors.wiki.ti.com/index.php/EZ430-Chronos}.
+
+\bibitem[git13]{git}
+{\em Github Repository of wa7iut}.
+\newblock Robert Davidson, Stand: 26. 01. 2013.
+\newblock \\ \url{https://github.com/wa7iut}.
+
+\bibitem[iar13]{iar}
+{\em C/C++ Compiler 8051 - IAR Embedded Workbench for 8051}.
+\newblock IAR Systems, Stand: 26. 01. 2013.
+\newblock \\ \url{http://www.iar.com/en/Products/IAR-Embedded-Workbench/8051/}.
 
 \bibitem[Ins08]{ADS1232}
 Texas Instruments.
@@ -77,9 +123,52 @@ LTC.
   95035-7417, 2010.
 \newblock \\ \url{http://www.linear.com/product/LTC3108}.
 
+\bibitem[LTC13]{LTC}
+{\em LTC3108 - Ultralow voltage Step-Up Converter and Power Manager}.
+\newblock LTC, Stand: 26. 01. 2013.
+\newblock \\ \url{http://www.linear.com/product/LTC3108}.
+
+\bibitem[MAS13]{MAS}
+{\em Low Noise/EMI Piezo Buzzer Driver - Micro Analog Systems}.
+\newblock Micro Analog Systems, Stand: 26. 01. 2013.
+\newblock \\ \url{http://www.mas-oy.com/products/audio/mas6240/}.
+
 \bibitem[MTK98]{Psych}
 Johannes W.~Steiner Manfred T.~Kalivoda.
 \newblock {\em Taschenbuch der Angewandten Psychoakustik}.
 \newblock Springer Technik, 1998.
+
+\bibitem[mul13]{multisim}
+{\em Software f"ur den Schaltungsentwurf: NI Multisim}.
+\newblock National Instruments, Stand: 26. 01. 2013.
+\newblock \\ \url{http://www.ni.com/multisim/d/}.
+
+\bibitem[sri13]{sri}
+{\em SRI - Spezialist f"ur Elektronikfertigung, Entwicklung und Lean
+  Consulting}.
+\newblock SRI Radio Systems GmbH, Stand: 26. 01. 2013.
+\newblock \\ \url{http://www.sri.de/}.
+
+\bibitem[TIB13]{TIBQ24100}
+{\em Battery Management Products - Battery Charger Solutions BQ24100}.
+\newblock Texas Instruments Incorporated, Stand: 26. 01. 2013.
+\newblock \\ \url{https://www.ti.com/product/bq24100}.
+
+\bibitem[TIC13]{TICC2541}
+{\em Personal Area Networks - Bluetooth Low Energy Technology - CC2541}.
+\newblock Texas Instruments Incorporated, Stand: 26. 01. 2013.
+\newblock \\ \url{http://www.ti.com/product/cc2541}.
+
+\bibitem[ton13]{tonline}
+{\em Uelzen: Explodiertes Notebook l"ost Feuerwehreinsatz aus}.
+\newblock T-Online, Stand: 26. 01. 2013.
+\newblock \\
+  \url{http://computer.t-online.de/uelzen-explodiertes-notebook-loest-feuerwehreinsatz-aus/id_42553726/index}.
+
+\bibitem[txl13]{txline}
+{\em TX-Line: Transmission Line Calculator AWR Corporation}.
+\newblock AWR Corporation, Stand: 26. 01. 2013.
+\newblock \\
+  \url{http://www.awrcorp.com/products/optional-products/tx-line-transmission-line-calculator}.
 
 \end{thebibliography}
