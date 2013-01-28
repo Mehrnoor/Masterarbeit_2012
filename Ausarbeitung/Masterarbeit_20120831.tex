@@ -183,15 +183,56 @@ Zum Energy-Harvesting werden bevorzugt Biegebalken\footnote{im Englischen auch b
 D_3 & =  \textrm{d}_{31} \cdot T_1 + \varepsilon_{33}^{\textrm{T}} \cdot E_3 \label{formel:3.3} \\
 S_1 & =  s_{11}^{\textrm{E}} \cdot T_3 + \textrm{d}_{31} \cdot E_3 \label{formel:3.4}
 \end{align}
-Bei den Transversalschwingern wird quer zur mechanischen Auslenkung eine elektrische Spannung erzeugt. Wenn mechanische Schwingung bzw. Druckbelastung mit dem elektrischen Feld bzw. der dielektrischen Verschiebung gleichgerichtet ist, wird von Longitudinalschwingern gesprochen. Transversalschwinger erzeugen eine rund zehnmal höhere Spannung als Longitudinalschwinger \citep[S.39]{Dembowski2011}.
+Bei den Transversalschwingern wird quer zur mechanischen Auslenkung eine elektrische Spannung erzeugt. Wenn mechanische Schwingung bzw. Druckbelastung mit dem elektrischen Feld bzw. der dielektrischen Verschiebung gleichgerichtet ist, wird von Longitudinalschwingern gesprochen. Transversalschwinger erzeugen eine rund zehnmal höhere Spannung als Longitudinalschwinger \citep[S.39]{Dembowski2011}. Ein Beispiel für die Wirkungsweise im kristallinen Aufbau eines longitudinal aktiven Piezoelements ist in Abbildung \vref{piezo} zu sehen. Dabei ist recht deutlich die Ladungsverschiebung aufgrund der Verzerrung der Kristallstruktur zu erkennen. 
 \begin{align}
 D_3 & =  \textrm{d}_{33} \cdot T_3 + \varepsilon_{33}^{\textrm{T}} \cdot E_3 \label{formel:3.5} \\
 S_3 & =  s_{33}^{\textrm{E}} \cdot T_3 + \textrm{d}_{33} \cdot E_3 \label{formel:3.6}
 \end{align}
+\begin {figure}[htbp]
+\caption[Longitudinaler Piezoeffekt; Kristallstruktur und Ladungsverschiebung]{Longitudinaler Piezoeffekt; Aufbau der Kristallstruktur und Ladungsverschiebung}
+      \begin{center}
+       \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/Piezo.png}}
+      \end{center}
+Quelle: Universität Bayreuth Didaktik der Chemie \citep{BAY}
+\label{piezo}
+\end{figure}
 \subsection{Thermoelektrisch}
 Eine im Vergleich zu piezoelektrischem Energy-Harvesting hohe Energieumwandlung wird mit der thermoelektrischen Transformation erzielt. Dabei wird als physikalische Grundlage der Seebeck-Effekt benutzt. Dieser beschreibt, dass bei zwei unterschiedlichen Metalllegierungen bei vorliegender Differenz der Temperaturen am Übergang der Elemente eine Spannung entsteht. Die entstandene Potentialdifferenz wird auch Thermospannung \citep[vgl. S.158]{Schruefer2012} genannt. Die Inverse dieses Vorgangs wird mit dem Peltier-Effekt beschrieben. Da das Verhalten der spezifischen Elemente reziprok ist, können Peltierelemente auch zur Gewinnung von elektrischer Energie genutzt werden. \newline
 Der Seebeck-Effekt beruht auf den folgenden molekularen Gegebenheiten: Naturgemäß wandern bei einem Metall, welches einem Temperaturunterschied ausgesetzt ist, die Elektronen von der heißen zur kalten Seite. Dies geschieht aufgrund der natürlichen Diffusionsbewegung innerhalb des Metalls. Bei zwei aneinanderliegenden, verlöteten oder verschweißten Legierungen gibt das Metall mit der niedrigeren Austrittsarbeit Elektronen an das andere Metall ab und wird dadurch positiv geladen. Dadurch bildet sich an der Kontaktfläche ein elektrisches Feld. Dieses kann resultierend als direkte Proportionale zur anliegenden Temperaturdifferenz der zwei Kontaktstellen mit einem Voltmeter gemessen werden. Übliche Werte hierfür sind ca. $10  \frac{\textrm{mV}}{100 \degree \textrm{K}}$. Durch intelligente Beschaltung, zum Beispiel mehrere Elemente in Reihe, lässt sich eine höhere Empfindlichkeit erzielen. Mit dem in Kapitel \vref{energy} vorgestellten LTC3108 Baustein lässt sich ab einer Ausgangsspannung von 20mV eine stabile Energieumwandlung in Gang bringen. \newline \newline
-Wird der technischen Aufbau nun so gestaltet, dass er zur Energieumwandlung und nicht zur Temperaturmessung verwendet werden soll, erweist es sich als zweckmäßig ein oder mehrere Peltierelemente im umgekehrten Betrieb zu verwenden. \citep[vgl. S.30]{Dembowski2011}
+Wird der technischen Aufbau nun so gestaltet, dass er zur Energieumwandlung und nicht zur Temperaturmessung verwendet werden soll, erweist es sich als nützlich ein oder mehrere Peltierelemente im umgekehrten Betrieb zu verwenden. \citep[vgl. S.30]{Dembowski2011}
+\section{Lithium-Ionen Akkumulator}
+Der LiIon-Akku\footnote{Lithium-Ionen Akkumulator} stellt den aktuellen Stand der Technik in der elektrischen Speichertechnologie dar. Da dieser auch in dieser Arbeit zum Einsatz kommt, sollen im Folgenden die wichtigsten Eckdaten und Informationen bezüglich dessen Verwendung näher erläutert werden. Der Inhalt wurde sinngemäß aus der Webseite Battery University \citep{BAT} übernommen.
+\subsection{Aufladen}
+Der Ladeprozess ähnelt dem von Blei-Akkumulatoren. Im Gegensatz zu Diesen ist allerdings auf die Speisespannung genauestens zu achten. Einzelne Zellen werden mit einer Spannung von 4,20V geladen. Dabei darf die anliegende Spannung höchstens $\pm$50mV vom Normalwert abweichen. Andernfalls ist mit einer Verkürzung der Lebensdauer der Akku-Zelle zu rechnen. Anders als bei anderen Akkumulatoren wie dem NiMH\footnote{Nickel-Metallhydrid}-Akku ist auch keine sogenannte Erhaltungsladung\footnote{besser bekannt unter dem englischen Begriff: trickle charging} zulässig. In Abbildung \vref{fig:bat} sind die einzelnen Schritte des Ladevorgangs zu sehen. Diese werden im Folgenden näher erklärt.
+\begin {figure}[htbp]
+\caption{Ladungskurve eines typischen Lithium-Ionen-Akkumulators}
+      \begin{center}
+       \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/ion1.jpg}}
+      \end{center}
+Quelle: Cadex Electronics Incorporated \citep{BAT}
+\label{fig:bat}
+\end{figure}
+\subsubsection{Phase 1}
+In der ersten Phase des Ladevorgangs wird der Akku mit einem konstanten Ladestrom gespeist. Dabei wird die Höhe in der Einheit $C$ festgelegt. Diese ist nicht zu verwechseln mit der Bezeichnung der Ladung, $Coulomb$. Stattdessen handelt es sich um einen Umrechnungsfaktor, ausgehend vom Quotienten $\frac{Ladestrom}{Kapazit"at}$ beziehungsweise $1\frac{A}{Ah}$. Dabei wird das resultierende $\frac{1}{h}$ in der Literatur ignoriert und man spricht generell von $C$. Übliche Werte hierfür bewegen sich zwischen 0,5 und 1$C$. Ein Ladestrom von 0,7$C$ hat als resultierenden Strom 1,4A bei einer 2Ah Zelle. Allerdings ist es für die Zelle auch nicht schädlich, wenn sie weit unter diesen Werten bestromt wird. So können LiIon-Zellen beispielsweise auch mit Solarzellen oder anderen Niederstrom-erzeugenden Quellen gespeist werden.
+\subsubsection{Phase 2}
+Wenn beim Laden mit konstanten Strom der Spannungswert von 4,05V erreicht wird, ändert sich die Ladestrategie. Nun wird eine konstante Spannung von 4,2V an die Zelle angelegt. Dabei wird der Ladestrom weiter gemessen, denn an ihm wird das Abbruchkriterium festgelegt. Erreicht der Strom 3\% des in der ersten Phase festgelegten Werts, so ist der Akku fertig geladen und die Zelle gesättigt. Auch hier sei angemerkt, dass die maximale Spannung von 4,2V nicht zwingend erreicht werden muss. Wird die Zelle bei einer Spannung von 4,1V geladen, erreicht sie nicht die maximale Kapazität. Dafür kann Sie öfter geladen werden, die Ladezyklenzahl erhöht sich.
+\subsubsection{Phase 3}
+Diese Phase beschreibt lediglich den Arbeitszustand des Akkus. Dabei sinkt vorerst die Spannung der Zelle rapide von dem zuvor angelegten Ladungshöchstwert von 4,2V auf eine Nennspannung von 3,6 bis 3,7V.  Auf diesem Wert hält sich die Spannung relativ lange, bis dieser kurz vor der vollständigen Entladung steht. Erst dann beginnt die Spannung wieder weiter zu sinken. Je nach Herstellerempfehlung befindet sich die Entladeschlussspannung zwischen 2,5 und 3V. Wird der Akku dennoch weiter entladen, können entweder Schäden auftreten oder er muss mit einem anderen Ladeprofil wieder regeneriert und vorgeladen werden.
+\subsubsection{Phase 4}
+Soll der Akku auf Bereitschaft geladen werden, so darf dieser nicht mit einer Erhaltungsladung bestromt werden. Stattdessen wird die Spannung der Zelle gemessen und bewertet. Fällt diese unter einen Schwellwert von meistens 4,05V wird mit Phase zwei wieder nachgeladen, bis das Abbruchkriterium des Ladestroms erreicht worden ist.
+\subsection{Allgemeine Hinweise}
+\begin{itemize}
+\item
+LiIon Akkus sollten nie unter 2,7V per Zelle entladen werden. Daher sollte bei der Einlagerung darauf geachtet werden, dass eine Mindestladung von 40\% der Maximalkapazität vorhanden ist.
+\item
+Bei einem gewöhnlichen Ladevorgang ist eine Temperaturerhöhung der Zelle von 5-10$\celsius$ üblich. Höhere Temperatursprünge sind ein Zeichen für eine vorangegangene, unsachgemäße Handhabung oder Schäden am Akku. 
+\item
+LiIonen Akkus sollten generell bei moderaten Temperaturen betrieben werden. Insbesondere beim Laden sollte darauf geachtet werden, dass die Temperatur 0$\celsius$ nicht unterschritten wird.
+\item
+Tiefentladene Akkus können mit einem speziellen Ladeprofil eventuell wieder aktiviert werden.
+\item
+Eine vollständige Ladung beziehungsweise Entladung wie bei NiMH-Akkus ist nicht förderlich für dessen Lebensdauer. Teilaufladungen sind bei diesem Akkutyp besser.
+\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Voruntersuchung}
 
@@ -237,7 +278,7 @@ Bei diesem Piezobaustein handelt es sich um ein einfaches, nicht mehrschichtiges
 Diese Messung zeigt das kapazitive Verhalten des Piezoelements Sonox P502. Bei den Messwerten wird die Kapazität über die angelegte Kraft, bzw. die Spannung an der Kraftmessdose, aufgetragen, wie in Tabelle \vref{tab:2.1} und Abbildung \vref{fig:2.1} nachzuvollziehen ist. Speisefrequenz der Impedanzmessung war 500Hz bei 1V Amplitude.
 \setlongtables
 \begin{longtable}{| l | l | l |}
-\caption{Messung 1}\\
+\caption[Messung 1; Sonox 502 Kapazitives Verhalten]{Messung 1; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung}\\
 \hline
 $U_{diff}$ in mV&$C_{diff}$ in nF&$C_{Piezo}$ in nF\\
 \hline
@@ -269,9 +310,9 @@ $U_{diff}$ in mV&$C_{diff}$ in $nF$&$C_{Piezo}$ in nF\\
 6.11&-0.03231&0.96766\\
 \end{longtable}
 \begin {figure}[htbp]
-	\caption{Messung 1; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung}
+	\caption[Messung 1; Sonox 502 Kapazitives Verhalten]{Messung 1; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung}
       \begin{center}
-        \includegraphics{tabelle2_1_1}
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_1_1}}
       \end{center}
 Quelle: Stephan Jobstmann
 \label{fig:2.1}
@@ -284,7 +325,7 @@ Aufgrund eines Gegenvergleichs lässt sich an dieser Stelle bereits sagen, dass 
 
 \setlongtables
 \begin{longtable}{| l | l | l |}
-\caption{Messung 2 }\\
+\caption[Messung 2; Sonox 502 Statisches Verhalten]{Messung 2; Sonox 502 Statisches Verhalten über steigende mechanische Belastung}\\
 \hline
 Uhrzeit&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \hline
@@ -307,9 +348,9 @@ Uhrzeit&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \end{longtable}
 
 \begin {figure}[htbp]
-\caption{Messung 2; Sonox 502 Statisches Verhalten über steigende mechanische Belastung}
+\caption[Messung 2; Sonox 502 Statisches Verhalten]{Messung 2; Sonox 502 Statisches Verhalten über steigende mechanische Belastung}
       \begin{center}
-        \includegraphics{tabelle2_1_2}
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_1_2}}
       \end{center}
 Quelle: Stephan Jobstmann
 \label{fig:2.2}
@@ -381,9 +422,9 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \end{longtable}
 
 \begin {figure}[htbp]
-\caption{Messung 3 und 4; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung unter Einsatz besserer Spannvorrichtung}
+\caption[Messung 3 und 4; Sonox 502 unter Einsatz besserer Spannvorrichtung]{Messung 3 und 4; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung unter Einsatz besserer Spannvorrichtung}
       \begin{center}
-        \includegraphics{tabelle2_1_3}
+  \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_1_3}}
       \end{center}
 Quelle: Stephan Jobstmann
 \label{fig:2.3}
@@ -421,9 +462,9 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \end{longtable}
 
 \begin {figure}[htbp]
-\caption{Messung 5}
+\caption{Messung 5; 1kHz Messfrequenz}
       \begin{center}
-        \includegraphics{tabelle2_1_4}
+    \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_1_4}}
       \end{center}
 Quelle: Stephan Jobstmann
 \label{fig:2.4}
@@ -478,7 +519,7 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF&$R_{Parallel}$ in k$\Omega$\\
 \begin {figure}[htbp]
 \caption{Messung 6; Einführende Messung Piezostack}
       \begin{center}
-        \includegraphics{tabelle2_2_1}
+      \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_1}}
       \end{center}
 Quelle: Stephan Jobstmann
 \label{fig:2.6}
@@ -492,7 +533,7 @@ Um Rückschlüsse auf das $\varepsilon$ des Piezomaterials zu ermöglichen, wurd
 
 \setlongtables
 \begin{longtable}{| l | l | l | l |}
-\caption{Messung 7; Piezostack; mit Entladung, ohne Setz-Zeit; Kapazität}\\
+\caption[Messung 7; ohne Setz-Zeit; Kapazität]{Messung 7; Piezostack; mit Entladung, ohne Setz-Zeit; Kapazität}\\
 \hline
 \multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
 \hline
@@ -529,7 +570,7 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \begin {figure}[htbp]
 \caption{Messung 7; mit Entladung, ohne Setz-Zeit; Piezostack; Kapazität}
       \begin{center}
-        \includegraphics{tabelle2_2_2}
+     \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_2}}
       \end{center}
 Quelle: Stephan Jobstmann
 \label{fig:2.7}
@@ -537,7 +578,7 @@ Quelle: Stephan Jobstmann
 
 \setlongtables
 \begin{longtable}{| l | l | l | l |}
-\caption{Messung 8; Piezostack; mit Entladung, ohne Setz-Zeit; Parallelwiderstand}\\
+\caption[Messung 8; ohne Setz-Zeit; Parallelwiderstand]{Messung 8; Piezostack; mit Entladung, ohne Setz-Zeit; Parallelwiderstand}\\
 \hline
 \multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
 \hline
@@ -572,9 +613,9 @@ $U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$&$U_{diff}$ in mV&$R_{Parallel}$ in 
 \end{longtable}
 
 \begin {figure}[htbp]
-\caption{Messung 8; mit Entladung, ohne Setz-Zeit; Piezostack; Parallelwiderstand}
+\caption[Messung 8; ohne Setz-Zeit; Parallelwiderstand]{Messung 8; Piezostack; mit Entladung, ohne Setz-Zeit; Parallelwiderstand}
       \begin{center}
-        \includegraphics{tabelle2_2_3}
+       \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_3}}
       \end{center}
 Quelle: Stephan Jobstmann
 \label{fig:2.8}
@@ -587,7 +628,7 @@ Auch hier wurde eine Messung des auftretenden Parallelwiderstands angestoßen. D
 
 \setlongtables
 \begin{longtable}{| l | l | l | l |}
-\caption{Messung 9; Piezostack; mit Entladung, 2 Minuten Setz-Zeit; Kapazität}\\
+\caption[Messung 9; 2 Minuten Setz-Zeit; Piezostack; Kapazität]{Messung 9; Piezostack; mit Entladung, 2 Minuten Setz-Zeit; Kapazität}\\
 \hline
 \multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
 \hline
@@ -622,16 +663,16 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \end{longtable}
 
 \begin {figure}[htbp]
-\caption{Messung 9; mit Entladung, 2 Minuten Setz-Zeit; Piezostack; Kapazität}
+\caption[Messung 9; 2 Minuten Setz-Zeit; Piezostack; Kapazität]{Messung 9; mit Entladung, 2 Minuten Setz-Zeit; Piezostack; Kapazität}
       \begin{center}
-        \includegraphics{tabelle2_2_4}
+        \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_4}}
       \end{center}
 Quelle: Stephan Jobstmann
 \label{fig:2.9}
 \end{figure}
 \setlongtables
 \begin{longtable}{| l | l | l | l |}
-\caption{Messung 10; Piezostack; mit Entladung, 2 Minuten Setz-Zeit; Parallelwiderstand}\\
+\caption[Messung 10; 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand]{Messung 10; Piezostack; mit Entladung, 2 Minuten Setz-Zeit; Parallelwiderstand}\\
 \hline
 \multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
 \hline
@@ -666,9 +707,9 @@ $U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$&$U_{diff}$ in mV&$R_{Parallel}$ in 
 \end{longtable}
 
 \begin {figure}[htbp]
-\caption{Messung 10; mit Entladung, 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand}
+\caption[Messung 10; 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand]{Messung 10; mit Entladung, 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand}
       \begin{center}
-        \includegraphics{tabelle2_2_5}
+       \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_5}}
       \end{center}
 Quelle: Stephan Jobstmann
 \label{fig:2.10}
@@ -941,7 +982,7 @@ Genauso wie der CC2541 in Kapitel \vref{CC2541} ist der CC430F6137 ein SoC. Nach
 Für den Taster wurde eine Ersatzschaltung aus einem einfachen Piezobuzzer und einer dazu parallelgeschalteten Zenerdiode (Zenerspannung bei 3,3V) aufgebaut (Siehe Abbildung \vref{pic.breakout}). Der durch einen Druck auf den Piezo erzeugte Spannungshub von mehreren Volt (bis zu 20V) und dessen geringe Ladungsausschüttung genügen zur Signalverarbeitung. Allerdings muss der SoC vor dem großen Spannungspegel wirksam geschützt werden. Darum befindet sich unmittelbar an dem Piezobuzzer gekoppelt eine Diode, welche den anfallenden Pegel auf maximal 3,3V herunterzieht. Da die freigesetzte Ladung des Piezokristalls nicht genügt, um die Diode im Arbeitsbereich zu betreiben, ist beim praktischen Versuchaufbau lediglich Spannungspegel von maximal ca. 2,1V zu erzielen. Dieser reicht aber immer noch aus um eine Flanke bzw. einen Pegel zur Interrupt-Generierung zu erzeugen. 
 \begin{figure}
 \centering
-\caption{Modifizierte ez430-Chronos Uhr mit Piezo-Interrupt Taster und Erweiterungsstiftleisten}
+\caption[Modifizierte ez430-Chronos Uhr]{Modifizierte ez430-Chronos Uhr mit Piezo-Interrupt Taster und Erweiterungsstiftleisten}
 \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/breakout.JPG}}
 Quelle: Stephan Jobstmann
 \label{pic.breakout}
@@ -978,7 +1019,7 @@ All diese Kriterien wurden von dem Baustein ADS1232 von Texas Instruments erfül
 Ein erster Schaltungsentwurf wurde mithilfe des an Hochschule Landshut vorhandenen Leiterplatten-Prototypers\footnote{LPKF C60} auf Platine gebracht, wie auf Abbildung \vref{pic.ad1232}. Dabei wurden alle Konfigurationsmöglichkeiten sowie Ein- und Ausgänge über Jumper und Stiftleisten nach außen geführt:
 \begin{figure}
 \centering
-\caption{AD1232 A/D-Wandler Modul mit Drucksensor auf Keramik-Stahl Verbundmaterial}
+\caption[AD1232 A/D-Wandler Modul mit Drucksensor]{AD1232 A/D-Wandler Modul mit Drucksensor auf Keramik-Stahl Verbundmaterial}
 \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/ad1232.JPG}}
 Quelle: Stephan Jobstmann
 \label{pic.ad1232}

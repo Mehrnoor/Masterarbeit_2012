@@ -5,6 +5,8 @@ The style file: alpha.bst
 Database file #1: literatur.bib
 Warning--to sort, need author, editor, or key in DLR
 Warning--to sort, need author, editor, or key in DLR2
+Warning--to sort, need author, editor, or key in BAY
+Warning--to sort, need author, editor, or key in BAT
 Warning--to sort, need author, editor, or key in git
 Warning--to sort, need author, editor, or key in LTC
 Warning--to sort, need author, editor, or key in tonline
@@ -19,6 +21,8 @@ Warning--to sort, need author, editor, or key in ez430
 Warning--to sort, need author, editor, or key in cc1101
 Warning--to sort, need author, editor, or key in iar
 Warning--to sort, need author, editor, or key in cc430f6137
+Warning--empty author and editor in BAT
+Warning--empty author and editor in BAY
 Warning--empty author and editor in cc1101
 Warning--empty author and editor in cc430f6137
 Warning--empty author and editor in CCDEBUG
@@ -35,45 +39,45 @@ Warning--empty author and editor in TIBQ24100
 Warning--empty author and editor in TICC2541
 Warning--empty author and editor in tonline
 Warning--empty author and editor in txline
-You've used 28 entries,
+You've used 30 entries,
             2543 wiz_defined-function locations,
-            688 strings with 8489 characters,
-and the built_in function-call counts, 7064 in all, are:
-= -- 641
-> -- 112
+            700 strings with 8878 characters,
+and the built_in function-call counts, 7526 in all, are:
+= -- 683
+> -- 114
 < -- 12
 + -- 29
 - -- 24
-* -- 427
-:= -- 1048
-add.period$ -- 92
-call.type$ -- 28
-change.case$ -- 98
-chr.to.int$ -- 23
-cite$ -- 76
-duplicate$ -- 448
-empty$ -- 765
+* -- 459
+:= -- 1106
+add.period$ -- 98
+call.type$ -- 30
+change.case$ -- 104
+chr.to.int$ -- 25
+cite$ -- 84
+duplicate$ -- 480
+empty$ -- 823
 format.name$ -- 45
-if$ -- 1523
+if$ -- 1627
 int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 40
-newline$ -- 151
+missing$ -- 42
+newline$ -- 161
 num.names$ -- 36
-pop$ -- 182
+pop$ -- 194
 preamble$ -- 1
-purify$ -- 152
+purify$ -- 162
 quote$ -- 0
-skip$ -- 278
+skip$ -- 298
 stack$ -- 0
-substring$ -- 212
-swap$ -- 28
+substring$ -- 228
+swap$ -- 30
 text.length$ -- 12
 text.prefix$ -- 9
 top$ -- 0
-type$ -- 112
-warning$ -- 32
+type$ -- 120
+warning$ -- 36
 while$ -- 24
-width$ -- 33
-write$ -- 365
-(There were 32 warnings)
+width$ -- 35
+write$ -- 389
+(There were 36 warnings)
