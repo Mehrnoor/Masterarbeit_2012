@@ -161,6 +161,12 @@ Johannes W.~Steiner Manfred T.~Kalivoda.
 \newblock SRI Radio Systems GmbH, Zugegriffen am: 26. 01. 2013.
 \newblock \\ \url{http://www.sri.de/}.
 
+\bibitem[TES13]{TESLA}
+{\em Nikola Tesla Lebensdaten / Nikola Tesla - vergessenes Genie}.
+\newblock Thomas Gobmaier, Feldmochinger Str. 210 b D-80995 M"unchen,
+  Zugegriffen am: 28. 01. 2013.
+\newblock \\ \url{http://www.tesla-info.de/Lebenslauf.htm}.
+
 \bibitem[TIB13]{TIBQ24100}
 {\em Battery Management Products - Battery Charger Solutions BQ24100}.
 \newblock Texas Instruments Incorporated, Zugegriffen am: 26. 01. 2013.
@@ -182,5 +188,11 @@ Johannes W.~Steiner Manfred T.~Kalivoda.
 \newblock AWR Corporation, Zugegriffen am:26. 01. 2013.
 \newblock \\
   \url{http://www.awrcorp.com/products/optional-products/tx-line-transmission-line-calculator}.
+
+\bibitem[WPC13]{WPC}
+{\em Wireless Power Technology - Wireless Power Consortium}.
+\newblock Administration by IEEE-ISTO, Piscataway, NJ, United States,
+  Zugegriffen am: 28. 01. 2013.
+\newblock \\ \url{http://www.wirelesspowerconsortium.com/technology}.
 
 \end{thebibliography}

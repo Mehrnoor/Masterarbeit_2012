@@ -6,6 +6,8 @@ Database file #1: literatur.bib
 Warning--to sort, need author, editor, or key in DLR
 Warning--to sort, need author, editor, or key in DLR2
 Warning--to sort, need author, editor, or key in BAY
+Warning--to sort, need author, editor, or key in TESLA
+Warning--to sort, need author, editor, or key in WPC
 Warning--to sort, need author, editor, or key in BAT
 Warning--to sort, need author, editor, or key in git
 Warning--to sort, need author, editor, or key in LTC
@@ -35,49 +37,51 @@ Warning--empty author and editor in LTC
 Warning--empty author and editor in MAS
 Warning--empty author and editor in multisim
 Warning--empty author and editor in sri
+Warning--empty author and editor in TESLA
 Warning--empty author and editor in TIBQ24100
 Warning--empty author and editor in TICC2541
 Warning--empty author and editor in tonline
 Warning--empty author and editor in txline
-You've used 30 entries,
+Warning--empty author and editor in WPC
+You've used 32 entries,
             2543 wiz_defined-function locations,
-            700 strings with 8878 characters,
-and the built_in function-call counts, 7526 in all, are:
-= -- 683
-> -- 114
+            712 strings with 9224 characters,
+and the built_in function-call counts, 7990 in all, are:
+= -- 727
+> -- 116
 < -- 12
 + -- 29
 - -- 24
-* -- 459
-:= -- 1106
-add.period$ -- 98
-call.type$ -- 30
-change.case$ -- 104
-chr.to.int$ -- 25
-cite$ -- 84
-duplicate$ -- 480
-empty$ -- 823
+* -- 493
+:= -- 1160
+add.period$ -- 104
+call.type$ -- 32
+change.case$ -- 110
+chr.to.int$ -- 27
+cite$ -- 92
+duplicate$ -- 512
+empty$ -- 881
 format.name$ -- 45
-if$ -- 1627
+if$ -- 1733
 int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 42
-newline$ -- 161
+missing$ -- 44
+newline$ -- 171
 num.names$ -- 36
-pop$ -- 194
+pop$ -- 204
 preamble$ -- 1
-purify$ -- 162
+purify$ -- 172
 quote$ -- 0
-skip$ -- 298
+skip$ -- 321
 stack$ -- 0
-substring$ -- 228
-swap$ -- 30
+substring$ -- 244
+swap$ -- 32
 text.length$ -- 12
 text.prefix$ -- 9
 top$ -- 0
-type$ -- 120
-warning$ -- 36
+type$ -- 128
+warning$ -- 40
 while$ -- 24
-width$ -- 35
-write$ -- 389
-(There were 36 warnings)
+width$ -- 34
+write$ -- 415
+(There were 40 warnings)

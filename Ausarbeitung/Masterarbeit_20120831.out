@@ -4,28 +4,30 @@
 \BOOKMARK [1][-]{section.3.1}{Energy-Harvesting}{chapter.3}% 4
 \BOOKMARK [2][-]{subsection.3.1.1}{Piezoelektrisch}{section.3.1}% 5
 \BOOKMARK [2][-]{subsection.3.1.2}{Thermoelektrisch}{section.3.1}% 6
-\BOOKMARK [1][-]{section.3.2}{Lithium-Ionen Akkumulator}{chapter.3}% 7
-\BOOKMARK [2][-]{subsection.3.2.1}{Aufladen}{section.3.2}% 8
-\BOOKMARK [2][-]{subsection.3.2.2}{Allgemeine Hinweise}{section.3.2}% 9
-\BOOKMARK [0][-]{chapter.4}{Voruntersuchung}{}% 10
-\BOOKMARK [1][-]{section.4.1}{Motivation}{chapter.4}% 11
-\BOOKMARK [1][-]{section.4.2}{Versuchsaufbau}{chapter.4}% 12
-\BOOKMARK [1][-]{section.4.3}{Ergebnis}{chapter.4}% 13
-\BOOKMARK [1][-]{section.4.4}{Messungen}{chapter.4}% 14
-\BOOKMARK [2][-]{subsection.4.4.1}{Sonox P502}{section.4.4}% 15
-\BOOKMARK [2][-]{subsection.4.4.2}{B\374rklin Piezo-Stack von Elliptec}{section.4.4}% 16
-\BOOKMARK [0][-]{chapter.5}{Hardware}{}% 17
-\BOOKMARK [1][-]{section.5.1}{Energiezuf\374hrung}{chapter.5}% 18
-\BOOKMARK [2][-]{subsection.5.1.1}{Energy-Harvesting}{section.5.1}% 19
-\BOOKMARK [2][-]{subsection.5.1.2}{Drahtlose Energie\374bertragung}{section.5.1}% 20
-\BOOKMARK [1][-]{section.5.2}{Energiebereitstellung}{chapter.5}% 21
-\BOOKMARK [2][-]{subsection.5.2.1}{Superkondensator}{section.5.2}% 22
-\BOOKMARK [2][-]{subsection.5.2.2}{Lithium-Ionen-Akkumulator}{section.5.2}% 23
-\BOOKMARK [1][-]{section.5.3}{Arbeitsschaltung}{chapter.5}% 24
-\BOOKMARK [2][-]{subsection.5.3.1}{CC2541}{section.5.3}% 25
-\BOOKMARK [2][-]{subsection.5.3.2}{CC430F6137}{section.5.3}% 26
-\BOOKMARK [2][-]{subsection.5.3.3}{Sensorik}{section.5.3}% 27
-\BOOKMARK [0][-]{chapter.6}{Software}{}% 28
-\BOOKMARK [1][-]{section.6.1}{Frequenzgenerierung}{chapter.6}% 29
-\BOOKMARK [1][-]{section.6.2}{Sensorauswertung \046 ISR}{chapter.6}% 30
-\BOOKMARK [0][-]{chapter*.42}{Literaturverzeichnis}{}% 31
+\BOOKMARK [1][-]{section.3.2}{Drahtlose Energie\374bertragung}{chapter.3}% 7
+\BOOKMARK [2][-]{subsection.3.2.1}{Prinzip}{section.3.2}% 8
+\BOOKMARK [1][-]{section.3.3}{Lithium-Ionen Akkumulator}{chapter.3}% 9
+\BOOKMARK [2][-]{subsection.3.3.1}{Aufladen}{section.3.3}% 10
+\BOOKMARK [2][-]{subsection.3.3.2}{Allgemeine Hinweise}{section.3.3}% 11
+\BOOKMARK [0][-]{chapter.4}{Voruntersuchung}{}% 12
+\BOOKMARK [1][-]{section.4.1}{Motivation}{chapter.4}% 13
+\BOOKMARK [1][-]{section.4.2}{Versuchsaufbau}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.3}{Ergebnis}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.4}{Messungen}{chapter.4}% 16
+\BOOKMARK [2][-]{subsection.4.4.1}{Sonox P502}{section.4.4}% 17
+\BOOKMARK [2][-]{subsection.4.4.2}{B\374rklin Piezo-Stack von Elliptec}{section.4.4}% 18
+\BOOKMARK [0][-]{chapter.5}{Hardware}{}% 19
+\BOOKMARK [1][-]{section.5.1}{Energiezuf\374hrung}{chapter.5}% 20
+\BOOKMARK [2][-]{subsection.5.1.1}{Energy-Harvesting}{section.5.1}% 21
+\BOOKMARK [2][-]{subsection.5.1.2}{Drahtlose Energie\374bertragung}{section.5.1}% 22
+\BOOKMARK [1][-]{section.5.2}{Energiebereitstellung}{chapter.5}% 23
+\BOOKMARK [2][-]{subsection.5.2.1}{Superkondensator}{section.5.2}% 24
+\BOOKMARK [2][-]{subsection.5.2.2}{Lithium-Ionen-Akkumulator}{section.5.2}% 25
+\BOOKMARK [1][-]{section.5.3}{Arbeitsschaltung}{chapter.5}% 26
+\BOOKMARK [2][-]{subsection.5.3.1}{CC2541}{section.5.3}% 27
+\BOOKMARK [2][-]{subsection.5.3.2}{CC430F6137}{section.5.3}% 28
+\BOOKMARK [2][-]{subsection.5.3.3}{Sensorik}{section.5.3}% 29
+\BOOKMARK [0][-]{chapter.6}{Software}{}% 30
+\BOOKMARK [1][-]{section.6.1}{Frequenzgenerierung}{chapter.6}% 31
+\BOOKMARK [1][-]{section.6.2}{Sensorauswertung \046 ISR}{chapter.6}% 32
+\BOOKMARK [0][-]{chapter*.42}{Literaturverzeichnis}{}% 33
