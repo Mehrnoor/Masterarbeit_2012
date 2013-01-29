@@ -193,7 +193,7 @@ S_3 & =  s_{33}^{\textrm{E}} \cdot T_3 + \textrm{d}_{33} \cdot E_3 \label{formel
       \begin{center}
        \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/Piezo.png}}
       \end{center}
-Quelle: Universität Bayreuth Didaktik der Chemie \citep{BAY}
+Quelle:Stephan Jobstmann
 \label{piezo}
 \end{figure}
 \subsection{Thermoelektrisch}
@@ -220,16 +220,18 @@ Zur Erhaltung einer optimalen Anpassung zwischen der Ein- und Ausgangsleistung m
 \subsection{Resonanzkopplung}
 Um die induktive Kopplung zu erweitern können Resonanz-Schwingkreise verwendet werden. Dieses Prinzip wurde bereits von Nikola Tesla im vorletzten Jahrhundert aufgegriffen. Für Systeme mit schlechter Kopplung ist dies eine gute Möglichkeit den Energiefluss zu verbessern. Denselben Rahmenbedingungen wie der rein induktiven Kopplung folgend, hat diese Methode bereits weite Verbreitung gefunden. Ähnlich wie die Saiten einer akustischen Gitarre in einem entsprechenden Umfeld lässt sich selbst mit geringstem Aufwand ein Schwingkreis anregen. Bei der Gitarre genügt beispielsweise eine Unterhaltung in der selben Tonlage um eine merkliche Schwingung wahrnehmen zu können. Bei dieser Form der Energieübertragung lässt sich ein vergleichbarer Aufbau mit zusätzlichen Kondensatoren zu den Induktivitäten erstellen. Diese eliminieren auftretende Streuinduktivitäten im Empfänger und magnetisierende Induktivitäten im Sender. Die einzig übrigbleibende Größe ist der reelle Widerstand der Spulen. Aber bei gegebener guter Güte wie im vorhergehenden Unterkapitel \vref{Prinzip} lässt sich dieser Effekt als Minimal betrachten. 
 \subsection{Auswirkungen auf den Körper}
-Ausgehend von der Allgegenwart von Elektromagnetischer Strahlung und dessen weit gefächertes Frequenzspektrum von 0 bis 300GHz sind gesundheitliche Aspekte zu untersuchen. So genügen bei sogenannter ionisierender Strahlung, zu der auch Röntgen- und Gammastrahlung zu zählen ist, wenige Milliwatt um den menschlichen Körper zu beschädigen. Die Frequenzen der WPC-konformen Module bewegen sich im Gegensatz dazu im nicht ionisierenden Bereich. Die "`International Commission on Non-Ionizing Radiation Protection", kurz ICNIRP, hat dazu Richtlinien aufgestellt. Darin wird festgehalten, mit welcher Leistung in einem bestimmten Frequenzbereich auf den menschlichen Körper eingewirkt werden darf, ohne diesen zu schädigen.
+Ausgehend von der Allgegenwart von Elektromagnetischer Strahlung und dessen weit gefächertes Frequenzspektrum von 0 bis 300GHz sind gesundheitliche Aspekte zu untersuchen. So genügen bei sogenannter ionisierender Strahlung, zu der auch Röntgen- und Gammastrahlung zu zählen ist, wenige Milliwatt um den menschlichen Körper zu beschädigen. Die Frequenzen der WPC-konformen Module bewegen sich im Gegensatz dazu im nicht ionisierenden Bereich. Die "`International Commission on Non-Ionizing Radiation Protection", kurz ICNIRP, hat dazu Richtlinien aufgestellt\citep{ICNIRP}. Darin wird festgehalten, mit welcher Leistung in einem bestimmten Frequenzbereich auf den menschlichen Körper eingewirkt werden darf, ohne diesen zu schädigen.
 \setlongtables
-\begin{longtable}{| p{2,6cm} |p{2,4cm} | p{2,4cm} |p{2,4cm} |p{2,4cm} |}
-\caption{Richtwerte nach der ICNIRP}\\
+\begin{longtable}{| p{2,69cm} |p{2,4cm} | p{2,4cm} |p{2,4cm} |p{2,4cm} |}
+\caption{Richtwerte nach der ICNIRP\citep{ICNIRP}}\\
 \hline
 Art der Aussetzung &Frequenz-Bereich&Belastung des gesamten Körpers in W$\cdot$kg$^{-1}$ &Belastung von Kopf und Torso in W$\cdot$kg$^{-1}$ & Belastung der Extremitäten in W$\cdot$kg$^{-1}$ \\
+\hline
 \hline
 \endfirsthead
 \hline
 Art der Aussetzung &Frequenz-Bereich&Belastung des gesamten Körpers in W$\cdot$kg$^{-1}$ &Belastung von Kopf und Torso in W$\cdot$kg$^{-1}$ & Belastung der Extremitäten in W$\cdot$kg$^{-1}$ \\
+\hline
 \hline
 \endhead
 \hline
@@ -241,12 +243,25 @@ Art der Aussetzung &Frequenz-Bereich&Belastung des gesamten Körpers in W$\cdot$
 \hline
 \label{strahlung}%
 Berufsbedingte Belastung&1-100kHz&-&-&-\\
+\hline
 Berufsbedingte Belastung&100kHz-10MHz&0,4&10&20\\
+\hline
 Belastung in der Öffentlichkeit&1-100kHz&-&-&-\\
+\hline
 Belastung in der Öffentlichkeit&100kHz-10MHz&0,08&2&4
 \end{longtable}
-
-
+Weiter liegt die Überlegung nahe, Energie über größere Distanzen bereitzustellen oder Räume mit einem elektromagnetischen Feld zu fluten, um so auf jedem Punkt darin mit einer Empfängerspule einkoppeln zu können. Für den relevanten Frequenzbereich von 100kHz-10MHz nach ICNIRP bleibt die maximale abzugebende, nicht schädliche Strahlung konstant. Allerdings ist auch zu erwähnen, dass die zulässige Leistungsübertragung für Empfängerspulen von Handheld-Geräten (Durchmesser von 4cm bis 10cm) sich zwischen 2mW und 30mW bewegt. Damit lassen sich höchsten Sensornetzwerke, wie beispielsweise das ZigBee-Konzept versorgen. Zum Laden von mobilen Geräten ist diese geringe zugelassene Leistung unzureichend.   
+\subsection{Abschirmung}
+Maßnahmen zur Abschirmung müssen aus folgenden Gründen bei diesem System ergriffen werden:
+\begin{itemize}
+\item
+Das magnetische Feld könnte in andere Geräte einstreuen
+\item
+Es könnte zur Erwärmung der an der sekundären Seite angebrachten Akkuzelle kommen
+\item
+Wirbelströme in ungeschützten Metallteilen sind zu erwarten
+\end{itemize}
+Für diesen Frequenzbereich gibt es zwei grundlegende Methoden um magnetische Quellen abzuschirmen. Zum einen wäre die Option, dass ein magnetisches Gegenfeld aufgebaut wird, welches das eigentliche Arbeitsfeld auf die zu koppelnde Spule lenkt. Zum anderen besteht die Möglichkeit dass ein ferromagnetisches Material, beispielsweise eine Eisen- oder Ferritplatte, das magnetische Streufeld einfängt und bündelt. Diese Lösung wäre allerdings nur mit einer entsprechend dicken Schicht von ferromagnetischem Material sinnvoll. Denn dabei würde dennoch über der Platte ein magnetisches Feld (Restfeld) entstehen. Wenn man beide Optionen zusammenlegt, ergibt sich eine optimale Abschirmung. Dabei wird über die Eisenplatte eine Schicht eines elektrischen Leiters aufgebracht. In diesem wird vom Restfeld ein Strom erzeugt, der wiederum ein seiner Ursache entgegen wirkendes Magnetfeld aufbaut. Dieses löscht das oberhalb der Abschirmung vorhandene magnetische Feld aus. 
 \section{Lithium-Ionen Akkumulator}
 Der LiIon-Akku\footnote{Lithium-Ionen Akkumulator} stellt den aktuellen Stand der Technik in der elektrischen Speichertechnologie dar. Da dieser auch in dieser Arbeit zum Einsatz kommt, sollen im Folgenden die wichtigsten Eckdaten und Informationen bezüglich dessen Verwendung näher erläutert werden. Der Inhalt wurde sinngemäß aus der Webseite Battery University \citep{BAT} übernommen.
 \subsection{Aufladen}

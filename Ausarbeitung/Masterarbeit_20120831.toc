@@ -10,45 +10,46 @@
 \contentsline {subsection}{\numberline {3.2.2}Effizienz}{7}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Resonanzkopplung}{7}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Auswirkungen auf den K\IeC {\"o}rper}{8}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}Lithium-Ionen Akkumulator}{9}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Aufladen}{9}{subsection.3.3.1}
-\contentsline {subsubsection}{Phase 1}{10}{section*.7}
-\contentsline {subsubsection}{Phase 2}{11}{section*.8}
-\contentsline {subsubsection}{Phase 3}{11}{section*.9}
-\contentsline {subsubsection}{Phase 4}{11}{section*.10}
-\contentsline {subsection}{\numberline {3.3.2}Allgemeine Hinweise}{12}{subsection.3.3.2}
-\contentsline {chapter}{\numberline {4}Voruntersuchung}{13}{chapter.4}
-\contentsline {section}{\numberline {4.1}Motivation}{13}{section.4.1}
-\contentsline {section}{\numberline {4.2}Versuchsaufbau}{13}{section.4.2}
-\contentsline {section}{\numberline {4.3}Ergebnis}{14}{section.4.3}
-\contentsline {section}{\numberline {4.4}Messungen}{15}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Sonox P502}{15}{subsection.4.4.1}
-\contentsline {subsubsection}{Kapazit\IeC {\"a}t \IeC {\"u}ber steigender Druckbelastung}{15}{section*.11}
-\contentsline {subsubsection}{Kapazit\IeC {\"a}t \IeC {\"u}ber statischer Druckbelastung}{16}{section*.13}
-\contentsline {subsubsection}{Weitere Messung mithilfe des Maschinenschraubstocks}{19}{section*.15}
-\contentsline {subsubsection}{Messung mit anderer Impedanzmessfrequenz}{22}{section*.17}
-\contentsline {subsection}{\numberline {4.4.2}B\IeC {\"u}rklin Piezo-Stack von Elliptec}{24}{subsection.4.4.2}
-\contentsline {subsubsection}{Messung Piezo-Stack, ohne Entladungsma\IeC {\ss }nahme}{24}{section*.19}
-\contentsline {subsubsection}{Messung Piezo-Stack, mit Entladung, ohne Setz-Zeit}{27}{section*.21}
-\contentsline {subsubsection}{Messung Piezo-Stack, mit Entladung, mit 2 Minuten Setz-Zeit}{31}{section*.24}
-\contentsline {chapter}{\numberline {5}Hardware}{35}{chapter.5}
-\contentsline {section}{\numberline {5.1}Energiezuf\IeC {\"u}hrung}{35}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Energy-Harvesting}{35}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Drahtlose Energie\IeC {\"u}bertragung}{37}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Energiebereitstellung}{41}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Superkondensator}{41}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Lithium-Ionen-Akkumulator}{43}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Arbeitsschaltung}{49}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}CC2541}{49}{subsection.5.3.1}
-\contentsline {subsubsection}{Eingangsschutzbeschaltung}{50}{section*.31}
-\contentsline {subsubsection}{DC/DC Wandler}{50}{section*.32}
-\contentsline {subsubsection}{System on a Chip}{51}{section*.33}
-\contentsline {subsubsection}{Balun}{52}{section*.34}
-\contentsline {subsubsection}{Piezosignalgeber}{52}{section*.36}
-\contentsline {subsubsection}{Fazit}{54}{section*.37}
-\contentsline {subsection}{\numberline {5.3.2}CC430F6137}{54}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Sensorik}{60}{subsection.5.3.3}
-\contentsline {chapter}{\numberline {6}Software}{63}{chapter.6}
-\contentsline {section}{\numberline {6.1}Frequenzgenerierung}{63}{section.6.1}
-\contentsline {section}{\numberline {6.2}Sensorauswertung \& ISR}{67}{section.6.2}
-\contentsline {chapter}{Literaturverzeichnis}{81}{chapter*.42}
+\contentsline {subsection}{\numberline {3.2.5}Abschirmung}{9}{subsection.3.2.5}
+\contentsline {section}{\numberline {3.3}Lithium-Ionen Akkumulator}{10}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Aufladen}{10}{subsection.3.3.1}
+\contentsline {subsubsection}{Phase 1}{11}{section*.7}
+\contentsline {subsubsection}{Phase 2}{12}{section*.8}
+\contentsline {subsubsection}{Phase 3}{12}{section*.9}
+\contentsline {subsubsection}{Phase 4}{12}{section*.10}
+\contentsline {subsection}{\numberline {3.3.2}Allgemeine Hinweise}{13}{subsection.3.3.2}
+\contentsline {chapter}{\numberline {4}Voruntersuchung}{14}{chapter.4}
+\contentsline {section}{\numberline {4.1}Motivation}{14}{section.4.1}
+\contentsline {section}{\numberline {4.2}Versuchsaufbau}{14}{section.4.2}
+\contentsline {section}{\numberline {4.3}Ergebnis}{15}{section.4.3}
+\contentsline {section}{\numberline {4.4}Messungen}{16}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Sonox P502}{16}{subsection.4.4.1}
+\contentsline {subsubsection}{Kapazit\IeC {\"a}t \IeC {\"u}ber steigender Druckbelastung}{16}{section*.11}
+\contentsline {subsubsection}{Kapazit\IeC {\"a}t \IeC {\"u}ber statischer Druckbelastung}{17}{section*.13}
+\contentsline {subsubsection}{Weitere Messung mithilfe des Maschinenschraubstocks}{20}{section*.15}
+\contentsline {subsubsection}{Messung mit anderer Impedanzmessfrequenz}{23}{section*.17}
+\contentsline {subsection}{\numberline {4.4.2}B\IeC {\"u}rklin Piezo-Stack von Elliptec}{25}{subsection.4.4.2}
+\contentsline {subsubsection}{Messung Piezo-Stack, ohne Entladungsma\IeC {\ss }nahme}{25}{section*.19}
+\contentsline {subsubsection}{Messung Piezo-Stack, mit Entladung, ohne Setz-Zeit}{28}{section*.21}
+\contentsline {subsubsection}{Messung Piezo-Stack, mit Entladung, mit 2 Minuten Setz-Zeit}{32}{section*.24}
+\contentsline {chapter}{\numberline {5}Hardware}{36}{chapter.5}
+\contentsline {section}{\numberline {5.1}Energiezuf\IeC {\"u}hrung}{36}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Energy-Harvesting}{36}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Drahtlose Energie\IeC {\"u}bertragung}{38}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Energiebereitstellung}{42}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Superkondensator}{42}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Lithium-Ionen-Akkumulator}{44}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Arbeitsschaltung}{50}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}CC2541}{50}{subsection.5.3.1}
+\contentsline {subsubsection}{Eingangsschutzbeschaltung}{51}{section*.31}
+\contentsline {subsubsection}{DC/DC Wandler}{51}{section*.32}
+\contentsline {subsubsection}{System on a Chip}{52}{section*.33}
+\contentsline {subsubsection}{Balun}{53}{section*.34}
+\contentsline {subsubsection}{Piezosignalgeber}{53}{section*.36}
+\contentsline {subsubsection}{Fazit}{55}{section*.37}
+\contentsline {subsection}{\numberline {5.3.2}CC430F6137}{55}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Sensorik}{61}{subsection.5.3.3}
+\contentsline {chapter}{\numberline {6}Software}{64}{chapter.6}
+\contentsline {section}{\numberline {6.1}Frequenzgenerierung}{64}{section.6.1}
+\contentsline {section}{\numberline {6.2}Sensorauswertung \& ISR}{68}{section.6.2}
+\contentsline {chapter}{Literaturverzeichnis}{82}{chapter*.42}

@@ -3,9 +3,9 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Masterarbeit_20120831.aux
 The style file: alpha.bst
 Database file #1: literatur.bib
+Warning--to sort, need author, editor, or key in ICNIRP
 Warning--to sort, need author, editor, or key in DLR
 Warning--to sort, need author, editor, or key in DLR2
-Warning--to sort, need author, editor, or key in BAY
 Warning--to sort, need author, editor, or key in TESLA
 Warning--to sort, need author, editor, or key in WPC
 Warning--to sort, need author, editor, or key in BAT
@@ -24,7 +24,6 @@ Warning--to sort, need author, editor, or key in cc1101
 Warning--to sort, need author, editor, or key in iar
 Warning--to sort, need author, editor, or key in cc430f6137
 Warning--empty author and editor in BAT
-Warning--empty author and editor in BAY
 Warning--empty author and editor in cc1101
 Warning--empty author and editor in cc430f6137
 Warning--empty author and editor in CCDEBUG
@@ -33,6 +32,8 @@ Warning--empty author and editor in DLR2
 Warning--empty author and editor in ez430
 Warning--empty author and editor in git
 Warning--empty author and editor in iar
+Warning--empty author and editor in ICNIRP
+Warning--there's a number but no series in ICNIRP
 Warning--empty author and editor in LTC
 Warning--empty author and editor in MAS
 Warning--empty author and editor in multisim
@@ -45,43 +46,43 @@ Warning--empty author and editor in txline
 Warning--empty author and editor in WPC
 You've used 32 entries,
             2543 wiz_defined-function locations,
-            712 strings with 9224 characters,
-and the built_in function-call counts, 7990 in all, are:
-= -- 727
+            713 strings with 9201 characters,
+and the built_in function-call counts, 8011 in all, are:
+= -- 732
 > -- 116
-< -- 12
+< -- 13
 + -- 29
 - -- 24
-* -- 493
-:= -- 1160
+* -- 499
+:= -- 1162
 add.period$ -- 104
 call.type$ -- 32
-change.case$ -- 110
+change.case$ -- 111
 chr.to.int$ -- 27
-cite$ -- 92
+cite$ -- 93
 duplicate$ -- 512
 empty$ -- 881
 format.name$ -- 45
-if$ -- 1733
+if$ -- 1739
 int.to.chr$ -- 6
 int.to.str$ -- 0
 missing$ -- 44
-newline$ -- 171
+newline$ -- 170
 num.names$ -- 36
-pop$ -- 204
+pop$ -- 202
 preamble$ -- 1
 purify$ -- 172
 quote$ -- 0
-skip$ -- 321
+skip$ -- 320
 stack$ -- 0
 substring$ -- 244
-swap$ -- 32
-text.length$ -- 12
+swap$ -- 33
+text.length$ -- 13
 text.prefix$ -- 9
 top$ -- 0
 type$ -- 128
-warning$ -- 40
+warning$ -- 41
 while$ -- 24
 width$ -- 34
 write$ -- 415
-(There were 40 warnings)
+(There were 41 warnings)

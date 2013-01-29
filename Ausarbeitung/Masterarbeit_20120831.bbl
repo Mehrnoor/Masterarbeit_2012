@@ -6,12 +6,6 @@
 \newblock \\
   \url{http://batteryuniversity.com/learn/article/charging_lithium_ion_batteries}.
 
-\bibitem[BAY13]{BAY}
-{\em Der Piezoelektrische Effekt - Didaktik der Chemie}.
-\newblock Universit"at Bayreuth, Zugegriffen am: 28. 01. 2013.
-\newblock \\
-  \url{http://daten.didaktikchemie.uni-bayreuth.de/umat/piezo/piezo_effekt.htm}.
-
 \bibitem[cc113]{cc1101}
 {\em cc1101.pdf}.
 \newblock Texas Instruments Incorporated, Zugegriffen am: 26. 01. 2013.
@@ -74,6 +68,11 @@ B.~Zagar E.~Schr"ufer, L.~Reindl.
 {\em C/C++ Compiler 8051 - IAR Embedded Workbench for 8051}.
 \newblock IAR Systems, Zugegriffen am: 26. 01. 2013.
 \newblock \\ \url{http://www.iar.com/en/Products/IAR-Embedded-Workbench/8051/}.
+
+\bibitem[ICN98]{ICNIRP}
+{\em Guidelines for limiting exposure to time-varying electric, magnetic, and
+  electromagnetic fields}.
+\newblock Number~4. Health Physics, 74 edition, April 1998.
 
 \bibitem[Ins08]{ADS1232}
 Texas Instruments.
