@@ -203,8 +203,48 @@ Wird der technischen Aufbau nun so gestaltet, dass er zur Energieumwandlung und 
 \section{Drahtlose Energieübertragung}
 Das hier vorgestellte Konzept bezieht sich auf Technologie, die mit dem WPC\footnote{Wireless Power Consortium}-Standard konform ist. Es gibt auch andere Konzepte, die sich mit drahtloser Energieübertragung beschäftigen. Das ist auch nachvollziehbar wenn man bedenkt, dass die ersten drahtlosen Anlagen von Nikola Tesla bereits 1895 in Betrieb genommen wurden\citep{TESLA}. Allerdings weisen die meisten einfacheren Aufbauten einen entscheidenden Nachteil auf: Sie sind nicht geregelt. Der WPC-Standard hat aber nicht nur das Regelungssystem als Vorteil gegenüber anderen Konzepten vorzuweisen. In den nachfolgenden Unterkapiteln werden die einzelnen Punkte der Spezifikation aufgeführt und erklärt. Dabei ist der Inhalt sinngemäß aus Quelle \citep{WPC} genommen.
 \subsection{Prinzip}
-Das zugrundeliegende Prinzip
-
+\label{Prinzip}
+Das zugrundeliegende Prinzip ist die induktive Kopplung, ähnlich derer eines Transformators. Sie besteht aus einer Empfänger- und einer Sendespule, welche wiederum eine eine magnetisch-gekoppelte Einheit bilden. Wechselströme in der Sendespule erzeugen ein Magnetfeld das über die Lenz'sche Regel Strom in die Empfängerspule induziert. Die durch das Ohm'sche Gesetz entstehende Spannung kann zur Versorgung eines Handheld-Geräts verwendet werden. Über den Kopplungsfaktor und die Güte der Induktivitäten lassen sich Rückschlüsse auf das System ziehen. Bestimmend wirken folgende Faktoren auf die Kopplung:
+\begin{itemize}
+\item
+Abstand zwischen den beiden Spulen
+\item
+Größe der Spulen zueinander
+\item
+Form der Spulen
+\item
+Winkel zwischen den Spulen
+\end{itemize}
+\subsection{Effizienz}
+Zur Erhaltung einer optimalen Anpassung zwischen der Ein- und Ausgangsleistung müssen weitere Dinge beachtet werden. So darf kein allzu großer Unterschied im Größenverhältnis der beiden beteiligten Induktivitäten entstehen. Weiter sinkt der Leistungsfaktor mehr als indirekt proportional mit dem steigenden Abstand zwischen den Spulen. 
+\subsection{Resonanzkopplung}
+Um die induktive Kopplung zu erweitern können Resonanz-Schwingkreise verwendet werden. Dieses Prinzip wurde bereits von Nikola Tesla im vorletzten Jahrhundert aufgegriffen. Für Systeme mit schlechter Kopplung ist dies eine gute Möglichkeit den Energiefluss zu verbessern. Denselben Rahmenbedingungen wie der rein induktiven Kopplung folgend, hat diese Methode bereits weite Verbreitung gefunden. Ähnlich wie die Saiten einer akustischen Gitarre in einem entsprechenden Umfeld lässt sich selbst mit geringstem Aufwand ein Schwingkreis anregen. Bei der Gitarre genügt beispielsweise eine Unterhaltung in der selben Tonlage um eine merkliche Schwingung wahrnehmen zu können. Bei dieser Form der Energieübertragung lässt sich ein vergleichbarer Aufbau mit zusätzlichen Kondensatoren zu den Induktivitäten erstellen. Diese eliminieren auftretende Streuinduktivitäten im Empfänger und magnetisierende Induktivitäten im Sender. Die einzig übrigbleibende Größe ist der reelle Widerstand der Spulen. Aber bei gegebener guter Güte wie im vorhergehenden Unterkapitel \vref{Prinzip} lässt sich dieser Effekt als Minimal betrachten. 
+\subsection{Auswirkungen auf den Körper}
+Ausgehend von der Allgegenwart von Elektromagnetischer Strahlung und dessen weit gefächertes Frequenzspektrum von 0 bis 300GHz sind gesundheitliche Aspekte zu untersuchen. So genügen bei sogenannter ionisierender Strahlung, zu der auch Röntgen- und Gammastrahlung zu zählen ist, wenige Milliwatt um den menschlichen Körper zu beschädigen. Die Frequenzen der WPC-konformen Module bewegen sich im Gegensatz dazu im nicht ionisierenden Bereich. Die "`International Commission on Non-Ionizing Radiation Protection", kurz ICNIRP, hat dazu Richtlinien aufgestellt. Darin wird festgehalten, mit welcher Leistung in einem bestimmten Frequenzbereich auf den menschlichen Körper eingewirkt werden darf, ohne diesen zu schädigen.
+\setlongtables
+\begin{longtable}{| p{2,6cm} |p{2,4cm} | p{2,4cm} |p{2,4cm} |p{2,4cm} |}
+\caption{Richtwerte nach der ICNIRP}\\
+\hline
+Art der Aussetzung &Frequenz-Bereich&Belastung des gesamten Körpers in W$\cdot$kg$^{-1}$ &Belastung von Kopf und Torso in W$\cdot$kg$^{-1}$ & Belastung der Extremitäten in W$\cdot$kg$^{-1}$ \\
+\hline
+\endfirsthead
+\hline
+Art der Aussetzung &Frequenz-Bereich&Belastung des gesamten Körpers in W$\cdot$kg$^{-1}$ &Belastung von Kopf und Torso in W$\cdot$kg$^{-1}$ & Belastung der Extremitäten in W$\cdot$kg$^{-1}$ \\
+\hline
+\endhead
+\hline
+\multicolumn{5}{|c|}{Fortsetzung auf der nächsten Seite}\\
+\hline
+\endfoot
+\hline \hline
+\endlastfoot
+\hline
+\label{strahlung}%
+Berufsbedingte Belastung&1-100kHz&-&-&-\\
+Berufsbedingte Belastung&100kHz-10MHz&0,4&10&20\\
+Belastung in der Öffentlichkeit&1-100kHz&-&-&-\\
+Belastung in der Öffentlichkeit&100kHz-10MHz&0,08&2&4
+\end{longtable}
 
 
 \section{Lithium-Ionen Akkumulator}
