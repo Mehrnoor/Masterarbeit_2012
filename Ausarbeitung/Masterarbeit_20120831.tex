@@ -44,6 +44,7 @@
 \usepackage{color, listings}
 \definecolor{brown}{cmyk}{0,0.81,1,0.60}
 \definecolor{lightgray}{cmyk}{0.05,0.05,0.05,0.01}
+\usepackage{subfig}% mehrere Bilder in einer Bildumgebung mit \subfloat{bild.jpg}
 %\usepackage{cite}
 %\usepackage[round]{natbib}
 %\bibliographystyle{alphadin}
@@ -98,9 +99,9 @@
 
 %%% The "real" document content comes below...
 
-\title{Entwicklung und Erprobung einer piezoresistiven Sensor-Schaltung mit drahtloser Energieversorgung im Projekt "MedLast"}
-\author{Stephan Jobstmann}
-\date{\today}
+%\title{Entwicklung und Erprobung einer piezoresistiven Sensor-Schaltung mit drahtloser Energieversorgung im Projekt "MedLast"}
+%\author{Stephan Jobstmann}
+%\date{\today}
 \pagenumbering{roman}
 
 %\date{} % Activate to display a given date or no date (if empty),
@@ -110,9 +111,96 @@
 
 
 \begin{document}
-\maketitle
-\setcounter {page}{1}
+%%%%%%%%%%%%%
 \def\chapterpagestyle{fancy}
+\begin{titlepage}
+\thispagestyle{empty}
+ \begin{center}
+ \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.25\textwidth]{Bilder/UAS-LA_Logo.jpg}
+\end{figure}
+\vspace*{1cm}
+ \Large{Hochschule Landshut\\Fakultät Elektrotechnik und Wirtschaftsingenieurwesen \\Master Elektrotechnik }
+
+  \vspace*{1.5cm}
+ {\bf \huge Entwicklung und Erprobung einer piezoresistiven Sensor-Schaltung mit drahtloser Energieversorgung im Projekt MedLast}
+ \vspace*{1cm} \\
+ {\Large Master-Thesis\\von\\}
+ \vspace{0.5cm}
+ {\Large \bfseries Stephan Jobstmann\\}
+ \vspace{0.5cm}
+ {\Large geboren am 28. 09. 1988}
+ \vfill
+  \vspace*{1.5cm}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|l l|}\hline
+		Aufgabensteller: & Prof. Dipl.-Phys. Anton Harasim\\ \hline
+		Betreuer: & Dipl.-Ing. Sophie Engelsberger\\ \hline
+		Matrikelnummer: & 740131 \\ \hline
+		Arbeit vorgelegt am: & \today\\ \hline
+	\end{tabular}
+\end{table}
+
+ \end{center}
+\end{titlepage}
+
+\begin{center}
+\vspace*{1.5cm}
+ \Large \bfseries Erklärung zur Diplomarbeit\\
+(gemäß § 31, Abs. 7 RaPO)
+\end{center}
+\vspace*{3 cm}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{l l}
+		Name, Vorname  &\\
+		des Studierenden: & \textbf{Jobstmann Stephan}
+	\end{tabular}
+\end{table}
+\vspace*{3 cm}
+Hochschule Landshut\\
+Fakultät Elektrotechnik und Wirtschaftsingenieurwesen\\
+\vspace*{1,5 cm}
+\\
+Hiermit erkläre ich, das ich die Arbeit selbstständig verfasst, noch nicht anderweitig für Prüfungszwecke vorgelegt, keine anderen als die angegebenen Quellen oder Hilfsmittel benützt sowie wörtliche und sinngemäße Zitate als solche gekennzeichnet habe.
+\vspace*{2 cm}
+\\
+Landshut, den \today \qquad \qquad \qquad  \qquad \qquad (Stephan Jobstmann)
+\chapter*{Zusammenfassung}
+Die vorliegende Arbeit ist Teil des Projekts MedLast an der Hochschule Landshut, Fakultät Elektrotechnik und Wirtschaftsingenieurwesen. Ziel des Projekts ist ein System zu entwickeln, dass eine Überwachung des Genesungsprozesses sowohl für den Patienten als auch für den behandelnden Arzt ermöglicht. Dabei wird in der Fußschiene ein Elektronikmodul eingesetzt, dass Schrittzahl und Belastung auswertet. Diese Daten werden einerseits in einem Speicher für den Orthopäden aufgezeichnet und andererseits in Echtzeit für den Patienten verständlich aufbereitet und an eine Anzeige am Handgelenk desjenigen weitergeleitet. So hat der Genesende stets einen Überblick über Belastung seines Beines.\\
+Ziel dieser Arbeit ist es, ein funktionierendes Konzept für die Elektronik des Fußmoduls zu entwickeln. Dies schließt
+\begin{itemize}
+\item
+eine Auswertung der Belastung über eine Sensorikschaltung,
+\item
+eine verschleißfreie Aktivierung über einen Piezodruckaufnehmer,
+\item
+einen akustischen Signalgeber bei Überbelastung, 
+\item
+diverse Schaltungen zur Sicherheit und Leistungsoptimierung,
+\item
+ein Empfängermodul für drahtlose Energieübertragung und 
+\item
+eine Einheit zur Energiebereitstellung 
+\end{itemize}
+mit in die Aufgabenstellung mit ein. 
+\newline\newline
+Es wurden bei der Bearbeitung der Thematik folgende Ergebnisse erzielt:
+\begin{itemize}
+\item
+Während der Voruntersuchung wurde empirisch bewiesen, dass bei hinreichenden Störfaktoren während der Messung und bei kleiner Auslenkung unter 200 Newton eine kapazitive Messmethode mit Piezoelementen unzureichende Ergebnisse liefern. 
+\item
+Energy-Harvesting wurde im Bereich der thermoelektrischen Wandlung getestet. Allerdings hat sich beim praktischen Aufbau und bei der kommerziellen Betrachtung die drahtlose Energieübertragung als Energiezuführung für das System sich durchgesetzt. Ein eigener Aufbau eines Empfängers in Dickschichttechnik wurde bereits erfolgreich in Betrieb genommen. 
+\item
+Durch die parallele Bearbeitung mehrerer Teilgebiete des Projekts hat sich ein geringfügiger Mehraufwand im Schaltungs-Entwurf ergeben. So wurde zunächst eine Schaltung für ein System-on-a-Chip entwickelt welches auf dem 2,4 GHz Band sendet. Dieses ist allerdings ungünstig für den körpernahen Einsatz. Darum wurde ein zweites Layout für einen Mikrocontroller mit integrierter Sendeeinheit entwickelt. Dieser sendet auf einer besser geeigneten Frequenz von 868MHz. Gleichzeitig dazu wurde ein bereits fertiges Evaluations-Modul soweit modifiziert um die Sensorik darauf anzubinden. 
+\item
+Die Sensorik wurde samt Auswertungsbaustein erfolgreich an mehreren eingebetteten Systemen getestet. Darunter war auch das oben genannte modifizierte Evaluations-Modul.
+\end{itemize}
+%\maketitle
+%\setcounter {page}{1}
+
 \tableofcontents
 \listoffigures
 \lstlistoflistings
@@ -200,7 +288,7 @@ Quelle:Stephan Jobstmann
 Eine im Vergleich zu piezoelektrischem Energy-Harvesting hohe Energieumwandlung wird mit der thermoelektrischen Transformation erzielt. Dabei wird als physikalische Grundlage der Seebeck-Effekt benutzt. Dieser beschreibt, dass bei zwei unterschiedlichen Metalllegierungen bei vorliegender Differenz der Temperaturen am Übergang der Elemente eine Spannung entsteht. Die entstandene Potentialdifferenz wird auch Thermospannung \citep[vgl. S.158]{Schruefer2012} genannt. Die Inverse dieses Vorgangs wird mit dem Peltier-Effekt beschrieben. Da das Verhalten der spezifischen Elemente reziprok ist, können Peltierelemente auch zur Gewinnung von elektrischer Energie genutzt werden. \newline
 Der Seebeck-Effekt beruht auf den folgenden molekularen Gegebenheiten: Naturgemäß wandern bei einem Metall, welches einem Temperaturunterschied ausgesetzt ist, die Elektronen von der heißen zur kalten Seite. Dies geschieht aufgrund der natürlichen Diffusionsbewegung innerhalb des Metalls. Bei zwei aneinanderliegenden, verlöteten oder verschweißten Legierungen gibt das Metall mit der niedrigeren Austrittsarbeit Elektronen an das andere Metall ab und wird dadurch positiv geladen. Dadurch bildet sich an der Kontaktfläche ein elektrisches Feld. Dieses kann resultierend als direkte Proportionale zur anliegenden Temperaturdifferenz der zwei Kontaktstellen mit einem Voltmeter gemessen werden. Übliche Werte hierfür sind ca. $10  \frac{\textrm{mV}}{100 \degree \textrm{K}}$. Durch intelligente Beschaltung, zum Beispiel mehrere Elemente in Reihe, lässt sich eine höhere Empfindlichkeit erzielen. Mit dem in Kapitel \vref{energy} vorgestellten LTC3108 Baustein lässt sich ab einer Ausgangsspannung von 20mV eine stabile Energieumwandlung in Gang bringen. \newline \newline
 Wird der technischen Aufbau nun so gestaltet, dass er zur Energieumwandlung und nicht zur Temperaturmessung verwendet werden soll, erweist es sich als nützlich ein oder mehrere Peltierelemente im umgekehrten Betrieb zu verwenden. \citep[vgl. S.30]{Dembowski2011}
-\section{Drahtlose Energieübertragung}
+\section{Drahtlose Energieversorgung}
 Das hier vorgestellte Konzept bezieht sich auf Technologie, die mit dem WPC\footnote{Wireless Power Consortium}-Standard konform ist. Es gibt auch andere Konzepte, die sich mit drahtloser Energieübertragung beschäftigen. Das ist auch nachvollziehbar wenn man bedenkt, dass die ersten drahtlosen Anlagen von Nikola Tesla bereits 1895 in Betrieb genommen wurden\citep{TESLA}. Allerdings weisen die meisten einfacheren Aufbauten einen entscheidenden Nachteil auf: Sie sind nicht geregelt. Der WPC-Standard hat aber nicht nur das Regelungssystem als Vorteil gegenüber anderen Konzepten vorzuweisen. In den nachfolgenden Unterkapiteln werden die einzelnen Punkte der Spezifikation aufgeführt und erklärt. Dabei ist der Inhalt sinngemäß aus Quelle \citep{WPC} genommen.
 \subsection{Prinzip}
 \label{Prinzip}
@@ -275,7 +363,7 @@ Quelle: Cadex Electronics Incorporated \citep{BAT}
 \label{fig:bat}
 \end{figure}
 \subsubsection{Phase 1}
-In der ersten Phase des Ladevorgangs wird der Akku mit einem konstanten Ladestrom gespeist. Dabei wird die Höhe in der Einheit $C$ festgelegt. Diese ist nicht zu verwechseln mit der Bezeichnung der Ladung, $Coulomb$. Stattdessen handelt es sich um einen Umrechnungsfaktor, ausgehend vom Quotienten $\frac{Ladestrom}{Kapazit"at}$ beziehungsweise $1\frac{A}{Ah}$. Dabei wird das resultierende $\frac{1}{h}$ in der Literatur ignoriert und man spricht generell von $C$. Übliche Werte hierfür bewegen sich zwischen 0,5 und 1$C$. Ein Ladestrom von 0,7$C$ hat als resultierenden Strom 1,4A bei einer 2Ah Zelle. Allerdings ist es für die Zelle auch nicht schädlich, wenn sie weit unter diesen Werten bestromt wird. So können LiIon-Zellen beispielsweise auch mit Solarzellen oder anderen Niederstrom-erzeugenden Quellen gespeist werden.
+In der ersten Phase des Ladevorgangs wird der Akku mit einem konstanten Ladestrom gespeist. Dabei wird die Höhe in der Einheit $C$ festgelegt. Diese ist nicht zu verwechseln mit der Bezeichnung der Ladung, $Coulomb$. Stattdessen handelt es sich um einen Umrechnungsfaktor, ausgehend vom Quotienten $\frac{Ladestrom}{Kapazit"at}$ beziehungsweise $1\frac{A}{Ah}$. Dabei wird das resultierende $\frac{1}{h}$ in der Literatur ignoriert und generell nur von $C$ gesprochen. Übliche Werte hierfür bewegen sich zwischen 0,5 und 1$C$. Ein Ladestrom von 0,7$C$ hat als resultierenden Strom 1,4A bei einer 2Ah Zelle. Allerdings ist es für die Zelle auch nicht schädlich, wenn sie weit unter diesen Werten bestromt wird. So können LiIon-Zellen beispielsweise auch mit Solarzellen oder anderen Niederstrom-erzeugenden Quellen gespeist werden.
 \subsubsection{Phase 2}
 Wenn beim Laden mit konstanten Strom der Spannungswert von 4,05V erreicht wird, ändert sich die Ladestrategie. Nun wird eine konstante Spannung von 4,2V an die Zelle angelegt. Dabei wird der Ladestrom weiter gemessen, denn an ihm wird das Abbruchkriterium festgelegt. Erreicht der Strom 3\% des in der ersten Phase festgelegten Werts, so ist der Akku fertig geladen und die Zelle gesättigt. Auch hier sei angemerkt, dass die maximale Spannung von 4,2V nicht zwingend erreicht werden muss. Wird die Zelle bei einer Spannung von 4,1V geladen, erreicht sie nicht die maximale Kapazität. Dafür kann Sie öfter geladen werden, die Ladezyklenzahl erhöht sich.
 \subsubsection{Phase 3}
@@ -308,7 +396,7 @@ Ausschlaggebend für diese Messungen ist die Bestimmung von mechanischen Lastwec
 Dieses Kapitel bezieht sich auf die Untersuchung von Abhängigkeiten zwischen mechanischer Druckbelastung und elektrischer Kapazitätsänderung am Piezoelement. Weiter ist es zu großen Zügen dem Vorbericht \citep{Jobstmann2012} wörtlich entnommen.
 \section{Versuchsaufbau}
 
-Ziel dieser Versuchsreihe ist die Bestimmung der Kapazitätsänderung von piezoelektrischen Elementen bei mechanischer Druckbelastung. Dabei wird das Piezoelement elektrisch isoliert in einem Schraubstock belastet. Über Zuleitungen wird mit einem sogenannten LCR-Meter eine Vierdraht-Impedanz-Messung durchgeführt, die einzelnen Parameter hierfür werden bei den Versuchsreihen angegeben. Mithilfe einer Kraftmessdose, welche eine Vollmessbrücke mit Dehnmessstreifen beinhaltet, wird der angelegte mechanische Druck am Piezoelement abgeleitet. Da zu Messbeginn nur geringe Zusatzinformationen zu diesem Hilfsmittel vorhanden waren, geschahen alle Auswertungen in einem geringen Bereich unterhalb der Maximalbelastbarkeit von 250N. Weiter ist die angelegte Versorgungsspannung an der Messdose stets 10V DC. bei allen Messungen wurde ein LCR-Meter ISO-TECH LCR-821 zur Impedanzmessung und ein Fluke-Hand-Multimeter 179 zur Spannungsmessung verwendet. Als Spannungsquelle stand ein Hameg HM8142 bereit.
+Ziel dieser Versuchsreihe ist die Bestimmung der Kapazitätsänderung von piezoelektrischen Elementen bei mechanischer Druckbelastung. Dabei wird das Piezoelement elektrisch isoliert in einem Schraubstock belastet. Über Zuleitungen wird mit einem sogenannten LCR-Meter eine Vierdraht-Impedanz-Messung durchgeführt, die einzelnen Parameter hierfür werden bei den Versuchsreihen angegeben. Mithilfe einer Kraftmessdose, welche eine Vollmessbrücke mit Dehnmessstreifen beinhaltet, wird der angelegte mechanische Druck am Piezoelement abgeleitet. Da zu Messbeginn nur geringe Zusatzinformationen zu diesem Hilfsmittel vorhanden waren, geschahen alle Auswertungen in einem geringen Bereich unterhalb der Maximalbelastbarkeit von 250N. Weiter ist die angelegte Versorgungsspannung an der Messdose stets 10V DC. Bei allen Messungen wurde ein LCR-Meter ISO-TECH LCR-821 zur Impedanzmessung und ein Fluke-Hand-Multimeter 179 zur Spannungsmessung verwendet. Als Spannungsquelle stand ein Hameg HM8142 bereit.
 
 \section{Ergebnis}
 
@@ -534,7 +622,7 @@ Quelle: Stephan Jobstmann
 
 \newpage
 \subsection{Bürklin Piezo-Stack von Elliptec}
-Da die vorhergehenden Messungen mit dem einfach aufgebauten Piezoelement nicht die erforderlichen Resultate bezüglich Charakteristik und Reproduzierbarkeit brachten, wurde nun eine Versuchsreihe mit gestapelten Piezoelementen angestrebt. Der Messaufbau blieb weiterhin derselbe, d.h. mithilfe eines Schraubstocks mit Kunststoffbacken wurde eine mechanische Druckbelastung an den Piezostack (im Folgenden auch Stack genannt) und einer Kraftmessdose in Serie angelegt. Beim verwendeten LCR-Meter wurden folgende Parameter eingestellt:
+Da die vorhergehenden Messungen mit dem einfach aufgebauten Piezoelement nicht die erforderlichen Resultate bezüglich Charakteristik und Reproduzierbarkeit brachten, wurde nun eine Versuchsreihe mit gestapelten Piezoelementen angestrebt. Der Messaufbau blieb weiterhin derselbe wie in den ersten Versuchen, d.h. mithilfe eines Schraubstocks mit Kunststoffbacken wurde eine mechanische Druckbelastung an den Piezostack (im Folgenden auch Stack genannt) und einer Kraftmessdose in Serie angelegt. Beim verwendeten LCR-Meter wurden folgende Parameter eingestellt:
 \begin{itemize}
 \item 1kHz
 \item 1V
@@ -685,7 +773,7 @@ Quelle: Stephan Jobstmann
 
 \newpage
 \subsubsection{Messung Piezo-Stack, mit Entladung, mit 2 Minuten Setz-Zeit}
-Um eine treffen Aussage fassen zu können, wurde die vorhergehende Messung komplett wiederholt. Jedoch wurde dieses mal bei den einzelnen Werten eine Setz-Zeit von 2 Minuten eingehalten, um etwaige Fehler aufgrund des elastischen Materials der Schraubstockbacken zu minimieren. Allerdings sind auch hier anhand von Abbildung \vref{fig:2.9} die deutliche Abweichung zwischen den Kapazitätslinien zu sehen. Die dazugehörigen Werte sind in Tabelle \vref{tab:2.9} zu finden.\\
+Um eine treffende Aussage fassen zu können, wurde die vorhergehende Messung komplett wiederholt. Jedoch wurde dieses mal bei den einzelnen Werten eine Setz-Zeit von 2 Minuten eingehalten, um etwaige Fehler aufgrund des elastischen Materials der Schraubstockbacken zu minimieren. Allerdings sind auch hier anhand von Abbildung \vref{fig:2.9} die deutliche Abweichung zwischen den Kapazitätslinien zu sehen. Die dazugehörigen Werte sind in Tabelle \vref{tab:2.9} zu finden.\\
 Auch hier wurde eine Messung des auftretenden Parallelwiderstands angestoßen. Die Resultate sind in Tabelle \vref{tab:2.10} und Abbildung \vref{fig:2.10} nachzulesen.
 
 \setlongtables
@@ -785,7 +873,7 @@ Als zielführend erweist sich eine Vorüberlegung im Bezug auf die Möglichkeite
 \label{energy}
 In diesem Teilbereich werden zwei physikalische Grundarten des Micro Energy Harvesting betrachtet. Diese sind die Umwandlung von mechanischer Schwingungsenergie und thermischer Differenz in elektrische Spannung. Bei der Vorbereitung und Einarbeitung in die entsprechende Thematik wird bei der Umformung von mechanischen Schwingungen in Elektrizität offensichtlich, dass dies eine ungünstige Form der Energiegewinnung für dieses System ist. Dies liegt unter anderem an der unmöglichen Abstimmung der durch den Auftritt erzeugten Erregung auf die Resonanzfrequenz des Schwingungsaufnehmers. Weiter benötigt ein solches Bauelement einen Freiraum um seine abklingende Bewegung harmonisch abbauen zu können. Es müssen auch die maximal auftretenden Beschleunigungen berücksichtigt werden was wiederum zu einer Versteifung des kompletten Federsystems führen würde. Das hätte als Resultat, dass durch die Erhöhung der dynamischen Bandbreite die verhältnismäßig kleineren Anregungen einen schlechteren Wirkungsgrad liefern würden. Diese Umstände schließen die piezoelektrische Wandlung leider für die Option der Energiezuführung aus. \citep[vgl. S.39]{Dembowski2011} \newline 
 Die thermoelektrische Wandlung beruht auf der Inversen des Peltier-Effekts, dem Seebeck Effekt. Diesem liegt zu Grunde, dass am Übergang von zwei unterschiedlichen Metallen unterschiedlicher Temperierung ein elektrisches Feld aufgebaut wird. Die Verwendung dieses Effekts war zunächst nur bei Temperatur-Messfühlern weit verbreitet. Allerdings ist aufgrund der fortschreitenden Entwicklung der Micro Energy Harvesting Technologien dieser Effekt mittlerweile auch zur Energieversorgung nutzbar. \newline \newline
-Als zentralen Baustein für die Erprobung von Micro-Energy-Harvesting Systemen im Bezug auf thermo-elektrische Energiewandlung bietet sich der \textit{LTC3108} von der Firma Linear Technology an. Dieser vermag mit geringem Aufwand Eingangsspannungen von 20mV bis 500mV auf ausgangsseitig bis zu 5V aufwärts zu wandeln. Um möglichst schnell Erkenntnisse aus der Wirkungsweise des Bausteins ziehen zu können, wird eine im Internet veröffentlichte Schaltung\footnote{Github Repository of wa7iut \citep{git}} für Tests verwendet (siehe Abbildung \vref{fig:4.1}). Diese hält sich strikt an die Vorgaben des Datenblatts\footnote{LTC3108 - Ultralow voltage Step-Up Converter and Power Manager \citep{LTC}} \citep{LTC3108}. Beim LTC3108 handelt es sich um einen Spannungs-Aufwärtswandler\footnote{Step-Up-Converter} für sehr niedrige Eingangsspannungen. Im Gegensatz zum normalen Aufbau von Aufwärtswandlern wird keine einfache Induktivität sondern ein kleiner Transformator verwendet. Dies reduziert zwar aufgrund des hohen Übersetzungsverhältnisses (1:20 bis 1:100) den Wirkungsgrad, allerdings lassen sich so auch höhere Spannungen erzeugen. Bei dem Versuchsaufbau wird ein 1:100 Transformator verwendet, da sich die Eingangsspannungen, welche experimentell ermittelt wurden, sich zwischen 20mV und 90mV bewegen. Als zu erstrebende Ausgangsspannung wurde schaltungstechnisch 3,3V eingestellt, da dies die zur Zeit am häufigsten bei Mikrocontrollern vorkommende Versorgungsspannung ist. Als externer Energiespeicher wurde ausgangsseitig an die Schaltung ein $2200 \mu$F Kondensator angefügt. Als energieerzeugendes Element wurde ein Peltierelement mit einem Aluminium-Kühlkörper versehen. So muss bei ausreichender zugeführter Wärme nicht einmal aktiv gekühlt werden, es genügt die Wärmeveräußerung durch den Kühlkörper.%weitere Fotos
+Als zentralen Baustein für die Erprobung von Micro-Energy-Harvesting Systemen im Bezug auf thermo-elektrische Energiewandlung bietet sich der \textit{LTC3108} von der Firma Linear Technology an. Dieser vermag mit geringem Aufwand Eingangsspannungen von 20mV bis 500mV auf ausgangsseitig bis zu 5V aufwärts zu wandeln. Um möglichst schnell Erkenntnisse aus der Wirkungsweise des Bausteins ziehen zu können, wird eine im Internet veröffentlichte Schaltung\footnote{Github Repository of wa7iut \citep{GIT}} für Tests verwendet (siehe Abbildung \vref{fig:4.1}). Diese hält sich strikt an die Vorgaben des Datenblatts\footnote{LTC3108 - Ultralow voltage Step-Up Converter and Power Manager \citep{LTC}} \citep{LTC3108}. Beim LTC3108 handelt es sich um einen Spannungs-Aufwärtswandler\footnote{Step-Up-Converter} für sehr niedrige Eingangsspannungen. Im Gegensatz zum normalen Aufbau von Aufwärtswandlern wird keine einfache Induktivität sondern ein kleiner Transformator verwendet. Dies reduziert zwar aufgrund des hohen Übersetzungsverhältnisses (1:20 bis 1:100) den Wirkungsgrad, allerdings lassen sich so auch höhere Spannungen erzeugen. Bei dem Versuchsaufbau wird ein 1:100 Transformator verwendet, da sich die Eingangsspannungen, welche experimentell ermittelt wurden, sich zwischen 20mV und 90mV bewegen. Als zu erstrebende Ausgangsspannung wurde schaltungstechnisch 3,3V eingestellt, da dies die zur Zeit am häufigsten bei Mikrocontrollern vorkommende Versorgungsspannung ist. Als externer Energiespeicher wurde ausgangsseitig an die Schaltung ein $2200 \mu$F Kondensator angefügt. Als energieerzeugendes Element wurde ein Peltierelement mit einem Aluminium-Kühlkörper versehen. So muss bei ausreichender zugeführter Wärme nicht einmal aktiv gekühlt werden, es genügt die Wärmeveräußerung durch den Kühlkörper.%weitere Fotos
 \begin{figure}[htb]
 \caption{LTC3108 Board von Ambient Sensors}
 \centering
@@ -851,7 +939,7 @@ Da die Markttauglichkeit bei diesem Projekt eine wesentliche Rolle spielt, wird 
 Als Superkondensator werden im Allgemeinen hochkapazitive Energieträger bezeichnet, die Ihre elektrische Ladung anders als Keramik-, Tantal-, Elektrolyt- oder Folienkondensatoren speichern. Sie funktionieren nicht wie diese durch Ladungsseparation mittels Dielektrikum sondern bedienen sich anderer Effekte, wie Energiespeicherung in Helmholtz-Doppelschichten\footnote{Doppelschichtkondensator}, faradayscher Ladungstausch\footnote{Pseudokondensator} oder einer Kombination aus beiden Technologien\footnote{Hybridkondensator}. Aufgrund dieser anderen Bauweisen lassen sich Kapazitäten erreichen, die das von Elektrolytkondensatoren um das 10000-fache überschreiten. Somit ziehen sie bezüglich der Ladungsdichte mit Akkumulatoren gleich. Anders als bei den üblichen Kondensatoren wird durch den technologischen Unterschied der Funktionsprinzipien eine lineare Lade- beziehungsweise Entladekurve erreicht. Weiter In Miniaturbauweise für Platinenmontage sind so ganzzahlige Farad an Ladungskapazität mit dieser Technologie bereits üblich. Für den praktischen Einsatz für die Arbeit fielen diese Energiespeicher aufgrund ihrer schaltungstechnischen Zusatzbeschaltung zur Spannungsstabilisierung und des, im Gegensatz zu den weit verbreiteten Lithium-Ionen Akkus, hohen Kostenfaktors aus. Weiter ist die Selbstentladung zudem höher als bei konventionellen Akkumulatoren. Aus diesen Gründen wurde eine Lösung der Energiezwischenspeicherung, welche auf Superkondensatoren basiert, nicht weiter verfolgt.
 \subsection{Lithium-Ionen-Akkumulator}
 \label{chap:4.2.2}
- Der Lithium-Ionen-Akku hat sich in den letzten Jahren zur Standardtechnologie für wiederaufladbare Energiespeicher entwickelt. Sie sind in nahezu jedem portablen, elektrisch betriebenen Gerät zu finden. Durch weitere Sicherheitsmaßnahmen, wie den in nahezu allen Li-Ion-Akkus verbauten NTC\footnote{Negative Temperature Coefficient}-Widerstand, der mithilfe externer Sicherheits- und Messbeschaltung Rückschlüsse über die interne Temperaturentwicklung des Energiespeichers schließen lässt. Dies verhindert bei einer Fehlfunktion oder einem Schaden des Akkus einen Brand oder gar eine Explosion des Geräts\footnote{Uelzen: Explodiertes Notebook löst Feuerwehreinsatz aus \citep{tonline}}. \\
+ Der Lithium-Ionen-Akku hat sich in den letzten Jahren zur Standardtechnologie für wiederaufladbare Energiespeicher entwickelt. Sie sind in nahezu jedem portablen, elektrisch betriebenen Gerät zu finden. Durch weitere Sicherheitsmaßnahmen, wie den in nahezu allen Li-Ion-Akkus verbauten NTC\footnote{Negative Temperature Coefficient}-Widerstand, der mithilfe externer Sicherheits- und Messbeschaltung Rückschlüsse über die interne Temperaturentwicklung des Energiespeichers schließen lässt. Dies verhindert bei einer Fehlfunktion oder einem Schaden des Akkus einen Brand oder gar eine Explosion des Geräts\footnote{Uelzen: Explodiertes Notebook löst Feuerwehreinsatz aus \citep{TONLINE}}. \\
 Für das Projekt wurde nach einem IC-Baustein gesucht, der selbstständig bei ausreichender Eingangsspannung den Ladungsvorgang bei einem 1-Zellen Li-Ionen Akku vornimmt. Die Wahl eines fertigen ICs bietet einige Vorteile:
 \begin{itemize}
 \item
@@ -972,11 +1060,11 @@ RT1&=&9,263\text{k}\Omega \Rightarrow 9,31\text{k}\Omega
 \end{eqnarray}
 \\
 \\
-Ein passendes Schaltungslayout wurde mithilfe des Datenblatts \citep{BQ24100} und der Software Multisim\footnote{Software für den Schaltungsentwurf: NI Multisim \citep{multisim}} erstellt. Nach der Adaption der Schaltung auf ein passendes Layout wurde über einen Leiterplattenhersteller ein Prototyp auf FR4\footnote{Flame Retarding Number 4; Flammhemmendes Substratmaterial auf Epoxydbasis} bestellt. An der Hochschule Landshut wurde dieser per Hand bestückt und mithilfe der Dampfphasenlötanlage fertig gelötet. Für erste Tests wurde ein handelsüblicher Mobiltelefon-Akku der Firma Huawei verwendet. Dieser war bereits geringfügig vorgeladen und besitzt einen internen NTC-Widerstand von 10k$\Omega$. Somit entsprach diese Testumgebung ziemlich dem realen Einsatzgebiet der Ladeschaltung. Über einen fliegenden Aufbau mithilfe einer Experimentierplatine wurde der Akku an die Schaltung angeschlossen. Diese wurde selbst an eine 5V Konstantspannungsquelle angeschlossen, welche während des Versuchs auch im Spannungspegel verändert wurde. Solange sich die anliegende Gleichspannung innerhalb des im Datenblatt vermerkten Intervalls bewegt, zeigen die Indikationsausgänge des ICs einwandfreien Betrieb auf. Die Funktion des Moduls konnte einwandfrei nachgewiesen werden und war stets reproduzierbar. Auch die kombinierbare Funktion mit dem Modul aus Kapitel \vref{chap:4.1.2} wurde erfolgreich getestet.
+Ein passendes Schaltungslayout wurde mithilfe des Datenblatts \citep{BQ24100} und der Software Multisim\footnote{Software für den Schaltungsentwurf: NI Multisim \citep{MULTI}} erstellt. Nach der Adaption der Schaltung auf ein passendes Layout wurde über einen Leiterplattenhersteller ein Prototyp auf FR4\footnote{Flame Retarding Number 4; Flammhemmendes Substratmaterial auf Epoxydbasis} bestellt. An der Hochschule Landshut wurde dieser per Hand bestückt und mithilfe der Dampfphasenlötanlage fertig gelötet. Für erste Tests wurde ein handelsüblicher Mobiltelefon-Akku der Firma Huawei verwendet. Dieser war bereits geringfügig vorgeladen und besitzt einen internen NTC-Widerstand von 10k$\Omega$. Somit entsprach diese Testumgebung ziemlich dem realen Einsatzgebiet der Ladeschaltung. Über einen fliegenden Aufbau mithilfe einer Experimentierplatine wurde der Akku an die Schaltung angeschlossen. Diese wurde selbst an eine 5V Konstantspannungsquelle angeschlossen, welche während des Versuchs auch im Spannungspegel verändert wurde. Solange sich die anliegende Gleichspannung innerhalb des im Datenblatt vermerkten Intervalls bewegt, zeigen die Indikationsausgänge des ICs einwandfreien Betrieb auf. Die Funktion des Moduls konnte einwandfrei nachgewiesen werden und war stets reproduzierbar. Auch die kombinierbare Funktion mit dem Modul aus Kapitel \vref{chap:4.1.2} wurde erfolgreich getestet.
 \section{Arbeitsschaltung}
 \subsection{CC2541}
 \label{CC2541}
-Um die Sensordaten verarbeiten zu können, wird eine Recheneinheit benötigt. Dabei sollte diese neben der Auswertung und Konvertierung auch eine Möglichkeit bereitstellen, Daten drahtlos zu verschicken. Bei der drahtlosen Datenübertragung war eine weitere Maßgabe, dass diese auf einem lizenzfreien ISM\footnote{Industrial Scientific Medical} seine Nachrichten verschickt. In Europa liegen diese auf den Frequenzen 433MHz, 868MHz und 2,4GHz (es gibt noch weitere ISM-Frequenzbereiche, diese sind allerdings die Gängigsten). Durch eine Vorauswahl von einem Mitarbeiter der Firma SRI\footnote{Sri Radio Systems GmbH \citep{sri}} wurde der Mikrocontroller CC2541\footnote{Personal Area Networks - Bluetooth Low Energy Technology - CC2541 \citep{TICC2541}} für erste Layouttests bestimmt. Mithilfe des Controllerdatenblatts \citep{CC2541} wurde eine grundlegende Schaltung aufgebaut. Diese ist in Teilbereiche zu untergliedern:
+Um die Sensordaten verarbeiten zu können, wird eine Recheneinheit benötigt. Dabei sollte diese neben der Auswertung und Konvertierung auch eine Möglichkeit bereitstellen, Daten drahtlos zu verschicken. Bei der drahtlosen Datenübertragung war eine weitere Maßgabe, dass diese auf einem lizenzfreien ISM\footnote{Industrial Scientific Medical} seine Nachrichten verschickt. In Europa liegen diese auf den Frequenzen 433MHz, 868MHz und 2,4GHz (es gibt noch weitere ISM-Frequenzbereiche, diese sind allerdings die Gängigsten). Durch eine Vorauswahl von einem Mitarbeiter der Firma SRI\footnote{Sri Radio Systems GmbH \citep{SRI}} wurde der Mikrocontroller CC2541\footnote{Personal Area Networks - Bluetooth Low Energy Technology - CC2541 \citep{TICC2541}} für erste Layouttests bestimmt. Mithilfe des Controllerdatenblatts \citep{CC2541} wurde eine grundlegende Schaltung aufgebaut. Diese ist in Teilbereiche zu untergliedern:
 \begin{itemize}
 \item
 Eingangsschutzbeschaltung:  "`resetable Fuse"'\footnote{ein temperaturabhängiger Widerstand, zu deutsch: selbstrückstellende Sicherung}, Verpolschutz
@@ -1018,7 +1106,7 @@ Wie die Rechnung zeigt, bestätigt sich die Vorüberlegung und der 85\%ige Wirku
 \subsubsection{System on a Chip}
 Der CC2541 SoC vereint einen Mikrocontroller mit 8051-Architektur und eine Radiotransmitter-Einheit, welche eine Funkverbindung auf dem 2,4GHz ISM-Band erzeugt. Er ist die zentrale Verarbeitungseinheit des Systems und beherbergt die Arbitrierung der Messdatenverarbeitung und die Datenübermittlung.  Theoretisch ist es auch möglich mit diesem Chip Bluetooth-Übertragungen aufzubauen. Da aber hierfür Lizenzgebühren anfallen würden, wurden im Projekt erst proprietäre Protokolle zum Erstellen einer Funkverbindung angestrebt. Dies ist allerdings Aufgabe einer anderen Abschlussarbeit. Programmiert wird der SoC über eine TI\footnote{Texas Instruments}-Schnittstelle, welche mit deren CC-Debugger\footnote{Debugger and Programmer for RF-System-on-Chips - CC-Debugger \citep{CCDEBUG}} kompatibel ist. Zur Programmierung sind nähere Informationen in Kapitel \vref{Software} zu finden. Zu der peripheren Beschaltung kann noch auf die zwei Quarze eingegangen werden. Diese geben zum einen den Arbeitstakt im aktiven Modus vor (der 32MHz Quarz), zum anderen gibt es für den Low-Power-Mode\footnote{kurz: LPM} einen 32,768kHz Quarz. Dieser birgt den Vorteil, dass bei niedrigeren Taktfrequenzen deutlich weniger Leistung benötigt wird. Weiter wurden vier Portpins (P0.0 - P0.4) zum etwaigen Erweitern der Funktionalität herausgeführt. 
 \subsubsection{Balun}
-Der Balun samt Filter wurde von dem Referenzdesign übernommen. So konnte die Berechnung der Bauteilwerte umgangen werden. Die Leitungsdimensionierung wurde mit der Software TXLine\footnote{TX-Line: Transmission Line Calculator AWR Corporation \citep{txline}} vorgenommen. Mit diesem Programm lässt sich ohne größere Kenntnis der Berechnungen die Dimension der Leiterbahnführung bestimmen. Abbildung \vref{TXLine} zeigt als Beispiel die Leiterbahnbreitenberechnung für diese Schaltung.
+Der Balun samt Filter wurde von dem Referenzdesign übernommen. So konnte die Berechnung der Bauteilwerte umgangen werden. Die Leitungsdimensionierung wurde mit der Software TXLine\footnote{TX-Line: Transmission Line Calculator AWR Corporation \citep{TXLINE}} vorgenommen. Mit diesem Programm lässt sich ohne größere Kenntnis der Berechnungen die Dimension der Leiterbahnführung bestimmen. Abbildung \vref{TXLine} zeigt als Beispiel die Leiterbahnbreitenberechnung für diese Schaltung.
 \begin{figure}
 \centering
 \caption{Programm TXLine; Berechnung der Leiterbahnbreite}
@@ -1038,7 +1126,7 @@ Quelle: Stephan Jobstmann
 \label{pic.CC2541}
 \end{figure}
 \subsection{CC430F6137}
-Genauso wie der CC2541 in Kapitel \vref{CC2541} ist der CC430F6137 ein SoC. Nachdem Ersterer aufgrund seiner schlechten Anpassung der Funkverbindung für den Einsatzzweck für unzureichend eingestuft wurde, sind erste Versuche mit diesem Chip unternommen worden. Dabei wurde vorerst noch keine Modulplatine aufgebaut, sondern eine Entwicklungsplattform von TI verwendet: eine ez430-Chronos Uhr\footnote{EZ430-Chronos Texas Instruments Embedde Processors Wiki \citep{ez430}}. Diese kann je nach Ausführung auf einem ISM-Band eine Funkverbindung mit einer zweiten Uhr oder einer Basisstation aufbauen. Da diese Uhren bereits an der Hochschule Landshut zur Verfügung standen, wurde die Variante mit dem CC430F6137 verwendet.  Dieser ist ähnlich aufgebaut wie der bereits vorgestellte SoC, allerdings wurde hier ein CC1101\footnote{Transceiver Chip von TI \citep{cc1101}} Chip implementiert, welcher auf 868MHz im ISM-Band sendet. Trotz der geringen Abmaße des 64-Pin QFN\footnote{Quadrature Flat No Lead} wurden mit Fädeldraht die Kontakte für die SPI\footnote{serial peripheral interface}-Schnittstelle und für einen Interrupteingang herausgeführt. Dieser wurde mit der im nächsten Unterkapitel (Nummer \vref{Sensorik}) beschriebenen Sensorik verbunden. Schaltungstechnisch ergab sich bei diesem Versuchsaufbau kein allzu großer Mehraufwand. Eine Besonderheit ist die Interruptsteuerung: Anforderung war eine verschleißfreie Möglichkeit den Controller in die Routine für die Datenaufnahme zu überführen. Dabei erwies sich folgender Testaufbau als zielführend:
+Genauso wie der CC2541 in Kapitel \vref{CC2541} ist der CC430F6137 ein SoC. Nachdem Ersterer aufgrund seiner schlechten Anpassung der Funkverbindung für den Einsatzzweck für unzureichend eingestuft wurde, sind erste Versuche mit diesem Chip unternommen worden. Dabei wurde vorerst noch keine Modulplatine aufgebaut, sondern eine Entwicklungsplattform von TI verwendet: eine ez430-Chronos Uhr\footnote{EZ430-Chronos Texas Instruments Embedde Processors Wiki \citep{EZ430}}. Diese kann je nach Ausführung auf einem ISM-Band eine Funkverbindung mit einer zweiten Uhr oder einer Basisstation aufbauen. Da diese Uhren bereits an der Hochschule Landshut zur Verfügung standen, wurde die Variante mit dem CC430F6137 verwendet.  Dieser ist ähnlich aufgebaut wie der bereits vorgestellte SoC, allerdings wurde hier ein CC1101\footnote{Transceiver Chip von TI \citep{CC1101}} Chip implementiert, welcher auf 868MHz im ISM-Band sendet. Trotz der geringen Abmaße des 64-Pin QFN\footnote{Quadrature Flat No Lead} wurden mit Fädeldraht die Kontakte für die SPI\footnote{serial peripheral interface}-Schnittstelle und für einen Interrupteingang herausgeführt. Dieser wurde mit der im nächsten Unterkapitel (Nummer \vref{Sensorik}) beschriebenen Sensorik verbunden. Schaltungstechnisch ergab sich bei diesem Versuchsaufbau kein allzu großer Mehraufwand. Eine Besonderheit ist die Interruptsteuerung: Anforderung war eine verschleißfreie Möglichkeit den Controller in die Routine für die Datenaufnahme zu überführen. Dabei erwies sich folgender Testaufbau als zielführend:
 \begin{itemize}
 \item
 Für den Taster wurde eine Ersatzschaltung aus einem einfachen Piezobuzzer und einer dazu parallelgeschalteten Zenerdiode (Zenerspannung bei 3,3V) aufgebaut (Siehe Abbildung \vref{pic.breakout}). Der durch einen Druck auf den Piezo erzeugte Spannungshub von mehreren Volt (bis zu 20V) und dessen geringe Ladungsausschüttung genügen zur Signalverarbeitung. Allerdings muss der SoC vor dem großen Spannungspegel wirksam geschützt werden. Darum befindet sich unmittelbar an dem Piezobuzzer gekoppelt eine Diode, welche den anfallenden Pegel auf maximal 3,3V herunterzieht. Da die freigesetzte Ladung des Piezokristalls nicht genügt, um die Diode im Arbeitsbereich zu betreiben, ist beim praktischen Versuchaufbau lediglich Spannungspegel von maximal ca. 2,1V zu erzielen. Dieser reicht aber immer noch aus um eine Flanke bzw. einen Pegel zur Interrupt-Generierung zu erzeugen. 
@@ -1108,7 +1196,7 @@ Der Testaufbau wurde weiter dahingehend modifiziert, dass es mit einem experimen
 \label{Software}
 Für diverse Testläufe und die Auswertung der Sensordaten des AD1232-Bausteins sowie der Ansteuerung der erweiterten Peripherie werden verschiedene Programme benötigt. Unter Peripherie ist im Rahmen dieser Arbeit der Piezotreiber und die Interruptsteuerung von externen Signalen zu verstehen. Trotz der verschiedenen Entwicklungsumgebungen haben alle geschriebenen Programme als gemeinsame Sprache \textit{C}. In den folgenden Unterkapiteln werden nur die eigens für diese Arbeit erstellten Routinen und Subroutinen vorgestellt. Falls ein proprietärer Softwarerahmen oder eine Bibliothek vom Hersteller verwendet wurde, ist dies an entsprechender Stelle ausdrücklich erwähnt.
 \section{Frequenzgenerierung}
-Zur Frequenzgenerierung wurde vorerst als Zielbaustein der CC2541 aufgrund des bestehenden Hardware-Aufbaus (vergleiche Kapitel \vref{CC2541}) in den Vordergrund gerückt. Zum Erstellen wurde die Entwicklungsumgebung IAR Embedded Workbench IDE for 8051\footnote{C/C++ Compiler 8051 - IAR Embedded Workbench for 8051 \citep{iar}} verwendet. Zuerst wurden die grundlegenden Strukturen der Clock-Generierung, der Timer-Funktion und die der Port-Adressierung mithilfe des User's Guide \citep{CC2541_full} ausreichend eruiert. Um den Code auch für Dritte möglichst lesbar zu halten, wurden statt einfachen hexadezimalen Werten zur Registerkonfiguration lesbare Akronyme in einer separaten Header-Datei erstellt. Diese sind ab Seite \pageref{CC2541_porting_defines}zu finden. Der ganze Code wurde wiederum mit Kommentaren versehen um einen schnellen Überblick über dessen Funktion wiederzugeben. Auf Seite \pageref{CC2541_main} ist die Hauptroutine ersichtlich. Von Zeile \texttt{6} bis \texttt{8} wird als Taktquelle für den Prozessor der externe Quarz eingestellt. Die Port-Konfiguration wurde in der Passage von \texttt{10} bis \texttt{13} modifiziert. Dabei wurde die zweite alternative Portbelegung für den Timerausgang vorgenommen. Timer 1 wird in Zeile \texttt{15} mit \texttt{MODULU} zum einfachen Hochzählen bis zu einem festgelegten Wert (Zeile \texttt{22} bis \texttt{24}) konfiguriert. Mit den Passagen \texttt{22}, \texttt{26} bis \texttt{28} wird ein Puls-Breiten-moduliertes\footnote{PWM: Puls Width Modulation} Signal mit 50\% Taktverhältnis erzeugt. 
+Zur Frequenzgenerierung wurde vorerst als Zielbaustein der CC2541 aufgrund des bestehenden Hardware-Aufbaus (vergleiche Kapitel \vref{CC2541}) in den Vordergrund gerückt. Zum Erstellen wurde die Entwicklungsumgebung IAR Embedded Workbench IDE for 8051\footnote{C/C++ Compiler 8051 - IAR Embedded Workbench for 8051 \citep{IAR}} verwendet. Zuerst wurden die grundlegenden Strukturen der Clock-Generierung, der Timer-Funktion und die der Port-Adressierung mithilfe des User's Guide \citep{CC2541_full} ausreichend eruiert. Um den Code auch für Dritte möglichst lesbar zu halten, wurden statt einfachen hexadezimalen Werten zur Registerkonfiguration lesbare Akronyme in einer separaten Header-Datei erstellt. Diese sind ab Seite \pageref{CC2541_porting_defines}zu finden. Der ganze Code wurde wiederum mit Kommentaren versehen um einen schnellen Überblick über dessen Funktion wiederzugeben. Auf Seite \pageref{CC2541_main} ist die Hauptroutine ersichtlich. Von Zeile \texttt{6} bis \texttt{8} wird als Taktquelle für den Prozessor der externe Quarz eingestellt. Die Port-Konfiguration wurde in der Passage von \texttt{10} bis \texttt{13} modifiziert. Dabei wurde die zweite alternative Portbelegung für den Timerausgang vorgenommen. Timer 1 wird in Zeile \texttt{15} mit \texttt{MODULU} zum einfachen Hochzählen bis zu einem festgelegten Wert (Zeile \texttt{22} bis \texttt{24}) konfiguriert. Mit den Passagen \texttt{22}, \texttt{26} bis \texttt{28} wird ein Puls-Breiten-moduliertes\footnote{PWM: Puls Width Modulation} Signal mit 50\% Taktverhältnis erzeugt. 
 \newpage
 \lstinputlisting[caption={main.c, Umgebung IAR Embedded Workbench for 8051},label=CC2541_main]{main.c}
 \newpage
@@ -1118,7 +1206,7 @@ Zur Frequenzgenerierung wurde vorerst als Zielbaustein der CC2541 aufgrund des b
 \section{Sensorauswertung \& ISR}
 Um die Funktion des Sensors festzustellen wurde zunächst eine Plattform gewählt, deren Funktion sich bewährt hat. Somit wurde der AD1232 mit dem 8051 Mikrocontroller Board\footnote{C8051F020 von SiLabs, 8-Bit Mikrocontroller} der Hochschule Landshut in Betrieb genommen. Dies hatte den Vorteil, dass Messwerte über eine bereits im Vorfeld angelegte Code-Bibliothek auf dem LCD\footnote{Liquid Crystal Display} der Zusatzplatine ohne großen Programmieraufwand ausgegeben werden kann. Darum werden im Folgenden auch nur die für den Sensor relevanten Teile erläutert. Auf Seite \pageref{CC430_SPI} werden die Routinen zur Sensordatenverarbeitung der Quelldatei \texttt{SPI.c} dargestellt. Der String am Anfang dient zur etwaigen Ausgabe auf dem LC-Display. Die \lstinline$union$ vereint die einzelnen empfangen 8-Bit Fragmente des ausgelesenen Wertes des 24-Bit A/D-Wandlers zu einem \lstinline$ unsigned long$-Wert (\lstinline{longre}). Über Präprozessor-Anweisungen kann eine Vorselektion der unterschiedlichen Programmabschnitte erzielt werden (\lstinline$MV_OUT, UV_OUT, TEMP, EVAL_BOARD$). So wird ein Großteil des Programmcodes eingespart. Darum kann auch eine Vielzahl an Variationen der Signalaufbereitung in eine Quelldatei untergebracht werden, ohne die maximale Codegröße von 4kByte zu überschreiten. Diese ist von der lizenzfreien Version der Entwicklungsumgebung $\mu$Vision4 von Keil vorgegeben. Im Unterprogramm \lstinline{void wandlascii_signed(unsigned int e)} wird unabhängig von der Vorselektion der empfangene AD-Wert in \texttt{ASCII}-Zeichen umgewandelt. Lediglich die arithmetische Aufbereitung ist unterschiedlich. Ebenfalls ist eine Vorzeichenanalyse allen gemein, diese wird über Bitmanipulation durchgeführt: \lstinline$ken5[x] = (e > 0x7FFF) ? 0x2D : 0x2B;$. Über den Aufruf der Subroutine wird über das Polling-Verfahren der 24-Bit Wert des A/D-Wandlers eingelesen. Dies geschieht über 4 in Reihe folgende Aufrufe einer 8-Bit Empfangsschleife. \\
 In der Headerdatei \texttt{dependencies.h} auf Seite \pageref{CC430_dependencies} werden die Anweisungen für den Präprozessor definiert. Dazu kommen noch Kalibrationswerte für den internen Temperatursensor des AD1232, welche durch empirische Analyse festgelegt wurden.
-Nach erfolgreicher Inbetriebnahme des A/D-Wandlers mit dem Hochschul-Board, wurde eine Adaption auf die ez-Chronos Uhr vollzogen. Dafür wurde ein Programmbeispiel\footnote{CC430F613x Demo - USCI\_A0, SPI 3-Wire Master Increment Data \citep{cc430f6137}} von Texas Instruments als Grundlage verwendet und dementsprechend angepasst. Um eine eventuelle weitere Portierung zu vereinfachen, beginnt die Quelldatei auf Seite \pageref{CC430_ADS1232} mit \lstinline$#define$-Anweisungen die ein schnelles Angleichen ermöglichen. Nach dem Abschalten des Watchdog-Timers in der \lstinline$void main(void)$-Routine werden die Ports gesetzt und der SPI-Port konfiguriert. Eine Besonderheit des Controllers fällt dabei auf: es ist beim Betrieb der SPI-Schnittstelle nicht nötig, alle drei Standardleitungen (MOSI, MISO, SCK) zu setzen. So kann bei PIN/PORT-Mangel auch beispielsweise ein MOSI-PIN als GPIO\footnote{General Purpose Input Output} verwendet werden, wenn über SPI ausschließlich Daten eingelesen werden. Weiter wird ein Interrupt-Eingang für den Piezo-Taster und der zugehörige Vector eingeschalten. 
+Nach erfolgreicher Inbetriebnahme des A/D-Wandlers mit dem Hochschul-Board, wurde eine Adaption auf die ez-Chronos Uhr vollzogen. Dafür wurde ein Programmbeispiel\footnote{CC430F613x Demo - USCI\_A0, SPI 3-Wire Master Increment Data \citep{CC430f6137}} von Texas Instruments als Grundlage verwendet und dementsprechend angepasst. Um eine eventuelle weitere Portierung zu vereinfachen, beginnt die Quelldatei auf Seite \pageref{CC430_ADS1232} mit \lstinline$#define$-Anweisungen die ein schnelles Angleichen ermöglichen. Nach dem Abschalten des Watchdog-Timers in der \lstinline$void main(void)$-Routine werden die Ports gesetzt und der SPI-Port konfiguriert. Eine Besonderheit des Controllers fällt dabei auf: es ist beim Betrieb der SPI-Schnittstelle nicht nötig, alle drei Standardleitungen (MOSI, MISO, SCK) zu setzen. So kann bei PIN/PORT-Mangel auch beispielsweise ein MOSI-PIN als GPIO\footnote{General Purpose Input Output} verwendet werden, wenn über SPI ausschließlich Daten eingelesen werden. Weiter wird ein Interrupt-Eingang für den Piezo-Taster und der zugehörige Vector eingeschalten. 
 In der \lstinline$__interrupt void PORT1_ISR(void)$ (Zeile \texttt{109}) wird mit ankommenden Interrupt zuerst geprüft, ob am A/D-Wandler gültige Daten anliegen. Danach werden wie im vorhergehenden Programm für den 8051 Controller die 4 8-Bit Werte des 24-Bit ADC-Werts eingelesen.
 \newpage
 \lstinputlisting[caption={SPI.c, Umgebung $\mu$Vision4 Keil},label=CC430_SPI]{SPI.c}
@@ -1126,6 +1214,21 @@ In der \lstinline$__interrupt void PORT1_ISR(void)$ (Zeile \texttt{109}) wird mi
 \lstinputlisting[caption={dependencies.h, Umgebung $\mu$Vision4 Keil},label=CC430_dependencies]{dependencies.h}
 \newpage
 \lstinputlisting[caption={ADS1232.c, Umgebung Code Composer Studio v4},label=CC430_ADS1232]{ADS1232.c}
+\chapter{Ergebnis}
+Bei dieser Arbeit wurde die Aufgabenstellung komplett erfüllt. Lediglich das Modul für den Baustein CC430F6137 konnte nicht verifiziert werden. Da allerdings ein Prototyp aus einem proprietären Testaufbau\footnote{ez430-Chronos} durch sinngemäße Modifikationen erstellt wurde und dieser alle Erwartungen erfüllt, ist auch hier von einem erfolgreichen Aufbau zu sprechen. Es wurden verschiedene Konzepte der Energiezuführung getestet und dabei das Attraktivste mit den besten Leistungsübertragungsdaten ausgewählt. Dies wurde mit einem WPC-konformen Empfängeraufbau zum drahtlosen Energieempfang realisiert. Jener wurde in Dickschichttechnik an der Hochschule Landshut im Hybridlabor angefertigt und anschließend erfolgreich getestet. Zum Energiespeichern fiel die Auswahl nach einer Voruntersuchung auf Lithium-Ionen-Technologie. Hierfür wurde ein Aufbau zum Laden eines handelsüblichen Akkus erstellt und erfolgreich mit einem der weitverbreiteten Mobiltelefon-Akkus validiert. Die geforderte Sensorik wurde mit dem bereits weiter oben im Text erwähnten modifizierten Testaufbau erfolgreich gekoppelt. Die passende Software zur Sensorauswertung, Generierung eines Warnsignals und Ansteuerung eines Controller-externen Interrupts wurde ebenfalls entwickelt, verbessert und mit Erfolg getestet. Vorausgehende Untersuchungen des kapazitiven Verhaltens von Piezo-Elementen unter Last haben die Zielrichtung der Arbeit entscheidend geprägt. Grundlegende Sachverhalte sind erläutert worden und beschreiben Wirkungsweisen und Funktion der einzelnen Komponenten im Allgemeinen. Vollständig überblickend ist die Arbeit als Erfolg zu bewerten. 
+\chapter{Ausblick}
+Nachfolgende weiterführende Arbeiten können sich auf die Stabilisierung und die Verbesserung der Reproduzierbarkeit der einzelnen Komponenten beziehen. Mit einem monolithischen Aufbau sollte die Weiterentwicklung abzuschließen sein. So können folgende Arbeitspunkte für zukünftige Aufgaben genannt werden:
+\begin{itemize}
+\item
+Minimierung der Ausmaße der Leiterplattenlayouts
+\item
+Verbesserung der spezifischen Eigenschaften der einzelnen Module
+\item
+Zusammenführen einzelner Komponenten, beispielsweise Energieübertragung und Lade-Schaltung
+\item
+Vereinigung aller modularen Aufbauten
+\end{itemize}
+Mit der Ausführung, Verifizierung und Validierung dieser weiteren Arbeitsschritte ist das Gerät, das Fußmodul für das Projekt MedLast, tauglich zur Serienfertigung.
 \bibliography{literatur}
 \bibliographystyle{alpha}
 \end{document}

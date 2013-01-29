@@ -4,7 +4,7 @@
 \BOOKMARK [1][-]{section.3.1}{Energy-Harvesting}{chapter.3}% 4
 \BOOKMARK [2][-]{subsection.3.1.1}{Piezoelektrisch}{section.3.1}% 5
 \BOOKMARK [2][-]{subsection.3.1.2}{Thermoelektrisch}{section.3.1}% 6
-\BOOKMARK [1][-]{section.3.2}{Drahtlose Energie\374bertragung}{chapter.3}% 7
+\BOOKMARK [1][-]{section.3.2}{Drahtlose Energieversorgung}{chapter.3}% 7
 \BOOKMARK [2][-]{subsection.3.2.1}{Prinzip}{section.3.2}% 8
 \BOOKMARK [2][-]{subsection.3.2.2}{Effizienz}{section.3.2}% 9
 \BOOKMARK [2][-]{subsection.3.2.3}{Resonanzkopplung}{section.3.2}% 10
@@ -34,4 +34,6 @@
 \BOOKMARK [0][-]{chapter.6}{Software}{}% 34
 \BOOKMARK [1][-]{section.6.1}{Frequenzgenerierung}{chapter.6}% 35
 \BOOKMARK [1][-]{section.6.2}{Sensorauswertung \046 ISR}{chapter.6}% 36
-\BOOKMARK [0][-]{chapter*.42}{Literaturverzeichnis}{}% 37
+\BOOKMARK [0][-]{chapter.7}{Ergebnis}{}% 37
+\BOOKMARK [0][-]{chapter.8}{Ausblick}{}% 38
+\BOOKMARK [0][-]{chapter*.46}{Literaturverzeichnis}{}% 39

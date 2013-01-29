@@ -6,12 +6,12 @@
 \newblock \\
   \url{http://batteryuniversity.com/learn/article/charging_lithium_ion_batteries}.
 
-\bibitem[cc113]{cc1101}
+\bibitem[CC113]{CC1101}
 {\em cc1101.pdf}.
 \newblock Texas Instruments Incorporated, Zugegriffen am: 26. 01. 2013.
 \newblock \\ \url{www.ti.com/lit/ds/symlink/cc1101.pdf}.
 
-\bibitem[cc413]{cc430f6137}
+\bibitem[CC413]{CC430f6137}
 {\em MSP430 16-Bit Ultra-Low Power MCUs - RF SoC Series - CC430F6137}.
 \newblock Texas Instruments Incorporated, Zugegriffen am: 26. 01. 2013.
 \newblock \\
@@ -54,17 +54,17 @@ B.~Zagar E.~Schr"ufer, L.~Reindl.
 \newblock {\em Elektrische Messtechnik}.
 \newblock Hanser Verlag, 10. edition, 2012.
 
-\bibitem[ez413]{ez430}
+\bibitem[EZ413]{EZ430}
 {\em EZ430-Chronos Texas Instruments Embedde Processors Wiki}.
 \newblock Texas Instruments Incorporated, Zugegriffen am: 26. 01. 2013.
 \newblock \\ \url{http://processors.wiki.ti.com/index.php/EZ430-Chronos}.
 
-\bibitem[git13]{git}
+\bibitem[GIT13]{GIT}
 {\em Github Repository of wa7iut}.
 \newblock Robert Davidson, Zugegriffen am: 26. 01. 2013.
 \newblock \\ \url{https://github.com/wa7iut}.
 
-\bibitem[iar13]{iar}
+\bibitem[IAR13]{IAR}
 {\em C/C++ Compiler 8051 - IAR Embedded Workbench for 8051}.
 \newblock IAR Systems, Zugegriffen am: 26. 01. 2013.
 \newblock \\ \url{http://www.iar.com/en/Products/IAR-Embedded-Workbench/8051/}.
@@ -149,12 +149,12 @@ Johannes W.~Steiner Manfred T.~Kalivoda.
 \newblock {\em Taschenbuch der Angewandten Psychoakustik}.
 \newblock Springer Technik, 1998.
 
-\bibitem[mul13]{multisim}
+\bibitem[MUL13]{MULTI}
 {\em Software f"ur den Schaltungsentwurf: NI Multisim}.
 \newblock National Instruments, Zugegriffen am: 26. 01. 2013.
 \newblock \\ \url{http://www.ni.com/multisim/d/}.
 
-\bibitem[sri13]{sri}
+\bibitem[SRI13]{SRI}
 {\em SRI - Spezialist f"ur Elektronikfertigung, Entwicklung und Lean
   Consulting}.
 \newblock SRI Radio Systems GmbH, Zugegriffen am: 26. 01. 2013.
@@ -176,13 +176,13 @@ Johannes W.~Steiner Manfred T.~Kalivoda.
 \newblock Texas Instruments Incorporated, Zugegriffen am: 26. 01. 2013.
 \newblock \\ \url{http://www.ti.com/product/cc2541}.
 
-\bibitem[ton13]{tonline}
+\bibitem[TON13]{TONLINE}
 {\em Uelzen: Explodiertes Notebook l"ost Feuerwehreinsatz aus}.
 \newblock T-Online, Zugegriffen am: 26. 01. 2013.
 \newblock \\
   \url{http://computer.t-online.de/uelzen-explodiertes-notebook-loest-feuerwehreinsatz-aus/id_42553726/index}.
 
-\bibitem[txl13]{txline}
+\bibitem[TXL13]{TXLINE}
 {\em TX-Line: Transmission Line Calculator AWR Corporation}.
 \newblock AWR Corporation, Zugegriffen am:26. 01. 2013.
 \newblock \\

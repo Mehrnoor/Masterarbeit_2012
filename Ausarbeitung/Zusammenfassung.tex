@@ -1,0 +1,117 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[12pt]{scrreprt} % use larger type; default would be 10pt
+\linespread {1,25}\selectfont %1.25 da er von Haus aus 1.2 ist und 1,25 * 1,2 = 1,5 isch
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+%
+%\setkomafont{chapter}{\Large\linespread{ 1}\sffamily\bfseries}
+%\setkomafont{section}{\Large\linespread{ 1}\sffamily\bfseries}
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage[german]{babel}
+\usepackage{helvet}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{picinpar}
+\usepackage{float}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage[german]{varioref}
+\usepackage{natbib}
+%\usepackage{url}
+\usepackage{breakurl}
+\usepackage{calc}
+\usepackage{color, listings}
+\definecolor{brown}{cmyk}{0,0.81,1,0.60}
+\definecolor{lightgray}{cmyk}{0.05,0.05,0.05,0.01}
+\usepackage{subfig}% mehrere Bilder in einer Bildumgebung mit \subfloat{bild.jpg}
+%\usepackage{cite}
+%\usepackage[round]{natbib}
+%\bibliographystyle{alphadin}
+%\usepackage[style=authoryear]{biblatex} %e
+%\bibliographystyle{unsrt}
+%\bibliography{literatur}
+\usepackage{longtable} %for tables langer than a page
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+\renewcommand{\UrlBreaks}{\do\/\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z}
+
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry //fancyhdr
+\pagestyle{fancy} % options: empty , plain , fancy
+%\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt} % customise the layout...
+%\lhead{}\chead{}\rhead{}
+%\lfoot{}\cfoot{\thepage}\rfoot{}
+%\lohead{\headmark}
+
+
+%%%% SECTION TITLE APPEARANCE
+%\usepackage{sectsty}
+%\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+
+\setkomafont{chapter}{\rm\bf \large} %Größe der Kapitelüberschriften
+\setkomafont{section}{\rm\bf\large} %Größe der UNterkapitelüberschriften 
+\setkomafont{subsection}{\rm\bf\large} %Größe der UNterkapitelüberschriften 
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+
+%\usepackage[automark]{scrpage2}
+%\pagestyle{scrheadings}
+
+
+%%% END Article customizations
+
+
+
+%%% The "real" document content comes below...
+
+%\title{Entwicklung und Erprobung einer piezoresistiven Sensor-Schaltung mit drahtloser Energieversorgung im Projekt "MedLast"}
+%\author{Stephan Jobstmann}
+%\date{\today}
+\pagenumbering{roman}
+
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+
+
+
+\begin{document}
+%%%%%%%%%%%%%
+\chapter*{Zusammenfassung}
+test
+\end{document}

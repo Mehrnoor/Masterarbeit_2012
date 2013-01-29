@@ -9,44 +9,44 @@ Warning--to sort, need author, editor, or key in DLR2
 Warning--to sort, need author, editor, or key in TESLA
 Warning--to sort, need author, editor, or key in WPC
 Warning--to sort, need author, editor, or key in BAT
-Warning--to sort, need author, editor, or key in git
+Warning--to sort, need author, editor, or key in GIT
 Warning--to sort, need author, editor, or key in LTC
-Warning--to sort, need author, editor, or key in tonline
+Warning--to sort, need author, editor, or key in TONLINE
 Warning--to sort, need author, editor, or key in TIBQ24100
-Warning--to sort, need author, editor, or key in multisim
-Warning--to sort, need author, editor, or key in sri
+Warning--to sort, need author, editor, or key in MULTI
+Warning--to sort, need author, editor, or key in SRI
 Warning--to sort, need author, editor, or key in TICC2541
 Warning--to sort, need author, editor, or key in MAS
 Warning--to sort, need author, editor, or key in CCDEBUG
-Warning--to sort, need author, editor, or key in txline
-Warning--to sort, need author, editor, or key in ez430
-Warning--to sort, need author, editor, or key in cc1101
-Warning--to sort, need author, editor, or key in iar
-Warning--to sort, need author, editor, or key in cc430f6137
+Warning--to sort, need author, editor, or key in TXLINE
+Warning--to sort, need author, editor, or key in EZ430
+Warning--to sort, need author, editor, or key in CC1101
+Warning--to sort, need author, editor, or key in IAR
+Warning--to sort, need author, editor, or key in CC430f6137
 Warning--empty author and editor in BAT
-Warning--empty author and editor in cc1101
-Warning--empty author and editor in cc430f6137
+Warning--empty author and editor in CC1101
+Warning--empty author and editor in CC430f6137
 Warning--empty author and editor in CCDEBUG
 Warning--empty author and editor in DLR
 Warning--empty author and editor in DLR2
-Warning--empty author and editor in ez430
-Warning--empty author and editor in git
-Warning--empty author and editor in iar
+Warning--empty author and editor in EZ430
+Warning--empty author and editor in GIT
+Warning--empty author and editor in IAR
 Warning--empty author and editor in ICNIRP
 Warning--there's a number but no series in ICNIRP
 Warning--empty author and editor in LTC
 Warning--empty author and editor in MAS
-Warning--empty author and editor in multisim
-Warning--empty author and editor in sri
+Warning--empty author and editor in MULTI
+Warning--empty author and editor in SRI
 Warning--empty author and editor in TESLA
 Warning--empty author and editor in TIBQ24100
 Warning--empty author and editor in TICC2541
-Warning--empty author and editor in tonline
-Warning--empty author and editor in txline
+Warning--empty author and editor in TONLINE
+Warning--empty author and editor in TXLINE
 Warning--empty author and editor in WPC
 You've used 32 entries,
             2543 wiz_defined-function locations,
-            713 strings with 9201 characters,
+            722 strings with 9246 characters,
 and the built_in function-call counts, 8011 in all, are:
 = -- 732
 > -- 116

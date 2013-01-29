@@ -221,18 +221,6 @@
   timestamp = {2013.01.28}
 }
 
-@BOOK{WPC,
-  title = {Wireless Power Technology - Wireless Power Consortium},
-  publisher = {Administration by  IEEE-ISTO},
-  year = {Zugegriffen am: 28. 01. 2013},
-  address = {Piscataway, NJ, United States},
-  note = {\\
-	
-	\url{http://www.wirelesspowerconsortium.com/technology}},
-  owner = {sjobstm},
-  timestamp = {2013.01.28}
-}
-
 @BOOK{TESLA,
   title = {Nikola Tesla Lebensdaten / Nikola Tesla - vergessenes Genie},
   publisher = {Thomas Gobmaier},
@@ -243,6 +231,18 @@
   note = {\\
 	
 	\url{http://www.tesla-info.de/Lebenslauf.htm}},
+  owner = {sjobstm},
+  timestamp = {2013.01.28}
+}
+
+@BOOK{WPC,
+  title = {Wireless Power Technology - Wireless Power Consortium},
+  publisher = {Administration by IEEE-ISTO},
+  year = {Zugegriffen am: 28. 01. 2013},
+  address = {Piscataway, NJ, United States},
+  note = {\\
+	
+	\url{http://www.wirelesspowerconsortium.com/technology}},
   owner = {sjobstm},
   timestamp = {2013.01.28}
 }
@@ -305,7 +305,7 @@
   timestamp = {2013.01.27}
 }
 
-@BOOK{ez430,
+@BOOK{EZ430,
   title = {EZ430-Chronos Texas Instruments Embedde Processors Wiki},
   publisher = {Texas Instruments Incorporated},
   year = {Zugegriffen am: 26. 01. 2013},
@@ -316,7 +316,7 @@
   timestamp = {2013.01.27}
 }
 
-@BOOK{git,
+@BOOK{GIT,
   title = {Github Repository of wa7iut},
   publisher = {Robert Davidson},
   year = {Zugegriffen am: 26. 01. 2013},
@@ -327,7 +327,7 @@
   timestamp = {2013.01.27}
 }
 
-@BOOK{iar,
+@BOOK{IAR,
   title = {C/C++ Compiler 8051 - IAR Embedded Workbench for 8051},
   publisher = {IAR Systems},
   year = {Zugegriffen am: 26. 01. 2013},
@@ -360,7 +360,7 @@
   timestamp = {2013.01.27}
 }
 
-@BOOK{multisim,
+@BOOK{MULTI,
   title = {Software f"ur den Schaltungsentwurf: NI Multisim},
   publisher = {National Instruments},
   year = {Zugegriffen am: 26. 01. 2013},
@@ -371,7 +371,7 @@
   timestamp = {2013.01.27}
 }
 
-@BOOK{sri,
+@BOOK{SRI,
   title = {SRI - Spezialist f"ur Elektronikfertigung, Entwicklung und Lean Consulting},
   publisher = {SRI Radio Systems GmbH},
   year = {Zugegriffen am: 26. 01. 2013},
@@ -404,7 +404,7 @@
   timestamp = {2013.01.27}
 }
 
-@BOOK{tonline,
+@BOOK{TONLINE,
   title = {Uelzen: Explodiertes Notebook l"ost Feuerwehreinsatz aus},
   publisher = {T-Online},
   year = {Zugegriffen am: 26. 01. 2013},
@@ -415,7 +415,7 @@
   timestamp = {2013.01.27}
 }
 
-@BOOK{txline,
+@BOOK{TXLINE,
   title = {TX-Line: Transmission Line Calculator AWR Corporation},
   publisher = {AWR Corporation},
   year = {Zugegriffen am:26. 01. 2013},
@@ -424,5 +424,16 @@
 	\url{http://www.awrcorp.com/products/optional-products/tx-line-transmission-line-calculator}},
   owner = {sjobstm},
   timestamp = {2013.01.27}
+}
+
+@BOOK{ICNIRP,
+  title = {Guidelines for limiting exposure to time-varying electric, magnetic,
+	and electromagnetic fields},
+  publisher = {Health Physics},
+  year = {April 1998},
+  number = {4},
+  edition = {74},
+  owner = {sjobstm},
+  timestamp = {2013.01.29}
 }
 
