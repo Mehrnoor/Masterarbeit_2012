@@ -120,28 +120,33 @@
     \centering
     \includegraphics[width=0.25\textwidth]{Bilder/UAS-LA_Logo.jpg}
 \end{figure}
-\vspace*{1cm}
+\vspace*{0.2cm}
  \Large{Hochschule Landshut\\Fakultät Elektrotechnik und Wirtschaftsingenieurwesen \\Master Elektrotechnik }
 
-  \vspace*{1.5cm}
+  \vspace*{1cm}
  {\bf \huge Entwicklung und Erprobung einer piezoresistiven Sensor-Schaltung mit drahtloser Energieversorgung im Projekt MedLast}
  \vspace*{1cm} \\
  {\Large Master-Thesis\\von\\}
  \vspace{0.5cm}
  {\Large \bfseries Stephan Jobstmann\\}
- \vspace{0.5cm}
- {\Large geboren am 28. 09. 1988}
- \vfill
-  \vspace*{1.5cm}
-\begin{table}[h]
-	\centering
-	\begin{tabular}{|l l|}\hline
-		Aufgabensteller: & Prof. Dipl.-Phys. Anton Harasim\\ \hline
-		Betreuer: & Dipl.-Ing. Sophie Engelsberger\\ \hline
-		Matrikelnummer: & 740131 \\ \hline
-		Arbeit vorgelegt am: & \today\\ \hline
+ %\vspace{0.5cm}
+% {\Large geboren am 28. 09. 1988}
+ \vspace*{2.2cm}
+\centering
+	\begin{tabular}{lr}
+		Betreuer: &  Prof. Dipl.-Phys. Anton Harasim\\ 
+		Arbeit vorgelegt am: & 29. Januar 2013\\ 
 	\end{tabular}
-\end{table}
+
+% \vfill
+%  \vspace*{1cm}
+%{\begin{table}
+%	\centering
+%	\begin{tabular}{l l}
+%		Betreuer: &  Prof. Dipl.-Phys. Anton Harasim\\ 
+%		Arbeit vorgelegt am: & 29. Januar 2013\\ 
+%	\end{tabular}
+%\end{table}}
 
  \end{center}
 \end{titlepage}
@@ -167,36 +172,50 @@ Fakultät Elektrotechnik und Wirtschaftsingenieurwesen\\
 Hiermit erkläre ich, das ich die Arbeit selbstständig verfasst, noch nicht anderweitig für Prüfungszwecke vorgelegt, keine anderen als die angegebenen Quellen oder Hilfsmittel benützt sowie wörtliche und sinngemäße Zitate als solche gekennzeichnet habe.
 \vspace*{2 cm}
 \\
-Landshut, den \today \qquad \qquad \qquad  \qquad \qquad (Stephan Jobstmann)
+Landshut, den  29. Januar 2013 \qquad \qquad \qquad  \qquad \qquad (Stephan Jobstmann)
 \chapter*{Zusammenfassung}
-Die vorliegende Arbeit ist Teil des Projekts MedLast an der Hochschule Landshut, Fakultät Elektrotechnik und Wirtschaftsingenieurwesen. Ziel des Projekts ist ein System zu entwickeln, dass eine Überwachung des Genesungsprozesses sowohl für den Patienten als auch für den behandelnden Arzt ermöglicht. Dabei wird in der Fußschiene ein Elektronikmodul eingesetzt, dass Schrittzahl und Belastung auswertet. Diese Daten werden einerseits in einem Speicher für den Orthopäden aufgezeichnet und andererseits in Echtzeit für den Patienten verständlich aufbereitet und an eine Anzeige am Handgelenk desjenigen weitergeleitet. So hat der Genesende stets einen Überblick über Belastung seines Beines.\\
-Ziel dieser Arbeit ist es, ein funktionierendes Konzept für die Elektronik des Fußmoduls zu entwickeln. Dies schließt
+Die vorliegende Arbeit ist Teil des Projekts MedLast an der Hochschule Landshut, Fakultät Elektrotechnik und Wirtschaftsingenieurwesen. Ziel des Projekts ist ein System zu entwickeln, das eine Überwachung des Genesungsprozesses für Fuß-, Hüft- und Knieverletzungen sowohl für den Patienten als auch für den behandelnden Arzt ermöglicht. Dabei wird im Bereich der Fußsohle ein Elektronikmodul eingesetzt, dass Schrittzahl und Belastung auswertet. Diese Daten werden in einem Speicher aufgezeichnet und in Echtzeit für den Patienten verständlich aufbereitet und an eine Anzeige am Handgelenk des Patienten weitergeleitet. So hat der Genesende stets einen Überblick über Belastung seines Beines.\\
+Ziel dieser Arbeit ist es, ein funktionierendes Schaltungskonzept für die Elektronik des Fußmoduls zu entwickeln. Dies schließt folgende Schaltungsteile ein:
 \begin{itemize}
 \item
-eine Auswertung der Belastung über eine Sensorikschaltung,
+eine Messschaltung der Belastung über einen piezoresistiven Sensor,
 \item
-eine verschleißfreie Aktivierung über einen Piezodruckaufnehmer,
+eine verschleißfreie Aktivierung des Interrupts über einen Piezodruckaufnehmer,
 \item
-einen akustischen Signalgeber bei Überbelastung, 
+einen akustischen Signalgeber (Piezo-Buzzer) bei Überbelastung, 
 \item
-diverse Schaltungen zur Sicherheit und Leistungsoptimierung,
+diverse Schaltungen zur Sicherheit und Leistungsoptimierung:
+\begin{itemize}
+\item
+Verpolschutz
+\item
+Kurzschlussstromsperre
+\item
+Abwärtswandler zu Impedanzanpassung
+\end{itemize}
 \item
 ein Empfängermodul für drahtlose Energieübertragung und 
 \item
-eine Einheit zur Energiebereitstellung 
+ein Akkusystem zur Energiebereitstellung 
 \end{itemize}
-mit in die Aufgabenstellung mit ein. 
-\newline\newline
+\newpage
 Es wurden bei der Bearbeitung der Thematik folgende Ergebnisse erzielt:
 \begin{itemize}
 \item
-Während der Voruntersuchung wurde empirisch bewiesen, dass bei hinreichenden Störfaktoren während der Messung und bei kleiner Auslenkung unter 200 Newton eine kapazitive Messmethode mit Piezoelementen unzureichende Ergebnisse liefern. 
+Während der Voruntersuchung wurde empirisch bewiesen, dass bei hinreichenden Störfaktoren während der Messung und bei kleiner Auslenkung unter 200 Newton eine kapazitive Messmethode mit den bisher bereitgestellten Piezoelementen des Typs Sonox 502 der Firma Ceramtec unzureichende Ergebnisse liefern. 
 \item
-Energy-Harvesting wurde im Bereich der thermoelektrischen Wandlung getestet. Allerdings hat sich beim praktischen Aufbau und bei der kommerziellen Betrachtung die drahtlose Energieübertragung als Energiezuführung für das System sich durchgesetzt. Ein eigener Aufbau eines Empfängers in Dickschichttechnik wurde bereits erfolgreich in Betrieb genommen. 
+Energy-Harvesting wurde im Bereich der thermoelektrischen Wandlung getestet. Allerdings hat sich beim praktischen Aufbau und bei der kommerziellen Betrachtung die drahtlose Energieübertragung als Energiezuführung für das System durchgesetzt. Ein eigener Aufbau eines Empfängers in Dickschichttechnik wurde bereits erfolgreich in Betrieb genommen. 
 \item
-Durch die parallele Bearbeitung mehrerer Teilgebiete des Projekts hat sich ein geringfügiger Mehraufwand im Schaltungs-Entwurf ergeben. So wurde zunächst eine Schaltung für ein System-on-a-Chip entwickelt welches auf dem 2,4 GHz Band sendet. Dieses ist allerdings ungünstig für den körpernahen Einsatz. Darum wurde ein zweites Layout für einen Mikrocontroller mit integrierter Sendeeinheit entwickelt. Dieser sendet auf einer besser geeigneten Frequenz von 868MHz. Gleichzeitig dazu wurde ein bereits fertiges Evaluations-Modul soweit modifiziert um die Sensorik darauf anzubinden. 
+Bei einem Testaufbau wurde ein Piezosignalgeber (Buzzer) als Schalter zweckentfremdet und mit geringer Zusatzbeschaltung in Betrieb genommen. Mit diesem kann der jeweils angeschlossene Mikroprozessor über externe Interrupts angesteuert werden.
 \item
-Die Sensorik wurde samt Auswertungsbaustein erfolgreich an mehreren eingebetteten Systemen getestet. Darunter war auch das oben genannte modifizierte Evaluations-Modul.
+Es wurde mithilfe einfacher diskreter Bauteile, wie einem P-Kanal MOSFET und einer selbst-zurückstellenden Sicherung eine ausreichende Schutzbeschaltung aufgebaut und getestet. Da bei den Mikroprozessoren der Stromverbrauch unabhängig von der angelegten Spannung gleich bleibt, wurde mit einem Abwärtswandler eine Leistungsoptimierung vorgenommen.
+\item
+Durch die parallele Bearbeitung mehrerer Teilgebiete des Projekts hat sich ein geringfügiger Mehraufwand im Schaltungs-Entwurf ergeben. So wurde zunächst eine Schaltung für ein System-on-a-Chip entwickelt welches auf dem 2,4 GHz Band sendet. Dieses ist allerdings ungünstig für den körpernahen Einsatz. Darum wurde ein zweites Layout für einen Mikrocontroller mit integrierter Sendeeinheit entwickelt. Dieser sendet auf einer besser geeigneten Frequenz von 868MHz. Gleichzeitig dazu wurde ein bereits fertiges Evaluations-Modul soweit modifiziert, um die Sensorik darauf anzubinden. 
+\item
+Die Sensorik wurde samt Auswertungsbaustein erfolgreich an mehreren eingebetteten Systemen getestet. Darunter war auch das oben genannte modifizierte Evaluations-Modul das auf der Frequenz von 868MHz sendet. 
+\item
+Um eine ausreichende Versorgung des eingebetteten Systems zu gewährleisten, wurde ein Lithium-Ionen Akku samt Ladesystem aufgebaut und erfolgreich getestet. Dabei können konventionelle Akkus, wie etwa die für Mobiltelefone, benutzt werden.
+
 \end{itemize}
 %\maketitle
 %\setcounter {page}{1}
@@ -226,7 +245,7 @@ stringstyle =\itshape \color{red},
 captionpos=b}
 \chapter{Einleitung}
 \pagenumbering{arabic}
-Die moderne Schulmedizin ist mittlerweile an einem Punkt angelangt, an dem die biochemischen Prozesse innerhalb des Körpers als nahezu komplett erfasst gelten. Die Mechanismen der Informationsweitergabe über die Nervenbahnen, die Belastbarkeit der Anatomie oder die Zerlegungsprozesse des Stoffwechsels sind als solche weitestgehend erforscht. Wie jedoch in jedem Forschungsbereich bedeutet dies auch, dass die Lernkurve beziehungsweise die Anzahl der Ergebnisse an innovativen Erkenntnissen drastisch über die letzten Jahrzehnte abnehmen. Weiter lässt sich feststellen, dass die Fortschritte der modernen Medizin sich hauptsächlich auf die Innovationen aus den Bereichen der Pharmazie und der Medizintechnik berufen. So ermöglichen intelligente Kamerasysteme eine bessere Überwachung von Operationen am schlagenden Herzen\footnote{Motion Compensation in Minimally Invasive Heart Surgery \citep{DLR}} oder die Abnahme von elektrischen Nervensignalen eine Steuerung von kybernetischen Prothesen\footnote{Paralyzed individuals control robotic arms to reach and grasp using brain computer interface \citep{DLR2}}.\\
+Die moderne Schulmedizin ist mittlerweile an einem Punkt angelangt, an dem die biochemischen Prozesse innerhalb des Körpers als nahezu komplett erfasst gelten. Die Mechanismen der Informationsweitergabe über die Nervenbahnen, die Belastbarkeit der Anatomie oder die Zerlegungsprozesse des Stoffwechsels sind als solche weitestgehend erforscht. Wie jedoch in jedem Forschungsbereich bedeutet dies auch, dass die Lernkurve beziehungsweise die Anzahl der Ergebnisse an innovativen Erkenntnissen drastisch über die letzten Jahrzehnte abnehmen. Weiter lässt sich feststellen, dass Fortschritte der modernen Medizin hauptsächlich auf den Innovationen aus den Bereichen der Pharmazie und der Medizintechnik beruhen. So ermöglichen intelligente Kamerasysteme eine bessere Überwachung von Operationen am schlagenden Herzen\footnote{Motion Compensation in Minimally Invasive Heart Surgery \citep{DLR}} oder die Abnahme von elektrischen Nervensignalen eine Steuerung von kybernetischen Prothesen\footnote{Paralyzed individuals control robotic arms to reach and grasp using brain computer interface \citep{DLR2}}.\\
 Die fortschreitende Entwicklung in der Medizintechnik bietet auch Hilfestellung im Genesungsprozess im Fachbereich der Orthopädie. So wird im Projekt "`MedLast"' sowohl eine Unterstützung für den Patienten als auch eine Kontrollmöglichkeit während der Heilung einer Beinfraktur erstrebt. Dabei wird das Gewicht auf dem geschienten Fuß und die Häufigkeit der Auftritte aufgezeichnet. Gleichzeitig sollen diese Daten zur zeitnahen Kontrolle an eine visuelle Ausgabeeinheit, ähnlich einer Armbanduhr, weitergegeben werden. Für die Konstruktion der Elektronik, welche die Werte für Belastung und Schrittzahl aufnimmt, werden die Gebiete Energieversorgung und Sensorik zusammengefasst. Hierbei kann nur sehr schlecht auf proprietäre Komplettlösungen zurückgegriffen werden. Darum sollen in dieser Arbeit die nötigen Schritte unternommen werden, um ein solches System zu erstellen und in Betrieb zu nehmen.
 \chapter{Anforderungen}
 Als wesentliche Bestandteile der Aufgabenstellung sind zuerst die zu bearbeitenden Teilgebiete zu nennen. Hierzu gehören:

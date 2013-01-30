@@ -13,10 +13,10 @@
 \contentsline {subsection}{\numberline {3.2.5}Abschirmung}{9}{subsection.3.2.5}
 \contentsline {section}{\numberline {3.3}Lithium-Ionen Akkumulator}{10}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Aufladen}{10}{subsection.3.3.1}
-\contentsline {subsubsection}{Phase 1}{11}{section*.11}
-\contentsline {subsubsection}{Phase 2}{12}{section*.12}
-\contentsline {subsubsection}{Phase 3}{12}{section*.13}
-\contentsline {subsubsection}{Phase 4}{12}{section*.14}
+\contentsline {subsubsection}{Phase 1}{11}{section*.10}
+\contentsline {subsubsection}{Phase 2}{12}{section*.11}
+\contentsline {subsubsection}{Phase 3}{12}{section*.12}
+\contentsline {subsubsection}{Phase 4}{12}{section*.13}
 \contentsline {subsection}{\numberline {3.3.2}Allgemeine Hinweise}{13}{subsection.3.3.2}
 \contentsline {chapter}{\numberline {4}Voruntersuchung}{14}{chapter.4}
 \contentsline {section}{\numberline {4.1}Motivation}{14}{section.4.1}
@@ -24,14 +24,14 @@
 \contentsline {section}{\numberline {4.3}Ergebnis}{15}{section.4.3}
 \contentsline {section}{\numberline {4.4}Messungen}{16}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Sonox P502}{16}{subsection.4.4.1}
-\contentsline {subsubsection}{Kapazit\IeC {\"a}t \IeC {\"u}ber steigender Druckbelastung}{16}{section*.15}
-\contentsline {subsubsection}{Kapazit\IeC {\"a}t \IeC {\"u}ber statischer Druckbelastung}{17}{section*.17}
-\contentsline {subsubsection}{Weitere Messung mithilfe des Maschinenschraubstocks}{20}{section*.19}
-\contentsline {subsubsection}{Messung mit anderer Impedanzmessfrequenz}{23}{section*.21}
+\contentsline {subsubsection}{Kapazit\IeC {\"a}t \IeC {\"u}ber steigender Druckbelastung}{16}{section*.14}
+\contentsline {subsubsection}{Kapazit\IeC {\"a}t \IeC {\"u}ber statischer Druckbelastung}{17}{section*.16}
+\contentsline {subsubsection}{Weitere Messung mithilfe des Maschinenschraubstocks}{20}{section*.18}
+\contentsline {subsubsection}{Messung mit anderer Impedanzmessfrequenz}{23}{section*.20}
 \contentsline {subsection}{\numberline {4.4.2}B\IeC {\"u}rklin Piezo-Stack von Elliptec}{25}{subsection.4.4.2}
-\contentsline {subsubsection}{Messung Piezo-Stack, ohne Entladungsma\IeC {\ss }nahme}{25}{section*.23}
-\contentsline {subsubsection}{Messung Piezo-Stack, mit Entladung, ohne Setz-Zeit}{28}{section*.25}
-\contentsline {subsubsection}{Messung Piezo-Stack, mit Entladung, mit 2 Minuten Setz-Zeit}{32}{section*.28}
+\contentsline {subsubsection}{Messung Piezo-Stack, ohne Entladungsma\IeC {\ss }nahme}{25}{section*.22}
+\contentsline {subsubsection}{Messung Piezo-Stack, mit Entladung, ohne Setz-Zeit}{28}{section*.24}
+\contentsline {subsubsection}{Messung Piezo-Stack, mit Entladung, mit 2 Minuten Setz-Zeit}{32}{section*.27}
 \contentsline {chapter}{\numberline {5}Hardware}{36}{chapter.5}
 \contentsline {section}{\numberline {5.1}Energiezuf\IeC {\"u}hrung}{36}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Energy-Harvesting}{36}{subsection.5.1.1}
@@ -41,12 +41,12 @@
 \contentsline {subsection}{\numberline {5.2.2}Lithium-Ionen-Akkumulator}{44}{subsection.5.2.2}
 \contentsline {section}{\numberline {5.3}Arbeitsschaltung}{50}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}CC2541}{50}{subsection.5.3.1}
-\contentsline {subsubsection}{Eingangsschutzbeschaltung}{51}{section*.35}
-\contentsline {subsubsection}{DC/DC Wandler}{51}{section*.36}
-\contentsline {subsubsection}{System on a Chip}{52}{section*.37}
-\contentsline {subsubsection}{Balun}{53}{section*.38}
-\contentsline {subsubsection}{Piezosignalgeber}{53}{section*.40}
-\contentsline {subsubsection}{Fazit}{55}{section*.41}
+\contentsline {subsubsection}{Eingangsschutzbeschaltung}{51}{section*.34}
+\contentsline {subsubsection}{DC/DC Wandler}{51}{section*.35}
+\contentsline {subsubsection}{System on a Chip}{52}{section*.36}
+\contentsline {subsubsection}{Balun}{53}{section*.37}
+\contentsline {subsubsection}{Piezosignalgeber}{53}{section*.39}
+\contentsline {subsubsection}{Fazit}{55}{section*.40}
 \contentsline {subsection}{\numberline {5.3.2}CC430F6137}{55}{subsection.5.3.2}
 \contentsline {subsection}{\numberline {5.3.3}Sensorik}{61}{subsection.5.3.3}
 \contentsline {chapter}{\numberline {6}Software}{64}{chapter.6}
@@ -54,4 +54,4 @@
 \contentsline {section}{\numberline {6.2}Sensorauswertung \& ISR}{68}{section.6.2}
 \contentsline {chapter}{\numberline {7}Ergebnis}{82}{chapter.7}
 \contentsline {chapter}{\numberline {8}Ausblick}{83}{chapter.8}
-\contentsline {chapter}{Literaturverzeichnis}{84}{chapter*.46}
+\contentsline {chapter}{Literaturverzeichnis}{84}{chapter*.45}
