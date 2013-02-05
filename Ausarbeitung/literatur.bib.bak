@@ -247,7 +247,18 @@
   timestamp = {2013.01.28}
 }
 
-@BOOK{cc1101,
+@BOOK{ENERGIZER,
+  title = {Qi Inductive Wireless Charging Energizer},
+  publisher = {Texas Instruments Incorporated},
+  year = {Zugegriffen am: 27. 01. 2013},
+  edition = {\\
+	
+	\url{http://www.energizer.com/portable-power/wireless-chargers/qi-wireless/Pages/default.aspx}},
+  owner = {sjobstm},
+  timestamp = {2013.01.27}
+}
+
+@BOOK{CC1101,
   title = {cc1101.pdf},
   publisher = {Texas Instruments Incorporated},
   year = {Zugegriffen am: 26. 01. 2013},
@@ -258,7 +269,7 @@
   timestamp = {2013.01.27}
 }
 
-@BOOK{cc430f6137,
+@BOOK{CC430f6137,
   title = {MSP430 16-Bit Ultra-Low Power MCUs - RF SoC Series - CC430F6137},
   publisher = {Texas Instruments Incorporated},
   year = {Zugegriffen am: 26. 01. 2013},
@@ -418,7 +429,7 @@
 @BOOK{TXLINE,
   title = {TX-Line: Transmission Line Calculator AWR Corporation},
   publisher = {AWR Corporation},
-  year = {Zugegriffen am:26. 01. 2013},
+  year = {Zugegriffen am: 26. 01. 2013},
   note = {\\
 	
 	\url{http://www.awrcorp.com/products/optional-products/tx-line-transmission-line-calculator}},

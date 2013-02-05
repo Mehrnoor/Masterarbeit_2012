@@ -187,7 +187,7 @@ einen akustischen Signalgeber (Piezo-Buzzer) bei Überbelastung,
 diverse Schaltungen zur Sicherheit und Leistungsoptimierung:
 \begin{itemize}
 \item
-Verpolschutz
+Verpolschutzb
 \item
 Kurzschlussstromsperre
 \item
@@ -206,7 +206,7 @@ Während der Voruntersuchung wurde empirisch bewiesen, dass bei hinreichenden St
 \item
 Energy-Harvesting wurde im Bereich der thermoelektrischen Wandlung getestet. Allerdings hat sich beim praktischen Aufbau und bei der kommerziellen Betrachtung die drahtlose Energieübertragung als Energiezuführung für das System durchgesetzt. Ein eigener Aufbau eines Empfängers in Dickschichttechnik wurde bereits erfolgreich in Betrieb genommen. 
 \item
-Bei einem Testaufbau wurde ein Piezosignalgeber (Buzzer) als Schalter zweckentfremdet und mit geringer Zusatzbeschaltung in Betrieb genommen. Mit diesem kann der jeweils angeschlossene Mikroprozessor über externe Interrupts angesteuert werden.
+Bei einem Testaufbau wurde ein Piezo-Signalgeber (Buzzer) als Schalter zweckentfremdet und mit geringer Zusatzbeschaltung in Betrieb genommen. Mit diesem kann der jeweils angeschlossene Mikroprozessor über externe Interrupts angesteuert werden.
 \item
 Es wurde mithilfe einfacher diskreter Bauteile, wie einem P-Kanal MOSFET und einer selbst-zurückstellenden Sicherung eine ausreichende Schutzbeschaltung aufgebaut und getestet. Da bei den Mikroprozessoren der Stromverbrauch unabhängig von der angelegten Spannung gleich bleibt, wurde mit einem Abwärtswandler eine Leistungsoptimierung vorgenommen.
 \item
@@ -214,7 +214,7 @@ Durch die parallele Bearbeitung mehrerer Teilgebiete des Projekts hat sich ein g
 \item
 Die Sensorik wurde samt Auswertungsbaustein erfolgreich an mehreren eingebetteten Systemen getestet. Darunter war auch das oben genannte modifizierte Evaluations-Modul das auf der Frequenz von 868MHz sendet. 
 \item
-Um eine ausreichende Versorgung des eingebetteten Systems zu gewährleisten, wurde ein Lithium-Ionen Akku samt Ladesystem aufgebaut und erfolgreich getestet. Dabei können konventionelle Akkus, wie etwa die für Mobiltelefone, benutzt werden.
+Um eine ausreichende Versorgung des eingebetteten Systems sicher zu stellen, wurde ein Lithium-Ionen Akku samt Ladesystem aufgebaut und erfolgreich getestet. Dabei können konventionelle Akkus, wie etwa die für Mobiltelefone, benutzt werden.
 
 \end{itemize}
 %\maketitle
@@ -248,6 +248,17 @@ captionpos=b}
 Die moderne Schulmedizin ist mittlerweile an einem Punkt angelangt, an dem die biochemischen Prozesse innerhalb des Körpers als nahezu komplett erfasst gelten. Die Mechanismen der Informationsweitergabe über die Nervenbahnen, die Belastbarkeit der Anatomie oder die Zerlegungsprozesse des Stoffwechsels sind als solche weitestgehend erforscht. Wie jedoch in jedem Forschungsbereich bedeutet dies auch, dass die Lernkurve beziehungsweise die Anzahl der Ergebnisse an innovativen Erkenntnissen drastisch über die letzten Jahrzehnte abnehmen. Weiter lässt sich feststellen, dass Fortschritte der modernen Medizin hauptsächlich auf den Innovationen aus den Bereichen der Pharmazie und der Medizintechnik beruhen. So ermöglichen intelligente Kamerasysteme eine bessere Überwachung von Operationen am schlagenden Herzen\footnote{Motion Compensation in Minimally Invasive Heart Surgery \citep{DLR}} oder die Abnahme von elektrischen Nervensignalen eine Steuerung von kybernetischen Prothesen\footnote{Paralyzed individuals control robotic arms to reach and grasp using brain computer interface \citep{DLR2}}.\\
 Die fortschreitende Entwicklung in der Medizintechnik bietet auch Hilfestellung im Genesungsprozess im Fachbereich der Orthopädie. So wird im Projekt "`MedLast"' sowohl eine Unterstützung für den Patienten als auch eine Kontrollmöglichkeit während der Heilung einer Beinfraktur erstrebt. Dabei wird das Gewicht auf dem geschienten Fuß und die Häufigkeit der Auftritte aufgezeichnet. Gleichzeitig sollen diese Daten zur zeitnahen Kontrolle an eine visuelle Ausgabeeinheit, ähnlich einer Armbanduhr, weitergegeben werden. Für die Konstruktion der Elektronik, welche die Werte für Belastung und Schrittzahl aufnimmt, werden die Gebiete Energieversorgung und Sensorik zusammengefasst. Hierbei kann nur sehr schlecht auf proprietäre Komplettlösungen zurückgegriffen werden. Darum sollen in dieser Arbeit die nötigen Schritte unternommen werden, um ein solches System zu erstellen und in Betrieb zu nehmen.
 \chapter{Anforderungen}
+\section{Stand der Technik}
+In der Sparte der drahtlosen Energieübertragung konnten insbesondere bei dem Qi-Standard größere Absatzzahlen erreicht werden. Insbesondere die Vertretung bei namhaften Herstellern wie Nokia \citep{NOKIA} oder Energizer\citep{ENERGIZER}, welcher eine breite Palette an Lösungen für Ladestationen hat. Es werden zwar andere Standards im Kommen, aber diese sind noch im Entwicklungsstadium.\\
+\\
+Bei der Akkutechnik kam es in letzten Jahren zu einer weit übergreifenden Verbreitung der Lithium-Ionen Technologie. Es gab bei diesem Typ noch eine weitere verbreitete Entwicklung, den Lithium-Polymer Akku. Dabei ist die Anode nicht mehr auf einer Flüssigkeit basierend aufgebaut, sondern auf vielen kleinen Schichten. Durch diese Umgestaltung sind verschiedenste neue Bauformen möglich. Bei dieser Arbeit wird aber weiterhin an der Lithium-Ionen Technologie festgehalten.\\
+\\
+Die Sensorik zur Aufnahme der Gewichtskraft hat ebenfalls einen weitverbreiteten Standard ausgearbeitet. Hier werden sehr häufig Dehnmessstreifen verwendet. Diese finden beispielsweise bei Körperwaagen, Achslastsensoren und Drehmoment-Aufnehmern Einsatz. Somit gilt diese Gattung der Kraftaufnehmern als etabliert.\\
+\\
+Bisher gibt es kein System, das aktiv die laufende Belastung bei Beinfrakturen, Knöchel-, Knie- und Hüftverletzungen überwacht. Es werden lediglich nur Direktiven durch den behandelnden Arzt vorgegeben. Diese können allerdings weder vom Arzt überprüft noch vom Patienten einwandfrei nachverfolgt werden.
+
+
+\section{Aufgabenstellung}
 Als wesentliche Bestandteile der Aufgabenstellung sind zuerst die zu bearbeitenden Teilgebiete zu nennen. Hierzu gehören:
 \begin{itemize}
 \item
@@ -257,7 +268,7 @@ Energiebereitstellung
 \item
 Sensorik-Auswertung
 \end{itemize}
-Bei der Energiezuführung sollen dahingehend Überlegungen angestrebt werden, auf welche Art und Weise das komplette Modul mit Spannung versorgt werden kann. Dabei sollen autarke wie auch fremd-gespeiste Quellen betrachtet werden. Die Energiebereitstellung bezieht sich auf die Speicherung im oder am Modul selbst. Hierbei ist die Abstimmung zwischen Bedarf und Bereitstellung ausschlaggebend für die Wahl der zu verwendenden Technologie. In der Sensorik-Auswertung ist natürlich in erster Linie der zu verwendende Sensor bestimmend. Da dieser sich durch den steten Optimierungsverlauf auch im Verhalten sowie in den zu erwartenden Messgrößen ändern kann, sollte diesbezüglich ein Freiheitsgrad in der Implementierung vorhanden sein. Weiter soll im zentralen Mikrocontroller des Moduls eine passende Auslesesoftware erstellt werden. Diese muss die gemessenen Daten aufbereiten und in eine passende SI-Einheit wie Newton [N] oder Kilogramm [kg] zurück rechnen. Als kleinere Additive sind folgende elektronische Komponenten noch vorgesehen: 
+Bei der Energiezuführung sollen dahingehend Überlegungen angestrebt werden, auf welche Art und Weise das komplette Modul mit Spannung versorgt werden kann. Dabei sollen autarke wie auch fremd-gespeiste Quellen betrachtet werden. Dabei sollen Energie-Harvesting Systeme und auch Konzepte für die drahtlose Energieübertragung analysiert werden. Die Energiebereitstellung bezieht sich auf die Speicherung im oder am Modul selbst. Hierbei ist die Abstimmung zwischen Bedarf und Bereitstellung ausschlaggebend für die Wahl der zu verwendenden Technologie. Dabei werden Superkondensatoren und Lithium-Ionen-Akkus gegenübergestellt und bewertet. In der Sensorik-Auswertung ist natürlich in erster Linie der zu verwendende Sensor bestimmend. Da dieser sich durch den steten Optimierungsverlauf auch im Verhalten sowie in den zu erwartenden Messgrößen ändern kann, sollte diesbezüglich ein Freiheitsgrad in der Implementierung vorhanden sein. Durch vorausgehende Messungen des Authors werden piezoresistive Druckaufnehmer verwendet. Dieser muss einer Belastung von 150kg Körpergewicht im Lastwechsel standhalten. Weiter soll im zentralen Mikrocontroller des Moduls eine passende Auslesesoftware erstellt werden. Diese muss die gemessenen Daten aufbereiten und in eine passende SI-Einheit wie Newton [N] oder Kilogramm [kg] zurück rechnen. Als kleinere Additive sind folgende elektronische Komponenten noch vorgesehen: 
 \begin{itemize}
 \item
 Piezo-Summer samt Treiberschaltung
@@ -266,52 +277,25 @@ Schutzbeschaltung
 \item
 Temperaturaufnehmer
 \end{itemize}
+\section{Vorgehensweise}
+Grundsätzlich lässt sich die Herangehensweise beim Bearbeiten der einzelnen Teilbereiche in vier Schritte einteilen:
+\begin{enumerate}
+\item
+Zuerst werden die Anforderungen analysiert und die in Frage kommenden Elemente aufgelistet. Je nach den zu gewichtenden Eigenschaften, wie beispielsweise Funktionsumfang, Implementierungsaufwand, Leistungsaufnahme oder langfristige Kosten pro Stück in der Fertigung werden die Bausteine daraufhin ausgewählt.
+\item
+Als nächsten Schritt folgt die Anpassung an vorhandene Schaltungselemente. Hierbei müssen Berechnungen zur Schaltungsauslegung vorgenommen werden. 
+\item
+Anschließend wird ein Schaltplan erstellt. Dies erfolgt meist anhand der Informationen aus den entsprechenden Datenblättern oder der gängigen Schaltungstechnik. Dieser wird dann in ein passendes Layout umgewandelt. 
+\item
+Zueltzt wird eine Platine des Prototyps bestellt, bestückt und auf Funktion geprüft. 
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Grundlagen}
-\section{Energy-Harvesting}
-\subsection{Piezoelektrisch}
-
-Eines der größten abgedeckten Felder im Energy-Harvesting Bereich ist die Gewinnung von nutzbarer elektrischer Energie aus vorhandener mechanischer Energie. Hierbei werden die piezoelektrischen Effekte genutzt, welche bei Druck oder Schwingungsbelastungen auf einem Piezokristall entstehen \citep[vgl. S.36 ff]{Dembowski2011}. Dabei entsteht bei bestimmten nichtleitenden Keramiken aufgrund von mechanischem Druck elektrische Ladung an den Oberflächen. Die inneren Ladungskerne driften dabei auseinander, es bildet sich ein Dipol aus. Es werden die grundlegenden Gleichungen des Piezo-Effekts wie folgt beschrieben:
-\begin{align}
-D & =  \textrm{d} \cdot T + \varepsilon^{\textrm{T}} \cdot E\\
-S & =  s^{\textrm{E}} \cdot T + \textrm{d} \cdot E
-\end{align}
-Mit den Parametern:
-\begin{array}[t] {r c l}
-D & : & \textrm{Dielektrische Verschiebung (statt Polarisation)}\\
-S & : & \textrm{Relative mechanische Dehnung} \\
-T & : &\textrm{Mechanische Spannung} \\
-E & : & \textrm{Elektrische Feldstärke} \\
-  $d$  & : & \textrm{piezoelektrische Ladungskonstante} \\
- s^{\textrm{E}}  & : & \textrm{Elastizitätskonstante, E = konstant} \\
- \varepsilon^{\textrm{T}}  & : & \textrm{Permittivität, T = konstant}\\
-\end{array}\\ \newline
-Zum Energy-Harvesting werden bevorzugt Biegebalken\footnote{im Englischen auch bekannt als Cantilever} verwendet. Diese können technologisch an die angeforderte Kraftaufnahme, die Schwingungsfrequenz und die Amplitude der resultierenden Spannung angepasst werden. Der Aufbau als Biegebalken liefert sein Optimum der Energieumwandlung bei seiner Resonanzfrequenz. Dabei wird weiter zwischen Transversalschwingern\footnote{31-Schwingungsmodus} (Formel \ref{formel:3.3} und \ref{formel:3.4}) und Longitudinalschwingern\footnote{33-Schwingungsmodus}  (Formel \ref{formel:3.5} und \ref{formel:3.6}) unterschieden. 
-\begin{align}
-D_3 & =  \textrm{d}_{31} \cdot T_1 + \varepsilon_{33}^{\textrm{T}} \cdot E_3 \label{formel:3.3} \\
-S_1 & =  s_{11}^{\textrm{E}} \cdot T_3 + \textrm{d}_{31} \cdot E_3 \label{formel:3.4}
-\end{align}
-Bei den Transversalschwingern wird quer zur mechanischen Auslenkung eine elektrische Spannung erzeugt. Wenn mechanische Schwingung bzw. Druckbelastung mit dem elektrischen Feld bzw. der dielektrischen Verschiebung gleichgerichtet ist, wird von Longitudinalschwingern gesprochen. Transversalschwinger erzeugen eine rund zehnmal höhere Spannung als Longitudinalschwinger \citep[S.39]{Dembowski2011}. Ein Beispiel für die Wirkungsweise im kristallinen Aufbau eines longitudinal aktiven Piezoelements ist in Abbildung \vref{piezo} zu sehen. Dabei ist recht deutlich die Ladungsverschiebung aufgrund der Verzerrung der Kristallstruktur zu erkennen. 
-\begin{align}
-D_3 & =  \textrm{d}_{33} \cdot T_3 + \varepsilon_{33}^{\textrm{T}} \cdot E_3 \label{formel:3.5} \\
-S_3 & =  s_{33}^{\textrm{E}} \cdot T_3 + \textrm{d}_{33} \cdot E_3 \label{formel:3.6}
-\end{align}
-\begin {figure}[htbp]
-\caption[Longitudinaler Piezoeffekt; Kristallstruktur und Ladungsverschiebung]{Longitudinaler Piezoeffekt; Aufbau der Kristallstruktur und Ladungsverschiebung}
-      \begin{center}
-       \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/Piezo.png}}
-      \end{center}
-Quelle:Stephan Jobstmann
-\label{piezo}
-\end{figure}
-\subsection{Thermoelektrisch}
-Eine im Vergleich zu piezoelektrischem Energy-Harvesting hohe Energieumwandlung wird mit der thermoelektrischen Transformation erzielt. Dabei wird als physikalische Grundlage der Seebeck-Effekt benutzt. Dieser beschreibt, dass bei zwei unterschiedlichen Metalllegierungen bei vorliegender Differenz der Temperaturen am Übergang der Elemente eine Spannung entsteht. Die entstandene Potentialdifferenz wird auch Thermospannung \citep[vgl. S.158]{Schruefer2012} genannt. Die Inverse dieses Vorgangs wird mit dem Peltier-Effekt beschrieben. Da das Verhalten der spezifischen Elemente reziprok ist, können Peltierelemente auch zur Gewinnung von elektrischer Energie genutzt werden. \newline
-Der Seebeck-Effekt beruht auf den folgenden molekularen Gegebenheiten: Naturgemäß wandern bei einem Metall, welches einem Temperaturunterschied ausgesetzt ist, die Elektronen von der heißen zur kalten Seite. Dies geschieht aufgrund der natürlichen Diffusionsbewegung innerhalb des Metalls. Bei zwei aneinanderliegenden, verlöteten oder verschweißten Legierungen gibt das Metall mit der niedrigeren Austrittsarbeit Elektronen an das andere Metall ab und wird dadurch positiv geladen. Dadurch bildet sich an der Kontaktfläche ein elektrisches Feld. Dieses kann resultierend als direkte Proportionale zur anliegenden Temperaturdifferenz der zwei Kontaktstellen mit einem Voltmeter gemessen werden. Übliche Werte hierfür sind ca. $10  \frac{\textrm{mV}}{100 \degree \textrm{K}}$. Durch intelligente Beschaltung, zum Beispiel mehrere Elemente in Reihe, lässt sich eine höhere Empfindlichkeit erzielen. Mit dem in Kapitel \vref{energy} vorgestellten LTC3108 Baustein lässt sich ab einer Ausgangsspannung von 20mV eine stabile Energieumwandlung in Gang bringen. \newline \newline
-Wird der technischen Aufbau nun so gestaltet, dass er zur Energieumwandlung und nicht zur Temperaturmessung verwendet werden soll, erweist es sich als nützlich ein oder mehrere Peltierelemente im umgekehrten Betrieb zu verwenden. \citep[vgl. S.30]{Dembowski2011}
 \section{Drahtlose Energieversorgung}
-Das hier vorgestellte Konzept bezieht sich auf Technologie, die mit dem WPC\footnote{Wireless Power Consortium}-Standard konform ist. Es gibt auch andere Konzepte, die sich mit drahtloser Energieübertragung beschäftigen. Das ist auch nachvollziehbar wenn man bedenkt, dass die ersten drahtlosen Anlagen von Nikola Tesla bereits 1895 in Betrieb genommen wurden\citep{TESLA}. Allerdings weisen die meisten einfacheren Aufbauten einen entscheidenden Nachteil auf: Sie sind nicht geregelt. Der WPC-Standard hat aber nicht nur das Regelungssystem als Vorteil gegenüber anderen Konzepten vorzuweisen. In den nachfolgenden Unterkapiteln werden die einzelnen Punkte der Spezifikation aufgeführt und erklärt. Dabei ist der Inhalt sinngemäß aus Quelle \citep{WPC} genommen.
+Das hier vorgestellte Konzept bezieht sich auf Technologie, die mit dem WPC\footnote{Wireless Power Consortium}-Standard konform ist. Es gibt auch andere Konzepte, die sich mit drahtloser Energieübertragung beschäftigen. Das ist auch nachvollziehbar wenn man bedenkt, dass die ersten drahtlosen Anlagen von Nikola Tesla bereits 1895 in Betrieb genommen wurden\citep{TESLA}. Allerdings weisen die meisten einfacheren Aufbauten einen entscheidenden Nachteil auf: Sie sind nicht geregelt. Der WPC-Standard hat aber nicht nur das Regelungssystem als Vorteil gegenüber anderen Konzepten vorzuweisen. In den nachfolgenden Unterkapiteln werden die einzelnen Punkte der Spezifikation aufgeführt und erklärt. Dabei ist der Inhalt sinngemäß aus Quelle \citep{WPC} übertragen worden.
 \subsection{Prinzip}
 \label{Prinzip}
-Das zugrundeliegende Prinzip ist die induktive Kopplung, ähnlich derer eines Transformators. Sie besteht aus einer Empfänger- und einer Sendespule, welche wiederum eine eine magnetisch-gekoppelte Einheit bilden. Wechselströme in der Sendespule erzeugen ein Magnetfeld das über die Lenz'sche Regel Strom in die Empfängerspule induziert. Die durch das Ohm'sche Gesetz entstehende Spannung kann zur Versorgung eines Handheld-Geräts verwendet werden. Über den Kopplungsfaktor und die Güte der Induktivitäten lassen sich Rückschlüsse auf das System ziehen. Bestimmend wirken folgende Faktoren auf die Kopplung:
+Das zugrundeliegende Prinzip ist die induktive Kopplung, ähnlich derer eines Transformators. Sie besteht aus einer Empfänger- und einer Sendespule, welche wiederum eine eine magnetisch-gekoppelte Einheit bilden. Wechselströme in der Sendespule erzeugen ein Magnetfeld, das über die Lenz'sche Regel Strom in die Empfängerspule induziert. Die durch das Ohm'sche Gesetz entstehende Spannung kann zur Versorgung eines Handheld-Geräts verwendet werden. Über den Kopplungsfaktor und die Güte der Induktivitäten lassen sich Rückschlüsse auf das System ziehen. Bestimmend wirken folgende Faktoren auf die Kopplung:
 \begin{itemize}
 \item
 Abstand zwischen den beiden Spulen
@@ -325,12 +309,11 @@ Winkel zwischen den Spulen
 \subsection{Effizienz}
 Zur Erhaltung einer optimalen Anpassung zwischen der Ein- und Ausgangsleistung müssen weitere Dinge beachtet werden. So darf kein allzu großer Unterschied im Größenverhältnis der beiden beteiligten Induktivitäten entstehen. Weiter sinkt der Leistungsfaktor mehr als indirekt proportional mit dem steigenden Abstand zwischen den Spulen. 
 \subsection{Resonanzkopplung}
-Um die induktive Kopplung zu erweitern können Resonanz-Schwingkreise verwendet werden. Dieses Prinzip wurde bereits von Nikola Tesla im vorletzten Jahrhundert aufgegriffen. Für Systeme mit schlechter Kopplung ist dies eine gute Möglichkeit den Energiefluss zu verbessern. Denselben Rahmenbedingungen wie der rein induktiven Kopplung folgend, hat diese Methode bereits weite Verbreitung gefunden. Ähnlich wie die Saiten einer akustischen Gitarre in einem entsprechenden Umfeld lässt sich selbst mit geringstem Aufwand ein Schwingkreis anregen. Bei der Gitarre genügt beispielsweise eine Unterhaltung in der selben Tonlage um eine merkliche Schwingung wahrnehmen zu können. Bei dieser Form der Energieübertragung lässt sich ein vergleichbarer Aufbau mit zusätzlichen Kondensatoren zu den Induktivitäten erstellen. Diese eliminieren auftretende Streuinduktivitäten im Empfänger und magnetisierende Induktivitäten im Sender. Die einzig übrigbleibende Größe ist der reelle Widerstand der Spulen. Aber bei gegebener guter Güte wie im vorhergehenden Unterkapitel \vref{Prinzip} lässt sich dieser Effekt als Minimal betrachten. 
+Um die induktive Kopplung zu erweitern, können Resonanz-Schwingkreise verwendet werden. Dieses Prinzip wurde bereits von Nikola Tesla im vorletzten Jahrhundert aufgegriffen. Für Systeme mit schlechter Kopplung ist dies eine gute Möglichkeit, den Energiefluss zu verbessern. Denselben Rahmenbedingungen, wie der rein induktiven Kopplung folgend, hat diese Methode bereits weite Verbreitung gefunden. Ähnlich wie die Saiten einer akustischen Gitarre in einem entsprechenden Umfeld lässt sich selbst mit geringstem Aufwand ein Schwingkreis anregen. Bei der Gitarre genügt beispielsweise eine Unterhaltung zwischen zwei Personen in der selben Tonlage um eine merkliche Schwingung wahrnehmen zu können. Bei dieser Form der Energieübertragung lässt sich ein vergleichbarer Aufbau mit zusätzlichen Kondensatoren zu den Induktivitäten erstellen. Diese eliminieren auftretende Streuinduktivitäten im Empfänger und magnetisierende Induktivitäten im Sender. Die einzig übrigbleibende Größe ist der reelle Widerstand der Spulen. Aber bei gegebener guter Güte wie im vorhergehenden Unterkapitel \vref{Prinzip} lässt sich dieser Effekt als minimal betrachten. 
 \subsection{Auswirkungen auf den Körper}
-Ausgehend von der Allgegenwart von Elektromagnetischer Strahlung und dessen weit gefächertes Frequenzspektrum von 0 bis 300GHz sind gesundheitliche Aspekte zu untersuchen. So genügen bei sogenannter ionisierender Strahlung, zu der auch Röntgen- und Gammastrahlung zu zählen ist, wenige Milliwatt um den menschlichen Körper zu beschädigen. Die Frequenzen der WPC-konformen Module bewegen sich im Gegensatz dazu im nicht ionisierenden Bereich. Die "`International Commission on Non-Ionizing Radiation Protection", kurz ICNIRP, hat dazu Richtlinien aufgestellt\citep{ICNIRP}. Darin wird festgehalten, mit welcher Leistung in einem bestimmten Frequenzbereich auf den menschlichen Körper eingewirkt werden darf, ohne diesen zu schädigen.
+Ausgehend von der Allgegenwart von Elektromagnetischer Strahlung und dessen weit gefächertes Frequenzspektrum von 0 bis 300GHz sind gesundheitliche Aspekte zu untersuchen. So genügen bei sogenannter ionisierender Strahlung zu der auch Röntgen- und Gammastrahlung zu zählen ist, wenige Milliwatt, um den menschlichen Körper zu beschädigen. Die Frequenzen der WPC-konformen Module bewegen sich im Gegensatz dazu im nicht ionisierenden Bereich. Die "`International Commission on Non-Ionizing Radiation Protection", kurz ICNIRP, hat dazu Richtlinien aufgestellt\citep{ICNIRP}. Darin wird festgehalten, mit welcher Leistung in einem bestimmten Frequenzbereich auf den menschlichen Körper eingewirkt werden darf, ohne diesen zu schädigen.
 \setlongtables
 \begin{longtable}{| p{2,69cm} |p{2,4cm} | p{2,4cm} |p{2,4cm} |p{2,4cm} |}
-\caption{Richtwerte nach der ICNIRP\citep{ICNIRP}}\\
 \hline
 Art der Aussetzung &Frequenz-Bereich&Belastung des gesamten Körpers in W$\cdot$kg$^{-1}$ &Belastung von Kopf und Torso in W$\cdot$kg$^{-1}$ & Belastung der Extremitäten in W$\cdot$kg$^{-1}$ \\
 \hline
@@ -346,6 +329,7 @@ Art der Aussetzung &Frequenz-Bereich&Belastung des gesamten Körpers in W$\cdot$
 \hline
 \endfoot
 \hline \hline
+\caption{Richtwerte nach der ICNIRP\citep{ICNIRP}}\\
 \endlastfoot
 \hline
 \label{strahlung}%
@@ -374,10 +358,11 @@ Der LiIon-Akku\footnote{Lithium-Ionen Akkumulator} stellt den aktuellen Stand de
 \subsection{Aufladen}
 Der Ladeprozess ähnelt dem von Blei-Akkumulatoren. Im Gegensatz zu Diesen ist allerdings auf die Speisespannung genauestens zu achten. Einzelne Zellen werden mit einer Spannung von 4,20V geladen. Dabei darf die anliegende Spannung höchstens $\pm$50mV vom Normalwert abweichen. Andernfalls ist mit einer Verkürzung der Lebensdauer der Akku-Zelle zu rechnen. Anders als bei anderen Akkumulatoren wie dem NiMH\footnote{Nickel-Metallhydrid}-Akku ist auch keine sogenannte Erhaltungsladung\footnote{besser bekannt unter dem englischen Begriff: trickle charging} zulässig. In Abbildung \vref{fig:bat} sind die einzelnen Schritte des Ladevorgangs zu sehen. Diese werden im Folgenden näher erklärt.
 \begin {figure}[htbp]
-\caption{Ladungskurve eines typischen Lithium-Ionen-Akkumulators}
       \begin{center}
        \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/ion1.jpg}}
       \end{center}
+\caption{Ladungskurve eines typischen Lithium-Ionen-Akkumulators}
+\centering
 Quelle: Cadex Electronics Incorporated \citep{BAT}
 \label{fig:bat}
 \end{figure}
@@ -402,6 +387,45 @@ Tiefentladene Akkus können mit einem speziellen Ladeprofil eventuell wieder akt
 \item
 Eine vollständige Ladung beziehungsweise Entladung wie bei NiMH-Akkus ist nicht förderlich für dessen Lebensdauer. Teilaufladungen sind bei diesem Akkutyp besser.
 \end{itemize}
+
+\section{Energy-Harvesting}
+\subsection{Piezoelektrisch}
+Eines der größten abgedeckten Felder im Energy-Harvesting Bereich ist die Gewinnung von nutzbarer elektrischer Energie aus vorhandener mechanischer Energie. Hierbei werden die piezoelektrischen Effekte genutzt, welche bei Druck oder Schwingungsbelastungen auf einem Piezokristall entstehen \citep[vgl. S.36 ff]{Dembowski2011}. Dabei entsteht bei bestimmten nichtleitenden Keramiken aufgrund von mechanischem Druck elektrische Ladung an den Oberflächen. Die inneren Ladungskerne driften dabei auseinander, es bildet sich ein Dipol aus. Es werden die grundlegenden Gleichungen des Piezo-Effekts wie folgt beschrieben:
+\begin{align}
+D & =  \textrm{d} \cdot T + \varepsilon^{\textrm{T}} \cdot E\\
+S & =  s^{\textrm{E}} \cdot T + \textrm{d} \cdot E
+\end{align}
+Mit den Parametern:
+\begin{array}[t] {r c l}
+D & : & \textrm{Dielektrische Verschiebung (statt Polarisation)}\\
+S & : & \textrm{Relative mechanische Dehnung} \\
+T & : &\textrm{Mechanische Spannung} \\
+E & : & \textrm{Elektrische Feldstärke} \\
+  $d$  & : & \textrm{piezoelektrische Ladungskonstante} \\
+ s^{\textrm{E}}  & : & \textrm{Elastizitätskonstante, E = konstant} \\
+ \varepsilon^{\textrm{T}}  & : & \textrm{Permittivität, T = konstant}\\
+\end{array}\\ \newline
+Zum Energy-Harvesting werden bevorzugt Biegebalken\footnote{im Englischen auch bekannt als Cantilever} verwendet. Diese können technologisch an die angeforderte Kraftaufnahme, die Schwingungsfrequenz und die Amplitude der resultierenden Spannung angepasst werden. Der Aufbau als Biegebalken liefert sein Optimum der Energieumwandlung bei seiner Resonanzfrequenz. Dabei wird weiter zwischen Transversalschwingern\footnote{31-Schwingungsmodus} (Formel \ref{formel:3.3} und \ref{formel:3.4}) und Longitudinalschwingern\footnote{33-Schwingungsmodus}  (Formel \ref{formel:3.5} und \ref{formel:3.6}) unterschieden. 
+\begin{align}
+D_3 & =  \textrm{d}_{31} \cdot T_1 + \varepsilon_{33}^{\textrm{T}} \cdot E_3 \label{formel:3.3} \\
+S_1 & =  s_{11}^{\textrm{E}} \cdot T_3 + \textrm{d}_{31} \cdot E_3 \label{formel:3.4}
+\end{align}
+Bei den Transversalschwingern wird quer zur mechanischen Auslenkung eine elektrische Spannung erzeugt. Wenn mechanische Schwingung bzw. Druckbelastung mit dem elektrischen Feld bzw. der dielektrischen Verschiebung gleichgerichtet ist, wird von Longitudinalschwingern gesprochen. Transversalschwinger erzeugen eine rund zehnmal höhere Spannung als Longitudinalschwinger \citep[S.39]{Dembowski2011}. Ein Beispiel für die Wirkungsweise im kristallinen Aufbau eines longitudinal aktiven Piezoelements ist in Abbildung \vref{piezo} zu sehen. Dabei ist recht deutlich die Ladungsverschiebung aufgrund der Verzerrung der Kristallstruktur zu erkennen. 
+\begin{align}
+D_3 & =  \textrm{d}_{33} \cdot T_3 + \varepsilon_{33}^{\textrm{T}} \cdot E_3 \label{formel:3.5} \\
+S_3 & =  s_{33}^{\textrm{E}} \cdot T_3 + \textrm{d}_{33} \cdot E_3 \label{formel:3.6}
+\end{align}
+\begin {figure}[htbp]
+      \begin{center}
+       \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/Piezo.png}}
+      \end{center}
+\caption[Longitudinaler Piezoeffekt; Kristallstruktur und Ladungsverschiebung]{Longitudinaler Piezoeffekt; Aufbau der Kristallstruktur und Ladungsverschiebung}
+\label{piezo}
+\end{figure}
+\subsection{Thermoelektrisch}
+Eine im Vergleich zu piezoelektrischem Energy-Harvesting hohe Energieumwandlung wird mit der thermoelektrischen Transformation erzielt. Dabei wird als physikalische Grundlage der Seebeck-Effekt benutzt. Dieser beschreibt, dass bei zwei unterschiedlichen Metalllegierungen bei vorliegender Differenz der Temperaturen am Übergang der Elemente eine Spannung entsteht. Die entstandene Potentialdifferenz wird auch Thermospannung \citep[vgl. S.158]{Schruefer2012} genannt. Die Inverse dieses Vorgangs wird mit dem Peltier-Effekt beschrieben. Da das Verhalten der spezifischen Elemente reziprok ist, können Peltierelemente auch zur Gewinnung von elektrischer Energie genutzt werden. \newline
+Der Seebeck-Effekt beruht auf den folgenden molekularen Gegebenheiten: Naturgemäß wandern bei einem Metall, welches einem Temperaturunterschied ausgesetzt ist, die Elektronen von der heißen zur kalten Seite. Dies geschieht aufgrund der natürlichen Diffusionsbewegung innerhalb des Metalls. Bei zwei aneinanderliegenden, verlöteten oder verschweißten Legierungen gibt das Metall mit der niedrigeren Austrittsarbeit Elektronen an das andere Metall ab und wird dadurch positiv geladen. Dadurch bildet sich an der Kontaktfläche ein elektrisches Feld. Dieses kann resultierend als direkte Proportionale zur anliegenden Temperaturdifferenz der zwei Kontaktstellen mit einem Voltmeter gemessen werden. Übliche Werte hierfür sind ca. $10  \frac{\textrm{mV}}{100 \degree \textrm{K}}$. Durch intelligente Beschaltung, zum Beispiel mehrere Elemente in Reihe, lässt sich eine höhere Empfindlichkeit erzielen. Mit dem in Kapitel \vref{energy} vorgestellten LTC3108 Baustein lässt sich ab einer Ausgangsspannung von 20mV eine stabile Energieumwandlung in Gang bringen. \newline \newline
+Wird der technischen Aufbau nun so gestaltet, dass er zur Energieumwandlung und nicht zur Temperaturmessung verwendet werden soll, erweist es sich als nützlich ein oder mehrere Peltierelemente im umgekehrten Betrieb zu verwenden. \citep[vgl. S.30]{Dembowski2011}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Voruntersuchung}
 
@@ -447,7 +471,6 @@ Bei diesem Piezobaustein handelt es sich um ein einfaches, nicht mehrschichtiges
 Diese Messung zeigt das kapazitive Verhalten des Piezoelements Sonox P502. Bei den Messwerten wird die Kapazität über die angelegte Kraft, bzw. die Spannung an der Kraftmessdose, aufgetragen, wie in Tabelle \vref{tab:2.1} und Abbildung \vref{fig:2.1} nachzuvollziehen ist. Speisefrequenz der Impedanzmessung war 500Hz bei 1V Amplitude.
 \setlongtables
 \begin{longtable}{| l | l | l |}
-\caption[Messung 1; Sonox 502 Kapazitives Verhalten]{Messung 1; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung}\\
 \hline
 $U_{diff}$ in mV&$C_{diff}$ in nF&$C_{Piezo}$ in nF\\
 \hline
@@ -461,6 +484,7 @@ $U_{diff}$ in mV&$C_{diff}$ in $nF$&$C_{Piezo}$ in nF\\
 \hline
 \endfoot
 \hline \hline
+\caption[Messung 1; Sonox 502 Kapazitives Verhalten]{Messung 1; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung}\\
 \endlastfoot
 \hline
 \label{tab:2.1}%
@@ -479,11 +503,10 @@ $U_{diff}$ in mV&$C_{diff}$ in $nF$&$C_{Piezo}$ in nF\\
 6.11&-0.03231&0.96766\\
 \end{longtable}
 \begin {figure}[htbp]
-	\caption[Messung 1; Sonox 502 Kapazitives Verhalten]{Messung 1; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung}
       \begin{center}
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_1_1}}
       \end{center}
-Quelle: Stephan Jobstmann
+	\caption[Messung 1; Sonox 502 Kapazitives Verhalten]{Messung 1; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung}
 \label{fig:2.1}
 \end{figure}
 
@@ -494,7 +517,6 @@ Aufgrund eines Gegenvergleichs lässt sich an dieser Stelle bereits sagen, dass 
 
 \setlongtables
 \begin{longtable}{| l | l | l |}
-\caption[Messung 2; Sonox 502 Statisches Verhalten]{Messung 2; Sonox 502 Statisches Verhalten über steigende mechanische Belastung}\\
 \hline
 Uhrzeit&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \hline
@@ -508,6 +530,7 @@ Uhrzeit&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \hline
 \endfoot
 \hline \hline
+\caption[Messung 2; Sonox 502 Statisches Verhalten]{Messung 2; Sonox 502 Statisches Verhalten über steigende mechanische Belastung}\\
 \endlastfoot
 \hline
 \label{tab:2.2}%
@@ -517,11 +540,10 @@ Uhrzeit&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \end{longtable}
 
 \begin {figure}[htbp]
-\caption[Messung 2; Sonox 502 Statisches Verhalten]{Messung 2; Sonox 502 Statisches Verhalten über steigende mechanische Belastung}
       \begin{center}
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_1_2}}
       \end{center}
-Quelle: Stephan Jobstmann
+\caption[Messung 2; Sonox 502 Statisches Verhalten]{Messung 2; Sonox 502 Statisches Verhalten über steigende mechanische Belastung}
 \label{fig:2.2}
 \end{figure}
 \newpage
@@ -531,7 +553,6 @@ Bei vorhergehenden Messungen ergab sich der Verdacht, dass die Werte aufgrund de
 
 \setlongtables
 \begin{longtable}{| l | l |}
-\caption{Messung 3; mit 100k$\Omega$ Parallelwiderstand}\\
 \hline
 $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \hline
@@ -545,6 +566,7 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \hline
 \endfoot
 \hline \hline
+\caption{Messung 3; mit 100k$\Omega$ Parallelwiderstand}\\
 \endlastfoot
 \hline
 \label{tab:2.3}%
@@ -563,7 +585,6 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 
 \setlongtables
 \begin{longtable}{| l | l |}
-\caption{Messung 4; ohne Parallelwiderstand}\\
 \hline
 $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \hline
@@ -577,6 +598,7 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \hline
 \endfoot
 \hline \hline
+\caption{Messung 4; ohne Parallelwiderstand}\\
 \endlastfoot
 \hline
 \label{tab:2.4}%
@@ -591,11 +613,10 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \end{longtable}
 
 \begin {figure}[htbp]
-\caption[Messung 3 und 4; Sonox 502 unter Einsatz besserer Spannvorrichtung]{Messung 3 und 4; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung unter Einsatz besserer Spannvorrichtung}
       \begin{center}
   \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_1_3}}
       \end{center}
-Quelle: Stephan Jobstmann
+\caption[Messung 3 und 4; Sonox 502 unter Einsatz besserer Spannvorrichtung]{Messung 3 und 4; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung unter Einsatz besserer Spannvorrichtung}
 \label{fig:2.3}
 \end{figure}
 \newpage
@@ -605,7 +626,6 @@ Um eine weitere qualitative Aussage über das Frequenzverhalten treffen zu könn
 
 \setlongtables
 \begin{longtable}{| l | l |}
-\caption{Messung 5; 1kHz Messfrequenz}\\
 \hline
 $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \hline
@@ -619,6 +639,7 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \hline
 \endfoot
 \hline \hline
+\caption{Messung 5; 1kHz Messfrequenz}\\
 \endlastfoot
 \hline
 \label{tab:2.5}%
@@ -631,11 +652,10 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \end{longtable}
 
 \begin {figure}[htbp]
-\caption{Messung 5; 1kHz Messfrequenz}
       \begin{center}
     \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_1_4}}
       \end{center}
-Quelle: Stephan Jobstmann
+\caption{Messung 5; 1kHz Messfrequenz}
 \label{fig:2.4}
 \end{figure}
 
@@ -655,7 +675,6 @@ Bei dieser ersten Vermessung des kapazitiven Verhaltens des Piezostacks unter Dr
 
 \setlongtables
 \begin{longtable}{| l |l| l |}
-\caption{Messung 6; Piezostack; Einführende Messung}\\
 \hline
 $U_{diff}$ in mV&$C_{Piezo}$ in nF&$R_{Parallel}$ in k$\Omega$\\
 \hline
@@ -669,6 +688,7 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF&$R_{Parallel}$ in k$\Omega$\\
 \hline
 \endfoot
 \hline \hline
+\caption{Messung 6; Piezostack; Einführende Messung}\\
 \endlastfoot
 \hline
 \label{tab:2.6}%
@@ -686,11 +706,10 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF&$R_{Parallel}$ in k$\Omega$\\
 \end{longtable}
 
 \begin {figure}[htbp]
-\caption{Messung 6; Einführende Messung Piezostack}
       \begin{center}
       \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_1}}
       \end{center}
-Quelle: Stephan Jobstmann
+\caption{Messung 6; Einführende Messung Piezostack}
 \label{fig:2.6}
 \end{figure}
 
@@ -702,7 +721,6 @@ Um Rückschlüsse auf das $\varepsilon$ des Piezomaterials zu ermöglichen, wurd
 
 \setlongtables
 \begin{longtable}{| l | l | l | l |}
-\caption[Messung 7; ohne Setz-Zeit; Kapazität]{Messung 7; Piezostack; mit Entladung, ohne Setz-Zeit; Kapazität}\\
 \hline
 \multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
 \hline
@@ -720,6 +738,7 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \hline
 \endfoot
 \hline \hline
+\caption[Messung 7; ohne Setz-Zeit; Kapazität]{Messung 7; Piezostack; mit Entladung, ohne Setz-Zeit; Kapazität}\\
 \endlastfoot
 \hline
 \label{tab:2.7}%
@@ -737,17 +756,15 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \end{longtable}
 
 \begin {figure}[htbp]
-\caption{Messung 7; mit Entladung, ohne Setz-Zeit; Piezostack; Kapazität}
       \begin{center}
      \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_2}}
       \end{center}
-Quelle: Stephan Jobstmann
+\caption{Messung 7; mit Entladung, ohne Setz-Zeit; Piezostack; Kapazität}
 \label{fig:2.7}
 \end{figure}
 
 \setlongtables
 \begin{longtable}{| l | l | l | l |}
-\caption[Messung 8; ohne Setz-Zeit; Parallelwiderstand]{Messung 8; Piezostack; mit Entladung, ohne Setz-Zeit; Parallelwiderstand}\\
 \hline
 \multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
 \hline
@@ -765,6 +782,7 @@ $U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$&$U_{diff}$ in mV&$R_{Parallel}$ in 
 \hline
 \endfoot
 \hline \hline
+\caption[Messung 8; ohne Setz-Zeit; Parallelwiderstand]{Messung 8; Piezostack; mit Entladung, ohne Setz-Zeit; Parallelwiderstand}\\
 \endlastfoot
 \hline
 \label{tab:2.8}%
@@ -782,11 +800,10 @@ $U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$&$U_{diff}$ in mV&$R_{Parallel}$ in 
 \end{longtable}
 
 \begin {figure}[htbp]
-\caption[Messung 8; ohne Setz-Zeit; Parallelwiderstand]{Messung 8; Piezostack; mit Entladung, ohne Setz-Zeit; Parallelwiderstand}
       \begin{center}
        \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_3}}
       \end{center}
-Quelle: Stephan Jobstmann
+\caption[Messung 8; ohne Setz-Zeit; Parallelwiderstand]{Messung 8; Piezostack; mit Entladung, ohne Setz-Zeit; Parallelwiderstand}
 \label{fig:2.8}
 \end{figure}
 
@@ -797,7 +814,6 @@ Auch hier wurde eine Messung des auftretenden Parallelwiderstands angestoßen. D
 
 \setlongtables
 \begin{longtable}{| l | l | l | l |}
-\caption[Messung 9; 2 Minuten Setz-Zeit; Piezostack; Kapazität]{Messung 9; Piezostack; mit Entladung, 2 Minuten Setz-Zeit; Kapazität}\\
 \hline
 \multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
 \hline
@@ -815,6 +831,7 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \hline
 \endfoot
 \hline \hline
+\caption[Messung 9; 2 Minuten Setz-Zeit; Piezostack; Kapazität]{Messung 9; Piezostack; mit Entladung, 2 Minuten Setz-Zeit; Kapazität}\\
 \endlastfoot
 \hline
 \label{tab:2.9}%
@@ -832,16 +849,14 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \end{longtable}
 
 \begin {figure}[htbp]
-\caption[Messung 9; 2 Minuten Setz-Zeit; Piezostack; Kapazität]{Messung 9; mit Entladung, 2 Minuten Setz-Zeit; Piezostack; Kapazität}
       \begin{center}
         \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_4}}
       \end{center}
-Quelle: Stephan Jobstmann
+\caption[Messung 9; 2 Minuten Setz-Zeit; Piezostack; Kapazität]{Messung 9; mit Entladung, 2 Minuten Setz-Zeit; Piezostack; Kapazität}
 \label{fig:2.9}
 \end{figure}
 \setlongtables
 \begin{longtable}{| l | l | l | l |}
-\caption[Messung 10; 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand]{Messung 10; Piezostack; mit Entladung, 2 Minuten Setz-Zeit; Parallelwiderstand}\\
 \hline
 \multicolumn{2}{|c|}{Messung 1} &\multicolumn{2}{|c|}{Messung 2}\\
 \hline
@@ -859,6 +874,7 @@ $U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$&$U_{diff}$ in mV&$R_{Parallel}$ in 
 \hline
 \endfoot
 \hline \hline
+\caption[Messung 10; 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand]{Messung 10; Piezostack; mit Entladung, 2 Minuten Setz-Zeit; Parallelwiderstand}\\
 \endlastfoot
 \hline
 \label{tab:2.10}%
@@ -876,11 +892,10 @@ $U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$&$U_{diff}$ in mV&$R_{Parallel}$ in 
 \end{longtable}
 
 \begin {figure}[htbp]
-\caption[Messung 10; 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand]{Messung 10; mit Entladung, 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand}
       \begin{center}
        \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_5}}
       \end{center}
-Quelle: Stephan Jobstmann
+\caption[Messung 10; 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand]{Messung 10; mit Entladung, 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand}
 \label{fig:2.10}
 \end{figure}
 %
@@ -894,10 +909,9 @@ In diesem Teilbereich werden zwei physikalische Grundarten des Micro Energy Harv
 Die thermoelektrische Wandlung beruht auf der Inversen des Peltier-Effekts, dem Seebeck Effekt. Diesem liegt zu Grunde, dass am Übergang von zwei unterschiedlichen Metallen unterschiedlicher Temperierung ein elektrisches Feld aufgebaut wird. Die Verwendung dieses Effekts war zunächst nur bei Temperatur-Messfühlern weit verbreitet. Allerdings ist aufgrund der fortschreitenden Entwicklung der Micro Energy Harvesting Technologien dieser Effekt mittlerweile auch zur Energieversorgung nutzbar. \newline \newline
 Als zentralen Baustein für die Erprobung von Micro-Energy-Harvesting Systemen im Bezug auf thermo-elektrische Energiewandlung bietet sich der \textit{LTC3108} von der Firma Linear Technology an. Dieser vermag mit geringem Aufwand Eingangsspannungen von 20mV bis 500mV auf ausgangsseitig bis zu 5V aufwärts zu wandeln. Um möglichst schnell Erkenntnisse aus der Wirkungsweise des Bausteins ziehen zu können, wird eine im Internet veröffentlichte Schaltung\footnote{Github Repository of wa7iut \citep{GIT}} für Tests verwendet (siehe Abbildung \vref{fig:4.1}). Diese hält sich strikt an die Vorgaben des Datenblatts\footnote{LTC3108 - Ultralow voltage Step-Up Converter and Power Manager \citep{LTC}} \citep{LTC3108}. Beim LTC3108 handelt es sich um einen Spannungs-Aufwärtswandler\footnote{Step-Up-Converter} für sehr niedrige Eingangsspannungen. Im Gegensatz zum normalen Aufbau von Aufwärtswandlern wird keine einfache Induktivität sondern ein kleiner Transformator verwendet. Dies reduziert zwar aufgrund des hohen Übersetzungsverhältnisses (1:20 bis 1:100) den Wirkungsgrad, allerdings lassen sich so auch höhere Spannungen erzeugen. Bei dem Versuchsaufbau wird ein 1:100 Transformator verwendet, da sich die Eingangsspannungen, welche experimentell ermittelt wurden, sich zwischen 20mV und 90mV bewegen. Als zu erstrebende Ausgangsspannung wurde schaltungstechnisch 3,3V eingestellt, da dies die zur Zeit am häufigsten bei Mikrocontrollern vorkommende Versorgungsspannung ist. Als externer Energiespeicher wurde ausgangsseitig an die Schaltung ein $2200 \mu$F Kondensator angefügt. Als energieerzeugendes Element wurde ein Peltierelement mit einem Aluminium-Kühlkörper versehen. So muss bei ausreichender zugeführter Wärme nicht einmal aktiv gekühlt werden, es genügt die Wärmeveräußerung durch den Kühlkörper.%weitere Fotos
 \begin{figure}[htb]
-\caption{LTC3108 Board von Ambient Sensors}
 \centering
 \includegraphics[bb=3.4cm 10.6cm 17.5cm 19.4cm]{Bilder/LTC3108breakoutSSOC}
-\\Quelle: Stephan Jobstmann
+\caption{LTC3108 Board von Ambient Sensors}
 \label{fig:4.1}
 \end{figure}
 \subsection{Drahtlose Energieübertragung}
@@ -910,17 +924,15 @@ Transmitter, Sender: bq500110EVM-688 Evaluation Module (Abbildung \ref{BQ_transm
 Receiver, Empfänger: bq51013EVM-725 Evaluation Module (Abbildung \ref{BQ_rec})
 \end{itemize}
 \begin{figure}
-\caption{Transmitter-Modul des Evaluation-Packs}
 \centering
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/BQ_Tesla_transmitter.JPG}}
-\\Quelle: Stephan Jobstmann
+\caption{Transmitter-Modul des Evaluation-Packs}
 \label{BQ_transm}
 \end{figure}
 \begin{figure}
 \centering
-\caption{Receiver-Modul des Evaluation-Packs}
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/BQ_Tesla_receiver.JPG}}
-\\Quelle: Stephan Jobstmann
+\caption{Receiver-Modul des Evaluation-Packs}
 \label{BQ_rec}
 \end{figure}
 Dieses lässt sich mithilfe einer Gleichspannungsquelle, eingestellt auf eine Speisung von 19V und einer Stromgrenze über 0,5A sehr einfach in Betrieb nehmen. Am Empfängermodul stellt sich bei passgenauer Platzierung der beiden Übertragerspulen des magnetischen Kopplungssystems eine Tätigkeit der Indikationsanzeige ein. Ein Permanentmagnet hilft beim Zentrieren der beiden Luftspulen. Laut Datenblatt \citep[vgl. S.2]{bq51013EVM-725} liefert die Beispielschaltung 5V bei 1A. Zum Testen der Kompatibilität wurde die Schaltung mit der in Kapitel \ref{chap:4.2.2} vorgestellten Ladeeinheit gekoppelt. Das erfolgreiche Zusammenarbeiten konnte reproduzierbar getestet werden.\\
@@ -946,9 +958,8 @@ Als Mindestmaß wird im Datenblatt \citep[siehe S.23]{BQ51013} eine Güte von 77
 Mit drei, beziehungsweise zwei diskreten Kondensatoren wurden die Kapazitäten $C1$ und $C2$ aufgebaut. Dies wurde auf einer separaten, zwischen Spule und Keramikschaltung gelöteten Platine aufgebaut. Der fertige selbstentworfene Aufbau wurde mit einer geringen Last von $47 \Omega$ auf die von Texas Instruments bereitgestellte Schaltung\footnote{bq500110EVM-688, Sendeeinheit} gesetzt und getestet. Dieser ist auf Grafik \vref{self_rec} zu sehen. Die Reproduzierbarkeit wies noch Defizite auf, so konnte noch nicht sichergestellt werden, dass bei jedem Aufsetzen der Empfängerschaltung eine stabile Verbindung zustande kommt. Weiter können noch keine niederohmigen Lasten ($<50 \Omega$) an das Modul gekoppelt werden. Dies mag zum ein an der unzureichenden Anpassung des Schwingkreises liegen oder auch zum anderen an der Hochohmigkeit der gedruckten Leiterbahnen auf dem Keramiksubstrat. 
 \begin{figure}
 \centering
-\caption{Receiver-Modul, hergestellt im Hybridlabor der Hochschule Landshut}
 \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/self_receiver.JPG}}
-Quelle: Stephan Jobstmann
+\caption{Receiver-Modul, hergestellt im Hybridlabor der Hochschule Landshut}
 \label{self_rec}
 \end{figure}
 \section{Energiebereitstellung}
@@ -1128,9 +1139,8 @@ Der CC2541 SoC vereint einen Mikrocontroller mit 8051-Architektur und eine Radio
 Der Balun samt Filter wurde von dem Referenzdesign übernommen. So konnte die Berechnung der Bauteilwerte umgangen werden. Die Leitungsdimensionierung wurde mit der Software TXLine\footnote{TX-Line: Transmission Line Calculator AWR Corporation \citep{TXLINE}} vorgenommen. Mit diesem Programm lässt sich ohne größere Kenntnis der Berechnungen die Dimension der Leiterbahnführung bestimmen. Abbildung \vref{TXLine} zeigt als Beispiel die Leiterbahnbreitenberechnung für diese Schaltung.
 \begin{figure}
 \centering
-\caption{Programm TXLine; Berechnung der Leiterbahnbreite}
 \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/TXLine.png}}
-Quelle: Stephan Jobstmann
+\caption{Programm TXLine; Berechnung der Leiterbahnbreite}
 \label{TXLine}
 \end{figure}
 \subsubsection{Piezosignalgeber}
@@ -1139,9 +1149,8 @@ Als zusätzliches Element soll die Schaltung über einen akustischen Signalgeber
 Da sich im Laufe grundlegender Messungen einer anderen Abschlussarbeit herausgestellt hat, dass 2,4GHz äußerst ungünstig als Übertragungsfrequenz für Funkverbindungen in Körpernähe ist, wurde der Aufbau dieses Moduls wieder verworfen und ist somit obsolet. Die Funkverbindung wurde nicht getestet und eine Verbindung mit der Sensorik kam nicht zustande. Lediglich die Ansteuerung und das Layout des Piezotreiberbausteins  wird für zukünftige weiterführende Arbeiten als Grundlage wiederverwendet werden. Ansonsten ist konnten alle erstrebten Funktionen des Moduls (Abbildung \vref{pic.CC2541} erfolgreich im autarken Betrieb validiert werden.
 \begin{figure}
 \centering
-\caption{Modul CC2541; Hergestellt an der Hochschule Landshut}
 \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/CC2541.JPG}}
-Quelle: Stephan Jobstmann
+\caption{Modul CC2541; Hergestellt an der Hochschule Landshut}
 \label{pic.CC2541}
 \end{figure}
 \subsection{CC430F6137}
@@ -1151,9 +1160,8 @@ Genauso wie der CC2541 in Kapitel \vref{CC2541} ist der CC430F6137 ein SoC. Nach
 Für den Taster wurde eine Ersatzschaltung aus einem einfachen Piezobuzzer und einer dazu parallelgeschalteten Zenerdiode (Zenerspannung bei 3,3V) aufgebaut (Siehe Abbildung \vref{pic.breakout}). Der durch einen Druck auf den Piezo erzeugte Spannungshub von mehreren Volt (bis zu 20V) und dessen geringe Ladungsausschüttung genügen zur Signalverarbeitung. Allerdings muss der SoC vor dem großen Spannungspegel wirksam geschützt werden. Darum befindet sich unmittelbar an dem Piezobuzzer gekoppelt eine Diode, welche den anfallenden Pegel auf maximal 3,3V herunterzieht. Da die freigesetzte Ladung des Piezokristalls nicht genügt, um die Diode im Arbeitsbereich zu betreiben, ist beim praktischen Versuchaufbau lediglich Spannungspegel von maximal ca. 2,1V zu erzielen. Dieser reicht aber immer noch aus um eine Flanke bzw. einen Pegel zur Interrupt-Generierung zu erzeugen. 
 \begin{figure}
 \centering
-\caption[Modifizierte ez430-Chronos Uhr]{Modifizierte ez430-Chronos Uhr mit Piezo-Interrupt Taster und Erweiterungsstiftleisten}
 \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/breakout.JPG}}
-Quelle: Stephan Jobstmann
+\caption[Modifizierte ez430-Chronos Uhr]{Modifizierte ez430-Chronos Uhr mit Piezo-Interrupt Taster und Erweiterungsstiftleisten}
 \label{pic.breakout}
 \end{figure}
 \end{itemize}
@@ -1176,9 +1184,8 @@ Die einzelnen Baugruppen sind nach demselben Schema wie dem des Modul des CC2541
 Die Verifizierung des Aufbaus (Abbildung \vref{pic.CC430}) konnte aufgrund eines Layoutfehlers am Quarz des CC2541 nicht durchgeführt werden. Es steht ein Redesign für das Schaltungslayout zum Zeitpunkt dieser Arbeit noch aus. 
 \begin{figure}
 \centering
-\caption{Modul CC430F6137; Hergestellt an der Hochschule Landshut}
 \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/CC430.JPG}}
-Quelle: Stephan Jobstmann
+\caption{Modul CC430F6137; Hergestellt an der Hochschule Landshut}
 \label{pic.CC430}
 \end{figure}
 \subsection{Sensorik}
@@ -1188,9 +1195,8 @@ All diese Kriterien wurden von dem Baustein ADS1232 von Texas Instruments erfül
 Ein erster Schaltungsentwurf wurde mithilfe des an Hochschule Landshut vorhandenen Leiterplatten-Prototypers\footnote{LPKF C60} auf Platine gebracht, wie auf Abbildung \vref{pic.ad1232}. Dabei wurden alle Konfigurationsmöglichkeiten sowie Ein- und Ausgänge über Jumper und Stiftleisten nach außen geführt:
 \begin{figure}
 \centering
-\caption[AD1232 A/D-Wandler Modul mit Drucksensor]{AD1232 A/D-Wandler Modul mit Drucksensor auf Keramik-Stahl Verbundmaterial}
 \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/ad1232.JPG}}
-Quelle: Stephan Jobstmann
+\caption[AD1232 A/D-Wandler Modul mit Drucksensor]{AD1232 A/D-Wandler Modul mit Drucksensor auf Keramik-Stahl Verbundmaterial}
 \label{pic.ad1232}
 \end{figure}
 \begin{itemize}
@@ -1234,7 +1240,7 @@ In der \lstinline$__interrupt void PORT1_ISR(void)$ (Zeile \texttt{109}) wird mi
 \newpage
 \lstinputlisting[caption={ADS1232.c, Umgebung Code Composer Studio v4},label=CC430_ADS1232]{ADS1232.c}
 \chapter{Ergebnis}
-Bei dieser Arbeit wurde die Aufgabenstellung komplett erfüllt. Lediglich das Modul für den Baustein CC430F6137 konnte nicht verifiziert werden. Da allerdings ein Prototyp aus einem proprietären Testaufbau\footnote{ez430-Chronos} durch sinngemäße Modifikationen erstellt wurde und dieser alle Erwartungen erfüllt, ist auch hier von einem erfolgreichen Aufbau zu sprechen. Es wurden verschiedene Konzepte der Energiezuführung getestet und dabei das Attraktivste mit den besten Leistungsübertragungsdaten ausgewählt. Dies wurde mit einem WPC-konformen Empfängeraufbau zum drahtlosen Energieempfang realisiert. Jener wurde in Dickschichttechnik an der Hochschule Landshut im Hybridlabor angefertigt und anschließend erfolgreich getestet. Zum Energiespeichern fiel die Auswahl nach einer Voruntersuchung auf Lithium-Ionen-Technologie. Hierfür wurde ein Aufbau zum Laden eines handelsüblichen Akkus erstellt und erfolgreich mit einem der weitverbreiteten Mobiltelefon-Akkus validiert. Die geforderte Sensorik wurde mit dem bereits weiter oben im Text erwähnten modifizierten Testaufbau erfolgreich gekoppelt. Die passende Software zur Sensorauswertung, Generierung eines Warnsignals und Ansteuerung eines Controller-externen Interrupts wurde ebenfalls entwickelt, verbessert und mit Erfolg getestet. Vorausgehende Untersuchungen des kapazitiven Verhaltens von Piezo-Elementen unter Last haben die Zielrichtung der Arbeit entscheidend geprägt. Grundlegende Sachverhalte sind erläutert worden und beschreiben Wirkungsweisen und Funktion der einzelnen Komponenten im Allgemeinen. Vollständig überblickend ist die Arbeit als Erfolg zu bewerten. 
+Bei dieser Arbeit wurde die Aufgabenstellung komplett erfüllt. Lediglich das Modul für den Baustein CC430F6137 konnte nicht verifiziert werden. Da allerdings ein Prototyp aus einem proprietären Testaufbau\footnote{ez430-Chronos} durch sinngemäße Modifikationen erstellt wurde und dieser alle Erwartungen erfüllt, ist auch hier von einem erfolgreichen Aufbau zu sprechen. Es wurden verschiedene Konzepte der Energiezuführung getestet und dabei das Attraktivste mit den besten Leistungsübertragungsdaten ausgewählt. Dies wurde mit einem WPC-konformen Empfängeraufbau zum drahtlosen Energieempfang realisiert. Jener wurde in Dickschichttechnik an der Hochschule Landshut im Hybridlabor angefertigt und anschließend erfolgreich getestet. Zum Energiespeichern fiel die Auswahl nach einer Voruntersuchung auf Lithium-Ionen-Technologie. Hierfür wurde ein Aufbau zum Laden eines handelsüblichen Akkus erstellt und erfolgreich mit einem der weitverbreiteten Mobiltelefon-Akkus validiert. Die geforderte Sensorik wurde mit dem bereits weiter oben im Text erwähnten modifizierten Testaufbau erfolgreich gekoppelt. Die passende Software zur Sensorauswertung, Generierung eines Warnsignals und Ansteuerung eines Controller-externen Interrupts wurde ebenfalls entwickelt, verbessert und mit Erfolg getestet. Vorausgehende Untersuchungen des kapazitiven Verhaltens von Piezo-Elementen unter Last haben die Zielrichtung der Arbeit entscheidend geprägt. Grundlegende Sachverhalte sind erläutert worden und beschreiben Wirkungsweisen und Funktion der einzelnen Komponenten im Allgemeinen. Gänzlich überblickend ist die Arbeit als Erfolg zu bewerten. 
 \chapter{Ausblick}
 Nachfolgende weiterführende Arbeiten können sich auf die Stabilisierung und die Verbesserung der Reproduzierbarkeit der einzelnen Komponenten beziehen. Mit einem monolithischen Aufbau sollte die Weiterentwicklung abzuschließen sein. So können folgende Arbeitspunkte für zukünftige Aufgaben genannt werden:
 \begin{itemize}
@@ -1243,11 +1249,12 @@ Minimierung der Ausmaße der Leiterplattenlayouts
 \item
 Verbesserung der spezifischen Eigenschaften der einzelnen Module
 \item
-Zusammenführen einzelner Komponenten, beispielsweise Energieübertragung und Lade-Schaltung
+Zusammenführen einzelner Komponenten, beispielsweise drahtlose Energie-Übertragung und Lade-Schaltung
 \item
 Vereinigung aller modularen Aufbauten
 \end{itemize}
 Mit der Ausführung, Verifizierung und Validierung dieser weiteren Arbeitsschritte ist das Gerät, das Fußmodul für das Projekt MedLast, tauglich zur Serienfertigung.
+\interlinepenalty 10000
 \bibliography{literatur}
 \bibliographystyle{alpha}
 \end{document}

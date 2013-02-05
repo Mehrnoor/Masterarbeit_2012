@@ -6,6 +6,8 @@ Database file #1: literatur.bib
 Warning--to sort, need author, editor, or key in ICNIRP
 Warning--to sort, need author, editor, or key in DLR
 Warning--to sort, need author, editor, or key in DLR2
+Warning--to sort, need author, editor, or key in NOKIA
+Warning--to sort, need author, editor, or key in ENERGIZER
 Warning--to sort, need author, editor, or key in TESLA
 Warning--to sort, need author, editor, or key in WPC
 Warning--to sort, need author, editor, or key in BAT
@@ -29,6 +31,7 @@ Warning--empty author and editor in CC430f6137
 Warning--empty author and editor in CCDEBUG
 Warning--empty author and editor in DLR
 Warning--empty author and editor in DLR2
+Warning--empty author and editor in ENERGIZER
 Warning--empty author and editor in EZ430
 Warning--empty author and editor in GIT
 Warning--empty author and editor in IAR
@@ -37,6 +40,7 @@ Warning--there's a number but no series in ICNIRP
 Warning--empty author and editor in LTC
 Warning--empty author and editor in MAS
 Warning--empty author and editor in MULTI
+Warning--empty author and editor in NOKIA
 Warning--empty author and editor in SRI
 Warning--empty author and editor in TESLA
 Warning--empty author and editor in TIBQ24100
@@ -44,45 +48,45 @@ Warning--empty author and editor in TICC2541
 Warning--empty author and editor in TONLINE
 Warning--empty author and editor in TXLINE
 Warning--empty author and editor in WPC
-You've used 32 entries,
+You've used 34 entries,
             2543 wiz_defined-function locations,
-            722 strings with 9246 characters,
-and the built_in function-call counts, 8011 in all, are:
-= -- 732
-> -- 116
+            732 strings with 9898 characters,
+and the built_in function-call counts, 8270 in all, are:
+= -- 716
+> -- 118
 < -- 13
 + -- 29
 - -- 24
-* -- 499
+* -- 589
 := -- 1162
-add.period$ -- 104
-call.type$ -- 32
-change.case$ -- 111
-chr.to.int$ -- 27
-cite$ -- 93
-duplicate$ -- 512
-empty$ -- 881
+add.period$ -- 81
+call.type$ -- 34
+change.case$ -- 117
+chr.to.int$ -- 29
+cite$ -- 101
+duplicate$ -- 544
+empty$ -- 939
 format.name$ -- 45
-if$ -- 1739
+if$ -- 1785
 int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 44
-newline$ -- 170
+missing$ -- 46
+newline$ -- 151
 num.names$ -- 36
-pop$ -- 202
+pop$ -- 243
 preamble$ -- 1
-purify$ -- 172
+purify$ -- 182
 quote$ -- 0
-skip$ -- 320
+skip$ -- 340
 stack$ -- 0
-substring$ -- 244
-swap$ -- 33
+substring$ -- 260
+swap$ -- 35
 text.length$ -- 13
 text.prefix$ -- 9
 top$ -- 0
-type$ -- 128
-warning$ -- 41
+type$ -- 136
+warning$ -- 45
 while$ -- 24
-width$ -- 34
-write$ -- 415
-(There were 41 warnings)
+width$ -- 36
+write$ -- 381
+(There were 45 warnings)
