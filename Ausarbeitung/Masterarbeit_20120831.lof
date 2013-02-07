@@ -2,33 +2,33 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Ladungskurve eines typischen Lithium-Ionen-Akkumulators\relax }}{11}{figure.caption.8}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Longitudinaler Piezoeffekt; Kristallstruktur und Ladungsverschiebung}}{15}{figure.caption.13}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Ladungskurve eines typischen Lithium-Ionen-Akkumulators\relax }}{11}{figure.caption.7}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Longitudinaler Piezoeffekt; Kristallstruktur und Ladungsverschiebung}}{15}{figure.caption.12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Messung 1; Sonox 502 Kapazitives Verhalten}}{21}{figure.caption.15}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Messung 2; Sonox 502 Statisches Verhalten}}{23}{figure.caption.17}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Messung 2a;Statisches Verhalten des stabileren Schraubstocks}}{24}{figure.caption.18}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Messung 3 und 4; Sonox 502 unter Einsatz besserer Spannvorrichtung}}{26}{figure.caption.20}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Messung 5; 1kHz Messfrequenz\relax }}{28}{figure.caption.22}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Messung 6; Einf\IeC {\"u}hrende Messung Piezostack\relax }}{31}{figure.caption.24}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Messung 7; mit Entladung, ohne Setz-Zeit; Piezostack; Kapazit\IeC {\"a}t\relax }}{33}{figure.caption.26}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Messung 8; ohne Setz-Zeit; Parallelwiderstand}}{35}{figure.caption.27}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Messung 9; 2 Minuten Setz-Zeit; Piezostack; Kapazit\IeC {\"a}t}}{38}{figure.caption.29}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Messung 10; 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand}}{39}{figure.caption.30}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Messung 1; Sonox 502 Kapazitives Verhalten}}{21}{figure.caption.14}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Messung 2; Sonox 502 Statisches Verhalten}}{23}{figure.caption.16}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Messung 2a;Statisches Verhalten des stabileren Schraubstocks}}{24}{figure.caption.17}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Messung 3 und 4; Sonox 502 unter Einsatz besserer Spannvorrichtung}}{26}{figure.caption.19}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Messung 5; 1kHz Messfrequenz\relax }}{28}{figure.caption.21}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Messung 6; Einf\IeC {\"u}hrende Messung Piezostack\relax }}{31}{figure.caption.23}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Messung 7; mit Entladung, ohne Setz-Zeit; Piezostack; Kapazit\IeC {\"a}t\relax }}{33}{figure.caption.25}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Messung 8; ohne Setz-Zeit; Parallelwiderstand}}{35}{figure.caption.26}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Messung 9; 2 Minuten Setz-Zeit; Piezostack; Kapazit\IeC {\"a}t}}{38}{figure.caption.28}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Messung 10; 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand}}{39}{figure.caption.29}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces AD1232 A/D-Wandler Schaltbild}}{41}{figure.caption.31}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces AD1232 A/D-Wandler Modul mit Drucksensor}}{42}{figure.caption.32}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Schaltbild des Lademoduls, BQ24100}}{50}{figure.caption.33}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Schaltbild des Moduls, CC2541}}{51}{figure.caption.34}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Programm TXLine; Berechnung der Leiterbahnbreite\relax }}{55}{figure.caption.39}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Modul CC2541; Hergestellt an der Hochschule Landshut\relax }}{56}{figure.caption.42}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Modifizierte ez430-Chronos Uhr}}{58}{figure.caption.43}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Schaltbild des Modulentwurfs, CC430F6137}}{59}{figure.caption.44}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Modul CC430F6137; Hergestellt an der Hochschule Landshut\relax }}{60}{figure.caption.45}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Transmitter-Modul des Evaluation-Packs\relax }}{61}{figure.caption.46}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Receiver-Modul des Evaluation-Packs\relax }}{62}{figure.caption.47}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Receiver-Modul, hergestellt im Hybridlabor der Hochschule Landshut\relax }}{64}{figure.caption.48}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces LTC3108 Board von Ambient Sensors\relax }}{67}{figure.caption.49}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces AD1232 A/D-Wandler Schaltbild}}{41}{figure.caption.30}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces AD1232 A/D-Wandler Modul mit Drucksensor}}{42}{figure.caption.31}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Schaltbild des Lademoduls, BQ24100}}{50}{figure.caption.32}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Schaltbild des Moduls, CC2541}}{51}{figure.caption.33}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Programm TXLine; Berechnung der Leiterbahnbreite\relax }}{55}{figure.caption.38}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Modul CC2541; Hergestellt an der Hochschule Landshut\relax }}{56}{figure.caption.41}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Modifizierte ez430-Chronos Uhr}}{58}{figure.caption.42}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Schaltbild des Modulentwurfs, CC430F6137}}{59}{figure.caption.43}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Modul CC430F6137; Hergestellt an der Hochschule Landshut\relax }}{60}{figure.caption.44}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Transmitter-Modul des Evaluation-Packs\relax }}{61}{figure.caption.45}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Receiver-Modul des Evaluation-Packs\relax }}{62}{figure.caption.46}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Receiver-Modul, hergestellt im Hybridlabor der Hochschule Landshut\relax }}{64}{figure.caption.47}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces LTC3108 Board von Ambient Sensors\relax }}{67}{figure.caption.48}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
