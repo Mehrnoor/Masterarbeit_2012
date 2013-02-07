@@ -61,6 +61,10 @@
 
 \renewcommand{\UrlBreaks}{\do\/\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z}
 
+% Schusterjungen und Hurenkinder vermeiden
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
 
 %%% HEADERS & FOOTERS
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry //fancyhdr
@@ -291,6 +295,37 @@ Zueltzt wird eine Platine des Prototyps bestellt, bestückt und auf Funktion gep
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Grundlagen}
+\section{Piezoresistives Meßprinzip}
+Bei dieser Arbeit werden Dehnungsmessstreifen\footnote{kurz: DMS} zum Detektieren der auftretenden Gewichtskraft verwendet. Deren grundlegendes Messprinzip beruht auf der Deformation des Materials. Durch diese werden die Parameter, $l$ Länge und $q$ Querschnitt, der Grundgleichung \vref{eq.R} für den elektrischen Widerstand $R$ verändert. 
+\begin{equation}
+R = \frac{l}{q}\cdot \rho \label{eq.R}
+\end{equation}
+Die relative Widerstandsänderung kann wie folgt mit der Fehlerabschätzung nach \citep[S.234 ff.]{Schruefer2012} bestimmt werden:\\
+%\allowdisplaybreaks
+\begin{equation}
+\frac{\Delta R} {R} =\frac{\Delta l} {l}-\frac{\Delta q} {q}+\frac{\Delta \rho} {\rho}
+\end{equation}\\
+wenn der Querschnitt $q$ durch Durchmesser $D$ ersetzt wird\\
+\begin{equation}
+\frac{\Delta R} {R} =\frac{\Delta l} {l}-2\frac{\Delta D} {D}+\frac{\Delta \rho} {\rho}\\
+\end{equation}\\
+Dividiert man durch $\Delta l/ l$\\
+\begin{equation}
+\frac{\displaystyle\left(\frac{\Delta R} {R}\right)}{\displaystyle\left(\frac{\Delta l} {l}\right)} =1-2\frac{\displaystyle\left(\frac{\Delta D} {D}\right)}{\displaystyle\left(\frac{\Delta l} {l}\right)}+\frac{\displaystyle\left(\frac{\Delta \rho} {\rho}\right)}{\displaystyle\left(\frac{\Delta l} {l}\right)} \label{eq.R+}\\
+\end{equation}\\
+Das Verhältnis von relativer Widerstandsänderung und Dehnung wird folgend mit $K$ bezeichnet\\
+\begin{equation}
+K=\frac{\Delta R/ R}{\Delta l/ l}
+\end{equation}\\
+Das Verhältnis von relativer Querkontraktion und relativer Längenänderung wird durch $\mu$ ersetzt.\\
+\begin{equation}
+\mu=-\frac{\Delta D / D}{\Delta l / l}
+\end{equation}\\
+Somit erhält man statt Gleichung \vref{eq.R+} die folgende:\\
+\begin{equation}
+K=1+2\mu+\frac{\displaystyle\Delta \rho / \rho}{\displaystyle\Delta l / l}
+\end{equation}\\
+Die relative Änderung des spezifischen Widerstands $\Delta \rho/ \rho$ bezogen auf die relative Längenänderung $\Delta l/ l$ bleibt bei den weit verbreiteten Metall-DMS nahezu unverändert. Zur Messung von Deformationen, wie Druck, Zug oder Torsion müssen diese isoliert auf das zu vermessende Material aufgebracht werden. Dabei werden diese in Mäanderform gebrachten Metallbahnen in Folie eingegossen und mit Klebstoff anmontiert. Allerdings kann es dabei zu Komplikationen im Verbund mit der schützenden Folie kommen. Darum werden oft DMS in Dickschichttechnik mit anderen Materialien gleich auf den Folienträger aufgedruckt und eingebrannt. So wird schon durch den Fertigungsprozess eine Fehlerquelle ausgeschlossen. Dennoch muss bei dieser Technologie nun auch die relative Änderung des spezifischen Widerstands berücksichtigt werden. Diese ist durch den piezoresistiven Effekt bei dieser Stoffgattung ausschlaggebend. Bei Metall-DMS treten $K$-Werte von höchstens 2 auf. Im großen Gegensatz dazu bewegen sich die auf Silizium basierenden DMS mit $K$-Faktoren von -100 bis 120 je nach Dotierung. 
 \section{Drahtlose Energieversorgung}
 Das hier vorgestellte Konzept bezieht sich auf Technologie, die mit dem WPC\footnote{Wireless Power Consortium}-Standard konform ist. Es gibt auch andere Konzepte, die sich mit drahtloser Energieübertragung beschäftigen. Das ist auch nachvollziehbar wenn man bedenkt, dass die ersten drahtlosen Anlagen von Nikola Tesla bereits 1895 in Betrieb genommen wurden\citep{TESLA}. Allerdings weisen die meisten einfacheren Aufbauten einen entscheidenden Nachteil auf: Sie sind nicht geregelt. Der WPC-Standard hat aber nicht nur das Regelungssystem als Vorteil gegenüber anderen Konzepten vorzuweisen. In den nachfolgenden Unterkapiteln werden die einzelnen Punkte der Spezifikation aufgeführt und erklärt. Dabei ist der Inhalt sinngemäß aus Quelle \citep{WPC} übertragen worden.
 \subsection{Prinzip}
@@ -436,7 +471,7 @@ Ausschlaggebend für diese Messungen ist die Bestimmung von mechanischen Lastwec
 \item Ladung,
 \item Kapazität.
 \end{itemize}
-Dieses Kapitel bezieht sich auf die Untersuchung von Abhängigkeiten zwischen mechanischer Druckbelastung und elektrischer Kapazitätsänderung am Piezoelement. Weiter ist es zu großen Zügen dem Vorbericht \citep{Jobstmann2012} wörtlich entnommen.
+Dieses Kapitel bezieht sich auf die Untersuchung von Abhängigkeiten zwischen mechanischer Druckbelastung und elektrischer Kapazitätsänderung am Piezoelement. Hier wurde vom Autor ein Vorbericht erstellt, der weitgehend wörtlich übernommen wurde \citep{Jobstmann2012}.
 \section{Versuchsaufbau}
 
 Ziel dieser Versuchsreihe ist die Bestimmung der Kapazitätsänderung von piezoelektrischen Elementen bei mechanischer Druckbelastung. Dabei wird das Piezoelement elektrisch isoliert in einem Schraubstock belastet. Über Zuleitungen wird mit einem sogenannten LCR-Meter eine Vierdraht-Impedanz-Messung durchgeführt, die einzelnen Parameter hierfür werden bei den Versuchsreihen angegeben. Mithilfe einer Kraftmessdose, welche eine Vollmessbrücke mit Dehnmessstreifen beinhaltet, wird der angelegte mechanische Druck am Piezoelement abgeleitet. Da zu Messbeginn nur geringe Zusatzinformationen zu diesem Hilfsmittel vorhanden waren, geschahen alle Auswertungen in einem geringen Bereich unterhalb der Maximalbelastbarkeit von 250N. Weiter ist die angelegte Versorgungsspannung an der Messdose stets 10V DC. Bei allen Messungen wurde ein LCR-Meter ISO-TECH LCR-821 zur Impedanzmessung und ein Fluke-Hand-Multimeter 179 zur Spannungsmessung verwendet. Als Spannungsquelle stand ein Hameg HM8142 bereit.
@@ -448,7 +483,7 @@ Im Allgemeinen lassen sich aufgrund der getätigten Messungen folgende Aussagen 
 \item
 Die Kapazitätsänderung der Piezoelemente unter Last stellt für kleine wirkende Kräfte keine hinreichend reproduzierbare Methode zur Messung von mechanischer Druckbelastung dar. Aufgrund der massiv einwirkenden parasitären Effekte, seien es Veränderungen der Luftfeuchte, Temperaturschwankungen oder pyroelektrische Einflüsse, konnten keine eindeutig wiederholbaren Werte erzielt werden.
 \item
-Die Werkstoffstabilität ist auch in Frage zu stellen. Während der Messung ist ein Element unter Belastung zu Bruch gegangen.
+Die Werkstoffstabilität ist auch in Frage zu stellen. Während der Messung ist ein Element unter Belastung zu Bruch gegangen. Dies ist auf eine fehlende Einfassung zurückzuführen.
 \item
 Weiter lassen sich die Ergebnisse der einzelnen Prüflinge unterscheiden:
 \begin{itemize}
@@ -465,7 +500,7 @@ Elliptec, Mehrschichtiger Piezo: Bei diesem Stack ergab sich eine mit dem Druck 
 \section{Messungen}
 
 \subsection{Sonox P502} 
-Bei diesem Piezobaustein handelt es sich um ein einfaches, nicht mehrschichtiges Element. Die nachfolgenden Messungen untersuchten das Verhalten der Kapazität unter mechanischer Druckbelastung entlang der elektrischen Feldorientierung. Entgegen der Erwartung, dass die Kapazität mit steigender Druckbelastung ebenfalls steigt, verhält sich diese mehr wie eine Exponentialfunktion mit negativen Exponenten. Dies ist in nahezu allen folgenden Graphen der kommenden Unterkapitel nachzuvollziehen.
+Bei diesem Piezobaustein handelt es sich um ein einfaches, nicht mehrschichtiges Element. Die nachfolgenden Messungen untersuchten das Verhalten der Kapazität unter mechanischer Druckbelastung entlang der elektrischen Feldorientierung. Entgegen der Erwartung, dass die Kapazität mit steigender Druckbelastung ebenfalls steigt, verhält sich diese mehr wie eine Exponentialfunktion mit negativen Exponenten. Dies ist in nahezu allen folgenden Graphen der kommenden Unterkapitel nachzuvollziehen. Falls nicht anders in der Beschreibung zu den einzelnen Messungen erwähnt, wurden alle Messwerte sofort nach dem Kraft anlegen abgelesen.
 %%%%%%%%%%%%%Kapazität über steigender Druckbelastung%%%%%%%%%%%%%%%
 \subsubsection{Kapazität über steigender Druckbelastung}
 Diese Messung zeigt das kapazitive Verhalten des Piezoelements Sonox P502. Bei den Messwerten wird die Kapazität über die angelegte Kraft, bzw. die Spannung an der Kraftmessdose, aufgetragen, wie in Tabelle \vref{tab:2.1} und Abbildung \vref{fig:2.1} nachzuvollziehen ist. Speisefrequenz der Impedanzmessung war 500Hz bei 1V Amplitude.
@@ -512,8 +547,8 @@ $U_{diff}$ in mV&$C_{diff}$ in $nF$&$C_{Piezo}$ in nF\\
 
 %%%%%%%%%%%Kapazität über statischer Druckbelastung%%%%%%%%%%%%%%%
 \subsubsection{Kapazität über statischer Druckbelastung}
-Durch die bei der ersten Messung stets ändernden Kapazitäten während einer Druckvorgabe wird dieser Versuch zur Untersuchung bei statischer Belastung angesetzt. Durch die Beobachtung der sinkenden Spannungsdifferenz (der Kraftmessdose) über die Zeit lässt sich die auftretende Kapazitätsänderung (des Piezoelements) auf die elastischen Kunststoffbacken des Schraubstocks zurückführen. Die Werte bzw. die grafische Auswertung ist hierbei aus der Tabelle \vref{tab:2.2} und dem Graphen aus Abbildung \vref{fig:2.2} zu entnehmen. \\
-Aufgrund eines Gegenvergleichs lässt sich an dieser Stelle bereits sagen, dass die sich verringernden Werte auf die fortwährende Entspannung der Kunststoffbacken des Schraubstocks zurückführen lässt.
+Durch die bei der ersten Messung stets ändernden Kapazitäten während einer Druckvorgabe wird dieser Versuch zur Untersuchung bei statischer Belastung angesetzt. Durch die Beobachtung der sinkenden Spannungsdifferenz (der Kraftmessdose) über die Zeit lässt sich die auftretende Kapazitätsänderung (des Piezoelements) auf die Kunststoffbacken des Schraubstocks zurückführen. Die Werte bzw. die grafische Auswertung ist hierbei aus der Tabelle \vref{tab:2.2} und dem Graphen aus Abbildung \vref{fig:2.2} zu entnehmen. \\
+Aufgrund eines Gegenvergleichs (siehe Tabelle \vref{tab:2.2} Graph \vref{fig:2.2a}) lässt sich an dieser Stelle bereits sagen, dass die sich verringernden Werte auf die fortwährende Entspannung der Kunststoffbacken des Schraubstocks zurückführen lässt.
 
 \setlongtables
 \begin{longtable}{| l | l | l |}
@@ -539,14 +574,51 @@ Uhrzeit&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 11:40:00&9.37&0.96311\\
 \end{longtable}
 
+\setlongtables
+\begin{longtable}{| l | l |}
+\hline
+Uhrzeit&$U_{diff}$ in mV\\
+\hline
+\endfirsthead
+\hline
+Uhrzeit&$U_{diff}$ in mV\\
+\hline
+\endhead
+\hline
+\multicolumn{2}{|c|}{Fortsetzung auf der nächsten Seite}\\
+\hline
+\endfoot
+\hline \hline
+\caption[Messung 2; Statisches Verhalten, stabilerer Schraubstock]{Messung 2; Statisches Verhalten Zeit, stabilerer Schraubstock}\\
+\endlastfoot
+\hline
+\label{tab:2.2a}%
+11:20:00&9.510\\
+11:27:00&9.362\\
+11:35:00&9.278\\
+11:54:00&9.196\\
+12:19:00&9.167\\
+13:33:00&9.144\\
+14:33:00&9.137\\
+15:41:00&9.114\\
+16:10:00&9.112\\
+\end{longtable}
+
 \begin {figure}[htbp]
       \begin{center}
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_1_2}}
       \end{center}
-\caption[Messung 2; Sonox 502 Statisches Verhalten]{Messung 2; Sonox 502 Statisches Verhalten über steigende mechanische Belastung}
+\caption[Messung 2; Sonox 502 Statisches Verhalten]{Messung 2; Sonox 502 Statisches Verhalten über Zeit}
 \label{fig:2.2}
 \end{figure}
-\newpage
+
+\begin {figure}[htbp]
+      \begin{center}
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle_stat2}}
+      \end{center}
+\caption[Messung 2a;Statisches Verhalten des stabileren Schraubstocks]{Messung 2a; Statisches Verhalten über Zeit, stabilerer Schraubstock}
+\label{fig:2.2a}
+\end{figure}
 %%%%%%%%%%%%%%Weitere Messung mithilfe des Maschinenschraubstocks%%%%%%%%%%%%%
 \subsubsection{Weitere Messung mithilfe des Maschinenschraubstocks}
 Bei vorhergehenden Messungen ergab sich der Verdacht, dass die Werte aufgrund der nicht konstanten Druckbelastung durch die Spannvorrichtung verfälscht worden sind. Darum ist diese Messreihe mit einem schweren Maschinenschraubstock mit Stahlbacken erstellt worden. Hierbei wurde zusätzlich noch der Einfluss eines Parallelwiderstands untersucht. Allerdings wurden die Messungen jeweils nach einer Abschätzung der auftretenden Messwertdifferenz abgebrochen, da dies nicht als zielführend erschien. Zum Sicherstellen dieser Annahme wurde jeweils noch ein Messwert bei einer Druckbelastung von einer äquivalenten Spannung von 10mV aufgenommen. Diese ergaben keine feststellbaren Unterschiede zu den letzten dokumentierten Werten. Bei den Messungen wurde jeweils eine Entspannungsphase der Belastungsvorrichtung von 2 Minuten bei jedem Messschritt eingehalten. Die erzielten Messergebnisse sind in den Tabellen \vref{tab:2.3} und \vref{tab:2.4} ersichtlich. Anhand der Abbildung \vref{fig:2.3} lässt sich die unveränderte Charakteristik des Verhaltens unter Last nachvollziehen. Die Skalierung wurde hier zur Veranschaulichung angepasst. 
@@ -616,7 +688,7 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
       \begin{center}
   \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_1_3}}
       \end{center}
-\caption[Messung 3 und 4; Sonox 502 unter Einsatz besserer Spannvorrichtung]{Messung 3 und 4; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung unter Einsatz besserer Spannvorrichtung}
+\caption[Messung 3 und 4; Sonox 502 unter Einsatz besserer Spannvorrichtung]{Messung 3 und 4; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung unter Einsatz einer stabileren Spannvorrichtung}
 \label{fig:2.3}
 \end{figure}
 \newpage
@@ -660,15 +732,9 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
 \end{figure}
 
 \newpage
-\subsection{Bürklin Piezo-Stack von Elliptec}
-Da die vorhergehenden Messungen mit dem einfach aufgebauten Piezoelement nicht die erforderlichen Resultate bezüglich Charakteristik und Reproduzierbarkeit brachten, wurde nun eine Versuchsreihe mit gestapelten Piezoelementen angestrebt. Der Messaufbau blieb weiterhin derselbe wie in den ersten Versuchen, d.h. mithilfe eines Schraubstocks mit Kunststoffbacken wurde eine mechanische Druckbelastung an den Piezostack (im Folgenden auch Stack genannt) und einer Kraftmessdose in Serie angelegt. Beim verwendeten LCR-Meter wurden folgende Parameter eingestellt:
-\begin{itemize}
-\item 1kHz
-\item 1V
-\item R.H. off
-\item C.V. off
-\item int B. off
-\end{itemize}
+\subsection{Piezo-Stack von Elliptec}
+Da die vorhergehenden Messungen mit dem einfach aufgebauten Piezoelement nicht die erforderlichen Resultate bezüglich Charakteristik und Reproduzierbarkeit brachten, wurde nun eine Versuchsreihe mit gestapelten Piezoelementen angestrebt. Der Messaufbau blieb weiterhin derselbe wie in den ersten Versuchen, d.h. mithilfe eines Schraubstocks mit Kunststoffbacken wurde eine mechanische Druckbelastung an den Piezostack (im Folgenden auch Stack genannt) und einer Kraftmessdose in Serie angelegt. Beim verwendeten LCR-Meter wurden folgende Parameter eingestellt: 1kHz, 1V, R.H. off, C.V. off, int B. off.\\
+\\
 Weiter wurden bei diesen Messungen die Zuleitungen nicht auf dem Stack direkt aufgelötet, da dies den Messvorgang an sich unmöglich gemacht hätte. Stattdessen wurden Keramikträger als lose Verbindung der Messleitungen zum Piezoelement vewendet. Dadurch kann es bei geringer mechanischer Belastung zu Verfälschungen gekommen sein, da der Kontakt zwischen Stack und Keramik unzureichend war.
 \subsubsection{Messung Piezo-Stack, ohne Entladungsmaßnahme}
 Bei dieser ersten Vermessung des kapazitiven Verhaltens des Piezostacks unter Druckbelastung in elektrischer Feldrichtung wurde eine Entspannungs-Zeit der Kunststoffbacken des Schraubstocks von 2 Minuten berücksichtigt. Es wurde lediglich der Piezo ohne zusätzlichen Parallel- oder Serienwiderstand vermessen. Die auffällig abweichenden Anfangswerte in Abbildung \vref{fig:2.6} sind auf den schlechten Kontakt zwischen Keramikplättchen und Stack bei geringer Druckbelastung zurückzuführen. Die aufgenommenen Werte sind in Tabelle \vref{tab:2.6} zu finden.
@@ -900,76 +966,45 @@ $U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$&$U_{diff}$ in mV&$R_{Parallel}$ in 
 \end{figure}
 %
 \chapter{Hardware}
-Im Folgenden werden die Fortschritte in der Hardware-Entwicklung chronologisch geordnet und in Teilbereiche separiert aufgeführt.
-\section{Energiezuführung}
-Als zielführend erweist sich eine Vorüberlegung im Bezug auf die Möglichkeiten der elektrischen Speisung. Grundlegende Anforderungen waren hier die Verwendung in hermetisch isolierten Systemen und die Effizienz. Somit ist beispielsweise von vornherein eine direkte Kopplung an eine Netzversorgungsquelle oder eine Speisung durch wechselbare Batterien ausgeschlossen. 
-\subsection{Energy-Harvesting}
-\label{energy}
-In diesem Teilbereich werden zwei physikalische Grundarten des Micro Energy Harvesting betrachtet. Diese sind die Umwandlung von mechanischer Schwingungsenergie und thermischer Differenz in elektrische Spannung. Bei der Vorbereitung und Einarbeitung in die entsprechende Thematik wird bei der Umformung von mechanischen Schwingungen in Elektrizität offensichtlich, dass dies eine ungünstige Form der Energiegewinnung für dieses System ist. Dies liegt unter anderem an der unmöglichen Abstimmung der durch den Auftritt erzeugten Erregung auf die Resonanzfrequenz des Schwingungsaufnehmers. Weiter benötigt ein solches Bauelement einen Freiraum um seine abklingende Bewegung harmonisch abbauen zu können. Es müssen auch die maximal auftretenden Beschleunigungen berücksichtigt werden was wiederum zu einer Versteifung des kompletten Federsystems führen würde. Das hätte als Resultat, dass durch die Erhöhung der dynamischen Bandbreite die verhältnismäßig kleineren Anregungen einen schlechteren Wirkungsgrad liefern würden. Diese Umstände schließen die piezoelektrische Wandlung leider für die Option der Energiezuführung aus. \citep[vgl. S.39]{Dembowski2011} \newline 
-Die thermoelektrische Wandlung beruht auf der Inversen des Peltier-Effekts, dem Seebeck Effekt. Diesem liegt zu Grunde, dass am Übergang von zwei unterschiedlichen Metallen unterschiedlicher Temperierung ein elektrisches Feld aufgebaut wird. Die Verwendung dieses Effekts war zunächst nur bei Temperatur-Messfühlern weit verbreitet. Allerdings ist aufgrund der fortschreitenden Entwicklung der Micro Energy Harvesting Technologien dieser Effekt mittlerweile auch zur Energieversorgung nutzbar. \newline \newline
-Als zentralen Baustein für die Erprobung von Micro-Energy-Harvesting Systemen im Bezug auf thermo-elektrische Energiewandlung bietet sich der \textit{LTC3108} von der Firma Linear Technology an. Dieser vermag mit geringem Aufwand Eingangsspannungen von 20mV bis 500mV auf ausgangsseitig bis zu 5V aufwärts zu wandeln. Um möglichst schnell Erkenntnisse aus der Wirkungsweise des Bausteins ziehen zu können, wird eine im Internet veröffentlichte Schaltung\footnote{Github Repository of wa7iut \citep{GIT}} für Tests verwendet (siehe Abbildung \vref{fig:4.1}). Diese hält sich strikt an die Vorgaben des Datenblatts\footnote{LTC3108 - Ultralow voltage Step-Up Converter and Power Manager \citep{LTC}} \citep{LTC3108}. Beim LTC3108 handelt es sich um einen Spannungs-Aufwärtswandler\footnote{Step-Up-Converter} für sehr niedrige Eingangsspannungen. Im Gegensatz zum normalen Aufbau von Aufwärtswandlern wird keine einfache Induktivität sondern ein kleiner Transformator verwendet. Dies reduziert zwar aufgrund des hohen Übersetzungsverhältnisses (1:20 bis 1:100) den Wirkungsgrad, allerdings lassen sich so auch höhere Spannungen erzeugen. Bei dem Versuchsaufbau wird ein 1:100 Transformator verwendet, da sich die Eingangsspannungen, welche experimentell ermittelt wurden, sich zwischen 20mV und 90mV bewegen. Als zu erstrebende Ausgangsspannung wurde schaltungstechnisch 3,3V eingestellt, da dies die zur Zeit am häufigsten bei Mikrocontrollern vorkommende Versorgungsspannung ist. Als externer Energiespeicher wurde ausgangsseitig an die Schaltung ein $2200 \mu$F Kondensator angefügt. Als energieerzeugendes Element wurde ein Peltierelement mit einem Aluminium-Kühlkörper versehen. So muss bei ausreichender zugeführter Wärme nicht einmal aktiv gekühlt werden, es genügt die Wärmeveräußerung durch den Kühlkörper.%weitere Fotos
-\begin{figure}[htb]
+Im Folgenden werden die Schritte in der Hardware-Entwicklung für die Sensorik und das Energiemanagement geordnet und in Teilbereiche separiert aufgeführt.
+\section{Sensorik}
+\label{Sensorik}
+Zentrales Element der Schaltung des Fußmoduls des Projekts "`MedLast"' ist der Druckaufnehmer. Erste Versuche die Druckbelastung über die Kapazitätsänderung von Piezoelementen zu messen erwiesen sich als äußerst schwierig. Die Problematik bei dieser Messmethode besteht darin, dass sie aufgrund der Flüchtigkeit der geringen Ladung und der Empfindlichkeit gegenüber parasitären Effekten äußerst aufwendig betrieben werden muss, um repräsentative und reproduzierbare Ergebnisse zu erzielen. Als parasitäre Effekte spielen hier unter anderem Luftfeuchte, Beleuchtung und die Umgebungstemperatur eine entscheidende Rolle. Bei ausführlichen Belastungstests im Bereich bis 200N konnten keine zufriedenstellenden Ergebnisse erzielt werden \citep{Jobstmann2012}. Darum wurde die Messmethode auf piezoresistive Dehnungsmessstreifen geändert. Diese Technologie bietet auch den Vorteil, dass aufgrund der eigenen Verarbeitung im Hybridlabor der Hochschule Landshut das Layout beliebig angepasst werden kann. Da generell davon ausgegangen wurde, dass der Widerstand des DMS sich sowohl vergrößern als auch verkleinern kann, musste das Messverfahren dementsprechend ausgelegt sein. Gemessen wird nicht über eine Kelvin-Messschaltung\footnote{auch bekannt als Vierleitermessung} sondern über eine als Wheatstonesche Brücke bekannte Messschaltung. Dabei wird der betreffende DMS in eine Brückenschaltung, genauer in eine Viertelmessbrücke, eingesetzt. Dies hat zum Vorteil, dass bei richtiger Anpassung der restlichen drei Teilwiderstände der Schaltung, sich an den Abnahmepunkten eine Spannungsdifferenz von $0V$ bei Ruhe einstellt. Aus diesem Grund sollte der zu verwendende A/D\footnote{Analog-Digital}-Wandler die differentielle Spannungsmessung beherrschen oder von vornherein speziell für Messbrückenauswertung ausgelegt sein. Da eine weitere Maßgabe die Auflösung der Wandlung darstellt, wurde explizit nach einem Konverter mit mindestens 12-Bit Auflösung gesucht.\\
+All diese Kriterien wurden von dem Baustein ADS1232 von Texas Instruments erfüllt. Dieser verfügt über 24-Bit Auflösung und ist speziell für rein resistive Brückenschaltungen ausgelegt \citep{ADS1232}. Als weiteren Vorteil beinhaltet dieses IC bereits einen internen Temperatursensor der einen der Unterpunkte der Anforderungen an die Arbeit erfüllt.\\
+Ein erster Schaltungsentwurf wurde mithilfe des an Hochschule Landshut vorhandenen Leiterplatten-Prototypers\footnote{LPKF C60} auf Platine gebracht, wie auf Abbildung \vref{pic.ad1232} zu sehen ist. Dabei wurden alle Konfigurationsmöglichkeiten sowie Ein- und Ausgänge über Jumper und Stiftleisten nach außen geführt:
+\begin{figure}
 \centering
-\includegraphics[bb=3.4cm 10.6cm 17.5cm 19.4cm]{Bilder/LTC3108breakoutSSOC}
-\caption{LTC3108 Board von Ambient Sensors}
-\label{fig:4.1}
+\fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/ad1232.JPG}}
+\caption[AD1232 A/D-Wandler Modul mit Drucksensor]{AD1232 A/D-Wandler Modul mit Drucksensor auf Keramik-Stahl Verbundmaterial}
+\label{pic.ad1232}
 \end{figure}
-\subsection{Drahtlose Energieübertragung}
-\label{chap:4.1.2}
-Zum Laden der internen Speicher, die in Kapitel \vref{chap:4.2} vorgestellt werden, wird eine vielfach höhere Leistung benötigt als jene, die mit den Mitteln des Energy-Harvesting bereitgestellt werden kann. Allerdings sollen bei die durch die Grundvoraussetzung festgelegten Richtlinien nicht verletzt werden. Durch den betreuenden Professor Harasim kam die Vorgabe ein Evaluations-Kit der Firma Texas Instruments genauer zu untersuchen. Dabei handelte es sich um ein System, welches aus zwei Komponenten bestand:
 \begin{itemize}
 \item
-Transmitter, Sender: bq500110EVM-688 Evaluation Module (Abbildung \ref{BQ_transm})
+Temperatursensor an/aus
 \item
-Receiver, Empfänger: bq51013EVM-725 Evaluation Module (Abbildung \ref{BQ_rec})
+Eingangsbeschaltung: A1/A2
+\item
+Wandlungsgeschwindigkeit: 10/80 SPS\footnote{samples per second}
+\item
+Vorverstärkung (Gain 0/1)
+\item
+Positive sowie Negative Versorgungsspannung
+\item
+Datenleitungen für SPI
+\item
+Eingänge für beide analogen Spannungsaufnehmer AIN1/AIN2
 \end{itemize}
-\begin{figure}
-\centering
-\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/BQ_Tesla_transmitter.JPG}}
-\caption{Transmitter-Modul des Evaluation-Packs}
-\label{BQ_transm}
-\end{figure}
-\begin{figure}
-\centering
-\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/BQ_Tesla_receiver.JPG}}
-\caption{Receiver-Modul des Evaluation-Packs}
-\label{BQ_rec}
-\end{figure}
-Dieses lässt sich mithilfe einer Gleichspannungsquelle, eingestellt auf eine Speisung von 19V und einer Stromgrenze über 0,5A sehr einfach in Betrieb nehmen. Am Empfängermodul stellt sich bei passgenauer Platzierung der beiden Übertragerspulen des magnetischen Kopplungssystems eine Tätigkeit der Indikationsanzeige ein. Ein Permanentmagnet hilft beim Zentrieren der beiden Luftspulen. Laut Datenblatt \citep[vgl. S.2]{bq51013EVM-725} liefert die Beispielschaltung 5V bei 1A. Zum Testen der Kompatibilität wurde die Schaltung mit der in Kapitel \ref{chap:4.2.2} vorgestellten Ladeeinheit gekoppelt. Das erfolgreiche Zusammenarbeiten konnte reproduzierbar getestet werden.\\
-Für das Gesamtkonzept des Fußmoduls vom Projekt "`MedLast"' ist die Empfangseinheit vorrangig. Um eine passendes Zusammenspiel von proprietärer Sendeeinheit und selbstentworfener Empfangsschaltung sicherzustellen, wurde der gleiche Baustein (\textit{BQ51013}) verwendet. Allerdings wurde beim Schaltungsaufbau darauf geachtet, dass der Bauteilumfang sich auf ein Minimum reduziert. So wurde die Zusatzbeschaltung für eine eventuelle alternative bedrahtete Versorgung weggelassen. Bei dem BQ51013 handelt es sich um ein IC, welches nur in BGA\footnote{Ball Grid Array} Gehäusegröße erhältlich ist. Da dies wiederum für das Layoutdesign bedeutete, dass mit Kontaktflächengrößen von $250\mu$m gearbeitet werden muss, ergab sich eine weitere Problematik. Die typischen Leiterplattenhersteller für Prototypen und Kleinserien haben eine Vorgabe für den Mindestdurchmesser von Durchkontaktierungen mit $300\mu$m. D.h. über die üblichen Wege war es nicht ohne Mehraufwand möglich, einen Platine zu beschaffen. Da ein Durchmesser der Durchkontaktierungen von $150\mu$m als maximale Maßgabe anzusehen war, wurde für den Prototypenbau LTCC\footnote{Low Temperature Cofire Ceramic} als Schaltungsträger ausgewählt. Diese können im Hybridlabor in Dickschichttechnik selbstständig aufgebaut werden. Weiter können durch das Laserstruktur-Gerät \textit{ProtoLaser U} die Keramiksubstrate auf $15\mu$m genau geritzt und gebohrt werden.  Da LTCC im einlagigen Aufbau zu fragil wäre, wurden noch Überlegungen angestrebt um die mechanische Widerstandsfähigkeit zu erhöhen. Ein mehrlagiger Aufbau barg eine zu große Gefahr im Bezug auf die erhöhte Wahrscheinlichkeit einer unterbrochenen Durchkontaktierung. Diese steigt proportional mit der Anzahl der verwendeten Lagen LTCC. Durch einen Hinweis von Herrn Leschik wurde bei einem zweiten Versuch die LTCC-Schicht, welche den beidseitigen Schaltungsdruck aufgetragen hatte, auf eine $Al_2O_3$-Keramik auflaminiert. Diese dient als mechanisch-stabiler Träger. Nach einem ersten Fehlversuch konnten somit auf einem Substrat mit Mehrfach-Nutzen mehrere, passiv einwandfreie Schaltungen aufgebaut werden. Nach deren Bestückung per Hand und Lötung mit der Dampfphasenanlage der Hochschule Landshut wurde diese mit der Einkopplungsspule verbunden. Eine anfängliche Überlegung, diese ebenfalls auf Dickschichttechnik basierend auf LTCC zu der Schaltung zu bringen, wurde aufgrund der nicht einzuhaltenden Kriterien an die Güte der Induktivität wieder verworfen. Darum fiel die Entscheidung auf eine Empfänger-Spule, welche von der Firma Würth Elektronik genau für diesen Zweck bereitgestellt wird \citep{Spule}. Die für den Empfängerschwingkreis noch benötigten Kapazitäten wurden über folgende Formeln des Datenblatts \citep{BQ51013} dimensioniert: 
-\begin{eqnarray}
-C1&=&\left[\left(f_S \cdot 2\pi\right)^2 \cdot L'_S\right]^{-1}\\
-C1&=&\left[\left(100\text{kHz} \cdot 2\pi\right)^2 \cdot 0,01011\text{mH}\right]^{-1}\\
-C1&=&250\text{nF}\\
-\nonumber\\
-C2&=&\left[\left(f_D \cdot 2\pi\right)^2 \cdot L_S-\frac 1{C1}\right]^{-1}\\
-\nonumber\\
-C2&=&\left[\left(1\text{MHz} \cdot 2\pi\right)^2 \cdot 0,01011\text{mH}-\frac 1{250\text{nF}}\right]^{-1}\\
-\nonumber\\
-C2&=&2,53\text{nF}\\
-\nonumber\\
-Q&=&\frac{2\pi \cdot f_D \cdot L_S}{R}\\
-\nonumber\\
-Q&=&\frac{2\pi \cdot 1\text{MHz} \cdot 0,01011\text{mH}}{0,1488 \Omega}\\
-\nonumber\\
-Q&=&426,90
-\end{eqnarray}
-Als Mindestmaß wird im Datenblatt \citep[siehe S.23]{BQ51013} eine Güte von 77 festgelegt. Diese wird mit der Luftspule von Würth Elektronik weit überschritten.\\
-Mit drei, beziehungsweise zwei diskreten Kondensatoren wurden die Kapazitäten $C1$ und $C2$ aufgebaut. Dies wurde auf einer separaten, zwischen Spule und Keramikschaltung gelöteten Platine aufgebaut. Der fertige selbstentworfene Aufbau wurde mit einer geringen Last von $47 \Omega$ auf die von Texas Instruments bereitgestellte Schaltung\footnote{bq500110EVM-688, Sendeeinheit} gesetzt und getestet. Dieser ist auf Grafik \vref{self_rec} zu sehen. Die Reproduzierbarkeit wies noch Defizite auf, so konnte noch nicht sichergestellt werden, dass bei jedem Aufsetzen der Empfängerschaltung eine stabile Verbindung zustande kommt. Weiter können noch keine niederohmigen Lasten ($<50 \Omega$) an das Modul gekoppelt werden. Dies mag zum ein an der unzureichenden Anpassung des Schwingkreises liegen oder auch zum anderen an der Hochohmigkeit der gedruckten Leiterbahnen auf dem Keramiksubstrat. 
-\begin{figure}
-\centering
-\fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/self_receiver.JPG}}
-\caption{Receiver-Modul, hergestellt im Hybridlabor der Hochschule Landshut}
-\label{self_rec}
-\end{figure}
+Da bei der Prototypenschaltung keine allzu gravierenden Spannungs- oder Stromimpulse an der Versorgungsspannung auftreten, können die digitale und die analoge Speisung ebenfalls über einen Jumper zusammengeschlossen werden. Zu Testzwecken wurde eine Viertelbrücke mit einem Potentiometer als variablen Widerstand diskret auf die Platine gebracht. Diese kann über Jumper an den Controller angebunden werden. Für die digitale Anbindung, beispielsweise an einen Mikrocontroller, wird das SPI-Protokoll verwendet. Dabei ist hinzuzufügen, dass lediglich die MISO\footnote{Master Input Slave Output}- und SCK\footnote{Serial Clock}-Leitungen benötigt werden. Zusätzlich verfügt das IC einen PDWN\footnote{Power Down} Eingang, über den der Baustein in einen Ruhemodus versetzt werden kann.\\
+Der Testaufbau wurde weiter dahingehend modifiziert, dass es mit einem experimentellen Sensormodul von Frau Engelsberger, basierend auf einem LTCC-Stahl Verbundwerkstoff, optimale Ergebnisse liefert. Dementsprechend wurde die auf dem Modul befindliche Viertelbrücke aufgetrennt und das Potentiometer entfernt. Dieses wurde durch das Sensormodul ersetzt. Weiter wurden die Widerstände der restlichen Brücke an den Sensor angepasst.
+
 \section{Energiebereitstellung}
 \label{chap:4.2}
 Da die Markttauglichkeit bei diesem Projekt eine wesentliche Rolle spielt, wird eine weitverbreitete, einfach zu realisierende und auch günstige Methode gesucht um die Energie für die Elektronik des eingebetteten Moduls bereitzustellen.
 \subsection{Superkondensator}
-Als Superkondensator werden im Allgemeinen hochkapazitive Energieträger bezeichnet, die Ihre elektrische Ladung anders als Keramik-, Tantal-, Elektrolyt- oder Folienkondensatoren speichern. Sie funktionieren nicht wie diese durch Ladungsseparation mittels Dielektrikum sondern bedienen sich anderer Effekte, wie Energiespeicherung in Helmholtz-Doppelschichten\footnote{Doppelschichtkondensator}, faradayscher Ladungstausch\footnote{Pseudokondensator} oder einer Kombination aus beiden Technologien\footnote{Hybridkondensator}. Aufgrund dieser anderen Bauweisen lassen sich Kapazitäten erreichen, die das von Elektrolytkondensatoren um das 10000-fache überschreiten. Somit ziehen sie bezüglich der Ladungsdichte mit Akkumulatoren gleich. Anders als bei den üblichen Kondensatoren wird durch den technologischen Unterschied der Funktionsprinzipien eine lineare Lade- beziehungsweise Entladekurve erreicht. Weiter In Miniaturbauweise für Platinenmontage sind so ganzzahlige Farad an Ladungskapazität mit dieser Technologie bereits üblich. Für den praktischen Einsatz für die Arbeit fielen diese Energiespeicher aufgrund ihrer schaltungstechnischen Zusatzbeschaltung zur Spannungsstabilisierung und des, im Gegensatz zu den weit verbreiteten Lithium-Ionen Akkus, hohen Kostenfaktors aus. Weiter ist die Selbstentladung zudem höher als bei konventionellen Akkumulatoren. Aus diesen Gründen wurde eine Lösung der Energiezwischenspeicherung, welche auf Superkondensatoren basiert, nicht weiter verfolgt.
+Als Superkondensator werden im Allgemeinen hochkapazitive Energieträger bezeichnet, die ihre elektrische Ladung anders als Keramik-, Tantal-, Elektrolyt- oder Folienkondensatoren speichern. Sie funktionieren nicht wie diese durch Ladungsseparation mittels Dielektrikum sondern bedienen sich anderer Effekte, wie Energiespeicherung in Helmholtz-Doppelschichten\footnote{Doppelschichtkondensator}, faradayscher Ladungstausch\footnote{Pseudokondensator} oder einer Kombination aus beiden Technologien\footnote{Hybridkondensator}. Aufgrund dieser anderen Bauweisen lassen sich Kapazitäten erreichen, die das von Elektrolytkondensatoren um das 10000-fache überschreiten. Somit ziehen sie bezüglich der Ladungsdichte mit Akkumulatoren gleich. Anders als bei den üblichen Kondensatoren wird durch den technologischen Unterschied der Funktionsprinzipien eine lineare Lade- beziehungsweise Entladekurve erreicht. Mit in Miniaturbauweise gefertigte Bauelemente für Platinenmontage sind bereits ganzzahlige Farad an Ladungskapazität mit dieser Technologie üblich. Für den praktischen Einsatz für die Arbeit fielen diese Energiespeicher aufgrund ihrer schaltungstechnischen Zusatzbeschaltung zur Spannungsstabilisierung und des, im Gegensatz zu den weit verbreiteten Lithium-Ionen Akkus, hohen Kostenfaktors aus. Weiter ist die Selbstentladung zudem höher als bei konventionellen Akkumulatoren. Aus diesen Gründen wurde eine Lösung der Energiezwischenspeicherung, welche auf Superkondensatoren basiert, nicht weiter verfolgt.
 \subsection{Lithium-Ionen-Akkumulator}
 \label{chap:4.2.2}
- Der Lithium-Ionen-Akku hat sich in den letzten Jahren zur Standardtechnologie für wiederaufladbare Energiespeicher entwickelt. Sie sind in nahezu jedem portablen, elektrisch betriebenen Gerät zu finden. Durch weitere Sicherheitsmaßnahmen, wie den in nahezu allen Li-Ion-Akkus verbauten NTC\footnote{Negative Temperature Coefficient}-Widerstand, der mithilfe externer Sicherheits- und Messbeschaltung Rückschlüsse über die interne Temperaturentwicklung des Energiespeichers schließen lässt. Dies verhindert bei einer Fehlfunktion oder einem Schaden des Akkus einen Brand oder gar eine Explosion des Geräts\footnote{Uelzen: Explodiertes Notebook löst Feuerwehreinsatz aus \citep{TONLINE}}. \\
+ Der Lithium-Ionen-Akku hat sich in den letzten Jahren zur Standardtechnologie für wiederaufladbare Energiespeicher entwickelt. Sie sind in nahezu jedem portablen, elektrisch betriebenen Gerät zu finden. Dies liegt auch an Sicherheitsmaßnahmen, wie den in nahezu allen Li-Ion-Akkus verbauten NTC\footnote{Negative Temperature Coefficient}-Widerstand, der mithilfe externer Sicherheits- und Messbeschaltung Rückschlüsse über die interne Temperaturentwicklung des Energiespeichers schließen lässt. Dadurch wird bei einer Fehlfunktion oder einem Schaden des Akkus ein Brand oder gar eine Explosion des Geräts verhindert\footnote{Uelzen: Explodiertes Notebook löst Feuerwehreinsatz aus \citep{TONLINE}}. \\
 Für das Projekt wurde nach einem IC-Baustein gesucht, der selbstständig bei ausreichender Eingangsspannung den Ladungsvorgang bei einem 1-Zellen Li-Ionen Akku vornimmt. Die Wahl eines fertigen ICs bietet einige Vorteile:
 \begin{itemize}
 \item
@@ -1109,10 +1144,10 @@ Piezosignalgeber: MAS6240\footnote{Low Noise/EMI Piezo Buzzer Driver - Micro Ana
 \end{itemize}
 Diese Teilgebiete sollen nun im Folgenden noch einzeln näher erklärt werden.
 \subsubsection{Eingangsschutzbeschaltung}
-Die Eingangsschutzbeschaltung besteht im Wesentlichen aus zwei Komponenten. Zuerst wäre da die "`resetable Fuse"' welche einen zureichenden Schutz gegenüber Überströme bietet. Diese könnten im ungünstigsten Fall den speisenden Akku irreparabel beschädigen oder diesen zerstören. Die selbstrückstellende Sicherung ist im Grunde ein PTC-Widerstand\footnote{Positive Temperature Coefficient; Wert steigt mit steigender Temperatur}. Allerdings hat dieser eine sprungförmige Kennlinie, d. h. ab einem Schwellenwert wird der Widerstand hochohmig, sodass die gesamte Spannung der Schaltung an der Sicherung abfällt.\\
+Die Eingangsschutzbeschaltung besteht im Wesentlichen aus zwei Komponenten. Zuerst wäre da die "`resetable Fuse"' welche einen zureichenden Schutz gegenüber Überströme bietet. Diese könnten im ungünstigsten Fall den speisenden Akku irreparabel beschädigen oder diesen zerstören. Die selbstrückstellende Sicherung ist im Grunde ein PTC-Widerstand\footnote{Positive Temperature Coefficient; Wert steigt mit steigender Temperatur}. Allerdings hat dieser eine sprungförmige Kennlinie, d.h. ab einem Schwellenwert wird der Widerstand hochohmig, sodass die gesamte Spannung der Schaltung an der Sicherung abfällt.\\
 Der zweite Teil wird zum Schutz der elektronischen Schaltung vor Verpolung benötigt. Die Schutzelektronik besteht aus einem P-Kanal-MOSFET\footnote{Metal Oxid Semiconductor Field Effect Transistor} und einem 10k$\Omega$ Widerstand, der dessen Gate-Eingang vor Leistungsspitzen schützt. Die Funktion ist folgende: Damit der Transistor durchschaltet, muss dessen Source ein positiveres elektrisches Potential haben, als das Gate. Letzteres wird grundsätzlich über den Widerstand auf Massepotential gezogen. Bei richtig gepoltem Anschluss des Akkus leitet die Body-oder Bulk-Diode und das positive Potential der Akkuspannung liegt somit auch an Source an. Der Transistor steuert in Folge dessen auf. Bei Verpolung liegt am Gate grundsätzlich das höhere Potential an und auch die Body-Diode sperrt den Stromfluss. Die Schaltung hinter diesem Schutz bleibt im Fehlerfall unbehelligt. 
 \subsubsection{DC/DC Wandler}
-Da der CC2541 Baustein unabhängig von der Speisespannung nahezu die gleiche Stromaufnahme hat \citep[vgl. S. 21]{CC2541} wird von der Firma Texas Instruments der Einsatz eines TPS62730 Abwärtswandlers vorgeschlagen. Dieser wandelt eingehende Spannungen von 1,9V bis 3,9V auf eine feste Spannung von 2,10V um.  Durch die geringen Verluste durch den hohen Wirkungsgrad des Spannungswandlers (ca. 86\% am aktuellen Arbeitspunkt) bleibt die anfallende Leistung Eingangs- sowie Ausgangsseitig relativ gleich. Dadurch kann resultierend die Stromaufnahme vor dem TPS62730 reduziert werden. Zur Veranschaulichung folgende Beispielrechnung mit Zahlen aus dem Datenblatt:
+Da der CC2541 Baustein unabhängig von der Speisespannung nahezu die gleiche Stromaufnahme hat \citep[vgl. S. 21]{CC2541} wird von der Firma Texas Instruments der Einsatz eines TPS62730 Abwärtswandlers vorgeschlagen. Dieser wandelt eingehende Spannungen von 1,9V bis 3,9V auf eine feste Spannung von 2,10V um.  Durch die geringen Verluste und durch den hohen Wirkungsgrad des Spannungswandlers (ca. 86\% am aktuellen Arbeitspunkt) bleibt die anfallende Leistung Eingangs- sowie Ausgangsseitig relativ gleich. Dadurch kann resultierend die Stromaufnahme vor dem TPS62730 reduziert werden. Zur Veranschaulichung folgende Beispielrechnung mit Zahlen aus dem Datenblatt:
 \begin{eqnarray}
 \text{Active-Mode RX,}&&\nonumber\\
 \text{ ohne TPS62730}&&\nonumber\\
@@ -1146,7 +1181,7 @@ Der Balun samt Filter wurde von dem Referenzdesign übernommen. So konnte die Be
 \subsubsection{Piezosignalgeber}
 Als zusätzliches Element soll die Schaltung über einen akustischen Signalgeber Warnhinweise an den Patienten bei akuter Überbelastung ausgeben. Hierfür soll ein Piezobuzzer, wie er beispielsweise in Weckern oder digitalen Armbanduhren verwendet, wird angefügt werden. Der nötigen Spannungshub an dem hochohmigen Eingangswiderstand des Piezokristalls wird über einen Treiberbaustein erzeugt. Der MAS6240 befindet sich seit Längerem im Hybridlabor der Hochschule Landshut im Einsatz. Lediglich die korrekte Ansteuerung über Software fehlte bisher für eine erfolgreiche Inbetriebnahme. Das IC hat eine integrierte dreistufige Ladungspumpe, welche die Eingangsspannung von 3V auf 18$\text{V}_{pp}$ hochzieht. Das Signal wird einfach durch Anlegen der passenden Wechselspannung im für den Menschen hörbaren Bereich erzeugt. Für dieses Projekt wird über eine Zuleitung vom Mikrocontroller eine 4kHz Rechteckspannung angelegt. Diese Frequenz hat weiter den Vorteil, dass sie im psychoakustisch optimalen Bereich der menschlichen Wahrnehmung liegt \citep{Psych}. Hinzukommen noch zwei Steuerleitungen, welche für gewöhnlich ebenfalls vom SoC angesteuert werden sollen, allerdings spielt bei diesem Testaufbau vorerst die Stromaufnahme keine allzu große Rolle. Darum wurden diese Steuereingänge für dauerhaften Betrieb schaltungstechnisch auf High-Pegel gelegt. Weiter enthalten Rechtecksignale Oberschwingungen, die für den Menschen ab einem gewissen Klirrfaktor als unangenehm empfunden werden. Dieser Effekt ist besonders für Warnsignale sehr hilfreich.
 \subsubsection{Fazit}
-Da sich im Laufe grundlegender Messungen einer anderen Abschlussarbeit herausgestellt hat, dass 2,4GHz äußerst ungünstig als Übertragungsfrequenz für Funkverbindungen in Körpernähe ist, wurde der Aufbau dieses Moduls wieder verworfen und ist somit obsolet. Die Funkverbindung wurde nicht getestet und eine Verbindung mit der Sensorik kam nicht zustande. Lediglich die Ansteuerung und das Layout des Piezotreiberbausteins  wird für zukünftige weiterführende Arbeiten als Grundlage wiederverwendet werden. Ansonsten ist konnten alle erstrebten Funktionen des Moduls (Abbildung \vref{pic.CC2541} erfolgreich im autarken Betrieb validiert werden.
+Da sich im Laufe grundlegender Messungen einer anderen Abschlussarbeit herausgestellt hat, dass 2,4GHz äußerst ungünstig als Übertragungsfrequenz für Funkverbindungen in Körpernähe ist, wurde der Aufbau dieses Moduls wieder verworfen und ist somit obsolet. Die Funkverbindung wurde nicht getestet und eine Verbindung mit der Sensorik kam nicht zustande. Lediglich die Ansteuerung und das Layout des Piezotreiberbausteins  wird für zukünftige weiterführende Arbeiten als Grundlage wiederverwendet werden. Ansonsten konnten alle erstrebten Funktionen des Moduls (Abbildung \vref{pic.CC2541} erfolgreich im autarken Betrieb validiert werden.
 \begin{figure}
 \centering
 \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/CC2541.JPG}}
@@ -1154,9 +1189,8 @@ Da sich im Laufe grundlegender Messungen einer anderen Abschlussarbeit herausges
 \label{pic.CC2541}
 \end{figure}
 \subsection{CC430F6137}
-Genauso wie der CC2541 in Kapitel \vref{CC2541} ist der CC430F6137 ein SoC. Nachdem Ersterer aufgrund seiner schlechten Anpassung der Funkverbindung für den Einsatzzweck für unzureichend eingestuft wurde, sind erste Versuche mit diesem Chip unternommen worden. Dabei wurde vorerst noch keine Modulplatine aufgebaut, sondern eine Entwicklungsplattform von TI verwendet: eine ez430-Chronos Uhr\footnote{EZ430-Chronos Texas Instruments Embedde Processors Wiki \citep{EZ430}}. Diese kann je nach Ausführung auf einem ISM-Band eine Funkverbindung mit einer zweiten Uhr oder einer Basisstation aufbauen. Da diese Uhren bereits an der Hochschule Landshut zur Verfügung standen, wurde die Variante mit dem CC430F6137 verwendet.  Dieser ist ähnlich aufgebaut wie der bereits vorgestellte SoC, allerdings wurde hier ein CC1101\footnote{Transceiver Chip von TI \citep{CC1101}} Chip implementiert, welcher auf 868MHz im ISM-Band sendet. Trotz der geringen Abmaße des 64-Pin QFN\footnote{Quadrature Flat No Lead} wurden mit Fädeldraht die Kontakte für die SPI\footnote{serial peripheral interface}-Schnittstelle und für einen Interrupteingang herausgeführt. Dieser wurde mit der im nächsten Unterkapitel (Nummer \vref{Sensorik}) beschriebenen Sensorik verbunden. Schaltungstechnisch ergab sich bei diesem Versuchsaufbau kein allzu großer Mehraufwand. Eine Besonderheit ist die Interruptsteuerung: Anforderung war eine verschleißfreie Möglichkeit den Controller in die Routine für die Datenaufnahme zu überführen. Dabei erwies sich folgender Testaufbau als zielführend:
-\begin{itemize}
-\item
+Genauso wie der CC2541 in Kapitel \vref{CC2541} ist der CC430F6137 ein SoC. Nachdem Ersterer aufgrund seiner schlechten Anpassung der Funkverbindung für den Einsatzzweck für unzureichend eingestuft wurde, sind erste Versuche mit diesem Chip unternommen worden. Dabei wurde vorerst noch keine Modulplatine aufgebaut, sondern eine Entwicklungsplattform von TI verwendet: eine ez430-Chronos Uhr\footnote{EZ430-Chronos Texas Instruments Embedde Processors Wiki \citep{EZ430}}. Diese kann je nach Ausführung auf einem ISM-Band eine Funkverbindung mit einer zweiten Uhr oder einer Basisstation aufbauen. Da diese Uhren bereits an der Hochschule Landshut zur Verfügung standen, wurde die Variante mit dem CC430F6137 verwendet.  Dieser ist ähnlich aufgebaut wie der bereits vorgestellte SoC, allerdings wurde hier ein CC1101\footnote{Transceiver Chip von TI \citep{CC1101}} Chip implementiert, welcher auf 868MHz im ISM-Band sendet. Trotz der geringen Abmaße des 64-Pin QFN\footnote{Quadrature Flat No Lead}-Gehäusetyps wurden mit Fädeldraht die Kontakte für die SPI\footnote{serial peripheral interface}-Schnittstelle und für einen Interrupteingang herausgeführt. Dieser wurde mit der im Unterkapitel (Nummer \vref{Sensorik}) beschriebenen Sensorik verbunden. Schaltungstechnisch ergab sich bei diesem Versuchsaufbau kein allzu großer Mehraufwand. Eine Besonderheit ist die Interruptsteuerung: Anforderung war eine verschleißfreie Möglichkeit den Controller in die Routine für die Datenaufnahme zu überführen. Dabei erwies sich folgender Testaufbau als zielführend:\\
+\\
 Für den Taster wurde eine Ersatzschaltung aus einem einfachen Piezobuzzer und einer dazu parallelgeschalteten Zenerdiode (Zenerspannung bei 3,3V) aufgebaut (Siehe Abbildung \vref{pic.breakout}). Der durch einen Druck auf den Piezo erzeugte Spannungshub von mehreren Volt (bis zu 20V) und dessen geringe Ladungsausschüttung genügen zur Signalverarbeitung. Allerdings muss der SoC vor dem großen Spannungspegel wirksam geschützt werden. Darum befindet sich unmittelbar an dem Piezobuzzer gekoppelt eine Diode, welche den anfallenden Pegel auf maximal 3,3V herunterzieht. Da die freigesetzte Ladung des Piezokristalls nicht genügt, um die Diode im Arbeitsbereich zu betreiben, ist beim praktischen Versuchaufbau lediglich Spannungspegel von maximal ca. 2,1V zu erzielen. Dieser reicht aber immer noch aus um eine Flanke bzw. einen Pegel zur Interrupt-Generierung zu erzeugen. 
 \begin{figure}
 \centering
@@ -1164,7 +1198,6 @@ Für den Taster wurde eine Ersatzschaltung aus einem einfachen Piezobuzzer und e
 \caption[Modifizierte ez430-Chronos Uhr]{Modifizierte ez430-Chronos Uhr mit Piezo-Interrupt Taster und Erweiterungsstiftleisten}
 \label{pic.breakout}
 \end{figure}
-\end{itemize}
 Weiter wurde nach dieser Modifizierung der Entwicklungsplattform auch wieder ein Aufbau in Modulbauweise angestrebt. Dieser hat grundsätzlich die selben Teilbereiche wie der Aufbau des CC2541 in Kapitel \vref{CC2541}. Folgende Unterschiede sind dennoch zu erwähnen:
 \begin{itemize}
 \item
@@ -1188,35 +1221,70 @@ Die Verifizierung des Aufbaus (Abbildung \vref{pic.CC430}) konnte aufgrund eines
 \caption{Modul CC430F6137; Hergestellt an der Hochschule Landshut}
 \label{pic.CC430}
 \end{figure}
-\subsection{Sensorik}
-\label{Sensorik}
-Zentrales Element der Schaltung des Fußmoduls des Projekts "`MedLast"' ist der Druckaufnehmer. Erste Versuche die Druckbelastung über die Kapazitätsänderung von Piezoelementen erwiesen sich als äußerst schwierig. Die Problematik bei dieser Messmethode besteht darin, dass sie aufgrund der Flüchtigkeit der geringen Ladung und der Empfindlichkeit gegenüber parasitären Effekten äußerst aufwendig betrieben werden muss, um repräsentative und reproduzierbare Ergebnisse zu erzielen. Als parasitäre Effekte spielen hier unter anderem Luftfeuchte, Beleuchtung und die Umgebungstemperatur eine entscheidende Rolle. Bei ausführlichen Belastungstests im Bereich bis 200N konnten keine zufriedenstellenden Ergebnisse erzielt werden \citep{Jobstmann2012}. Darum wurde die Messmethode auf piezoresistive Dehnungsmessstreifen\footnote{kurz: DMS} geändert. Diese Technologie bietet auch den Vorteil, dass aufgrund der eigenen Verarbeitung im Hybridlabor der Hochschule Landshut das Layout beliebig angepasst werden kann. Da generell davon ausgegangen wurde, dass der Widerstand des DMS sich sowohl vergrößern als auch verkleinern kann, musste das Messverfahren dementsprechend ausgelegt sein. Gemessen wird nicht über eine Kelvin-Messschaltung\footnote{auch bekannt als Vierleitermessung} sondern über eine als Wheatstonesche Brücke bekannte Messschaltung. Dabei wird der betreffende DMS in eine Brückenschaltung, genauer in eine Viertelmessbrücke, eingesetzt. Dies hat zum Vorteil, dass bei richtiger Anpassung der restlichen drei Teilwiderstände der Schaltung, sich an den Messpunkten eine Spannungsdifferenz von $0V$ bei Ruhe einstellt. Aus diesem Grund sollte der zu verwendende A/D\footnote{Analog-Digital}-Wandler die differentielle Spannungsmessung beherrschen oder von vornherein speziell für Messbrückenauswertung ausgelegt sein. Da eine weitere Maßgabe die Auflösung der Wandlung darstellt, wurde explizit nach einem Konverter mit mindestens 12-Bit Auflösung gesucht.\\
-All diese Kriterien wurden von dem Baustein ADS1232 von Texas Instruments erfüllt. Dieser verfügt über 24-Bit Auflösung und ist speziell für rein resistive Brückenschaltungen ausgelegt \citep{ADS1232}. Als weiteren Vorteil beinhaltet dieses IC bereits einen internen Temperatursensor der einen der Unterpunkte der Anforderungen an die Arbeit erfüllt.\\
-Ein erster Schaltungsentwurf wurde mithilfe des an Hochschule Landshut vorhandenen Leiterplatten-Prototypers\footnote{LPKF C60} auf Platine gebracht, wie auf Abbildung \vref{pic.ad1232}. Dabei wurden alle Konfigurationsmöglichkeiten sowie Ein- und Ausgänge über Jumper und Stiftleisten nach außen geführt:
-\begin{figure}
-\centering
-\fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/ad1232.JPG}}
-\caption[AD1232 A/D-Wandler Modul mit Drucksensor]{AD1232 A/D-Wandler Modul mit Drucksensor auf Keramik-Stahl Verbundmaterial}
-\label{pic.ad1232}
-\end{figure}
+
+
+\section{Energiezuführung}
+Als zielführend erweist sich eine Vorüberlegung im Bezug auf die Möglichkeiten der elektrischen Speisung. Grundlegende Anforderungen waren hier die Verwendung in hermetisch isolierten Systemen und die Effizienz. Somit ist beispielsweise von vornherein eine direkte Kopplung an eine Netzversorgungsquelle oder eine Speisung durch wechselbare Batterien ausgeschlossen. 
+
+\subsection{Drahtlose Energieübertragung}
+\label{chap:4.1.2}
+Zum Laden der internen Speicher, die in Kapitel \vref{chap:4.2} vorgestellt wurden, wird eine vielfach höhere Leistung benötigt als jene, die mit den Mitteln des Energy-Harvesting bereitgestellt werden kann. Allerdings sollen die durch die Grundvoraussetzung festgelegten Richtlinien nicht verletzt werden. Durch den betreuenden Professor Harasim kam die Vorgabe ein Evaluations-Kit der Firma Texas Instruments genauer zu untersuchen. Dabei handelte es sich um ein System, welches aus zwei Komponenten bestand:
 \begin{itemize}
 \item
-Temperatursensor an/aus
+Transmitter, Sender: bq500110EVM-688 Evaluation Module (Abbildung \ref{BQ_transm})
 \item
-Eingangsbeschaltung: A1/A2
-\item
-Wandlungsgeschwindigkeit: 10/80 SPS\footnote{samples per second}
-\item
-Vorverstärkung (Gain 0/1)
-\item
-Positve sowie Negative Versorgungsspannung
-\item
-Datenleitungen für SPI
-\item
-Eingänge für beide analogen Spannungsaufnehmer AIN1/AIN2
+Receiver, Empfänger: bq51013EVM-725 Evaluation Module (Abbildung \ref{BQ_rec})
 \end{itemize}
-Da bei der Prototypenschaltung keine allzu gravierenden Spannungs- oder Stromimpulse an der Versorgungsspannung auftreten, können die digitale und die analoge Speisung ebenfalls über einen Jumper zusammengeschlossen werden. Zu Testzwecken wurde eine Viertelbrücke mit einem Potentiometer als variablen Widerstand diskret auf die Platine gebracht. Diese kann über Jumper an den Controller angebunden werden. Für die digitale Anbindung, beispielsweise an einen Mikrocontroller, wird das SPI-Protokoll verwendet. Dabei ist hinzuzufügen, dass lediglich die MISO\footnote{Master Input Slave Output}- und SCK\footnote{Serial Clock}-Leitungen benötigt werden. Zusätzlich verfügt das IC einen PDWN\footnote{Power Down} Eingang, über den der Baustein in einen Ruhemodus versetzt werden kann.\\
-Der Testaufbau wurde weiter dahingehend modifiziert, dass es mit einem experimentellen Sensormodul von Frau Engelsberger, basierend auf einem LTCC-Stahl Verbundwerkstoff, optimale Ergebnisse liefert. Dementsprechend wurde die auf dem Modul befindliche Viertelbrücke aufgetrennt und das Potentiometer entfernt. Dieses wurde durch das Sensormodul ersetzt. Weiter wurden die Widerstände der restlichen Brücke an den Sensor angepasst.
+\begin{figure}
+\centering
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/BQ_Tesla_transmitter.JPG}}
+\caption{Transmitter-Modul des Evaluation-Packs}
+\label{BQ_transm}
+\end{figure}
+\begin{figure}
+\centering
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/BQ_Tesla_receiver.JPG}}
+\caption{Receiver-Modul des Evaluation-Packs}
+\label{BQ_rec}
+\end{figure}
+Dieses lässt sich mithilfe einer Gleichspannungsquelle, eingestellt auf eine Speisung von 19V und einer Stromgrenze über 0,5A sehr einfach in Betrieb nehmen. Am Empfängermodul stellt sich bei passgenauer Platzierung der beiden Übertragerspulen des magnetischen Kopplungssystems eine Tätigkeit der Indikationsanzeige ein. Ein Permanentmagnet hilft beim Zentrieren der beiden Luftspulen. Laut Datenblatt \citep[vgl. S.2]{bq51013EVM-725} liefert die Beispielschaltung 5V bei 1A. Zum Testen der Kompatibilität wurde die Schaltung mit der in Kapitel \ref{chap:4.2.2} vorgestellten Ladeeinheit gekoppelt. Das erfolgreiche Zusammenarbeiten konnte reproduzierbar getestet werden.\\
+Für das Gesamtkonzept des Fußmoduls vom Projekt "`MedLast"' ist die Empfangseinheit vorrangig. Um eine passendes Zusammenspiel von proprietärer Sendeeinheit und selbstentworfener Empfangsschaltung sicherzustellen, wurde der gleiche Baustein (\textit{BQ51013}) verwendet. Allerdings wurde beim Schaltungsaufbau darauf geachtet, dass der Bauteilumfang sich auf ein Minimum reduziert. So wurde die Zusatzbeschaltung für eine eventuelle alternative bedrahtete Versorgung weggelassen. Bei dem BQ51013 handelt es sich um ein IC, welches nur in BGA\footnote{Ball Grid Array} Gehäusegröße erhältlich ist. Da dies wiederum für das Layoutdesign bedeutete, dass mit Kontaktflächengrößen von $250\mu$m gearbeitet werden muss, ergab sich eine weitere Problematik. Die typischen Leiterplattenhersteller für Prototypen und Kleinserien haben eine Vorgabe für den Mindestdurchmesser von Durchkontaktierungen mit $300\mu$m. D.h. über die üblichen Wege war es nicht ohne Mehraufwand möglich, einen Platine zu beschaffen. Da ein Durchmesser der Durchkontaktierungen von $150\mu$m als maximale Maßgabe anzusehen war, wurde für den Prototypenbau LTCC\footnote{Low Temperature Cofire Ceramic} als Schaltungsträger ausgewählt. Diese können im Hybridlabor in Dickschichttechnik selbstständig aufgebaut werden. Weiter können durch das Laserstruktur-Gerät \textit{ProtoLaser U} die Keramiksubstrate auf $15\mu$m genau geritzt und gebohrt werden.  Da LTCC im einlagigen Aufbau zu fragil wäre, wurden noch Überlegungen angestrebt um die mechanische Widerstandsfähigkeit zu erhöhen. Ein mehrlagiger Aufbau barg eine zu große Gefahr im Bezug auf die erhöhte Wahrscheinlichkeit einer unterbrochenen Durchkontaktierung. Diese steigt exponentiell mit der Anzahl der verwendeten Lagen LTCC. Durch einen Hinweis von Herrn Leschik wurde bei einem zweiten Versuch die LTCC-Schicht, welche den beidseitigen Schaltungsdruck aufgetragen hatte, auf eine $Al_2O_3$-Keramik auflaminiert. Diese dient als mechanisch-stabiler Träger. Nach einem ersten Fehlversuch konnten somit auf einem Substrat mit Mehrfach-Nutzen mehrere, passiv-elektrisch einwandfreie Schaltungen aufgebaut werden. Nach deren Bestückung per Hand und Lötung mit der Dampfphasenanlage der Hochschule Landshut wurde diese mit der Einkopplungsspule verbunden. Eine anfängliche Überlegung, diese ebenfalls auf Dickschichttechnik basierend auf LTCC zu der Schaltung zu bringen, wurde aufgrund der nicht einzuhaltenden Kriterien an die Güte der Induktivität wieder verworfen. Darum fiel die Entscheidung auf eine Empfänger-Spule, welche von der Firma Würth Elektronik genau für diesen Zweck bereitgestellt wird \citep{Spule}. Die für den Empfängerschwingkreis noch benötigten Kapazitäten wurden über folgende Formeln des Datenblatts \citep{BQ51013} dimensioniert: 
+\begin{eqnarray}
+C1&=&\left[\left(f_S \cdot 2\pi\right)^2 \cdot L'_S\right]^{-1}\\
+C1&=&\left[\left(100\text{kHz} \cdot 2\pi\right)^2 \cdot 0,01011\text{mH}\right]^{-1}\\
+C1&=&250\text{nF}\\
+\nonumber\\
+C2&=&\left[\left(f_D \cdot 2\pi\right)^2 \cdot L_S-\frac 1{C1}\right]^{-1}\\
+\nonumber\\
+C2&=&\left[\left(1\text{MHz} \cdot 2\pi\right)^2 \cdot 0,01011\text{mH}-\frac 1{250\text{nF}}\right]^{-1}\\
+\nonumber\\
+C2&=&2,53\text{nF}\\
+\nonumber\\
+Q&=&\frac{2\pi \cdot f_D \cdot L_S}{R}\\
+\nonumber\\
+Q&=&\frac{2\pi \cdot 1\text{MHz} \cdot 0,01011\text{mH}}{0,1488 \Omega}\\
+\nonumber\\
+Q&=&426,90
+\end{eqnarray}
+Als Mindestmaß wird im Datenblatt \citep[siehe S.23]{BQ51013} eine Güte von 77 festgelegt. Diese wird mit der Luftspule von Würth Elektronik weit überschritten.\\
+Mit drei, beziehungsweise zwei diskreten Kondensatoren wurden die Kapazitäten $C1$ und $C2$ aufgebaut. Dies wurde auf einer separaten, zwischen Spule und Keramikschaltung gelöteten Platine aufgebaut. Der fertige selbstentworfene Aufbau wurde mit einer geringen Last von $47 \Omega$ auf die von Texas Instruments bereitgestellte Schaltung\footnote{bq500110EVM-688, Sendeeinheit} gesetzt und getestet. Dieser ist auf Grafik \vref{self_rec} zu sehen. Die Reproduzierbarkeit wies noch Defizite auf, so konnte noch nicht sichergestellt werden, dass bei jedem Aufsetzen der Empfängerschaltung eine stabile Verbindung zustande kommt. Weiter können noch keine niederohmigen Lasten ($<50 \Omega$) an das Modul gekoppelt werden. Dies mag zum einen an der unzureichenden Anpassung des Schwingkreises liegen oder auch zum anderen an der Hochohmigkeit der gedruckten Leiterbahnen auf dem Keramiksubstrat. 
+\begin{figure}
+\centering
+\fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/self_receiver.JPG}}
+\caption{Receiver-Modul, hergestellt im Hybridlabor der Hochschule Landshut}
+\label{self_rec}
+\end{figure}
+\subsection{Energy-Harvesting}
+\label{energy}
+In diesem Teilbereich werden zwei physikalische Grundarten des Micro Energy Harvesting betrachtet. Diese sind die Umwandlung von mechanischer Schwingungsenergie und thermischer Differenz in elektrische Spannung. Bei der Vorbereitung und Einarbeitung in die entsprechende Thematik wird bei der Umformung von mechanischen Schwingungen in Elektrizität offensichtlich, dass dies eine ungünstige Form der Energiegewinnung für dieses System ist. Dies liegt unter anderem an der unmöglichen Abstimmung der durch den Auftritt erzeugten Erregung auf die Resonanzfrequenz des Schwingungsaufnehmers. Das Optimum des ersten Ausschlags der durch den Tritt erzeugten Amplitude kann nicht in einer akzeptablen Baugröße implementiert werden. Andere Schwingungsaufnehmer sind zwar ebenfalls grundsätzlich geeignet und erregbar, allerdings bieten diese eine noch schlechtere Energiegewinnung. Weiter benötigt ein solches Bauelement einen Freiraum um seine abklingende Bewegung harmonisch abbauen zu können. Es müssen auch die maximal auftretenden Beschleunigungen berücksichtigt werden was wiederum zu einer Versteifung des kompletten Federsystems führen würde. Das hätte als Resultat, dass durch die Erhöhung der dynamischen Bandbreite die verhältnismäßig kleineren Anregungen einen schlechteren Wirkungsgrad liefern würden. Diese Umstände schließen die piezoelektrische Wandlung leider für die Option der Energiezuführung aus. \citep[vgl. S.39]{Dembowski2011} \newline 
+Die thermoelektrische Wandlung beruht auf der Inversen des Peltier-Effekts, dem Seebeck Effekt. Diesem liegt zu Grunde, dass am Übergang von zwei unterschiedlichen Metallen unterschiedlicher Temperierung ein elektrisches Feld aufgebaut wird. Die Verwendung dieses Effekts war zunächst nur bei Temperatur-Messfühlern weit verbreitet. Allerdings ist aufgrund der fortschreitenden Entwicklung der Micro Energy Harvesting Technologien dieser Effekt mittlerweile auch zur Energieversorgung nutzbar. \newline \newline
+Als zentralen Baustein für die Erprobung von Micro-Energy-Harvesting Systemen im Bezug auf thermo-elektrische Energiewandlung bietet sich der \textit{LTC3108} von der Firma Linear Technology an. Dieser vermag mit geringem Aufwand Eingangsspannungen von 20mV bis 500mV auf ausgangsseitig bis zu 5V aufwärts zu wandeln. Um möglichst schnell Erkenntnisse aus der Wirkungsweise des Bausteins ziehen zu können, wird eine im Internet veröffentlichte Schaltung\footnote{Github Repository of wa7iut \citep{GIT}} für Tests verwendet (siehe Abbildung \vref{fig:4.1}). Diese hält sich strikt an die Vorgaben des Datenblatts\footnote{LTC3108 - Ultralow voltage Step-Up Converter and Power Manager \citep{LTC}} \citep{LTC3108}. Beim LTC3108 handelt es sich um einen Spannungs-Aufwärtswandler\footnote{Step-Up-Converter} für sehr niedrige Eingangsspannungen. Im Gegensatz zum normalen Aufbau von Aufwärtswandlern wird keine einfache Induktivität sondern ein kleiner Transformator verwendet. Dies reduziert zwar aufgrund des hohen Übersetzungsverhältnisses (1:20 bis 1:100) den Wirkungsgrad, allerdings lassen sich so auch höhere Spannungen erzeugen. Bei dem Versuchsaufbau wird ein 1:100 Transformator verwendet, da sich die Eingangsspannungen, welche experimentell ermittelt wurden, sich zwischen 20mV und 90mV bewegen. Als zu erstrebende Ausgangsspannung wurde schaltungstechnisch 3,3V eingestellt, da dies die zur Zeit am häufigsten bei Mikrocontrollern vorkommende Versorgungsspannung ist. Als externer Energiespeicher wurde ausgangsseitig an die Schaltung ein $2200 \mu$F Kondensator angefügt. Als energieerzeugendes Element wurde ein Peltierelement mit einem Aluminium-Kühlkörper versehen. So muss bei ausreichender zugeführter Wärme nicht einmal aktiv gekühlt werden, es genügt die Wärmeveräußerung durch den Kühlkörper.%weitere Fotos
+\begin{figure}[htb]
+\centering
+\includegraphics[bb=3.4cm 10.6cm 17.5cm 19.4cm]{Bilder/LTC3108breakoutSSOC}
+\caption{LTC3108 Board von Ambient Sensors}
+\label{fig:4.1}
+\end{figure}
 \chapter{Software}
 \label{Software}
 Für diverse Testläufe und die Auswertung der Sensordaten des AD1232-Bausteins sowie der Ansteuerung der erweiterten Peripherie werden verschiedene Programme benötigt. Unter Peripherie ist im Rahmen dieser Arbeit der Piezotreiber und die Interruptsteuerung von externen Signalen zu verstehen. Trotz der verschiedenen Entwicklungsumgebungen haben alle geschriebenen Programme als gemeinsame Sprache \textit{C}. In den folgenden Unterkapiteln werden nur die eigens für diese Arbeit erstellten Routinen und Subroutinen vorgestellt. Falls ein proprietärer Softwarerahmen oder eine Bibliothek vom Hersteller verwendet wurde, ist dies an entsprechender Stelle ausdrücklich erwähnt.
