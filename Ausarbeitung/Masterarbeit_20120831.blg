@@ -3,16 +3,14 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Masterarbeit_20120831.aux
 The style file: alpha.bst
 Database file #1: literatur.bib
-Warning--to sort, need author, editor, or key in ICNIRP
 Warning--to sort, need author, editor, or key in DLR
 Warning--to sort, need author, editor, or key in DLR2
 Warning--to sort, need author, editor, or key in NOKIA
 Warning--to sort, need author, editor, or key in ENERGIZER
 Warning--to sort, need author, editor, or key in TESLA
 Warning--to sort, need author, editor, or key in WPC
+Warning--to sort, need author, editor, or key in ICNIRP
 Warning--to sort, need author, editor, or key in BAT
-Warning--to sort, need author, editor, or key in GIT
-Warning--to sort, need author, editor, or key in LTC
 Warning--to sort, need author, editor, or key in TONLINE
 Warning--to sort, need author, editor, or key in TIBQ24100
 Warning--to sort, need author, editor, or key in MULTI
@@ -23,6 +21,8 @@ Warning--to sort, need author, editor, or key in CCDEBUG
 Warning--to sort, need author, editor, or key in TXLINE
 Warning--to sort, need author, editor, or key in EZ430
 Warning--to sort, need author, editor, or key in CC1101
+Warning--to sort, need author, editor, or key in GIT
+Warning--to sort, need author, editor, or key in LTC
 Warning--to sort, need author, editor, or key in IAR
 Warning--to sort, need author, editor, or key in CC430f6137
 Warning--empty author and editor in BAT

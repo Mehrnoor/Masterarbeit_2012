@@ -394,7 +394,7 @@ Der LiIon-Akku\footnote{Lithium-Ionen Akkumulator} stellt den aktuellen Stand de
 Der Ladeprozess ähnelt dem von Blei-Akkumulatoren. Im Gegensatz zu Diesen ist allerdings auf die Speisespannung genauestens zu achten. Einzelne Zellen werden mit einer Spannung von 4,20V geladen. Dabei darf die anliegende Spannung höchstens $\pm$50mV vom Normalwert abweichen. Andernfalls ist mit einer Verkürzung der Lebensdauer der Akku-Zelle zu rechnen. Anders als bei anderen Akkumulatoren wie dem NiMH\footnote{Nickel-Metallhydrid}-Akku ist auch keine sogenannte Erhaltungsladung\footnote{besser bekannt unter dem englischen Begriff: trickle charging} zulässig. In Abbildung \vref{fig:bat} sind die einzelnen Schritte des Ladevorgangs zu sehen. Diese werden im Folgenden näher erklärt.
 \begin {figure}[htbp]
       \begin{center}
-       \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/ion1.jpg}}
+       \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/ion1.jpg}}
       \end{center}
 \caption{Ladungskurve eines typischen Lithium-Ionen-Akkumulators}
 \centering
@@ -452,7 +452,7 @@ S_3 & =  s_{33}^{\textrm{E}} \cdot T_3 + \textrm{d}_{33} \cdot E_3 \label{formel
 \end{align}
 \begin {figure}[htbp]
       \begin{center}
-       \fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/Piezo.png}}
+       \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/Piezo.png}}
       \end{center}
 \caption[Longitudinaler Piezoeffekt; Kristallstruktur und Ladungsverschiebung]{Longitudinaler Piezoeffekt; Aufbau der Kristallstruktur und Ladungsverschiebung}
 \label{piezo}
@@ -971,10 +971,16 @@ Im Folgenden werden die Schritte in der Hardware-Entwicklung für die Sensorik u
 \label{Sensorik}
 Zentrales Element der Schaltung des Fußmoduls des Projekts "`MedLast"' ist der Druckaufnehmer. Erste Versuche die Druckbelastung über die Kapazitätsänderung von Piezoelementen zu messen erwiesen sich als äußerst schwierig. Die Problematik bei dieser Messmethode besteht darin, dass sie aufgrund der Flüchtigkeit der geringen Ladung und der Empfindlichkeit gegenüber parasitären Effekten äußerst aufwendig betrieben werden muss, um repräsentative und reproduzierbare Ergebnisse zu erzielen. Als parasitäre Effekte spielen hier unter anderem Luftfeuchte, Beleuchtung und die Umgebungstemperatur eine entscheidende Rolle. Bei ausführlichen Belastungstests im Bereich bis 200N konnten keine zufriedenstellenden Ergebnisse erzielt werden \citep{Jobstmann2012}. Darum wurde die Messmethode auf piezoresistive Dehnungsmessstreifen geändert. Diese Technologie bietet auch den Vorteil, dass aufgrund der eigenen Verarbeitung im Hybridlabor der Hochschule Landshut das Layout beliebig angepasst werden kann. Da generell davon ausgegangen wurde, dass der Widerstand des DMS sich sowohl vergrößern als auch verkleinern kann, musste das Messverfahren dementsprechend ausgelegt sein. Gemessen wird nicht über eine Kelvin-Messschaltung\footnote{auch bekannt als Vierleitermessung} sondern über eine als Wheatstonesche Brücke bekannte Messschaltung. Dabei wird der betreffende DMS in eine Brückenschaltung, genauer in eine Viertelmessbrücke, eingesetzt. Dies hat zum Vorteil, dass bei richtiger Anpassung der restlichen drei Teilwiderstände der Schaltung, sich an den Abnahmepunkten eine Spannungsdifferenz von $0V$ bei Ruhe einstellt. Aus diesem Grund sollte der zu verwendende A/D\footnote{Analog-Digital}-Wandler die differentielle Spannungsmessung beherrschen oder von vornherein speziell für Messbrückenauswertung ausgelegt sein. Da eine weitere Maßgabe die Auflösung der Wandlung darstellt, wurde explizit nach einem Konverter mit mindestens 12-Bit Auflösung gesucht.\\
 All diese Kriterien wurden von dem Baustein ADS1232 von Texas Instruments erfüllt. Dieser verfügt über 24-Bit Auflösung und ist speziell für rein resistive Brückenschaltungen ausgelegt \citep{ADS1232}. Als weiteren Vorteil beinhaltet dieses IC bereits einen internen Temperatursensor der einen der Unterpunkte der Anforderungen an die Arbeit erfüllt.\\
-Ein erster Schaltungsentwurf wurde mithilfe des an Hochschule Landshut vorhandenen Leiterplatten-Prototypers\footnote{LPKF C60} auf Platine gebracht, wie auf Abbildung \vref{pic.ad1232} zu sehen ist. Dabei wurden alle Konfigurationsmöglichkeiten sowie Ein- und Ausgänge über Jumper und Stiftleisten nach außen geführt:
+Ein erster Schaltungsentwurf (siehe Abbildung \vref{sch.ad1232}) wurde mithilfe des an Hochschule Landshut vorhandenen Leiterplatten-Prototypers\footnote{LPKF C60} auf Platine gebracht, wie auf Abbildung \vref{pic.ad1232} zu sehen ist. Dabei wurden alle Konfigurationsmöglichkeiten sowie Ein- und Ausgänge über Jumper und Stiftleisten nach außen geführt:
 \begin{figure}
 \centering
-\fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/ad1232.JPG}}
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/Weight_Bridge}}
+\caption[AD1232 A/D-Wandler Schaltbild]{AD1232 A/D-Wandler Modul Schaltbild, angefertigt mit Multisim v12}
+\label{sch.ad1232}
+\end{figure}
+\begin{figure}
+\centering
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/ad1232.JPG}}
 \caption[AD1232 A/D-Wandler Modul mit Drucksensor]{AD1232 A/D-Wandler Modul mit Drucksensor auf Keramik-Stahl Verbundmaterial}
 \label{pic.ad1232}
 \end{figure}
@@ -1125,11 +1131,23 @@ RT1&=&9,263\text{k}\Omega \Rightarrow 9,31\text{k}\Omega
 \end{eqnarray}
 \\
 \\
-Ein passendes Schaltungslayout wurde mithilfe des Datenblatts \citep{BQ24100} und der Software Multisim\footnote{Software für den Schaltungsentwurf: NI Multisim \citep{MULTI}} erstellt. Nach der Adaption der Schaltung auf ein passendes Layout wurde über einen Leiterplattenhersteller ein Prototyp auf FR4\footnote{Flame Retarding Number 4; Flammhemmendes Substratmaterial auf Epoxydbasis} bestellt. An der Hochschule Landshut wurde dieser per Hand bestückt und mithilfe der Dampfphasenlötanlage fertig gelötet. Für erste Tests wurde ein handelsüblicher Mobiltelefon-Akku der Firma Huawei verwendet. Dieser war bereits geringfügig vorgeladen und besitzt einen internen NTC-Widerstand von 10k$\Omega$. Somit entsprach diese Testumgebung ziemlich dem realen Einsatzgebiet der Ladeschaltung. Über einen fliegenden Aufbau mithilfe einer Experimentierplatine wurde der Akku an die Schaltung angeschlossen. Diese wurde selbst an eine 5V Konstantspannungsquelle angeschlossen, welche während des Versuchs auch im Spannungspegel verändert wurde. Solange sich die anliegende Gleichspannung innerhalb des im Datenblatt vermerkten Intervalls bewegt, zeigen die Indikationsausgänge des ICs einwandfreien Betrieb auf. Die Funktion des Moduls konnte einwandfrei nachgewiesen werden und war stets reproduzierbar. Auch die kombinierbare Funktion mit dem Modul aus Kapitel \vref{chap:4.1.2} wurde erfolgreich getestet.
+Ein passendes Schaltungslayout (siehe Abbildung \vref{pic.BQ24100}) wurde mithilfe des Datenblatts \citep{BQ24100} und der Software Multisim\footnote{Software für den Schaltungsentwurf: NI Multisim \citep{MULTI}} erstellt. Nach der Adaption der Schaltung auf ein passendes Layout wurde über einen Leiterplattenhersteller ein Prototyp auf FR4\footnote{Flame Retarding Number 4; Flammhemmendes Substratmaterial auf Epoxydbasis} bestellt. An der Hochschule Landshut wurde dieser per Hand bestückt und mithilfe der Dampfphasenlötanlage fertig gelötet. Für erste Tests wurde ein handelsüblicher Mobiltelefon-Akku der Firma Huawei verwendet. Dieser war bereits geringfügig vorgeladen und besitzt einen internen NTC-Widerstand von 10k$\Omega$. Somit entsprach diese Testumgebung ziemlich dem realen Einsatzgebiet der Ladeschaltung. Über einen fliegenden Aufbau mithilfe einer Experimentierplatine wurde der Akku an die Schaltung angeschlossen. Diese wurde selbst an eine 5V Konstantspannungsquelle angeschlossen, welche während des Versuchs auch im Spannungspegel verändert wurde. Solange sich die anliegende Gleichspannung innerhalb des im Datenblatt vermerkten Intervalls bewegt, zeigen die Indikationsausgänge des ICs einwandfreien Betrieb auf. Die Funktion des Moduls konnte einwandfrei nachgewiesen werden und war stets reproduzierbar. Auch die kombinierbare Funktion mit dem Modul aus Kapitel \vref{chap:4.1.2} wurde erfolgreich getestet.
+\begin{figure}
+\centering
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/Charger_20120806}}
+\caption[Schaltbild des Lademoduls, BQ24100]{Schaltbild des Lademoduls mit BQ24100 Baustein}
+\label{pic.BQ24100}
+\end{figure}
 \section{Arbeitsschaltung}
 \subsection{CC2541}
 \label{CC2541}
-Um die Sensordaten verarbeiten zu können, wird eine Recheneinheit benötigt. Dabei sollte diese neben der Auswertung und Konvertierung auch eine Möglichkeit bereitstellen, Daten drahtlos zu verschicken. Bei der drahtlosen Datenübertragung war eine weitere Maßgabe, dass diese auf einem lizenzfreien ISM\footnote{Industrial Scientific Medical} seine Nachrichten verschickt. In Europa liegen diese auf den Frequenzen 433MHz, 868MHz und 2,4GHz (es gibt noch weitere ISM-Frequenzbereiche, diese sind allerdings die Gängigsten). Durch eine Vorauswahl von einem Mitarbeiter der Firma SRI\footnote{Sri Radio Systems GmbH \citep{SRI}} wurde der Mikrocontroller CC2541\footnote{Personal Area Networks - Bluetooth Low Energy Technology - CC2541 \citep{TICC2541}} für erste Layouttests bestimmt. Mithilfe des Controllerdatenblatts \citep{CC2541} wurde eine grundlegende Schaltung aufgebaut. Diese ist in Teilbereiche zu untergliedern:
+Um die Sensordaten verarbeiten zu können, wird eine Recheneinheit benötigt. Dabei sollte diese neben der Auswertung und Konvertierung auch eine Möglichkeit bereitstellen, Daten drahtlos zu verschicken. Bei der drahtlosen Datenübertragung war eine weitere Maßgabe, dass diese auf einem lizenzfreien ISM\footnote{Industrial Scientific Medical} seine Nachrichten verschickt. In Europa liegen diese auf den Frequenzen 433MHz, 868MHz und 2,4GHz (es gibt noch weitere ISM-Frequenzbereiche, diese sind allerdings die Gängigsten). Durch eine Vorauswahl von einem Mitarbeiter der Firma SRI\footnote{Sri Radio Systems GmbH \citep{SRI}} wurde der Mikrocontroller CC2541\footnote{Personal Area Networks - Bluetooth Low Energy Technology - CC2541 \citep{TICC2541}} für erste Layouttests bestimmt. Mithilfe des Controllerdatenblatts \citep{CC2541} wurde eine grundlegende Schaltung aufgebaut (siehe Abbildung \vref{pic.cc2541}). Diese ist in Teilbereiche zu untergliedern:
+\begin{figure}
+\centering
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/MedLast_20120502}}
+\caption[Schaltbild des Moduls, CC2541]{Schaltbild des Moduls für den CC2541 Baustein}
+\label{pic.cc2541}
+\end{figure}
 \begin{itemize}
 \item
 Eingangsschutzbeschaltung:  "`resetable Fuse"'\footnote{ein temperaturabhängiger Widerstand, zu deutsch: selbstrückstellende Sicherung}, Verpolschutz
@@ -1174,7 +1192,7 @@ Der CC2541 SoC vereint einen Mikrocontroller mit 8051-Architektur und eine Radio
 Der Balun samt Filter wurde von dem Referenzdesign übernommen. So konnte die Berechnung der Bauteilwerte umgangen werden. Die Leitungsdimensionierung wurde mit der Software TXLine\footnote{TX-Line: Transmission Line Calculator AWR Corporation \citep{TXLINE}} vorgenommen. Mit diesem Programm lässt sich ohne größere Kenntnis der Berechnungen die Dimension der Leiterbahnführung bestimmen. Abbildung \vref{TXLine} zeigt als Beispiel die Leiterbahnbreitenberechnung für diese Schaltung.
 \begin{figure}
 \centering
-\fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/TXLine.png}}
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/TXLine.png}}
 \caption{Programm TXLine; Berechnung der Leiterbahnbreite}
 \label{TXLine}
 \end{figure}
@@ -1184,7 +1202,7 @@ Als zusätzliches Element soll die Schaltung über einen akustischen Signalgeber
 Da sich im Laufe grundlegender Messungen einer anderen Abschlussarbeit herausgestellt hat, dass 2,4GHz äußerst ungünstig als Übertragungsfrequenz für Funkverbindungen in Körpernähe ist, wurde der Aufbau dieses Moduls wieder verworfen und ist somit obsolet. Die Funkverbindung wurde nicht getestet und eine Verbindung mit der Sensorik kam nicht zustande. Lediglich die Ansteuerung und das Layout des Piezotreiberbausteins  wird für zukünftige weiterführende Arbeiten als Grundlage wiederverwendet werden. Ansonsten konnten alle erstrebten Funktionen des Moduls (Abbildung \vref{pic.CC2541} erfolgreich im autarken Betrieb validiert werden.
 \begin{figure}
 \centering
-\fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/CC2541.JPG}}
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/CC2541.JPG}}
 \caption{Modul CC2541; Hergestellt an der Hochschule Landshut}
 \label{pic.CC2541}
 \end{figure}
@@ -1194,11 +1212,17 @@ Genauso wie der CC2541 in Kapitel \vref{CC2541} ist der CC430F6137 ein SoC. Nach
 Für den Taster wurde eine Ersatzschaltung aus einem einfachen Piezobuzzer und einer dazu parallelgeschalteten Zenerdiode (Zenerspannung bei 3,3V) aufgebaut (Siehe Abbildung \vref{pic.breakout}). Der durch einen Druck auf den Piezo erzeugte Spannungshub von mehreren Volt (bis zu 20V) und dessen geringe Ladungsausschüttung genügen zur Signalverarbeitung. Allerdings muss der SoC vor dem großen Spannungspegel wirksam geschützt werden. Darum befindet sich unmittelbar an dem Piezobuzzer gekoppelt eine Diode, welche den anfallenden Pegel auf maximal 3,3V herunterzieht. Da die freigesetzte Ladung des Piezokristalls nicht genügt, um die Diode im Arbeitsbereich zu betreiben, ist beim praktischen Versuchaufbau lediglich Spannungspegel von maximal ca. 2,1V zu erzielen. Dieser reicht aber immer noch aus um eine Flanke bzw. einen Pegel zur Interrupt-Generierung zu erzeugen. 
 \begin{figure}
 \centering
-\fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/breakout.JPG}}
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/breakout.JPG}}
 \caption[Modifizierte ez430-Chronos Uhr]{Modifizierte ez430-Chronos Uhr mit Piezo-Interrupt Taster und Erweiterungsstiftleisten}
 \label{pic.breakout}
 \end{figure}
-Weiter wurde nach dieser Modifizierung der Entwicklungsplattform auch wieder ein Aufbau in Modulbauweise angestrebt. Dieser hat grundsätzlich die selben Teilbereiche wie der Aufbau des CC2541 in Kapitel \vref{CC2541}. Folgende Unterschiede sind dennoch zu erwähnen:
+Weiter wurde nach dieser Modifizierung der Entwicklungsplattform auch wieder ein Aufbau in Modulbauweise angestrebt (sie Abbildung \vref{pic.cc430}). Dieser hat grundsätzlich die selben Teilbereiche wie der Aufbau des CC2541 in Kapitel \vref{CC2541}. Folgende Unterschiede sind dennoch zu erwähnen:
+\begin{figure}
+\centering
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/MedLast_20120820}}
+\caption[Schaltbild des Modulentwurfs, CC430F6137]{Schaltbild des Modulentwurfs für den CC430F6137 Baustein}
+\label{pic.cc430}
+\end{figure}
 \begin{itemize}
 \item
 Neben der üblichen Schnittstelle für den CC-Debugger wurde dieses mal auch eine Flachstecker-Verbindung mit aufgesetzt. Dies ermöglicht eine Programmierung über den Emulationsadapter der ez430-Chronos Entwicklungsplattform.
@@ -1217,7 +1241,7 @@ Die einzelnen Baugruppen sind nach demselben Schema wie dem des Modul des CC2541
 Die Verifizierung des Aufbaus (Abbildung \vref{pic.CC430}) konnte aufgrund eines Layoutfehlers am Quarz des CC2541 nicht durchgeführt werden. Es steht ein Redesign für das Schaltungslayout zum Zeitpunkt dieser Arbeit noch aus. 
 \begin{figure}
 \centering
-\fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/CC430.JPG}}
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/CC430.JPG}}
 \caption{Modul CC430F6137; Hergestellt an der Hochschule Landshut}
 \label{pic.CC430}
 \end{figure}
@@ -1270,7 +1294,7 @@ Als Mindestmaß wird im Datenblatt \citep[siehe S.23]{BQ51013} eine Güte von 77
 Mit drei, beziehungsweise zwei diskreten Kondensatoren wurden die Kapazitäten $C1$ und $C2$ aufgebaut. Dies wurde auf einer separaten, zwischen Spule und Keramikschaltung gelöteten Platine aufgebaut. Der fertige selbstentworfene Aufbau wurde mit einer geringen Last von $47 \Omega$ auf die von Texas Instruments bereitgestellte Schaltung\footnote{bq500110EVM-688, Sendeeinheit} gesetzt und getestet. Dieser ist auf Grafik \vref{self_rec} zu sehen. Die Reproduzierbarkeit wies noch Defizite auf, so konnte noch nicht sichergestellt werden, dass bei jedem Aufsetzen der Empfängerschaltung eine stabile Verbindung zustande kommt. Weiter können noch keine niederohmigen Lasten ($<50 \Omega$) an das Modul gekoppelt werden. Dies mag zum einen an der unzureichenden Anpassung des Schwingkreises liegen oder auch zum anderen an der Hochohmigkeit der gedruckten Leiterbahnen auf dem Keramiksubstrat. 
 \begin{figure}
 \centering
-\fbox{\includegraphics[width=1\textwidth-2\fboxsep-2\fboxrule]{Bilder/self_receiver.JPG}}
+\fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/self_receiver.JPG}}
 \caption{Receiver-Modul, hergestellt im Hybridlabor der Hochschule Landshut}
 \label{self_rec}
 \end{figure}
