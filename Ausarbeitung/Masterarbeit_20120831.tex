@@ -176,7 +176,7 @@ Fakultät Elektrotechnik und Wirtschaftsingenieurwesen\\
 Hiermit erkläre ich, das ich die Arbeit selbstständig verfasst, noch nicht anderweitig für Prüfungszwecke vorgelegt, keine anderen als die angegebenen Quellen oder Hilfsmittel benützt sowie wörtliche und sinngemäße Zitate als solche gekennzeichnet habe.
 \vspace*{2 cm}
 \\
-Landshut, den  29. Januar 2013 \qquad \qquad \qquad  \qquad \qquad (Stephan Jobstmann)
+Landshut, den  29. Januar 2013 \hspace{\fill} (Stephan Jobstmann)
 \chapter*{Zusammenfassung}
 Die vorliegende Arbeit ist Teil des Projekts MedLast an der Hochschule Landshut, Fakultät Elektrotechnik und Wirtschaftsingenieurwesen. Ziel des Projekts ist ein System zu entwickeln, das eine Überwachung des Genesungsprozesses für Fuß-, Hüft- und Knieverletzungen sowohl für den Patienten als auch für den behandelnden Arzt ermöglicht. Dabei wird im Bereich der Fußsohle ein Elektronikmodul eingesetzt, dass Schrittzahl und Belastung auswertet. Diese Daten werden in einem Speicher aufgezeichnet und in Echtzeit für den Patienten verständlich aufbereitet und an eine Anzeige am Handgelenk des Patienten weitergeleitet. So hat der Genesende stets einen Überblick über Belastung seines Beines.\\
 Ziel dieser Arbeit ist es, ein funktionierendes Schaltungskonzept für die Elektronik des Fußmoduls zu entwickeln. Dies schließt folgende Schaltungsteile ein:
@@ -205,20 +205,20 @@ ein Akkusystem zur Energiebereitstellung
 \newpage
 Es wurden bei der Bearbeitung der Thematik folgende Ergebnisse erzielt:
 \begin{itemize}
-\item
-Während der Voruntersuchung wurde empirisch bewiesen, dass bei hinreichenden Störfaktoren während der Messung und bei kleiner Auslenkung unter 200 Newton eine kapazitive Messmethode mit den bisher bereitgestellten Piezoelementen des Typs Sonox 502 der Firma Ceramtec unzureichende Ergebnisse liefern. 
-\item
-Energy-Harvesting wurde im Bereich der thermoelektrischen Wandlung getestet. Allerdings hat sich beim praktischen Aufbau und bei der kommerziellen Betrachtung die drahtlose Energieübertragung als Energiezuführung für das System durchgesetzt. Ein eigener Aufbau eines Empfängers in Dickschichttechnik wurde bereits erfolgreich in Betrieb genommen. 
-\item
+\item%1
+Durch die parallele Bearbeitung mehrerer Teilgebiete des Projekts hat sich ein geringfügiger Mehraufwand im Schaltungs-Entwurf ergeben. So wurde zunächst eine Schaltung für ein System-on-a-Chip entwickelt welches auf dem 2,4 GHz Band sendet. Dieses ist allerdings ungünstig für den körpernahen Einsatz. Darum wurde ein zweites Layout für einen Mikrocontroller mit integrierter Sendeeinheit entwickelt. Dieser sendet auf einer besser geeigneten Frequenz von 868MHz. Gleichzeitig dazu wurde ein bereits fertiges Evaluations-Modul soweit modifiziert, um die Sensorik darauf anzubinden. 
+\item%2
+Die Sensorik wurde samt Auswertungsbaustein erfolgreich an mehreren eingebetteten Systemen getestet. Darunter war auch das oben genannte modifizierte Evaluations-Modul das auf der Frequenz von 868MHz sendet. 
+\item%3
+Um eine ausreichende Versorgung des eingebetteten Systems sicher zu stellen, wurde ein Lithium-Ionen Akku samt Ladesystem aufgebaut und erfolgreich getestet. Dabei können konventionelle Akkus, wie etwa die für Mobiltelefone, benutzt werden.
+\item%4
 Bei einem Testaufbau wurde ein Piezo-Signalgeber (Buzzer) als Schalter zweckentfremdet und mit geringer Zusatzbeschaltung in Betrieb genommen. Mit diesem kann der jeweils angeschlossene Mikroprozessor über externe Interrupts angesteuert werden.
-\item
+\item%5
 Es wurde mithilfe einfacher diskreter Bauteile, wie einem P-Kanal MOSFET und einer selbst-zurückstellenden Sicherung, eine ausreichende Schutzbeschaltung aufgebaut und getestet. Da bei den Mikroprozessoren der Stromverbrauch unabhängig von der angelegten Spannung gleich bleibt, wurde mit einem Abwärtswandler eine Leistungsoptimierung vorgenommen.
 \item
-Durch die parallele Bearbeitung mehrerer Teilgebiete des Projekts hat sich ein geringfügiger Mehraufwand im Schaltungs-Entwurf ergeben. So wurde zunächst eine Schaltung für ein System-on-a-Chip entwickelt welches auf dem 2,4 GHz Band sendet. Dieses ist allerdings ungünstig für den körpernahen Einsatz. Darum wurde ein zweites Layout für einen Mikrocontroller mit integrierter Sendeeinheit entwickelt. Dieser sendet auf einer besser geeigneten Frequenz von 868MHz. Gleichzeitig dazu wurde ein bereits fertiges Evaluations-Modul soweit modifiziert, um die Sensorik darauf anzubinden. 
+Während der Voruntersuchung wurde empirisch nachgewiesen, dass bei kleiner Auslenkung unter 200 Newton eine kapazitive Messmethode mit den bisher bereitgestellten Piezoelementen des Typs Sonox 502 der Firma Ceramtec unzureichende Ergebnisse liefern. 
 \item
-Die Sensorik wurde samt Auswertungsbaustein erfolgreich an mehreren eingebetteten Systemen getestet. Darunter war auch das oben genannte modifizierte Evaluations-Modul das auf der Frequenz von 868MHz sendet. 
-\item
-Um eine ausreichende Versorgung des eingebetteten Systems sicher zu stellen, wurde ein Lithium-Ionen Akku samt Ladesystem aufgebaut und erfolgreich getestet. Dabei können konventionelle Akkus, wie etwa die für Mobiltelefone, benutzt werden.
+Energy-Harvesting wurde im Bereich der thermoelektrischen Wandlung getestet. Allerdings hat sich beim praktischen Aufbau und bei der kommerziellen Betrachtung die drahtlose Energieübertragung als Energiezuführung für das System durchgesetzt. Ein eigener Aufbau eines Empfängers in Dickschichttechnik wurde bereits erfolgreich in Betrieb genommen. 
 
 \end{itemize}
 %\maketitle
@@ -228,8 +228,18 @@ Mein Dank gilt Prof. Harasim und den Mitarbeitern des Hybridlabors der Hochschul
 \\
 \\
 Weiter möchte ich mich bei meiner Familie für die Unterstützung während meiner Studienzeit und bei meinen Freunden für die stete Bestätigung meiner Berufung bedanken.
-\chapter*{ } %%Widmung
+%\dedication{Diese Arbeit ist all den starken Frauen gewidmet,\\die immer hinter mir standen.}
+%\begin{dedication}
+%[Diese Arbeit ist all den starken Frauen gewidmet,\\die immer hinter mir standen.]
+%\end{dedication}
 
+\chapter*{ } %%Widmung
+%\vspace{\fill}
+\begin{center}
+%\emph{Hier deine dedication}
+\textit{Diese Arbeit ist all den starken Frauen gewidmet,}\\
+\textit{die immer hinter mir standen.}
+\end{center}
 \tableofcontents
 \lstset{language =C}
 \lstset{basicstyle =\ttfamily \color{black}\small,
@@ -259,29 +269,29 @@ Die fortschreitende Entwicklung in der Medizintechnik bietet auch Hilfestellung 
 
 %%Messsystem auf gekapseltes Eingebettetes beziehen
 
+%1
+Zur Messung der Gewichtskraft wurde auf einen weitverbreiteten Standard mit Dehnungsmessstreifen zurückgegriffen. Diese finden beispielsweise bei Körperwaagen, Achslastsensoren und Drehmoment-Aufnehmern Einsatz. Somit gilt diese Gattung der Kraftaufnehmern als etabliert.\\
+\\%2
+Bisher gibt es kein System, das aktiv die laufende Belastung bei Beinfrakturen, Knöchel-, Knie- und Hüftverletzungen überwacht. Es werden lediglich nur Direktiven durch den behandelnden Arzt vorgegeben. Diese können allerdings weder vom Arzt überprüft noch vom Patienten einwandfrei nachverfolgt werden. Ein gekapseltes eingebettetes Messsystem zur Erfassung der Schrittzahl und der Belastungsdaten ist noch nicht bekannt.\\
+\\
 In der Sparte der drahtlosen Energieübertragung konnten bei dem Qi-Standard größere Absatzzahlen erreicht werden. Insbesondere die Vertretung bei namhaften Herstellern wie Nokia \citep{NOKIA} oder Energizer\citep{ENERGIZER}, welcher eine breite Palette an Lösungen für Ladestationen hat. Es sind zwar andere Standards im Kommen, aber diese befinden sich noch im Entwicklungsstadium.\\
 \\
-Bei der Akkutechnik kam es in letzten Jahren zu einer weit übergreifenden Verbreitung der Lithium-Ionen Technologie. Es gab bei diesem Typ noch eine weitere sich weit verbreitende Entwicklung, den Lithium-Polymer Akku. Dabei ist die Anode nicht mehr auf einer Flüssigkeit basierend aufgebaut, sondern auf vielen kleinen Schichten. Durch diese Umgestaltung sind verschiedenste neue Bauformen möglich. Bei dieser Arbeit wird aber weiterhin an der Lithium-Ionen Technologie festgehalten.\\
-\\
-Zur Messung der Gewichtskraft wurde auf einen weitverbreiteten Standard mit Dehnungsmessstreifen zurückgegriffen. Diese finden beispielsweise bei Körperwaagen, Achslastsensoren und Drehmoment-Aufnehmern Einsatz. Somit gilt diese Gattung der Kraftaufnehmern als etabliert.\\
-\\
-Bisher gibt es kein System, das aktiv die laufende Belastung bei Beinfrakturen, Knöchel-, Knie- und Hüftverletzungen überwacht. Es werden lediglich nur Direktiven durch den behandelnden Arzt vorgegeben. Diese können allerdings weder vom Arzt überprüft noch vom Patienten einwandfrei nachverfolgt werden.
+Bei der Akkutechnik kam es in letzten Jahren zu einer übergreifenden Verbreitung der Lithium-Ionen Technologie. Es gab bei diesem Typ noch eine weitere sich verbreitende Entwicklung, den Lithium-Polymer Akku. Dabei ist die Anode nicht mehr auf einer Flüssigkeit basierend aufgebaut, sondern auf vielen kleinen Schichten. Durch diese Umgestaltung sind verschiedenste neue Bauformen möglich. Bei dieser Arbeit wird aber weiterhin an der Lithium-Ionen Technologie festgehalten.\\
 
 
 \section{Aufgabenstellung}
 Als wesentliche Bestandteile der Aufgabenstellung sind zuerst die zu bearbeitenden Teilgebiete zu nennen. Hierzu gehören:
 \begin{itemize}
 \item
+Sensorik-Auswertung
+\item
 Energiezuführung
 \item
 Energiebereitstellung
-\item
-Sensorik-Auswertung
 \end{itemize}
+In der Sensorik-Auswertung ist in erster Linie der zu verwendende Sensor bestimmend. Da dieser sich durch den steten Optimierungsverlauf auch im Verhalten sowie in den zu erwartenden Messgrößen ändern kann, sollte diesbezüglich ein Freiheitsgrad in der Implementierung vorhanden sein. Durch vorausgehende Messungen des Authors werden piezoresistive Druckaufnehmer verwendet. Dieser muss einer Belastung von 150kg Körpergewicht im Lastwechsel standhalten. Weiter soll im zentralen Mikrocontroller des Moduls eine passende Auslesesoftware erstellt werden. Diese muss die gemessenen Daten aufbereiten und in eine passende SI-Einheit wie Newton [N] oder Kilogramm [kg] zurück rechnen.\\
 Bei der Energiezuführung sollen dahingehend Überlegungen angestrebt werden, auf welche Art und Weise das komplette Modul mit Spannung versorgt werden kann. Dabei sollen autarke wie auch fremd-gespeiste Quellen betrachtet werden. Dabei werden Energie-Harvesting Systeme und auch Konzepte für die drahtlose Energieübertragung analysiert. \\
-Die Energiebereitstellung bezieht sich auf die Speicherung im oder am Modul selbst. Hierbei ist die Abstimmung zwischen Bedarf und Bereitstellung ausschlaggebend für die Wahl der zu verwendenden Technologie. Hier werden Superkondensatoren und Lithium-Ionen-Akkus gegenübergestellt und bewertet. \\
-
-In der Sensorik-Auswertung ist in erster Linie der zu verwendende Sensor bestimmend. Da dieser sich durch den steten Optimierungsverlauf auch im Verhalten sowie in den zu erwartenden Messgrößen ändern kann, sollte diesbezüglich ein Freiheitsgrad in der Implementierung vorhanden sein. Durch vorausgehende Messungen des Authors werden piezoresistive Druckaufnehmer verwendet. Dieser muss einer Belastung von 150kg Körpergewicht im Lastwechsel standhalten. Weiter soll im zentralen Mikrocontroller des Moduls eine passende Auslesesoftware erstellt werden. Diese muss die gemessenen Daten aufbereiten und in eine passende SI-Einheit wie Newton [N] oder Kilogramm [kg] zurück rechnen. Als kleinere Additive sind folgende elektronische Komponenten noch vorgesehen: 
+Die Energiebereitstellung bezieht sich auf die Speicherung im oder am Modul selbst. Hierbei ist die Abstimmung zwischen Bedarf und Bereitstellung ausschlaggebend für die Wahl der zu verwendenden Technologie. Hier werden Superkondensatoren und Lithium-Ionen-Akkus gegenübergestellt und bewertet. Als kleinere Additive sind folgende elektronische Komponenten noch vorgesehen: 
 \begin{itemize}
 \item
 Piezo-Summer samt Treiberschaltung
@@ -290,6 +300,7 @@ Schutzbeschaltung
 \item
 Temperaturaufnehmer
 \end{itemize}
+Somit ergibt sich ein kompletter Aufbau bei dem zuerst ein System zur Energiezuführung, wie thermisches Energy-Harvesting oder drahtlose Energieversorgung, angeführt wird. Eine Zwischenspeicherung der elektrischen Energie, in Form von entweder Superkondensatoren oder Lithium-Akkumulatoren, wird schaltungstechnisch gleich danach eingegliedert. Nach einer Schutzbeschaltung wird eine Anpassung des Spannungspegels durch einen Abwärtswandler vorgenommen bevor es im Stromlaufplan weiter zu der Arbeitsschaltung geht. Diese besteht aus einem Mikrocontroller,in dem ein Funkmodul implementiert ist. An diesem wird ein A/D-Wandler angefügt, der die Sensor-Auswertung übernimmt. Diese Reihe an Baugruppen gilt es zu entwerfen, aufzubauen und deren Funktion zu verifizieren.
 \section{Vorgehensweise}
 Grundsätzlich lässt sich die Herangehensweise beim Bearbeiten der einzelnen Teilbereiche in vier Schritte einteilen:
 \begin{enumerate}
@@ -300,7 +311,7 @@ Als nächsten Schritt folgt die Anpassung an vorhandene Schaltungselemente. Hier
 \item
 Anschließend wird ein Schaltplan erstellt. Dies erfolgt meist anhand der Informationen aus den entsprechenden Datenblättern oder der gängigen Schaltungstechnik. Dieser wird dann in ein passendes Layout umgewandelt. 
 \item
-Zueltzt wird eine Platine des Prototyps bestellt, bestückt und auf Funktion geprüft. 
+Zuletzt wird eine Platine des Prototyps bestellt, bestückt und auf Funktion geprüft. 
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Grundlagen}
@@ -309,9 +320,8 @@ Bei dieser Arbeit werden Dehnungsmessstreifen\footnote{kurz: DMS} zum Detektiere
 \begin{equation}
 R = \frac{l}{q}\cdot \rho \label{eq.R}
 \end{equation}
-%Literatur ordentlicher auf allgemein referenzieren
-Die relative Widerstandsänderung kann wie folgt mit der Fehlerabschätzung nach \citep[S.234 ff.]{Schruefer2012} bestimmt werden:\\
-%\allowdisplaybreaks
+Die folgenden Rechnungen und Erkenntnisse beziehen sich aus einer Passage des Lehrbuchs \citep[S.234 ff.]{Schruefer2012} .
+Die relative Widerstandsänderung kann mit der Fehlerabschätzung bestimmt werden:\\
 \begin{equation}
 \frac{\Delta R} {R} =\frac{\Delta l} {l}-\frac{\Delta q} {q}+\frac{\Delta \rho} {\rho}
 \end{equation}\\
@@ -464,7 +474,7 @@ S_3 & =  s_{33}^{\textrm{E}} \cdot T_3 + \textrm{d}_{33} \cdot E_3 \label{formel
       \begin{center}
        \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/Piezo.png}}
       \end{center}
-\caption[Longitudinaler Piezoeffekt; Kristallstruktur und Ladungsverschiebung]{Longitudinaler Piezoeffekt; Aufbau der Kristallstruktur und Ladungsverschiebung}
+\caption[Longitudinaler Piezoeffekt; Kristallstruktur und Ladungsverschiebung]{Longitudinaler Piezoeffekt; Es ist der Aufbau der Kristallstruktur und die Ladungsverschiebung eines Piezoelements zu sehen. Bei Krafteinwirkung verschieben sich die Ladungen im Kristall und erzeugen eine Spannung an den Außenflächen.}
 \label{piezo}
 \end{figure}
 \subsection{Thermoelektrisch}
@@ -551,7 +561,7 @@ $U_{diff}$ in mV&$C_{diff}$ in $nF$&$C_{Piezo}$ in nF\\
       \begin{center}
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_1_1}}
       \end{center}
-	\caption[Messung 1; Sonox 502 Kapazitives Verhalten]{Messung 1; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung}
+	\caption[Messung 1; Sonox 502 Kapazitives Verhalten]{Messung 1; Veränderung des kapazitiven Verhaltens des Piezoelements Sonox 502 der Firma Ceramtec über eine steigende mechanische Belastung. Messmittel: ISO-TECH LCR-821, 0,5V Erregung bei 500Hz Messfrequenz\\\\\emph{Quelle: eigene Darstellung}}
 \label{fig:2.1}
 \end{figure}
 
@@ -618,7 +628,7 @@ Uhrzeit&$U_{diff}$ in mV\\
       \begin{center}
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_1_2}}
       \end{center}
-\caption[Messung 2; Sonox 502 Statisches Verhalten]{Messung 2; Sonox 502 Statisches Verhalten über Zeit}
+\caption[Messung 2a; Sonox 502 Statisches Verhalten]{Messung 2a, Vergleichsmessung zu Messung 2; Veränderung des kapazitiven Verhaltens des Piezoelements Sonox 502 der Firma Ceramtec und der anliegenden Kraft bei gleichbleibender Einstellung der Spannvorrichtung, gemessen über die Zeit. Messmittel: ISO-TECH LCR-821, 0,5V Erregung bei 500Hz Messfrequenz\\\\\emph{Quelle: eigene Darstellung}}
 \label{fig:2.2}
 \end{figure}
 
@@ -626,7 +636,7 @@ Uhrzeit&$U_{diff}$ in mV\\
       \begin{center}
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle_stat2}}
       \end{center}
-\caption[Messung 2a;Statisches Verhalten des stabileren Schraubstocks]{Messung 2a; Statisches Verhalten über Zeit, stabilerer Schraubstock}
+\caption[Messung 2b;Statisches Verhalten des stabileren Schraubstocks]{Messung 2a; Erfassung der anliegenden Kraft mit einem stabileren Schraubstock bei gleichbleibender Einstellung der Spannvorrichtung, gemessen über die Zeit. Messmittel: ISO-TECH LCR-821, 0,5V Erregung bei 500Hz Messfrequenz\\\\\emph{Quelle: eigene Darstellung}}
 \label{fig:2.2a}
 \end{figure}
 %%%%%%%%%%%%%%Weitere Messung mithilfe des Maschinenschraubstocks%%%%%%%%%%%%%
@@ -698,7 +708,7 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
       \begin{center}
   \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_1_3}}
       \end{center}
-\caption[Messung 3 und 4; Sonox 502 unter Einsatz besserer Spannvorrichtung]{Messung 3 und 4; Sonox 502 Kapazitives Verhalten über steigende mechanische Belastung unter Einsatz einer stabileren Spannvorrichtung}
+\caption[Messung 3 und 4; Sonox 502 unter Einsatz besserer Spannvorrichtung]{Messung 3 und 4; Kapazitives Verhalten des Piezoelements Sonox 502 der Firma Ceramtec über eine steigende mechanische Belastung unter Einsatz einer stabileren Spannvorrichtung. Messmittel: ISO-TECH LCR-821, 0,5V Erregung bei 500Hz Messfrequenz\\\\\emph{Quelle: eigene Darstellung}}
 \label{fig:2.3}
 \end{figure}
 \newpage
@@ -737,7 +747,7 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF\\
       \begin{center}
     \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_1_4}}
       \end{center}
-\caption{Messung 5; 1kHz Messfrequenz}
+\caption[Messung 5; 1kHz Messfrequenz]{Messung 5; Kapazitives Verhalten des Piezoelements Sonox 502 der Firma Ceramtec über eine steigende mechanische Belastung unter Einsatz einer anderen Messfrequenz (1kHz). Messmittel: ISO-TECH LCR-821, 0,5V Erregung bei 1kHz Messfrequenz\\\\\emph{Quelle: eigene Darstellung}}
 \label{fig:2.4}
 \end{figure}
 
@@ -785,7 +795,7 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF&$R_{Parallel}$ in k$\Omega$\\
       \begin{center}
       \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_1}}
       \end{center}
-\caption{Messung 6; Einführende Messung Piezostack}
+\caption[Messung 6; Einführende Messung Piezostack]{Messung 6; Kapazitives Verhalten des Piezostacks der Firma Elliptec über eine steigende mechanische Belastung. Messmittel: ISO-TECH LCR-821, 1V Erregung bei 1kHz Messfrequenz\\\\\emph{Quelle: eigene Darstellung}}
 \label{fig:2.6}
 \end{figure}
 
@@ -835,7 +845,8 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
       \begin{center}
      \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_2}}
       \end{center}
-\caption{Messung 7; mit Entladung, ohne Setz-Zeit; Piezostack; Kapazität}
+\caption[Messung 7; mit Entladung, ohne Setz-Zeit; Piezostack; Kapazität]{Messung 7; Kapazitives Verhalten des Piezostacks der Firma Elliptec über eine steigende mechanische Belastung, mit andauernden Kurzschluss zwischen den sofort abgelesenen Messzeitpunkten. Messmittel: ISO-TECH LCR-821, 1V Erregung bei 1kHz Messfrequenz\\\\\emph{Quelle: eigene Darstellung}}
+
 \label{fig:2.7}
 \end{figure}
 
@@ -858,7 +869,7 @@ $U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$&$U_{diff}$ in mV&$R_{Parallel}$ in 
 \hline
 \endfoot
 \hline \hline
-\caption[Messung 8; ohne Setz-Zeit; Parallelwiderstand]{Messung 8; Piezostack; mit Entladung, ohne Setz-Zeit; Parallelwiderstand}\\
+\caption[Messung 8; ohne Setz-Zeit; Parallelwiderstand]{Messung 8; Piezostack; mit Entladung, ohne Setz-Zeit; Parallelwiderstand\\\\\emph{Quelle: eigene Darstellung}}
 \endlastfoot
 \hline
 \label{tab:2.8}%
@@ -879,7 +890,7 @@ $U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$&$U_{diff}$ in mV&$R_{Parallel}$ in 
       \begin{center}
        \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_3}}
       \end{center}
-\caption[Messung 8; ohne Setz-Zeit; Parallelwiderstand]{Messung 8; Piezostack; mit Entladung, ohne Setz-Zeit; Parallelwiderstand}
+\caption[Messung 8; ohne Setz-Zeit; Parallelwiderstand]{Messung 8; Resistives Verhalten des Piezostacks der Firma Elliptec über eine steigende mechanische Belastung, mit andauernden Kurzschluss zwischen den sofort abgelesenen Messzeitpunkten. Messmittel: ISO-TECH LCR-821, 1V Erregung bei 1kHz Messfrequenz\\\\\emph{Quelle: eigene Darstellung}}
 \label{fig:2.8}
 \end{figure}
 
@@ -928,7 +939,7 @@ $U_{diff}$ in mV&$C_{Piezo}$ in nF&$U_{diff}$ in mV&$C_{Piezo}$ in nF\\
       \begin{center}
         \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_4}}
       \end{center}
-\caption[Messung 9; 2 Minuten Setz-Zeit; Piezostack; Kapazität]{Messung 9; mit Entladung, 2 Minuten Setz-Zeit; Piezostack; Kapazität}
+\caption[Messung 9; 2 Minuten Setz-Zeit; Piezostack; Kapazität]{Messung 9; Kapazitives Verhalten des Piezostacks der Firma Elliptec über eine steigende mechanische Belastung, mit andauernden Kurzschluss zwischen den Messzeitpunkten. Diese wurden nach 2 Minuten Setz-Zeit abgelesen. Messmittel: ISO-TECH LCR-821, 1V Erregung bei 1kHz Messfrequenz\\\\\emph{Quelle: eigene Darstellung}}
 \label{fig:2.9}
 \end{figure}
 \setlongtables
@@ -971,7 +982,8 @@ $U_{diff}$ in mV&$R_{Parallel}$ in k$\Omega$&$U_{diff}$ in mV&$R_{Parallel}$ in 
       \begin{center}
        \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{tabelle2_2_5}}
       \end{center}
-\caption[Messung 10; 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand]{Messung 10; mit Entladung, 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand}
+\caption[Messung 10; 2 Minuten Setz-Zeit; Piezostack; Parallelwiderstand]{Messung 10;  Resistives Verhalten des Piezostacks der Firma Elliptec über eine steigende mechanische Belastung, mit andauernden Kurzschluss zwischen den Messzeitpunkten. Diese wurden nach 2 Minuten Setz-Zeit abgelesen. Messmittel: ISO-TECH LCR-821, 1V Erregung bei 1kHz Messfrequenz\\\\\emph{Quelle: eigene Darstellung}}
+
 \label{fig:2.10}
 \end{figure}
 %
@@ -985,13 +997,14 @@ Ein erster Schaltungsentwurf (siehe Abbildung \vref{sch.ad1232}) wurde mithilfe 
 \begin{figure}
 \centering
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/Weight_Bridge}}
-\caption[AD1232 A/D-Wandler Schaltbild]{AD1232 A/D-Wandler Modul Schaltbild, angefertigt mit Multisim v12}
+
+\caption[AD1232 A/D-Wandler Schaltbild]{Zentrales Element der Modul-Schaltung ist der AD1232 A/D-Wandler. Das Schaltbild wurde mit der Software Multisim v12 angefertigt.\\\\\emph{Quelle: eigene Darstellung}}
 \label{sch.ad1232}
 \end{figure}
 \begin{figure}
 \centering
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/ad1232.JPG}}
-\caption[AD1232 A/D-Wandler Modul mit Drucksensor]{AD1232 A/D-Wandler Modul mit Drucksensor auf Keramik-Stahl Verbundmaterial}
+\caption[AD1232 A/D-Wandler Modul mit Drucksensor]{Umsetzung in ein fertiges Design des AD1232 A/D-Wandler Moduls mit Drucksensor auf Keramik-Stahl Verbundmaterial, das im Hybridlabor der Hochschule Landshut entwickelt wurde.}
 \label{pic.ad1232}
 \end{figure}
 \begin{itemize}
@@ -1145,7 +1158,7 @@ Ein passendes Schaltungslayout (siehe Abbildung \vref{pic.BQ24100}) wurde mithil
 \begin{figure}
 \centering
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/Charger_20120806}}
-\caption[Schaltbild des Lademoduls, BQ24100]{Schaltbild des Lademoduls mit BQ24100 Baustein}
+\caption[Schaltbild des Lademoduls, BQ24100]{Schaltbild des Lademoduls mit BQ24100 Baustein\\\\\emph{Quelle: eigene Darstellung}}
 \label{pic.BQ24100}
 \end{figure}
 \section{Arbeitsschaltung}
@@ -1155,7 +1168,7 @@ Um die Sensordaten verarbeiten zu können, wird eine Recheneinheit benötigt. Da
 \begin{figure}
 \centering
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/MedLast_20120502}}
-\caption[Schaltbild des Moduls, CC2541]{Schaltbild des Moduls für den CC2541 Baustein}
+\caption[Schaltbild des Moduls, CC2541]{Schaltbild des Moduls für den CC2541 Baustein\\\\\emph{Quelle: eigene Darstellung}}
 \label{pic.cc2541}
 \end{figure}
 \begin{itemize}
@@ -1213,7 +1226,7 @@ Da sich im Laufe grundlegender Messungen einer anderen Abschlussarbeit herausges
 \begin{figure}
 \centering
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/CC2541.JPG}}
-\caption{Modul CC2541; Hergestellt an der Hochschule Landshut}
+\caption[Modul CC2541; Hergestellt an der Hochschule Landshut]{Layout des Moduls mit zentralen CC2541-Baustein. Rechts oben ist auf der Platine der Piezotreiber mit zwei Zuleitungen zu erkennen.  Hergestellt wurde es an der Hochschule Landshut}
 \label{pic.CC2541}
 \end{figure}
 \subsection{CC430F6137}
@@ -1230,7 +1243,7 @@ Weiter wurde nach dieser Modifizierung der Entwicklungsplattform auch wieder ein
 \begin{figure}
 \centering
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/MedLast_20120820}}
-\caption[Schaltbild des Modulentwurfs, CC430F6137]{Schaltbild des Modulentwurfs für den CC430F6137 Baustein}
+\caption[Schaltbild des Modulentwurfs, CC430F6137]{Schaltbild des Modulentwurfs für den CC430F6137 Baustein\\\\\emph{Quelle: eigene Darstellung}}
 \label{pic.cc430}
 \end{figure}
 \begin{itemize}
@@ -1239,7 +1252,7 @@ Neben der üblichen Schnittstelle für den CC-Debugger wurde dieses mal auch ein
 \item
 Es wurden dieses Mal gezielt Portpins für die SPI-Verbindung und für den Interrupt-Eingang herausgeführt. Zusätzlich dazu wurde der komplette 8-Bit breite Port 2 auf einer Pfostenleiste zugänglich gemacht.
 \item
-Es ist kein Low-Power Quarz (32,768kHz) implementiert.
+Es ist kein Low-Power Quarz (32,768kHz) implementiert. Stattdessen ist ein RC-Schwingkreis im Controller bereits integriert.
 \item
 Es wurde auf die Option einer diskret angebrachten Antenne verzichtet. Stattdessen befindet sich zum Testen eine Kupplung für Antennen mit koaxialem Anschluss.
 \item
@@ -1248,11 +1261,11 @@ Der Piezosignalgeber wurde für den ersten Prototypen weggelassen. Bei erfolgrei
 der Abwärtswandler wurde aufgrund der mangelnden Empfehlung durch TI nicht integriert. Dieser soll aber beim nächsten Layout ebenfalls als Option bestückbar sein.
 \end{itemize}
 Die einzelnen Baugruppen sind nach demselben Schema wie dem des Modul des CC2541 aufgebaut. So wurde der Balun und dessen Dimensionierung wieder aus dem Referenz-Design von TI übernommen und die Leiterbahnbreite mit TXLine berechnet. 
-Die Verifizierung des Aufbaus (Abbildung \vref{pic.CC430}) konnte aufgrund eines Layoutfehlers am Quarz des CC2541 nicht durchgeführt werden. Es steht ein Redesign für das Schaltungslayout zum Zeitpunkt dieser Arbeit noch aus. 
+Die Verifizierung des Aufbaus (Abbildung \vref{pic.CC430}) konnte aufgrund eines Layoutfehlers am Quarz des CC430F6137 nicht durchgeführt werden. Es steht ein Redesign für das Schaltungslayout zum Zeitpunkt dieser Arbeit noch aus. 
 \begin{figure}
 \centering
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/CC430.JPG}}
-\caption{Modul CC430F6137; Hergestellt an der Hochschule Landshut}
+\caption{Eine Modulplatine mit zentralen CC430F6137-Baustein auf FR4-Substrat; Hergestellt an der Hochschule Landshut}
 \label{pic.CC430}
 \end{figure}
 
@@ -1272,17 +1285,17 @@ Receiver, Empfänger: bq51013EVM-725 Evaluation Module (Abbildung \ref{BQ_rec})
 \begin{figure}
 \centering
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/BQ_Tesla_transmitter.JPG}}
-\caption{Transmitter-Modul des Evaluation-Packs}
+\caption{Transmitter-Modul bq500110EVM-688 des Evaluation-Packs von Texas Instruments}
 \label{BQ_transm}
 \end{figure}
 \begin{figure}
 \centering
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/BQ_Tesla_receiver.JPG}}
-\caption{Receiver-Modul des Evaluation-Packs}
+\caption{Receiver-Modul bq51013EVM-725 des Evaluation-Packs von Texas Instruments}
 \label{BQ_rec}
 \end{figure}
 Dieses lässt sich mithilfe einer Gleichspannungsquelle, eingestellt auf eine Speisung von 19V und einer Stromgrenze über 0,5A sehr einfach in Betrieb nehmen. Am Empfängermodul stellt sich bei passgenauer Platzierung der beiden Übertragerspulen des magnetischen Kopplungssystems eine Tätigkeit der Indikationsanzeige ein. Ein Permanentmagnet hilft beim Zentrieren der beiden Luftspulen. Laut Datenblatt \citep[vgl. S.2]{bq51013EVM-725} liefert die Beispielschaltung 5V bei 1A. Zum Testen der Kompatibilität wurde die Schaltung mit der in Kapitel \ref{chap:4.2.2} vorgestellten Ladeeinheit gekoppelt. Das erfolgreiche Zusammenarbeiten konnte reproduzierbar getestet werden.\\
-Für das Gesamtkonzept des Fußmoduls vom Projekt "`MedLast"' ist die Empfangseinheit vorrangig. Um eine passendes Zusammenspiel von proprietärer Sendeeinheit und selbstentworfener Empfangsschaltung sicherzustellen, wurde der gleiche Baustein (\textit{BQ51013}) verwendet. Allerdings wurde beim Schaltungsaufbau darauf geachtet, dass der Bauteilumfang sich auf ein Minimum reduziert. So wurde die Zusatzbeschaltung für eine eventuelle alternative bedrahtete Versorgung weggelassen. Bei dem BQ51013 handelt es sich um ein IC, welches nur in BGA\footnote{Ball Grid Array} Gehäusegröße erhältlich ist. Da dies wiederum für das Layoutdesign bedeutete, dass mit Kontaktflächengrößen von $250\mu$m gearbeitet werden muss, ergab sich eine weitere Problematik. Die typischen Leiterplattenhersteller für Prototypen und Kleinserien haben eine Vorgabe für den Mindestdurchmesser von Durchkontaktierungen mit $300\mu$m. D.h. über die üblichen Wege war es nicht ohne Mehraufwand möglich, einen Platine zu beschaffen. Da ein Durchmesser der Durchkontaktierungen von $150\mu$m als maximale Maßgabe anzusehen war, wurde für den Prototypenbau LTCC\footnote{Low Temperature Cofire Ceramic} als Schaltungsträger ausgewählt. Diese können im Hybridlabor in Dickschichttechnik selbstständig aufgebaut werden. Weiter können durch das Laserstruktur-Gerät \textit{ProtoLaser U} die Keramiksubstrate auf $15\mu$m genau geritzt und gebohrt werden.  Da LTCC im einlagigen Aufbau zu fragil wäre, wurden noch Überlegungen angestrebt um die mechanische Widerstandsfähigkeit zu erhöhen. Ein mehrlagiger Aufbau barg eine zu große Gefahr im Bezug auf die erhöhte Wahrscheinlichkeit einer unterbrochenen Durchkontaktierung. Diese steigt exponentiell mit der Anzahl der verwendeten Lagen LTCC. Durch einen Hinweis von Herrn Leschik wurde bei einem zweiten Versuch die LTCC-Schicht, welche den beidseitigen Schaltungsdruck aufgetragen hatte, auf eine $Al_2O_3$-Keramik auflaminiert. Diese dient als mechanisch-stabiler Träger. Nach einem ersten Fehlversuch konnten somit auf einem Substrat mit Mehrfach-Nutzen mehrere, passiv-elektrisch einwandfreie Schaltungen aufgebaut werden. Nach deren Bestückung per Hand und Lötung mit der Dampfphasenanlage der Hochschule Landshut wurde diese mit der Einkopplungsspule verbunden. Eine anfängliche Überlegung, diese ebenfalls auf Dickschichttechnik basierend auf LTCC zu der Schaltung zu bringen, wurde aufgrund der nicht einzuhaltenden Kriterien an die Güte der Induktivität wieder verworfen. Darum fiel die Entscheidung auf eine Empfänger-Spule, welche von der Firma Würth Elektronik genau für diesen Zweck bereitgestellt wird \citep{Spule}. Die für den Empfängerschwingkreis noch benötigten Kapazitäten wurden über folgende Formeln des Datenblatts \citep{BQ51013} dimensioniert: 
+Für das Gesamtkonzept des Fußmoduls vom Projekt "`MedLast"' ist die Empfangseinheit vorrangig. Um eine passendes Zusammenspiel von proprietärer Sendeeinheit und selbstentworfener Empfangsschaltung sicherzustellen, wurde der gleiche Baustein (\textit{BQ51013}) verwendet. Allerdings wurde beim Schaltungsaufbau darauf geachtet, dass der Bauteilumfang sich auf ein Minimum reduziert. So wurde die Zusatzbeschaltung für eine eventuelle alternative bedrahtete Versorgung weggelassen. Bei dem BQ51013 handelt es sich um ein IC, welches nur in BGA\footnote{Ball Grid Array} Gehäusegröße erhältlich ist. Da dies wiederum für das Layoutdesign bedeutete, dass mit Kontaktflächengrößen von $250\mu$m gearbeitet werden muss, ergab sich eine weitere Problematik. Die typischen Leiterplattenhersteller für Prototypen und Kleinserien haben eine Vorgabe für den Mindestdurchmesser von Durchkontaktierungen mit $300\mu$m. D.h. über die üblichen Wege war es nicht ohne Mehraufwand möglich, einen Platine zu beschaffen. Da ein Durchmesser der Durchkontaktierungen von $150\mu$m als maximale Maßgabe anzusehen war, wurde für den Prototypenbau LTCC\footnote{Low Temperature Cofire Ceramic} als Schaltungsträger ausgewählt. Diese können im Hybridlabor in Dickschichttechnik selbstständig aufgebaut werden. Weiter können durch das Laserstruktur-Gerät \textit{ProtoLaser U} die Keramiksubstrate auf $15\mu$m genau geritzt und gebohrt werden.  Da LTCC im einlagigen Aufbau zu fragil wäre, wurden noch Überlegungen angestrebt um die mechanische Widerstandsfähigkeit zu erhöhen. Ein mehrlagiger Aufbau barg eine zu große Gefahr im Bezug auf die erhöhte Wahrscheinlichkeit einer unterbrochenen Durchkontaktierung. Diese steigt exponentiell mit der Anzahl der verwendeten Lagen LTCC. Durch einen Hinweis von Herrn Leschik wurde bei einem zweiten Versuch die LTCC-Schicht, welche den beidseitigen Schaltungsdruck aufgetragen hatte, auf eine $Al_2O_3$-Keramik auflaminiert. Diese dient als mechanisch-stabiler Träger. Nach einem ersten Fehlversuch konnten somit auf einem Substrat mit Mehrfach-Nutzen mehrere, passiv-elektrisch einwandfreie Schaltungen aufgebaut werden. Nach deren Bestückung per Hand und Lötung mit der Dampfphasenanlage der Hochschule Landshut wurde diese mit der Einkopplungsspule verbunden. Eine anfängliche Überlegung, diese ebenfalls auf LTCC-Dickschichttechnik zu realisieren, wurde aufgrund der nicht einzuhaltenden Kriterien an die Güte der Induktivität wieder verworfen. Darum fiel die Entscheidung auf eine Empfänger-Spule, welche von der Firma Würth Elektronik genau für diesen Zweck bereitgestellt wird \citep{Spule}. Die für den Empfängerschwingkreis noch benötigten Kapazitäten wurden über folgende Formeln des Datenblatts \citep{BQ51013} dimensioniert: 
 \begin{eqnarray}
 C1&=&\left[\left(f_S \cdot 2\pi\right)^2 \cdot L'_S\right]^{-1}\\
 C1&=&\left[\left(100\text{kHz} \cdot 2\pi\right)^2 \cdot 0,01011\text{mH}\right]^{-1}\\
@@ -1305,7 +1318,7 @@ Mit drei, beziehungsweise zwei diskreten Kondensatoren wurden die Kapazitäten $
 \begin{figure}
 \centering
 \fbox{\includegraphics[width=0.8\textwidth-2\fboxsep-2\fboxrule]{Bilder/self_receiver.JPG}}
-\caption{Receiver-Modul, hergestellt im Hybridlabor der Hochschule Landshut}
+\caption{Im Bild ist links das bläuliche selbst entworfene LTCC-Receiver Modul zu erkennen. Über diesem ist ein Lastwiderstand zu sehen, rechts daneben ist eine kleine Platine mit SMD-Kondensatoren zum Abstimmen des Schwingkreises. Ganz rechts außen ist die zugekaufte Koppelspule zu sehen. Hergestellt wurde der Verbund im Hybridlabor der Hochschule Landshut}
 \label{self_rec}
 \end{figure}
 \subsection{Energy-Harvesting}
@@ -1316,12 +1329,12 @@ Als zentralen Baustein für die Erprobung von Micro-Energy-Harvesting Systemen i
 \begin{figure}[htb]
 \centering
 \includegraphics[bb=3.4cm 10.6cm 17.5cm 19.4cm]{Bilder/LTC3108breakoutSSOC}
-\caption{LTC3108 Board von Ambient Sensors}
+\caption[LTC3108 Board von Ambient Sensors]{Das Layout für den Energy-Harvesting Baustein LTC3108 wurde von der Open-Source-Quelle \citep{GIT} entnommen }
 \label{fig:4.1}
 \end{figure}
 \chapter{Software}
 \label{Software}
-Für diverse Testläufe und die Auswertung der Sensordaten des AD1232-Bausteins sowie der Ansteuerung der erweiterten Peripherie werden verschiedene Programme benötigt. Unter Peripherie ist im Rahmen dieser Arbeit der Piezotreiber und die Interruptsteuerung von externen Signalen zu verstehen. Trotz der verschiedenen Entwicklungsumgebungen haben alle geschriebenen Programme als gemeinsame Sprache \textit{C}. In den folgenden Unterkapiteln werden nur die eigens für diese Arbeit erstellten Routinen und Subroutinen vorgestellt. Falls ein proprietärer Softwarerahmen oder eine Bibliothek vom Hersteller verwendet wurde, ist dies an entsprechender Stelle ausdrücklich erwähnt.
+Für diverse Testläufe und die Auswertung der Sensordaten des AD1232-Bausteins sowie der Ansteuerung der erweiterten Peripherie werden verschiedene Programme benötigt. Unter Peripherie ist im Rahmen dieser Arbeit der Piezotreiber und die Interruptsteuerung von externen Signalen zu verstehen. Trotz der verschiedenen Entwicklungsumgebungen haben alle geschriebenen Programme die gemeinsame Sprache \textit{C}. In den folgenden Unterkapiteln werden nur die eigens für diese Arbeit erstellten Routinen und Subroutinen vorgestellt. Falls ein proprietärer Softwarerahmen oder eine Bibliothek vom Hersteller verwendet wurde, ist dies an entsprechender Stelle ausdrücklich erwähnt.
 \section{Frequenzgenerierung}
 Zur Frequenzgenerierung wurde vorerst als Zielbaustein der CC2541 aufgrund des bestehenden Hardware-Aufbaus (vergleiche Kapitel \vref{CC2541}) in den Vordergrund gerückt. Zum Erstellen wurde die Entwicklungsumgebung IAR Embedded Workbench IDE for 8051\footnote{C/C++ Compiler 8051 - IAR Embedded Workbench for 8051 \citep{IAR}} verwendet. Zuerst wurden die grundlegenden Strukturen der Clock-Generierung, der Timer-Funktion und die der Port-Adressierung mithilfe des User's Guide \citep{CC2541_full} ausreichend eruiert. Um den Code auch für Dritte möglichst lesbar zu halten, wurden statt einfachen hexadezimalen Werten zur Registerkonfiguration lesbare Akronyme in einer separaten Header-Datei erstellt. Diese sind ab Seite \pageref{CC2541_porting_defines}zu finden. Der ganze Code wurde wiederum mit Kommentaren versehen um einen schnellen Überblick über dessen Funktion wiederzugeben. Auf Seite \pageref{CC2541_main} ist die Hauptroutine ersichtlich. Von Zeile \texttt{6} bis \texttt{8} wird als Taktquelle für den Prozessor der externe Quarz eingestellt. Die Port-Konfiguration wurde in der Passage von \texttt{10} bis \texttt{13} modifiziert. Dabei wurde die zweite alternative Portbelegung für den Timerausgang vorgenommen. Timer 1 wird in Zeile \texttt{15} mit \texttt{MODULU} zum einfachen Hochzählen bis zu einem festgelegten Wert (Zeile \texttt{22} bis \texttt{24}) konfiguriert. Mit den Passagen \texttt{22}, \texttt{26} bis \texttt{28} wird ein Puls-Breiten-moduliertes\footnote{PWM: Puls Width Modulation} Signal mit 50\% Taktverhältnis erzeugt. 
 \newpage
@@ -1331,7 +1344,7 @@ Zur Frequenzgenerierung wurde vorerst als Zielbaustein der CC2541 aufgrund des b
 
 
 \section{Sensorauswertung \& ISR}
-Um die Funktion des Sensors festzustellen wurde zunächst eine Plattform gewählt, deren Funktion sich bewährt hat. Somit wurde der AD1232 mit dem 8051 Mikrocontroller Board\footnote{C8051F020 von SiLabs, 8-Bit Mikrocontroller} der Hochschule Landshut in Betrieb genommen. Dies hatte den Vorteil, dass Messwerte über eine bereits im Vorfeld angelegte Code-Bibliothek auf dem LCD\footnote{Liquid Crystal Display} der Zusatzplatine ohne großen Programmieraufwand ausgegeben werden kann. Darum werden im Folgenden auch nur die für den Sensor relevanten Teile erläutert. Auf Seite \pageref{CC430_SPI} werden die Routinen zur Sensordatenverarbeitung der Quelldatei \texttt{SPI.c} dargestellt. Der String am Anfang dient zur etwaigen Ausgabe auf dem LC-Display. Die \lstinline$union$ vereint die einzelnen empfangen 8-Bit Fragmente des ausgelesenen Wertes des 24-Bit A/D-Wandlers zu einem \lstinline$ unsigned long$-Wert (\lstinline{longre}). Über Präprozessor-Anweisungen kann eine Vorselektion der unterschiedlichen Programmabschnitte erzielt werden (\lstinline$MV_OUT, UV_OUT, TEMP, EVAL_BOARD$). So wird ein Großteil des Programmcodes eingespart. Darum kann auch eine Vielzahl an Variationen der Signalaufbereitung in eine Quelldatei untergebracht werden, ohne die maximale Codegröße von 4kByte zu überschreiten. Diese ist von der lizenzfreien Version der Entwicklungsumgebung $\mu$Vision4 von Keil vorgegeben. Im Unterprogramm \lstinline{void wandlascii_signed(unsigned int e)} wird unabhängig von der Vorselektion der empfangene AD-Wert in \texttt{ASCII}-Zeichen umgewandelt. Lediglich die arithmetische Aufbereitung ist unterschiedlich. Ebenfalls ist eine Vorzeichenanalyse allen gemein, diese wird über Bitmanipulation durchgeführt: \lstinline$ken5[x] = (e > 0x7FFF) ? 0x2D : 0x2B;$. Über den Aufruf der Subroutine wird über das Polling-Verfahren der 24-Bit Wert des A/D-Wandlers eingelesen. Dies geschieht über 4 in Reihe folgende Aufrufe einer 8-Bit Empfangsschleife. \\
+Um die Funktion des Sensors festzustellen, wurde zunächst eine Plattform gewählt, deren Funktion sich bewährt hat. Somit wurde der AD1232 mit dem 8051 Mikrocontroller Board\footnote{C8051F020 von SiLabs, 8-Bit Mikrocontroller} der Hochschule Landshut in Betrieb genommen. Dies hatte den Vorteil, dass Messwerte über eine bereits im Vorfeld angelegte Code-Bibliothek auf dem LCD\footnote{Liquid Crystal Display} der Zusatzplatine ohne großen Programmieraufwand ausgegeben werden kann. Darum werden im Folgenden auch nur die für den Sensor relevanten Teile erläutert. Auf Seite \pageref{CC430_SPI} werden die Routinen zur Sensordatenverarbeitung der Quelldatei \texttt{SPI.c} dargestellt. Der String am Anfang dient zur etwaigen Ausgabe auf dem LC-Display. Die \lstinline$union$ vereint die einzelnen empfangen 8-Bit Fragmente des ausgelesenen Wertes des 24-Bit A/D-Wandlers zu einem \lstinline$ unsigned long$-Wert (\lstinline{longre}). Über Präprozessor-Anweisungen kann eine Vorselektion der unterschiedlichen Programmabschnitte erzielt werden (\lstinline$MV_OUT, UV_OUT, TEMP, EVAL_BOARD$). So wird ein Großteil des Programmcodes eingespart. Darum kann auch eine Vielzahl an Variationen der Signalaufbereitung in eine Quelldatei untergebracht werden, ohne die maximale Codegröße von 4kByte zu überschreiten. Diese ist von der lizenzfreien Version der Entwicklungsumgebung $\mu$Vision4 von Keil vorgegeben. Im Unterprogramm \lstinline{void wandlascii_signed(unsigned int e)} wird unabhängig von der Vorselektion der empfangene AD-Wert in \texttt{ASCII}-Zeichen umgewandelt. Lediglich die arithmetische Aufbereitung ist unterschiedlich. Ebenfalls ist eine Vorzeichenanalyse allen gemein, diese wird über Bitmanipulation durchgeführt: \lstinline$ken5[x] = (e > 0x7FFF) ? 0x2D : 0x2B;$. Über den Aufruf der Subroutine wird über das Polling-Verfahren der 24-Bit Wert des A/D-Wandlers eingelesen. Dies geschieht über 4 in Reihe folgende Aufrufe einer 8-Bit Empfangsschleife. \\
 In der Headerdatei \texttt{dependencies.h} auf Seite \pageref{CC430_dependencies} werden die Anweisungen für den Präprozessor definiert. Dazu kommen noch Kalibrationswerte für den internen Temperatursensor des AD1232, welche durch empirische Analyse festgelegt wurden.
 Nach erfolgreicher Inbetriebnahme des A/D-Wandlers mit dem Hochschul-Board, wurde eine Adaption auf die ez-Chronos Uhr vollzogen. Dafür wurde ein Programmbeispiel\footnote{CC430F613x Demo - USCI\_A0, SPI 3-Wire Master Increment Data \citep{CC430f6137}} von Texas Instruments als Grundlage verwendet und dementsprechend angepasst. Um eine eventuelle weitere Portierung zu vereinfachen, beginnt die Quelldatei auf Seite \pageref{CC430_ADS1232} mit \lstinline$#define$-Anweisungen die ein schnelles Angleichen ermöglichen. Nach dem Abschalten des Watchdog-Timers in der \lstinline$void main(void)$-Routine werden die Ports gesetzt und der SPI-Port konfiguriert. Eine Besonderheit des Controllers fällt dabei auf: es ist beim Betrieb der SPI-Schnittstelle nicht nötig, alle drei Standardleitungen (MOSI, MISO, SCK) zu setzen. So kann bei PIN/PORT-Mangel auch beispielsweise ein MOSI-PIN als GPIO\footnote{General Purpose Input Output} verwendet werden, wenn über SPI ausschließlich Daten eingelesen werden. Weiter wird ein Interrupt-Eingang für den Piezo-Taster und der zugehörige Vector eingeschalten. 
 In der \lstinline$__interrupt void PORT1_ISR(void)$ (Zeile \texttt{109}) wird mit ankommenden Interrupt zuerst geprüft, ob am A/D-Wandler gültige Daten anliegen. Danach werden wie im vorhergehenden Programm für den 8051 Controller die 4 8-Bit Werte des 24-Bit ADC-Werts eingelesen.
@@ -1342,10 +1355,10 @@ In der \lstinline$__interrupt void PORT1_ISR(void)$ (Zeile \texttt{109}) wird mi
 \newpage
 \lstinputlisting[caption={ADS1232.c, Umgebung Code Composer Studio v4},label=CC430_ADS1232]{ADS1232.c}
 \chapter{Ergebnis}
-Bei dieser Arbeit wurde die Aufgabenstellung komplett erfüllt. Lediglich das Modul für den Baustein CC430F6137 konnte nicht verifiziert werden. Da allerdings ein Prototyp aus einem proprietären Testaufbau\footnote{ez430-Chronos} durch sinngemäße Modifikationen erstellt wurde und dieser alle Erwartungen erfüllt, ist auch hier von einem erfolgreichen Aufbau zu sprechen. Es wurden verschiedene Konzepte der Energiezuführung getestet und dabei das Attraktivste mit den besten Leistungsübertragungsdaten ausgewählt. Dies wurde mit einem WPC-konformen Empfängeraufbau zum drahtlosen Energieempfang realisiert. Jener wurde in Dickschichttechnik an der Hochschule Landshut im Hybridlabor angefertigt und anschließend erfolgreich getestet. Zum Energiespeichern fiel die Auswahl nach einer Voruntersuchung auf Lithium-Ionen-Technologie. Hierfür wurde ein Aufbau zum Laden eines handelsüblichen Akkus erstellt und erfolgreich mit einem der weitverbreiteten Mobiltelefon-Akkus validiert. Die geforderte Sensorik wurde mit dem bereits weiter oben im Text erwähnten modifizierten Testaufbau erfolgreich gekoppelt. Die passende Software zur Sensorauswertung, Generierung eines Warnsignals und Ansteuerung eines Controller-externen Interrupts wurde ebenfalls entwickelt, verbessert und mit Erfolg getestet. Vorausgehende Untersuchungen des kapazitiven Verhaltens von Piezo-Elementen unter Last haben die Zielrichtung der Arbeit entscheidend geprägt. Grundlegende Sachverhalte sind erläutert worden und beschreiben Wirkungsweisen und Funktion der einzelnen Komponenten im Allgemeinen. Gänzlich überblickend ist die Arbeit als Erfolg zu bewerten. 
+Bei dieser Arbeit konnte die Aufgabenstellung komplett erfüllt werden. Lediglich das Modul für den Baustein CC430F6137 konnte nicht verifiziert werden. Da allerdings ein Prototyp aus einem proprietären Testaufbau\footnote{ez430-Chronos} durch sinngemäße Modifikationen erstellt wurde und dieser alle Erwartungen erfüllt hat, ist auch hier von einem erfolgreichen Aufbau zu sprechen. Es wurden verschiedene Konzepte der Energiezuführung getestet und dabei das Attraktivste mit den besten Leistungsübertragungsdaten ausgewählt. Dies wurde mit einem WPC-konformen Empfängeraufbau zum drahtlosen Energieempfang realisiert. Jener wurde in Dickschichttechnik an der Hochschule Landshut im Hybridlabor angefertigt und anschließend erfolgreich getestet. Zum Energiespeichern fiel die Auswahl nach einer Voruntersuchung auf Lithium-Ionen-Technologie. Hierfür wurde ein Aufbau zum Laden eines handelsüblichen Akkus erstellt und erfolgreich mit einem der weitverbreiteten Mobiltelefon-Akkus validiert. Die geforderte Sensorik wurde mit dem bereits weiter oben im Text erwähnten modifizierten Testaufbau erfolgreich gekoppelt. Die passende Software zur Sensorauswertung, Generierung eines Warnsignals und Ansteuerung eines Controller-externen Interrupts wurde ebenfalls entwickelt, verbessert und mit Erfolg getestet. Vorausgehende Untersuchungen des kapazitiven Verhaltens von Piezo-Elementen unter Last haben die Zielrichtung der Arbeit entscheidend geprägt. Grundlegende Sachverhalte sind erläutert worden und beschreiben Wirkungsweisen und Funktion der einzelnen Komponenten im Allgemeinen.
 \chapter{Ausblick}
 %der monlithische Aufbau wird von der Firma Siegert durchgeführt
-Nachfolgende weiterführende Arbeiten können sich auf die Stabilisierung und die Verbesserung der Reproduzierbarkeit der einzelnen Komponenten beziehen. Mit einem monolithischen Aufbau sollte die Weiterentwicklung abzuschließen sein. So können folgende Arbeitspunkte für zukünftige Aufgaben genannt werden:
+Nachfolgende weiterführende Arbeiten können sich Stabilisierung und die Verbesserung der Reproduzierbarkeit der einzelnen Komponenten zum Ziel haben. Mit einem monolithischen Aufbau sollte die Weiterentwicklung durch die Firma Siegert abgeschlossen werden. So können folgende Arbeitspunkte für zukünftige Aufgaben genannt werden:
 \begin{itemize}
 \item
 Minimierung der Ausmaße der Leiterplattenlayouts
@@ -1356,8 +1369,7 @@ Zusammenführen einzelner Komponenten, beispielsweise drahtlose Energie-Übertra
 \item
 Vereinigung aller modularen Aufbauten
 \end{itemize}
-Mit der Ausführung, Verifizierung und Validierung dieser weiteren Arbeitsschritte ist das Gerät, das Fußmodul für das Projekt MedLast, tauglich zur Serienfertigung.
-%kapazitiver Sensor, bezug auf ceramtec
+Parallel zu den aufgeführten, auf dieser Arbeit basierenden Themen kann auch noch ein Messsystem, das auf einem kapazitiven Sensor der Firma CeramTec beruht, aufgebaut werden. Mit der Ausführung, Verifizierung und Validierung dieser weiteren Arbeitsschritte ist das Gerät, das Fußmodul für das Projekt MedLast, tauglich zur Serienfertigung.
 \listoffigures
 \lstlistoflistings
 \listoftables
