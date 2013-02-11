@@ -24,11 +24,15 @@
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Modul CC2541; Hergestellt an der Hochschule Landshut}}{57}{figure.caption.41}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Modifizierte ez430-Chronos Uhr}}{59}{figure.caption.42}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Schaltbild des Modulentwurfs, CC430F6137}}{60}{figure.caption.43}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Eine Modulplatine mit zentralen CC430F6137-Baustein auf FR4-Substrat; Hergestellt an der Hochschule Landshut\relax }}{62}{figure.caption.44}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Transmitter-Modul bq500110EVM-688 des Evaluation-Packs von Texas Instruments\relax }}{63}{figure.caption.45}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Receiver-Modul bq51013EVM-725 des Evaluation-Packs von Texas Instruments\relax }}{63}{figure.caption.46}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Im Bild ist links das bl\IeC {\"a}uliche selbst entworfene LTCC-Receiver Modul zu erkennen. \IeC {\"U}ber diesem ist ein Lastwiderstand zu sehen, rechts daneben ist eine kleine Platine mit SMD-Kondensatoren zum Abstimmen des Schwingkreises. Ganz rechts au\IeC {\ss }en ist die zugekaufte Koppelspule zu sehen. Hergestellt wurde der Verbund im Hybridlabor der Hochschule Landshut\relax }}{66}{figure.caption.47}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Modulplatine f\IeC {\"u}r CC430F6137 auf FR4-Substrat}}{61}{figure.caption.44}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Transmitter-Modul bq500110EVM-688}}{63}{figure.caption.45}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Receiver-Modul bq51013EVM-725}}{63}{figure.caption.46}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Receiver-Modul auf LTCC-$Al_2O_3$-Keramik Substrat}}{66}{figure.caption.47}
 \contentsline {figure}{\numberline {5.13}{\ignorespaces LTC3108 Board von Ambient Sensors}}{68}{figure.caption.48}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -40,4 +40,8 @@
 \BOOKMARK [1][-]{section.6.2}{Sensorauswertung \046 ISR}{chapter.6}% 40
 \BOOKMARK [0][-]{chapter.7}{Ergebnis}{}% 41
 \BOOKMARK [0][-]{chapter.8}{Ausblick}{}% 42
-\BOOKMARK [0][-]{chapter*.52}{Literaturverzeichnis}{}% 43
+\BOOKMARK [0][-]{appendix.A}{Layout: AD1232 Sensorik \(verifiziert\)}{}% 43
+\BOOKMARK [0][-]{appendix.B}{Layout: LiIon-Akku-Lader \(verifiziert\)}{}% 44
+\BOOKMARK [0][-]{appendix.C}{Layout: CC2541, 2,4GHz SoC \(verifiziert\)}{}% 45
+\BOOKMARK [0][-]{appendix.D}{Layout: CC430F6137 868MHz SoC}{}% 46
+\BOOKMARK [0][-]{appendix*.52}{Literaturverzeichnis}{}% 47

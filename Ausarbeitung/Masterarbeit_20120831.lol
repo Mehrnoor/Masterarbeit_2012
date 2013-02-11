@@ -11,3 +11,7 @@
 \contentsline {lstlisting}{\numberline {6.5}ADS1232.c, Umgebung Code Composer Studio v4}{82}{lstlisting.6.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

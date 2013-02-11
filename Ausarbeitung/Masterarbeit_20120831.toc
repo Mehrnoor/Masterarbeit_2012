@@ -50,12 +50,16 @@
 \contentsline {subsubsection}{Piezosignalgeber}{55}{section*.39}
 \contentsline {subsubsection}{Fazit}{57}{section*.40}
 \contentsline {subsection}{\numberline {5.3.2}CC430F6137}{57}{subsection.5.3.2}
-\contentsline {section}{\numberline {5.4}Energiezuf\IeC {\"u}hrung}{61}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Drahtlose Energie\IeC {\"u}bertragung}{61}{subsection.5.4.1}
+\contentsline {section}{\numberline {5.4}Energiezuf\IeC {\"u}hrung}{62}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Drahtlose Energie\IeC {\"u}bertragung}{62}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}Energy-Harvesting}{66}{subsection.5.4.2}
 \contentsline {chapter}{\numberline {6}Software}{69}{chapter.6}
 \contentsline {section}{\numberline {6.1}Frequenzgenerierung}{69}{section.6.1}
 \contentsline {section}{\numberline {6.2}Sensorauswertung \& ISR}{73}{section.6.2}
 \contentsline {chapter}{\numberline {7}Ergebnis}{87}{chapter.7}
 \contentsline {chapter}{\numberline {8}Ausblick}{88}{chapter.8}
-\contentsline {chapter}{Literaturverzeichnis}{93}{chapter*.52}
+\contentsline {chapter}{\numberline {A}Layout: AD1232 Sensorik (verifiziert)}{89}{appendix.A}
+\contentsline {chapter}{\numberline {B}Layout: LiIon-Akku-Lader (verifiziert)}{90}{appendix.B}
+\contentsline {chapter}{\numberline {C}Layout: CC2541, 2,4GHz SoC (verifiziert)}{91}{appendix.C}
+\contentsline {chapter}{\numberline {D}Layout: CC430F6137 868MHz SoC}{92}{appendix.D}
+\contentsline {chapter}{Literaturverzeichnis}{96}{appendix*.52}
